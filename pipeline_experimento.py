@@ -141,9 +141,10 @@ async def main():
             chave = f"{row['Nome_do_modelo']}||{row['Conta']}"
             concluidos.add(chave)
 
+    # Lista de tarefas pendentes
     pendencias = []
-    for modelo in modelos_gratuitos:
-        for _, row in df_operacoes.iterrows():
+    for _, row in df_operacoes.iterrows():
+        for modelo in modelos_gratuitos:
             chave = f"{modelo}||{row['Conta']}"
             if chave not in concluidos:
                 pendencias.append((modelo, row.to_dict()))
