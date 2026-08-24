@@ -39,7 +39,7 @@ ARQUIVO_RESULTADOS = os.path.join(DADOS_DIR, 'resultados_experimento.csv')
 
 # Limites
 LIMITE_DIARIO = 50
-TAMANHO_LOTE = 5 # Para fazer backup a cada 5 requisições
+TAMANHO_LOTE = 20 # Para fazer backup e respeitar os 20 RPM do OpenRouter
 
 def gerar_operacoes():
     """Gera as operações matemáticas caso a base de dados ainda não exista."""
@@ -188,8 +188,8 @@ async def main():
             print(f"Backup salvo com sucesso. Requisições feitas: {requisicoes_hoje}")
             
         if requisicoes_hoje < LIMITE_DIARIO and i + TAMANHO_LOTE < len(pendencias):
-            print("Aguardando 65 segundos para respeitar o Rate Limit do OpenRouter...")
-            await asyncio.sleep(65)
+            print("Aguardando 90 segundos para garantir a reinicialização do Rate Limit do OpenRouter...")
+            await asyncio.sleep(90)
 
 if __name__ == '__main__':
     asyncio.run(main())
