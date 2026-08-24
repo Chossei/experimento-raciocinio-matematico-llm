@@ -1,0 +1,18 @@
+# Ignorar chaves de API e arquivos de ambiente
+*.env
+chave.env
+.env
+
+# Ignorar base de dados (caso não queira subir os arquivos pesados)
+# Se quiser subir apenas a base gerada de operações e ignorar os resultados:
+dados/resultados_experimento.csv
+# Se quiser ignorar tudo da pasta de dados, descomente a linha abaixo:
+# dados/
+
+# Ignorar pastas geradas pelo Python
+__pycache__/
+*.pyc
+
+# Ignorar ambientes virtuais
+venv/
+env/
