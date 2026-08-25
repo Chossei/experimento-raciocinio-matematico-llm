@@ -7,20 +7,45 @@ import openai
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 import time
+import logging
+from datetime import datetime
 
-# Carrega as variáveis de ambiente
+# ==========================================
+# CONFIGURAÇÃO DE LOGS
+# ==========================================
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
+data_hora = datetime.now().strftime("%Y%m%d_%H%M%S")
+log_filename = os.path.join('logs', f'execucao_{data_hora}.log')
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_filename, encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
+
+logging.info("=== Iniciando Pipeline de Experimento Matemático ===")
+
+# ==========================================
+# VARIÁVEIS DE AMBIENTE E CHAVES
+# ==========================================
 load_dotenv('chave.env')
 
-# Obter todas as chaves disponíveis
 CHAVES_API = []
 for k, v in os.environ.items():
     if k.startswith("OPEN_ROUTER_API_KEY") and v.strip():
         CHAVES_API.append(v.strip())
 
 if not CHAVES_API:
+    logging.error("Nenhuma chave OPEN_ROUTER_API_KEY encontrada no arquivo chave.env.")
     raise ValueError("Nenhuma chave OPEN_ROUTER_API_KEY encontrada no arquivo chave.env.")
 
 indice_chave_atual = 0
+logging.info(f"Total de {len(CHAVES_API)} chave(s) carregada(s).")
 
 def get_client():
     return AsyncOpenAI(
@@ -35,11 +60,13 @@ def alternar_chave():
     if indice_chave_atual < len(CHAVES_API) - 1:
         indice_chave_atual += 1
         client = get_client()
-        print(f"\n[Aviso] Alternando para a chave da API {indice_chave_atual + 1}...")
+        logging.warning(f"Alternando para a chave da API {indice_chave_atual + 1}...")
         return True
     return False
 
-# Lista de modelos gratuitos
+# ==========================================
+# CONFIGURAÇÕES DO EXPERIMENTO
+# ==========================================
 modelos_gratuitos = [
     'dots-3-note-preview:free', 'liquid/lfm-2.5-2.6b:free',
     'nvidia/nemotron-3.5-lightning:free', 'thinkingmachines/inkling-small:free',
@@ -52,21 +79,20 @@ modelos_gratuitos = [
     'minimax/minimax-m2.7:free', 'nvidia/nemotron-3-super-120b-a12b:free'
 ]
 
-# Caminhos dos arquivos
 DADOS_DIR = 'dados'
 ARQUIVO_OPERACOES = os.path.join(DADOS_DIR, 'operacoes.csv')
 ARQUIVO_RESULTADOS = os.path.join(DADOS_DIR, 'resultados_experimento.csv')
 
-# Limites
 TAMANHO_LOTE = 20 # Para fazer backup e respeitar os 20 RPM do OpenRouter
 
+# ==========================================
+# FUNÇÕES DE APOIO
+# ==========================================
 def gerar_operacoes():
-    """Gera as operações matemáticas caso a base de dados ainda não exista."""
-    print("Gerando base de operações matemáticas...")
+    logging.info("Gerando base de operações matemáticas...")
     np.random.seed(123)
     dados_experimento = []
     
-    # Gera de 2 a 6 dígitos
     for digitos in range(2, 7):
         low_val = 10**(digitos - 1)
         high_val = 10**digitos
@@ -75,7 +101,7 @@ def gerar_operacoes():
         for i in range(100):
             a = np.random.randint(low=low_val, high=high_val)
             b = np.random.randint(low=low_val, high=high_val)
-            resultado = int(a * b) # Evita tipos numpy longos
+            resultado = int(a * b)
             
             dados_experimento.append({
                 'num_a': a,
@@ -87,21 +113,20 @@ def gerar_operacoes():
             
     df = pd.DataFrame(dados_experimento)
     df.to_csv(ARQUIVO_OPERACOES, index=False)
-    print(f"Total de {len(df)} operações geradas e salvas em {ARQUIVO_OPERACOES}.")
+    logging.info(f"Total de {len(df)} operações geradas e salvas em {ARQUIVO_OPERACOES}.")
     return df
 
 def extrair_numero(texto):
-    """Extrai apenas os dígitos numéricos da resposta do modelo usando Regex."""
-    # Encontra números. Pode conter sinal de menos caso tente responder negativos, mas aqui é só multiplicar positivos.
     padrao = re.compile(r'\d+')
     numeros = padrao.findall(texto)
     if numeros:
-        # Junta tudo, ex: caso responda 1 234 567
         return int("".join(numeros))
     return None
 
+# ==========================================
+# CHAMADA ASSÍNCRONA
+# ==========================================
 async def realizar_chamada(modelo, conta_dict):
-    """Realiza uma chamada para um único modelo avaliando uma única conta."""
     prompt_geral = f"""
     Sua tarefa é resolver operações matemáticas.
     Responda a pergunta a seguir e retorne o resultado SOMENTE em formato de número, sem unidades ou caracteres especiais.
@@ -113,13 +138,15 @@ async def realizar_chamada(modelo, conta_dict):
             model=modelo,
             messages=[{'role': 'user', 'content': prompt_geral}]
         )
-        texto_resposta = resposta.choices[0].message.content
         
-        # Análise
+        if not hasattr(resposta, 'choices') or not resposta.choices:
+            logging.error(f"O modelo {modelo} retornou uma resposta vazia (NoneType).")
+            return None
+            
+        texto_resposta = resposta.choices[0].message.content
         valor_extraido = extrair_numero(texto_resposta)
         acerto_formato = True
         
-        # Se contiver letras ou outros caracteres não numéricos (exceto whitespace), errou formato
         if re.search(r'[a-zA-Z]', texto_resposta):
             acerto_formato = False
             
@@ -136,49 +163,50 @@ async def realizar_chamada(modelo, conta_dict):
             'Conta': conta_dict['Conta']
         }
     except openai.RateLimitError as e:
-        print(f"Rate Limit (429) atingido na chave atual ao testar {modelo}.")
+        logging.warning(f"Rate Limit (429) atingido na chave atual ao testar {modelo}.")
         return {"status": "rate_limit", "modelo": modelo, "conta_dict": conta_dict}
     except openai.APIStatusError as e:
-        if e.status_code in [402, 403]:
-            # Erros comuns de falta de crédito
-            print(f"Erro {e.status_code} na chave atual ao testar {modelo} (possivelmente sem saldo).")
+        if e.status_code == 402:
+            logging.warning(f"Erro {e.status_code} na chave atual ao testar {modelo} (Sem saldo).")
             return {"status": "rate_limit", "modelo": modelo, "conta_dict": conta_dict}
+        elif e.status_code == 403:
+            # 403 não é rate limit de chave, mas sim bloqueio específico do modelo
+            logging.error(f"Erro 403 ao testar {modelo} (Acesso bloqueado ou proibido pelo provider). O modelo será ignorado.")
+            return None
         else:
-            print(f"Erro na API com o modelo {modelo}: {e}")
+            logging.error(f"Erro na API com o modelo {modelo}: {e.status_code} - {e.message}")
             return None
     except Exception as e:
-        print(f"Erro com o modelo {modelo}: {e}")
+        logging.error(f"Erro inesperado com o modelo {modelo}: {e}")
         return None
 
+# ==========================================
+# FLUXO PRINCIPAL
+# ==========================================
 async def main():
     if not os.path.exists(DADOS_DIR):
         os.makedirs(DADOS_DIR)
         
-    # Carrega ou gera operações
     if os.path.exists(ARQUIVO_OPERACOES):
         df_operacoes = pd.read_csv(ARQUIVO_OPERACOES)
     else:
         df_operacoes = gerar_operacoes()
 
-    # Carrega resultados existentes (backup)
     if os.path.exists(ARQUIVO_RESULTADOS):
         df_resultados = pd.read_csv(ARQUIVO_RESULTADOS)
     else:
-        # Cria dataframe vazio com as colunas esperadas
         colunas = [
             'Nome_do_modelo', 'Operacao', 'Resultado_do_modelo', 'Resposta_bruta',
             'Resultado_original', 'Acerto_da_operacao', 'Acerto_do_formato_de_resposta', 'Conta'
         ]
         df_resultados = pd.DataFrame(columns=colunas)
 
-    # Identifica as combinações (modelo, conta) que já foram feitas
     concluidos = set()
     if not df_resultados.empty:
         for _, row in df_resultados.iterrows():
             chave = f"{row['Nome_do_modelo']}||{row['Conta']}"
             concluidos.add(chave)
 
-    # Lista de tarefas pendentes (Agrupando por contas e depois modelos)
     pendencias = []
     for _, row in df_operacoes.iterrows():
         for modelo in modelos_gratuitos:
@@ -186,20 +214,19 @@ async def main():
             if chave not in concluidos:
                 pendencias.append((modelo, row.to_dict()))
 
-    print(f"Total de operações pendentes: {len(pendencias)}")
+    logging.info(f"Total de operações pendentes na fila: {len(pendencias)}")
     if len(pendencias) == 0:
-        print("Experimento concluído! Nenhuma operação pendente.")
+        logging.info("Experimento concluído! Nenhuma operação pendente.")
         return
 
     requisicoes_feitas = 0
     resultados_novos = []
 
-    # Processa pendências
     while pendencias:
         lote_atual = pendencias[:TAMANHO_LOTE]
         pendencias = pendencias[TAMANHO_LOTE:]
         
-        print(f"Processando lote de {len(lote_atual)} requisições... (Requisitadas até agora nesta sessão: {requisicoes_feitas})")
+        logging.info(f"Processando lote de {len(lote_atual)} requisições... (Requisitadas nesta sessão: {requisicoes_feitas})")
         
         tarefas = [realizar_chamada(modelo, conta) for modelo, conta in lote_atual]
         respostas = await asyncio.gather(*tarefas)
@@ -210,35 +237,33 @@ async def main():
             if res is not None:
                 if isinstance(res, dict) and res.get("status") == "rate_limit":
                     teve_rate_limit = True
-                    # Devolve para o INÍCIO da fila
                     pendencias.insert(0, (res["modelo"], res["conta_dict"]))
                 else:
                     resultados_novos.append(res)
                     requisicoes_feitas += 1
         
-        # Salva o backup
         if resultados_novos:
             novo_df = pd.DataFrame(resultados_novos)
             if os.path.exists(ARQUIVO_RESULTADOS):
-                # Anexa ao existente
                 df_salvo = pd.read_csv(ARQUIVO_RESULTADOS)
                 df_salvo = pd.concat([df_salvo, novo_df], ignore_index=True)
                 df_salvo.to_csv(ARQUIVO_RESULTADOS, index=False)
             else:
                 novo_df.to_csv(ARQUIVO_RESULTADOS, index=False)
             
-            # Limpa para a próxima iteração
             resultados_novos = []
-            print(f"Backup salvo com sucesso.")
+            logging.info("Backup salvo com sucesso no arquivo CSV.")
             
         if teve_rate_limit:
-            # Se a chave atingiu limite de saldo/requisição, tenta a próxima
             if not alternar_chave():
-                print("Todas as chaves atingiram o Rate Limit ou acabaram os créditos. Encerrando o script por hoje.")
+                logging.error("Todas as chaves atingiram o Rate Limit ou acabaram os créditos. Encerrando por hoje.")
                 break
         elif pendencias:
-            print("Aguardando 90 segundos para garantir a reinicialização do Rate Limit do OpenRouter (20 RPM)...")
+            logging.info("Aguardando 90 segundos para a reinicialização do Rate Limit (20 RPM)...")
             await asyncio.sleep(90)
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logging.warning("Script interrompido manualmente pelo usuário (KeyboardInterrupt).")
