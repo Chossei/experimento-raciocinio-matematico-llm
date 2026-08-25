@@ -50,7 +50,8 @@ logging.info(f"Total de {len(CHAVES_API)} chave(s) carregada(s).")
 def get_client():
     return AsyncOpenAI(
         base_url='https://openrouter.ai/api/v1',
-        api_key=CHAVES_API[indice_chave_atual]
+        api_key=CHAVES_API[indice_chave_atual],
+        max_retries=0
     )
 
 client = get_client()
