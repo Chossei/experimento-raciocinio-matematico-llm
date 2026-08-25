@@ -163,8 +163,12 @@ async def realizar_chamada(modelo, conta_dict):
             'Conta': conta_dict['Conta']
         }
     except openai.RateLimitError as e:
-        logging.warning(f"Rate Limit (429) atingido na chave atual ao testar {modelo}.")
-        return {"status": "rate_limit", "modelo": modelo, "conta_dict": conta_dict}
+        msg = getattr(e, 'message', str(e))
+        logging.warning(f"Rate Limit (429) no modelo {modelo}. Detalhes: {msg}")
+        if 'free-models-per-day' in msg.lower() or 'daily' in msg.lower():
+            return {"status": "rate_limit_diario", "modelo": modelo, "conta_dict": conta_dict}
+        else:
+            return {"status": "rate_limit_temporario", "modelo": modelo, "conta_dict": conta_dict}
     except openai.APIStatusError as e:
         if e.status_code == 402:
             logging.warning(f"Erro {e.status_code} na chave atual ao testar {modelo} (Sem saldo).")
@@ -242,9 +246,13 @@ async def main():
         
         for res in respostas:
             if res is not None:
-                if isinstance(res, dict) and res.get("status") == "rate_limit":
+                status = res.get("status") if isinstance(res, dict) else None
+                if status in ["rate_limit", "rate_limit_diario"]:
                     teve_rate_limit = True
                     pendencias.insert(0, (res["modelo"], res["conta_dict"]))
+                elif status == "rate_limit_temporario":
+                    # Reenfileira no final para tentar novamente mais tarde sem trocar a chave
+                    pendencias.append((res["modelo"], res["conta_dict"]))
                 else:
                     resultados_novos.append(res)
                     requisicoes_feitas += 1
