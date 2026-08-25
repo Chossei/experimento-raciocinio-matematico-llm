@@ -221,6 +221,9 @@ async def main():
 
     requisicoes_feitas = 0
     resultados_novos = []
+    
+    # Semáforo para limitar a concorrência a 5 requisições simultâneas
+    semaforo = asyncio.Semaphore(5)
 
     while pendencias:
         lote_atual = pendencias[:TAMANHO_LOTE]
@@ -228,7 +231,11 @@ async def main():
         
         logging.info(f"Processando lote de {len(lote_atual)} requisições... (Requisitadas nesta sessão: {requisicoes_feitas})")
         
-        tarefas = [realizar_chamada(modelo, conta) for modelo, conta in lote_atual]
+        async def tarefa_com_semaforo(m, c):
+            async with semaforo:
+                return await realizar_chamada(m, c)
+                
+        tarefas = [tarefa_com_semaforo(modelo, conta) for modelo, conta in lote_atual]
         respostas = await asyncio.gather(*tarefas)
         
         teve_rate_limit = False
