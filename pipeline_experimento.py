@@ -166,7 +166,9 @@ async def realizar_chamada(modelo, conta_dict):
     except openai.RateLimitError as e:
         msg = getattr(e, 'message', str(e))
         logging.warning(f"Rate Limit (429) no modelo {modelo}. Detalhes: {msg}")
-        if 'free-models-per-day' in msg.lower() or 'daily' in msg.lower():
+        if 'temporarily rate-limited upstream' in msg.lower() or 'upstream_429' in msg.lower():
+            return {"status": "rate_limit_congelar", "modelo": modelo, "conta_dict": conta_dict}
+        elif 'free-models-per-day' in msg.lower() or 'daily' in msg.lower():
             return {"status": "rate_limit_diario", "modelo": modelo, "conta_dict": conta_dict}
         else:
             return {"status": "rate_limit_temporario", "modelo": modelo, "conta_dict": conta_dict}
@@ -227,13 +229,38 @@ async def main():
     requisicoes_feitas = 0
     resultados_novos = []
     
+    # Dicionário para gerenciar modelos bloqueados no upstream (modelo: timestamp_liberacao)
+    modelos_congelados = {}
+    
     # Semáforo para limitar a concorrência a 5 requisições simultâneas
     semaforo = asyncio.Semaphore(5)
 
     while pendencias:
-        lote_atual = pendencias[:TAMANHO_LOTE]
-        pendencias = pendencias[TAMANHO_LOTE:]
+        agora = time.time()
         
+        # Descongelar modelos que já passaram do tempo
+        modelos_descongelar = [m for m, t in modelos_congelados.items() if agora >= t]
+        for m in modelos_descongelar:
+            del modelos_congelados[m]
+            logging.info(f"O modelo {m} saiu da geladeira (5 min expiraram). Voltando para a fila de testes.")
+            
+        lote_atual = []
+        pendencias_restantes = []
+        
+        for p in pendencias:
+            modelo = p[0]
+            if modelo not in modelos_congelados and len(lote_atual) < TAMANHO_LOTE:
+                lote_atual.append(p)
+            else:
+                pendencias_restantes.append(p)
+                
+        pendencias = pendencias_restantes
+        
+        if not lote_atual:
+            logging.info("Fila vazia ou todos os modelos restantes estão congelados. Aguardando 10 segundos...")
+            await asyncio.sleep(10)
+            continue
+            
         logging.info(f"Processando lote de {len(lote_atual)} requisições... (Requisitadas nesta sessão: {requisicoes_feitas})")
         
         async def tarefa_com_semaforo(m, c):
@@ -251,6 +278,11 @@ async def main():
                 if status in ["rate_limit", "rate_limit_diario"]:
                     teve_rate_limit = True
                     pendencias.insert(0, (res["modelo"], res["conta_dict"]))
+                elif status == "rate_limit_congelar":
+                    if res["modelo"] not in modelos_congelados:
+                        modelos_congelados[res["modelo"]] = time.time() + 300  # Congela por 5 minutos
+                        logging.warning(f"Congelando o modelo {res['modelo']} por 5 minutos devido a erro de Upstream Rate Limit.")
+                    pendencias.append((res["modelo"], res["conta_dict"]))
                 elif status == "rate_limit_temporario":
                     # Reenfileira no final para tentar novamente mais tarde sem trocar a chave
                     pendencias.append((res["modelo"], res["conta_dict"]))
