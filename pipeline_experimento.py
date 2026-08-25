@@ -6,6 +6,7 @@ import numpy as np
 import openai
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
+import time
 
 # Carrega as variáveis de ambiente
 load_dotenv('chave.env')
@@ -13,8 +14,8 @@ load_dotenv('chave.env')
 # Obter todas as chaves disponíveis
 CHAVES_API = []
 for k, v in os.environ.items():
-    if k.startswith("OPEN_ROUTER_API_KEY") and v:
-        CHAVES_API.append(v)
+    if k.startswith("OPEN_ROUTER_API_KEY") and v.strip():
+        CHAVES_API.append(v.strip())
 
 if not CHAVES_API:
     raise ValueError("Nenhuma chave OPEN_ROUTER_API_KEY encontrada no arquivo chave.env.")
@@ -45,10 +46,10 @@ modelos_gratuitos = [
     'poolside/laguna-s-2.1:free', 'thinkingmachines/inkling:free',
     'poolside/laguna-xs-2.1:free', 'cohere/north-mini-code:free',
     'z-ai/glm-5.2:free', 'nvidia/nemotron-3.5-content-safety:free',
-    'nvidia/nemotron-3-ultra-550b-a55b:free', 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
+    'nvidia/nemotron-3-ultra-550b-a55b:free', 'minimax/minimax-m3:free',
+    'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
     'google/gemma-4-26b-a4b-it:free', 'google/gemma-4-31b-it:free',
-    'nvidia/nemotron-3-super-120b-a12b:free', 'nvidia/nemotron-3-nano-30b-a3b:free', 
-    'nvidia/nemotron-nano-12b-v2-vl:free', 'nvidia/nemotron-nano-9b-v2:free'
+    'minimax/minimax-m2.7:free', 'nvidia/nemotron-3-super-120b-a12b:free'
 ]
 
 # Caminhos dos arquivos
@@ -57,7 +58,6 @@ ARQUIVO_OPERACOES = os.path.join(DADOS_DIR, 'operacoes.csv')
 ARQUIVO_RESULTADOS = os.path.join(DADOS_DIR, 'resultados_experimento.csv')
 
 # Limites
-LIMITE_POR_CHAVE = 50
 TAMANHO_LOTE = 20 # Para fazer backup e respeitar os 20 RPM do OpenRouter
 
 def gerar_operacoes():
@@ -66,6 +66,7 @@ def gerar_operacoes():
     np.random.seed(123)
     dados_experimento = []
     
+    # Gera de 2 a 6 dígitos
     for digitos in range(2, 7):
         low_val = 10**(digitos - 1)
         high_val = 10**digitos
@@ -74,7 +75,7 @@ def gerar_operacoes():
         for i in range(100):
             a = np.random.randint(low=low_val, high=high_val)
             b = np.random.randint(low=low_val, high=high_val)
-            resultado = int(a * b)
+            resultado = int(a * b) # Evita tipos numpy longos
             
             dados_experimento.append({
                 'num_a': a,
@@ -91,9 +92,11 @@ def gerar_operacoes():
 
 def extrair_numero(texto):
     """Extrai apenas os dígitos numéricos da resposta do modelo usando Regex."""
+    # Encontra números. Pode conter sinal de menos caso tente responder negativos, mas aqui é só multiplicar positivos.
     padrao = re.compile(r'\d+')
     numeros = padrao.findall(texto)
     if numeros:
+        # Junta tudo, ex: caso responda 1 234 567
         return int("".join(numeros))
     return None
 
@@ -112,8 +115,11 @@ async def realizar_chamada(modelo, conta_dict):
         )
         texto_resposta = resposta.choices[0].message.content
         
+        # Análise
         valor_extraido = extrair_numero(texto_resposta)
         acerto_formato = True
+        
+        # Se contiver letras ou outros caracteres não numéricos (exceto whitespace), errou formato
         if re.search(r'[a-zA-Z]', texto_resposta):
             acerto_formato = False
             
@@ -130,52 +136,49 @@ async def realizar_chamada(modelo, conta_dict):
             'Conta': conta_dict['Conta']
         }
     except openai.RateLimitError as e:
-        print(f"Rate Limit atingido na chave atual ao testar {modelo}.")
+        print(f"Rate Limit (429) atingido na chave atual ao testar {modelo}.")
         return {"status": "rate_limit", "modelo": modelo, "conta_dict": conta_dict}
     except openai.APIStatusError as e:
         if e.status_code in [402, 403]:
-            print(f"Modelo {modelo} retornou Erro {e.status_code} (possivelmente não é mais gratuito). Marcando como falha e pulando.")
-            return {
-                'Nome_do_modelo': modelo,
-                'Operacao': conta_dict['Operacao'],
-                'Resultado_do_modelo': None,
-                'Resposta_bruta': f"Erro {e.status_code}: {e.message}",
-                'Resultado_original': conta_dict['Resultado_original'],
-                'Acerto_da_operacao': False,
-                'Acerto_do_formato_de_resposta': False,
-                'Conta': conta_dict['Conta']
-            }
+            # Erros comuns de falta de crédito
+            print(f"Erro {e.status_code} na chave atual ao testar {modelo} (possivelmente sem saldo).")
+            return {"status": "rate_limit", "modelo": modelo, "conta_dict": conta_dict}
         else:
             print(f"Erro na API com o modelo {modelo}: {e}")
             return None
     except Exception as e:
-        print(f"Erro inesperado com o modelo {modelo}: {e}")
+        print(f"Erro com o modelo {modelo}: {e}")
         return None
 
 async def main():
     if not os.path.exists(DADOS_DIR):
         os.makedirs(DADOS_DIR)
         
+    # Carrega ou gera operações
     if os.path.exists(ARQUIVO_OPERACOES):
         df_operacoes = pd.read_csv(ARQUIVO_OPERACOES)
     else:
         df_operacoes = gerar_operacoes()
 
+    # Carrega resultados existentes (backup)
     if os.path.exists(ARQUIVO_RESULTADOS):
         df_resultados = pd.read_csv(ARQUIVO_RESULTADOS)
     else:
+        # Cria dataframe vazio com as colunas esperadas
         colunas = [
             'Nome_do_modelo', 'Operacao', 'Resultado_do_modelo', 'Resposta_bruta',
             'Resultado_original', 'Acerto_da_operacao', 'Acerto_do_formato_de_resposta', 'Conta'
         ]
         df_resultados = pd.DataFrame(columns=colunas)
 
+    # Identifica as combinações (modelo, conta) que já foram feitas
     concluidos = set()
     if not df_resultados.empty:
         for _, row in df_resultados.iterrows():
             chave = f"{row['Nome_do_modelo']}||{row['Conta']}"
             concluidos.add(chave)
 
+    # Lista de tarefas pendentes (Agrupando por contas e depois modelos)
     pendencias = []
     for _, row in df_operacoes.iterrows():
         for modelo in modelos_gratuitos:
@@ -188,65 +191,53 @@ async def main():
         print("Experimento concluído! Nenhuma operação pendente.")
         return
 
-    requisicoes_nesta_chave = 0
+    requisicoes_feitas = 0
     resultados_novos = []
 
     # Processa pendências
     while pendencias:
-        if requisicoes_nesta_chave >= LIMITE_POR_CHAVE:
-            print(f"Limite diário de {LIMITE_POR_CHAVE} atingido para a chave atual.")
-            if not alternar_chave():
-                print("Todas as chaves atingiram o limite diário. Encerrando o script por hoje.")
-                break
-            requisicoes_nesta_chave = 0
-            
         lote_atual = pendencias[:TAMANHO_LOTE]
         pendencias = pendencias[TAMANHO_LOTE:]
         
-        # Garante que não ultrapasse o limite no meio do lote
-        if requisicoes_nesta_chave + len(lote_atual) > LIMITE_POR_CHAVE:
-            sobra = lote_atual[(LIMITE_POR_CHAVE - requisicoes_nesta_chave):]
-            lote_atual = lote_atual[:(LIMITE_POR_CHAVE - requisicoes_nesta_chave)]
-            pendencias = sobra + pendencias
-            
-        print(f"Processando lote de {len(lote_atual)} requisições... (Total nesta chave: {requisicoes_nesta_chave})")
+        print(f"Processando lote de {len(lote_atual)} requisições... (Requisitadas até agora nesta sessão: {requisicoes_feitas})")
         
         tarefas = [realizar_chamada(modelo, conta) for modelo, conta in lote_atual]
         respostas = await asyncio.gather(*tarefas)
         
         teve_rate_limit = False
+        
         for res in respostas:
             if res is not None:
-                if res.get("status") == "rate_limit":
+                if isinstance(res, dict) and res.get("status") == "rate_limit":
                     teve_rate_limit = True
                     # Devolve para o INÍCIO da fila
                     pendencias.insert(0, (res["modelo"], res["conta_dict"]))
                 else:
                     resultados_novos.append(res)
-                
-        requisicoes_nesta_chave += len(lote_atual)
+                    requisicoes_feitas += 1
         
         # Salva o backup
         if resultados_novos:
             novo_df = pd.DataFrame(resultados_novos)
             if os.path.exists(ARQUIVO_RESULTADOS):
+                # Anexa ao existente
                 df_salvo = pd.read_csv(ARQUIVO_RESULTADOS)
                 df_salvo = pd.concat([df_salvo, novo_df], ignore_index=True)
                 df_salvo.to_csv(ARQUIVO_RESULTADOS, index=False)
             else:
                 novo_df.to_csv(ARQUIVO_RESULTADOS, index=False)
             
+            # Limpa para a próxima iteração
             resultados_novos = []
-            print(f"Backup salvo com sucesso. Requisições feitas nesta chave: {requisicoes_nesta_chave}")
+            print(f"Backup salvo com sucesso.")
             
         if teve_rate_limit:
-            # Se deu rate limit inesperado antes de atingir as 50
+            # Se a chave atingiu limite de saldo/requisição, tenta a próxima
             if not alternar_chave():
-                print("Todas as chaves atingiram o Rate Limit. Encerrando o script por hoje.")
+                print("Todas as chaves atingiram o Rate Limit ou acabaram os créditos. Encerrando o script por hoje.")
                 break
-            requisicoes_nesta_chave = 0
-        elif requisicoes_nesta_chave < LIMITE_POR_CHAVE and pendencias:
-            print("Aguardando 90 segundos para garantir a reinicialização do Rate Limit do OpenRouter...")
+        elif pendencias:
+            print("Aguardando 90 segundos para garantir a reinicialização do Rate Limit do OpenRouter (20 RPM)...")
             await asyncio.sleep(90)
 
 if __name__ == '__main__':
