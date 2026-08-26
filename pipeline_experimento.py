@@ -70,11 +70,15 @@ def alternar_chave():
 # ==========================================
 modelos_gratuitos = [
     'dots-3-note-preview:free', 'liquid/lfm-2.5-2.6b:free',
-    'nvidia/nemotron-3.5-lightning:free', 'thinkingmachines/inkling-small:free',
-    'poolside/laguna-s-2.1:free', 'thinkingmachines/inkling:free',
+    'nvidia/nemotron-3.5-lightning:free', 
+    # 'thinkingmachines/inkling-small:free', - apenas para harnesses agenticos
+    'poolside/laguna-s-2.1:free', 
+    # 'thinkingmachines/inkling:free', - apenas para harnesses agenticos
     'poolside/laguna-xs-2.1:free', 'cohere/north-mini-code:free',
-    'z-ai/glm-5.2:free', 'nvidia/nemotron-3.5-content-safety:free',
-    'nvidia/nemotron-3-ultra-550b-a55b:free', 'minimax/minimax-m3:free',
+    'z-ai/glm-5.2:free',
+    # 'nvidia/nemotron-3.5-content-safety:free', - não faz operações matemáticas. retorna "safety" ou "unsafety", modelo com fine tuning para essa tarefa específica.
+    'nvidia/nemotron-3-ultra-550b-a55b:free', 
+    # 'minimax/minimax-m3:free', - modelo descontinuado
     'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
     'google/gemma-4-26b-a4b-it:free', 'google/gemma-4-31b-it:free',
     'minimax/minimax-m2.7:free', 'nvidia/nemotron-3-super-120b-a12b:free'
@@ -94,7 +98,8 @@ def gerar_operacoes():
     np.random.seed(123)
     dados_experimento = []
     
-    for digitos in range(2, 7):
+    # Expandido para testar até 8 dígitos
+    for digitos in range(2, 9):
         low_val = 10**(digitos - 1)
         high_val = 10**digitos
         tipo_str = f"{digitos} dígitos"
