@@ -19,3 +19,5 @@ env/
 
 # Ignorar logs de execução
 logs/
+
+logs_gemini/
