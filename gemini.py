@@ -9,10 +9,8 @@ import time
 import logging
 from datetime import datetime
 
-from google.oauth2 import service_account
-import vertexai
-from vertexai.generative_models import GenerativeModel
-from google.api_core.exceptions import ResourceExhausted, ServiceUnavailable, InternalServerError
+from google import genai
+from google.genai.errors import APIError
 
 # ==========================================
 # CONFIGURAÇÃO DE LOGS
@@ -55,14 +53,20 @@ if not gemini_api_key_str:
 
 try:
     creds_dict = json.loads(gemini_api_key_str)
-    credentials = service_account.Credentials.from_service_account_info(creds_dict)
-    
-    # Inicializa o Vertex AI
     project_id = creds_dict.get("project_id", "plataformas-aula-ufba")
-    vertexai.init(project=project_id, location="us-central1", credentials=credentials)
-    logging.info(f"Vertex AI inicializado com sucesso para o projeto: {project_id} | Região: us-central1")
+    
+    # O genai.Client costuma ler GOOGLE_APPLICATION_CREDENTIALS do ambiente.
+    # Vamos persistir temporariamente em um JSON local para o SDK conseguir ler.
+    chave_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vertex_chave.json')
+    with open(chave_path, 'w', encoding='utf-8') as f:
+        json.dump(creds_dict, f)
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = chave_path
+    
+    # Inicializa o Google GenAI Client (Modo Enterprise Vertex)
+    client = genai.Client(enterprise=True, project=project_id, location="global")
+    logging.info(f"Google GenAI SDK inicializado com sucesso para o projeto: {project_id} | Região: global")
 except Exception as e:
-    logging.error(f"Erro ao carregar credenciais do Vertex AI a partir do chave.env: {e}")
+    logging.error(f"Erro ao carregar credenciais do Google GenAI a partir do chave.env: {e}")
     raise ValueError("Falha na autenticação. Verifique o formato do JSON em GEMINI_API_KEY no chave.env.")
 
 # ==========================================
@@ -142,11 +146,11 @@ async def realizar_chamada(modelo_nome, conta_dict):
     """
     
     try:
-        model = GenerativeModel(modelo_nome)
-        
-        # Vertex AI faz as chamadas automaticamente. Retries são gerenciados pela lib interna,
-        # mas as exceções maiores (Quota) chegam até nós.
-        resposta = await model.generate_content_async(prompt_geral)
+        # A chamada no google-genai aio precisa de client, que agora é global
+        resposta = await client.aio.models.generate_content(
+            model=modelo_nome,
+            contents=prompt_geral
+        )
         
         if not resposta or not resposta.text:
             logging.error(f"O modelo {modelo_nome} retornou uma resposta vazia.")
@@ -178,21 +182,23 @@ async def realizar_chamada(modelo_nome, conta_dict):
             'custo_total': custo_total
         }
         
-    except ResourceExhausted as e: 
-        # Código 429 Quota Exceeded (Pode ser RPM ou RPD)
-        msg = str(e)
-        logging.warning(f"Rate Limit (429) no modelo {modelo_nome}. Detalhes: {msg}")
-        
-        if 'per day' in msg.lower() or 'daily' in msg.lower():
-            return {"status": "rate_limit_diario", "modelo": modelo_nome, "conta_dict": conta_dict}
-        else:
+    except APIError as e: 
+        msg = str(e).lower()
+        if "429" in msg or "resource exhausted" in msg or "quota" in msg:
+            logging.warning(f"Rate Limit (429) no modelo {modelo_nome}. Detalhes: {e}")
+            if 'per day' in msg or 'daily' in msg:
+                return {"status": "rate_limit_diario", "modelo": modelo_nome, "conta_dict": conta_dict}
+            else:
+                return {"status": "rate_limit_congelar", "modelo": modelo_nome, "conta_dict": conta_dict}
+        elif "503" in msg or "500" in msg or "unavailable" in msg:
+            logging.warning(f"Erro upstream 5xx para {modelo_nome}: {e}")
             return {"status": "rate_limit_congelar", "modelo": modelo_nome, "conta_dict": conta_dict}
-            
-    except (ServiceUnavailable, InternalServerError) as e:
-        # Erro de Upstream do Vertex (Indisponível no momento)
-        logging.warning(f"Erro upstream 5xx para {modelo_nome}: {e}")
-        return {"status": "rate_limit_congelar", "modelo": modelo_nome, "conta_dict": conta_dict}
-        
+        elif "404" in msg or "not found" in msg:
+            logging.error(f"Erro 404 (Modelo não encontrado) para {modelo_nome}: {e}")
+            return None
+        else:
+            logging.error(f"Erro na API (APIError) com o modelo {modelo_nome}: {e}")
+            return None
     except Exception as e:
         # Como ValueError de modelo não encontrado
         logging.error(f"Erro inesperado com o modelo {modelo_nome}: {e}")
