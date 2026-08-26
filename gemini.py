@@ -52,8 +52,6 @@ if not gemini_api_key_str:
                 gemini_api_key_str = gemini_api_key_str[1:-1]
             elif gemini_api_key_str.startswith("'") and gemini_api_key_str.endswith("'"):
                 gemini_api_key_str = gemini_api_key_str[1:-1]
-            # Remove escapes extra se existirem
-            gemini_api_key_str = gemini_api_key_str.replace('\\n', '\n')
 
 try:
     creds_dict = json.loads(gemini_api_key_str)
