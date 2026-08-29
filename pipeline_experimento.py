@@ -105,8 +105,8 @@ def gerar_operacoes():
         tipo_str = f"{digitos} dígitos"
         
         for i in range(100):
-            a = np.random.randint(low=low_val, high=high_val)
-            b = np.random.randint(low=low_val, high=high_val)
+            a = np.random.randint(low=low_val, high=high_val, dtype=np.int64)
+            b = np.random.randint(low=low_val, high=high_val, dtype=np.int64)
             resultado = int(a * b)
             
             dados_experimento.append({
