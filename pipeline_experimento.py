@@ -107,7 +107,8 @@ def gerar_operacoes():
         for i in range(100):
             a = np.random.randint(low=low_val, high=high_val, dtype=np.int64)
             b = np.random.randint(low=low_val, high=high_val, dtype=np.int64)
-            resultado = int(a * b)
+            # Convertendo para int nativo do Python ANTES de multiplicar para evitar o limite de 64 bits do numpy
+            resultado = int(a) * int(b)
             
             dados_experimento.append({
                 'num_a': a,
