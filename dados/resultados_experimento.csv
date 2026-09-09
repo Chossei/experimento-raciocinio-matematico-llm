@@ -2327,7 +2327,7 @@ liquid/lfm-2.5-2.6b:free,4 dígitos,50029370.0,50029370,50129370,False,True,5703
 nvidia/nemotron-3.5-lightning:free,4 dígitos,50129370.0,50129370,50129370,True,True,5703x8790 = ?
 cohere/north-mini-code:free,4 dígitos,50129370.0,50129370,50129370,True,True,5703x8790 = ?
 nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,50129370.0,50129370,50129370,True,True,5703x8790 = ?
-nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,5.703879057038792e+268,"We need to compute 5703 * 8790. Let's calculate.
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,5.7038790570387915e+268,"We need to compute 5703 * 8790. Let's calculate.
 
 5703 * 8790 = 5703 * (879 * 10) = (5703 * 879) * 10.
 
@@ -2558,3 +2558,2317 @@ nvidia/nemotron-3.5-lightning:free,4 dígitos,56962950.0,56962950,56962950,True,
 cohere/north-mini-code:free,4 dígitos,56962950.0,56962950,56962950,True,True,6325x9006 = ?
 nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,56962950.0,56962950,56962950,True,True,6325x9006 = ?
 nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,56962950.0,56962950,56962950,True,True,6325x9006 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1054.0,1054,1054,True,True,17x62 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,3515.0,3515,3515,True,True,95x37 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,3740.0,3740,3740,True,True,85x44 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1360.0,1360,1360,True,True,68x20 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,2 dígitos,3240.0,3240,3240,True,True,36x90 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,5664.0,5664,5664,True,True,59x96 = ?
+nvidia/nemotron-3.5-lightning:free,2 dígitos,6300.0,6300,6300,True,True,84x75 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,5358.0,5358,5358,True,True,94x57 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,2784.0,2784,2784,True,True,32x87 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1480.0,1480,1480,True,True,37x40 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,3240.0,3240,3240,True,True,36x90 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,384.0,384,384,True,True,16x24 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,5440.0,5440,5440,True,True,85x64 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,891.0,891,891,True,True,81x11 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,3604.0,3604,3604,True,True,53x68 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,273.0,273,273,True,True,21x13 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,2328.0,2328,2328,True,True,97x24 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1482.0,1482,1482,True,True,57x26 = ?
+liquid/lfm-2.5-2.6b:free,2 dígitos,1400.0,1400,1400,True,True,56x25 = ?
+liquid/lfm-2.5-2.6b:free,2 dígitos,3450.0,3450,3450,True,True,69x50 = ?
+liquid/lfm-2.5-2.6b:free,2 dígitos,1925.0,1925,1925,True,True,35x55 = ?
+liquid/lfm-2.5-2.6b:free,2 dígitos,590.0,590,590,True,True,59x10 = ?
+liquid/lfm-2.5-2.6b:free,2 dígitos,1755.0,1755,1755,True,True,45x39 = ?
+poolside/laguna-s-2.1:free,2 dígitos,6450.0,6450,6450,True,True,75x86 = ?
+poolside/laguna-s-2.1:free,2 dígitos,874.0,874,874,True,True,23x38 = ?
+poolside/laguna-s-2.1:free,2 dígitos,7224.0,7224,7224,True,True,84x86 = ?
+poolside/laguna-s-2.1:free,2 dígitos,3010.0,3010,3010,True,True,86x35 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,167040.0,167040,167040,True,True,320x522 = ?
+minimax/minimax-m2.7:free,3 dígitos,190890.0,190890,190890,True,True,606x315 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,643518.0,643518,643518,True,True,701x918 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,643518.0,643518,643518,True,True,701x918 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,101376.0,101376,101376,True,True,144x704 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,73946862.0,73x94 = 6862,6862,False,False,73x94 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,7154.0,7154,7154,True,True,98x73 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1200.0,1200,1200,True,True,16x75 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1106.0,1106,1106,True,True,14x79 = ?
+minimax/minimax-m2.7:free,3 dígitos,101376.0,101376,101376,True,True,144x704 = ?
+minimax/minimax-m2.7:free,3 dígitos,140275.0,140275,140275,True,True,181x775 = ?
+minimax/minimax-m2.7:free,3 dígitos,303996.0,303996,303996,True,True,539x564 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,349965.0,349965,349965,True,True,693x505 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,278046.0,278046,278046,True,True,542x513 = ?
+nvidia/nemotron-3.5-lightning:free,3 dígitos,319658.0,319658,319658,True,True,577x554 = ?
+nvidia/nemotron-3-super-120b-a12b:free,3 dígitos,132745.0,132745,132745,True,True,139x955 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,255850.0,255850,255850,True,True,430x595 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,93330.0,93330,93330,True,True,610x153 = ?
+nvidia/nemotron-3-super-120b-a12b:free,3 dígitos,242970.0,242970,242970,True,True,273x890 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,242970.0,242970,242970,True,True,273x890 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,315168.0,315168,315168,True,True,588x536 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,315168.0,315168,315168,True,True,588x536 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,684970.0,684970,684970,True,True,715x958 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,336812.0,336812,336812,True,True,644x523 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,336812.0,336812,336812,True,True,644x523 = ?
+nvidia/nemotron-3.5-lightning:free,3 dígitos,85176.0,85176,85176,True,True,338x252 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,677970.0,677970,677970,True,True,930x729 = ?
+nvidia/nemotron-3.5-lightning:free,3 dígitos,654156.0,654156,654156,True,True,673x972 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,101376.0,101376,101376,True,True,144x704 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,28896.0,28896,28896,True,True,258x112 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,398034.0,398034,398034,True,True,702x567 = ?
+minimax/minimax-m2.7:free,3 dígitos,398034.0,398034,398034,True,True,702x567 = ?
+z-ai/glm-5.2:free,2 dígitos,5846.0,5846,5846,True,True,79x74 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,740421.0,740421,740421,True,True,891x831 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,310050.0,310050,310050,True,True,795x390 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,383265.0,383265,383265,True,True,765x501 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,173355.0,173355,173355,True,True,381x455 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,493633.0,493633,493633,True,True,679x727 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,63516.0,63516,63516,True,True,237x268 = ?
+poolside/laguna-s-2.1:free,3 dígitos,101376.0,101376,101376,True,True,144x704 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,191843.0,191843,191843,True,True,439x437 = ?
+poolside/laguna-s-2.1:free,3 dígitos,191843.0,191843,191843,True,True,439x437 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,100464.0,100464,100464,True,True,483x208 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,654156.0,654156,654156,True,True,673x972 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,589584.0,589584,589584,True,True,692x852 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,54918.0,54918,54918,True,True,226x243 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,416796.0,416796,416796,True,True,564x739 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,413424.0,413424,413424,True,True,594x696 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,720797.0,720797,720797,True,True,847x851 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,313230.0,313230,313230,True,True,318x985 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,153384.0,153384,153384,True,True,616x249 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,336812.0,336812,336812,True,True,644x523 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,468510.0,468510,468510,True,True,485x966 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,116596.0,116596,116596,True,True,206x566 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,684970.0,684970,684970,True,True,715x958 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,238221.0,238221,238221,True,True,459x519 = ?
+poolside/laguna-s-2.1:free,3 dígitos,238221.0,238221,238221,True,True,459x519 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,314928.0,314928,315168,False,True,588x536 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,589584.0,589584,589584,True,True,692x852 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,85176.0,85176,85176,True,True,338x252 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,54918.0,54918,54918,True,True,226x243 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,684970.0,684970,684970,True,True,715x958 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,238221.0,238221,238221,True,True,459x519 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,582230.0,582230,582230,True,True,670x869 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,899388.0,899388,899388,True,True,996x903 = ?
+poolside/laguna-s-2.1:free,3 dígitos,179523.0,179523,179523,True,True,981x183 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,307350.0,307350,307350,True,True,450x683 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,132745.0,132745,132745,True,True,139x955 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,255850.0,255850,255850,True,True,430x595 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,899388.0,899388,899388,True,True,996x903 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,179523.0,179523,179523,True,True,981x183 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,307350.0,307350,307350,True,True,450x683 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,132745.0,132745,132745,True,True,139x955 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,571551.0,571551,571551,True,True,601x951 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,427924.0,427924,427924,True,True,986x434 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,15351.0,15351,15351,True,True,129x119 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,39693.0,39693,39693,True,True,393x101 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,107413.0,107413,107413,True,True,233x461 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,140275.0,140275,140275,True,True,181x775 = ?
+poolside/laguna-s-2.1:free,3 dígitos,140275.0,140275,140275,True,True,181x775 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,86125.0,86125,86125,True,True,689x125 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,516861.0,516861,516861,True,True,709x729 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,319658.0,319658,319658,True,True,577x554 = ?
+poolside/laguna-s-2.1:free,3 dígitos,319658.0,319658,319658,True,True,577x554 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,277546.0,277546,278046,False,True,542x513 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,350065.0,350065,349965,False,True,693x505 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,140275.0,140275,140275,True,True,181x775 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,86125.0,86125,86125,True,True,689x125 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,94184.0,94184,94184,True,True,244x386 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,303996.0,303996,303996,True,True,539x564 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,28896.0,28896,28896,True,True,258x112 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,96000.0,96000,96000,True,True,500x192 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,295100.0,295100,295100,True,True,650x454 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,295100.0,295100,295100,True,True,650x454 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,444442.0,444442,444442,True,True,619x718 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,444442.0,444442,444442,True,True,619x718 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,444442.0,444442,444442,True,True,619x718 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,430360.0,430360,430360,True,True,580x742 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,22194.0,22194,22194,True,True,137x162 = ?
+poolside/laguna-s-2.1:free,3 dígitos,22194.0,22194,22194,True,True,137x162 = ?
+minimax/minimax-m2.7:free,3 dígitos,22194.0,22194,22194,True,True,137x162 = ?
+poolside/laguna-s-2.1:free,3 dígitos,83441.0,83441,83441,True,True,461x181 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,208978.0,208978,208978,True,True,649x322 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,102608.0,102608,102608,True,True,106x968 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,645435.0,645435,645435,True,True,683x945 = ?
+poolside/laguna-s-2.1:free,3 dígitos,645435.0,645435,645435,True,True,683x945 = ?
+poolside/laguna-s-2.1:free,3 dígitos,46512.0,46512,46512,True,True,228x204 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,46512.0,46512,46512,True,True,228x204 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,166788.0,166788,166788,True,True,738x226 = ?
+poolside/laguna-s-2.1:free,3 dígitos,192125.0,192125,192125,True,True,265x725 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,192125.0,192125,192125,True,True,265x725 = ?
+poolside/laguna-s-2.1:free,3 dígitos,631464.0,631464,631464,True,True,664x951 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,631464.0,631464,631464,True,True,664x951 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,159712.0,159712,159712,True,True,161x992 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,272626.0,272626,272626,True,True,503x542 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,102608.0,102608,102608,True,True,106x968 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,322586.0,322586,322586,True,True,341x946 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,631464.0,631464,631464,True,True,664x951 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,515910.0,515910,515910,True,True,870x593 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,202824.0,202824,202824,True,True,324x626 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,588826.0,588826,588826,True,True,614x959 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,3 dígitos,588826.0,588826,588826,True,True,614x959 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,157508.0,157508,157508,True,True,466x338 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,157508.0,157508,157508,True,True,466x338 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,368244.0,368244,368244,True,True,772x477 = ?
+poolside/laguna-s-2.1:free,3 dígitos,588826.0,588826,588826,True,True,614x959 = ?
+poolside/laguna-s-2.1:free,3 dígitos,157508.0,157508,157508,True,True,466x338 = ?
+poolside/laguna-s-2.1:free,3 dígitos,199432.0,199432,199432,True,True,388x514 = ?
+poolside/laguna-s-2.1:free,3 dígitos,727285.0,727285,727285,True,True,871x835 = ?
+poolside/laguna-s-2.1:free,3 dígitos,328609.0,328609,328609,True,True,347x947 = ?
+poolside/laguna-s-2.1:free,3 dígitos,201880.0,201880,201880,True,True,980x206 = ?
+poolside/laguna-s-2.1:free,4 dígitos,9581079.0,9581079,9581079,True,True,2557x3747 = ?
+minimax/minimax-m2.7:free,4 dígitos,9581079.0,9581079,9581079,True,True,2557x3747 = ?
+poolside/laguna-s-2.1:free,4 dígitos,41033538.0,41033538,41033538,True,True,7943x5166 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,41033538.0,41033538,41033538,True,True,7943x5166 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,41033538.0,41033538,41033538,True,True,7943x5166 = ?
+poolside/laguna-s-2.1:free,4 dígitos,4363720.0,4363720,4363720,True,True,4295x1016 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,4363720.0,4363720,4363720,True,True,4295x1016 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,25963330.0,25963330,26013330,False,True,6594x3945 = ?
+poolside/laguna-s-2.1:free,4 dígitos,26013330.0,26013330,26013330,True,True,6594x3945 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,26013330.0,26013330,26013330,True,True,6594x3945 = ?
+poolside/laguna-s-2.1:free,4 dígitos,20897955.0,20897955,20897955,True,True,6255x3341 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,9581079.0,9581079,9581079,True,True,2557x3747 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,26013330.0,26013330,26013330,True,True,6594x3945 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,28917864.0,28917864,28917864,True,True,4839x5976 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,1191890810609428.0,1191x8908 = 10609428,10609428,False,False,1191x8908 = ?
+minimax/minimax-m2.7:free,4 dígitos,10609428.0,10609428,10609428,True,True,1191x8908 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,18894690.0,18894690,18894690,True,True,8454x2235 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,3835398.0,3835398,3835398,True,True,1113x3446 = ?
+poolside/laguna-s-2.1:free,4 dígitos,74670336.0,74670336,74670336,True,True,8864x8424 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,74670336.0,74670336,74670336,True,True,8864x8424 = ?
+poolside/laguna-s-2.1:free,4 dígitos,33643625.0,33643625,33643625,True,True,9281x3625 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,32164116.0,32164116,32164116,True,True,6397x5028 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,40235404.0,40235404,40235404,True,True,7139x5636 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,40233404.0,40233404,40235404,False,True,7139x5636 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,24159168.0,24159168,24159168,True,True,5904x4092 = ?
+poolside/laguna-s-2.1:free,4 dígitos,52164160.0,52164160,52164160,True,True,7582x6880 = ?
+poolside/laguna-s-2.1:free,4 dígitos,34093327.0,34093327,34093327,True,True,3599x9473 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,34093327.0,34093327,34093327,True,True,3599x9473 = ?
+poolside/laguna-s-2.1:free,4 dígitos,14155617.0,14155617,14155617,True,True,1687x8391 = ?
+poolside/laguna-s-2.1:free,4 dígitos,16144800.0,16144800,16144800,True,True,7688x2100 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,27751945.0,27751945,27751945,True,True,7085x3917 = ?
+poolside/laguna-s-2.1:free,4 dígitos,27751945.0,27751945,27751945,True,True,7085x3917 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,27751945.0,27751945,27751945,True,True,7085x3917 = ?
+poolside/laguna-s-2.1:free,4 dígitos,14171278.0,14171278,14171278,True,True,3751x3778 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,14171278.0,14171278,14171278,True,True,3751x3778 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,19896604.0,19896604,19896604,True,True,2326x8554 = ?
+poolside/laguna-s-2.1:free,4 dígitos,19896604.0,19896604,19896604,True,True,2326x8554 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,19896604.0,19896604,19896604,True,True,2326x8554 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,14658297.0,14658297,14658397,False,True,4121x3557 = ?
+poolside/laguna-s-2.1:free,4 dígitos,4.1213557355730006e+157,"Para resolver a multiplicação de 4121 por 3557, podemos utilizar a propriedade distributiva da multiplicação sobre a adição, decompondo o número 3557 em suas partes: 3000 + 500 + 50 + 7. Assim, multiplicamos 4121 por cada uma dessas partes e somamos os resultados obtidos.
+
+1. **Multiplicando 4121 por 3000:**
+   $$
+   4121 \times 3000 = 12363000
+   $$
+
+2. **Multiplicando 4121 por 500:**
+   $$
+   4121 \times 500 = 2060500
+   $$
+
+3. **Multiplicando 4121 por 50:**
+   $$
+   4121 \times 50 = 206050
+   $$
+
+4. **Multiplicando 4121 por 7:**
+   $$
+   4121 \times 7 = 28847
+   $$
+
+Agora, somamos todos os resultados obtidos:
+$$
+12363000 + 2060500 + 206050 + 28847 = 14658397
+$$
+
+Portanto, o resultado da multiplicação 4121 × 3557 é $\boxed{14658397}$.",14658397,False,False,4121x3557 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,14658397.0,14658397,14658397,True,True,4121x3557 = ?
+z-ai/glm-5.2:free,2 dígitos,4158.0,4158,4158,True,True,77x54 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,5.904409214092408e+227,"To solve the multiplication 5904x4092, we break down the numbers using the distributive property:
+
+1. **Break down 4092**:
+   - 4092 = 4000 + 92
+
+2. **Calculate 5904 * 4000**:
+   - 5904 * 4000 = 5904 * 4 * 1000 = 23616 * 1000 = 23,616,000
+
+3. **Calculate 5904 * 92**:
+   - 92 = 90 + 2
+   - 5904 * 90 = 5904 * 9 * 10 = 53136 * 10 = 531,360
+   - 5904 * 2 = 11,808
+   - Add the results: 531,360 + 11,808 = 543,168
+
+4. **Add the two main parts**:
+   - 23,616,000 + 543,168 = 24,159,168
+
+Verification using alternative method:
+- Calculate 6000 * 4092 = 24,552,000
+- Subtract 96 * 4092 (since 5904 = 6000 - 96):
+  - 96 * 4092 = 392,832
+  - 24,552,000 - 392,832 = 24,159,168
+
+Final answer: \boxed{24159168}",24159168,False,False,5904x4092 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,14155617.0,14155617,14155617,True,True,1687x8391 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,14171278.0,14171278,14171278,True,True,3751x3778 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,40264479.0,40264479,40264479,True,True,9423x4273 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,19896604.0,19896604,19896604,True,True,2326x8554 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,14658397.0,14658397,14658397,True,True,4121x3557 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,49924336.0,49924336,49924336,True,True,6616x7546 = ?
+poolside/laguna-s-2.1:free,4 dígitos,49924336.0,49924336,49924336,True,True,6616x7546 = ?
+poolside/laguna-s-2.1:free,4 dígitos,9623454.0,9623454,9623454,True,True,5007x1922 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,9623454.0,9623454,9623454,True,True,5007x1922 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,9623454.0,9623454,9623454,True,True,5007x1922 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,29048276.0,29048276,29048276,True,True,4306x6746 = ?
+poolside/laguna-s-2.1:free,4 dígitos,26851740.0,26851740,26851740,True,True,4665x5756 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,26851740.0,26851740,26851740,True,True,4665x5756 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,49560518.0,49560518,49560518,True,True,9986x4963 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,49560518.0,49560518,49560518,True,True,9986x4963 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,49560518.0,49560518,49560518,True,True,9986x4963 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,49560518.0,49560518,49560518,True,True,9986x4963 = ?
+poolside/laguna-s-2.1:free,4 dígitos,46410404.0,46410404,46410404,True,True,9487x4892 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,46409404.0,46409404,46410404,False,True,9487x4892 = ?
+poolside/laguna-s-2.1:free,4 dígitos,31457514.0,31457514,31457514,True,True,9911x3174 = ?
+poolside/laguna-s-2.1:free,4 dígitos,16326560.0,16326560,16326560,True,True,5360x3046 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,8833622.0,8833622,8833622,True,True,2282x3871 = ?
+poolside/laguna-s-2.1:free,4 dígitos,8833622.0,8833622,8833622,True,True,2282x3871 = ?
+poolside/laguna-s-2.1:free,4 dígitos,4506420.0,4506420,4506420,True,True,1180x3819 = ?
+minimax/minimax-m2.7:free,4 dígitos,4506420.0,4506420,4506420,True,True,1180x3819 = ?
+poolside/laguna-s-2.1:free,4 dígitos,16943960.0,16943960,16943960,True,True,4367x3880 = ?
+poolside/laguna-s-2.1:free,4 dígitos,56962950.0,56962950,56962950,True,True,6325x9006 = ?
+minimax/minimax-m2.7:free,4 dígitos,56962950.0,56962950,56962950,True,True,6325x9006 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,56962950.0,56962950,56962950,True,True,6325x9006 = ?
+dots-3-note-preview:free,4 dígitos,51516486.0,"
+
+51516486",51516486,True,True,7173x7182 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+poolside/laguna-s-2.1:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+cohere/north-mini-code:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,46410404.0,46410404,46410404,True,True,9487x4892 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,9.911317419911316e+196,"Para calcular 9911 × 3174, decompomos a multiplicação em partes menores:
+
+1. Multiplicamos 9911 pelo dígito das unidades de 3174 (4):
+   9911 × 4 = 39644
+
+2. Multiplicamos 9911 pelo dígito das dezenas de 3174 (7), deslocando uma posição para a esquerda (equivalente a multiplicar por 70):
+   9911 × 7 = 69377, então 69377 × 10 = 693770
+
+3. Multiplicamos 9911 pelo dígito das centenas de 3174 (1), deslocando duas posições para a esquerda (equivalente a multiplicar por 100):
+   9911 × 100 = 991100
+
+4. Multiplicamos 9911 pelo dígito dos milhares de 3174 (3), deslocando três posições para a esquerda (equivalente a multiplicar por 3000):
+   9911 × 3 = 29733, então 29733 × 1000 = 29733000
+
+Em seguida, sommos todos os resultados:
+- 39644 + 693770 = 733414
+- 733414 + 991100 = 1724514
+- 1724514 + 29733000 = 31457514
+
+Portanto, o resultado é:
+$$
+\boxed{31457514}
+$$",31457514,False,False,9911x3174 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,16326560.0,16326560,16326560,True,True,5360x3046 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,8833622.0,8833622,8833622,True,True,2282x3871 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,4506420.0,4506420,4506420,True,True,1180x3819 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,4.3673880138802996e+244,"To solve a operação matemática 4367 × 3880, seguimos os seguintes passos:
+
+1. **Decomposição do multiplicador**:
+   - 3880 pode ser decomposto como 3000 + 800 + 80.
+   
+2. **Cálculo das partes individuais**:
+   - 4367 × 3000:
+     - 4367 × 3 = 13101
+     - 13101 × 1000 = 13,101,000
+   - 4367 × 800:
+     - 4367 × 8 = 34936
+     - 34936 × 100 = 3,493,600
+   - 4367 × 80:
+     - 4367 × 8 = 34936
+     - 34936 × 10 = 349,360
+
+3. **Adição das partes**:
+   - 13,101,000 + 3,493,600 = 16,594,600
+   - 16,594,600 + 349,360 = 16,943,960
+
+4. **Verificação adicional**:
+   - Usando outra decomposição: 3880 = 4000 - 120.
+   - 4367 × 4000 = 17,468,000
+   - 4367 × 120 = 524,040
+   - 17,468,000 - 524,040 = 16,943,960
+
+5. **Conclusão**:
+   - Todos os métodos levaram ao mesmo resultado: 16,943,960.
+
+### Final Answer
+\boxed{16943960}",16943960,False,False,4367x3880 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,56962950.0,56962950,56962950,True,True,6325x9006 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+minimax/minimax-m2.7:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+dots-3-note-preview:free,4 dígitos,81973688.0,"
+
+81973688",81973688,True,True,8887x9224 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,81973688.0,81973688,81973688,True,True,8887x9224 = ?
+poolside/laguna-s-2.1:free,4 dígitos,81973688.0,81973688,81973688,True,True,8887x9224 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,81973688.0,81973688,81973688,True,True,8887x9224 = ?
+cohere/north-mini-code:free,4 dígitos,81973688.0,81973688,81973688,True,True,8887x9224 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,81974688.0,81974688,81973688,False,True,8887x9224 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,81973688.0,81973688,81973688,True,True,8887x9224 = ?
+minimax/minimax-m2.7:free,4 dígitos,81973688.0,81973688,81973688,True,True,8887x9224 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,81973688.0,81973688,81973688,True,True,8887x9224 = ?
+dots-3-note-preview:free,4 dígitos,93372200.0,"
+
+93372200",93372200,True,True,9700x9626 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+poolside/laguna-s-2.1:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+cohere/north-mini-code:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+minimax/minimax-m2.7:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+dots-3-note-preview:free,4 dígitos,27365931.0,"
+
+27365931",27365931,True,True,3483x7857 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,27365931.0,27365931,27365931,True,True,3483x7857 = ?
+poolside/laguna-s-2.1:free,4 dígitos,27365931.0,27365931,27365931,True,True,3483x7857 = ?
+cohere/north-mini-code:free,4 dígitos,27365931.0,27365931,27365931,True,True,3483x7857 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,27365931.0,27365931,27365931,True,True,3483x7857 = ?
+minimax/minimax-m2.7:free,4 dígitos,27365931.0,27365931,27365931,True,True,3483x7857 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,27365931.0,27365931,27365931,True,True,3483x7857 = ?
+dots-3-note-preview:free,4 dígitos,21443655.0,"
+
+21443655",21443655,True,True,8095x2649 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+poolside/laguna-s-2.1:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+cohere/north-mini-code:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+minimax/minimax-m2.7:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+dots-3-note-preview:free,4 dígitos,25860060.0,"
+
+25860060",25860060,True,True,5321x4860 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+poolside/laguna-s-2.1:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+cohere/north-mini-code:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+minimax/minimax-m2.7:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+dots-3-note-preview:free,4 dígitos,14784296.0,"
+
+14784296",14784296,True,True,3578x4132 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,14784296.0,14784296,14784296,True,True,3578x4132 = ?
+poolside/laguna-s-2.1:free,4 dígitos,14784296.0,14784296,14784296,True,True,3578x4132 = ?
+cohere/north-mini-code:free,4 dígitos,14784296.0,14784296,14784296,True,True,3578x4132 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,25806060.0,25806060,25860060,False,True,5321x4860 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,25860060.0,25860060,25860060,True,True,5321x4860 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,3.578413213578241e+145,"Para calcular $3578 \times 4132$, utilizamos o método padrão de multiplicação:
+
+1. Multiplicamos 3578 pelo 2 (unidade de 4132):  
+   $3578 \times 2 = 7156$
+
+2. Multiplicamos 3578 pelo 3 (dezena de 4132), deslocando o resultado uma posição à esquerda:  
+   $3578 \times 3 = 10734$, então $107340$
+
+3. Multiplicamos 3578 pelo 1 (centena de 4132), deslocando o resultado duas posições à esquerda:  
+   $3578 \times 1 = 3578$, então $357800$
+
+4. Multiplicamos 3578 pelo 4 (milhar de 4132), deslocando o resultado três posições à esquerda:  
+   $3578 \times 4 = 14312$, então $14312000$
+
+Somando todos os resultutos parciais:  
+$7156 + 107340 + 357800 + 14312000 = 14784296$
+
+Verificação adicional usando outra abordagem (distributiva) também confirma o resultado. 
+
+**Resposta Final:**  
+\boxed{14784296}",14784296,False,False,3578x4132 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,14784496.0,14784496,14784296,False,True,3578x4132 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,14784296.0,14784296,14784296,True,True,3578x4132 = ?
+minimax/minimax-m2.7:free,4 dígitos,14784296.0,14784296,14784296,True,True,3578x4132 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,14784296.0,14784296,14784296,True,True,3578x4132 = ?
+dots-3-note-preview:free,4 dígitos,55218185.0,"
+
+55218185",55218185,True,True,9635x5731 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,55218185.0,55218185,55218185,True,True,9635x5731 = ?
+poolside/laguna-s-2.1:free,4 dígitos,9635573155218184.0,9635 × 5731 = 55218185,55218185,False,True,9635x5731 = ?
+cohere/north-mini-code:free,4 dígitos,55218185.0,55218185,55218185,True,True,9635x5731 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,55217185.0,55217185,55218185,False,True,9635x5731 = ?
+minimax/minimax-m2.7:free,4 dígitos,55218185.0,55218185,55218185,True,True,9635x5731 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,55218185.0,55218185,55218185,True,True,9635x5731 = ?
+z-ai/glm-5.2:free,2 dígitos,7553.0,7553,7553,True,True,83x91 = ?
+dots-3-note-preview:free,4 dígitos,51954176.0,"
+
+51954176",51954176,True,True,8636x6016 = ?
+poolside/laguna-s-2.1:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+cohere/north-mini-code:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+minimax/minimax-m2.7:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+dots-3-note-preview:free,4 dígitos,27845499.0,"
+
+27845499",27845499,True,True,8699x3201 = ?
+poolside/laguna-s-2.1:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+cohere/north-mini-code:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+minimax/minimax-m2.7:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+dots-3-note-preview:free,4 dígitos,3403898.0,"
+
+3403898",3403898,True,True,1126x3023 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+poolside/laguna-s-2.1:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+cohere/north-mini-code:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,52817776.0,52817776,51954176,False,True,8636x6016 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,27845599.0,27845599,27845499,False,True,8699x3201 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+minimax/minimax-m2.7:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+dots-3-note-preview:free,4 dígitos,20795236.0,"
+
+20795236",20795236,True,True,8239x2524 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+poolside/laguna-s-2.1:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+cohere/north-mini-code:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+minimax/minimax-m2.7:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,20795236.0,20795236,20795236,True,True,8239x2524 = ?
+dots-3-note-preview:free,4 dígitos,68634720.0,"
+
+68634720",68634720,True,True,9285x7392 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,68634720.0,68634720,68634720,True,True,9285x7392 = ?
+poolside/laguna-s-2.1:free,4 dígitos,68634720.0,68634720,68634720,True,True,9285x7392 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,68634720.0,68634720,68634720,True,True,9285x7392 = ?
+cohere/north-mini-code:free,4 dígitos,68634720.0,68634720,68634720,True,True,9285x7392 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,68634720.0,68634720,68634720,True,True,9285x7392 = ?
+minimax/minimax-m2.7:free,4 dígitos,68634720.0,68634720,68634720,True,True,9285x7392 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,68634720.0,68634720,68634720,True,True,9285x7392 = ?
+dots-3-note-preview:free,4 dígitos,40219728.0,"
+
+40219728",40219728,True,True,5496x7318 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+poolside/laguna-s-2.1:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+cohere/north-mini-code:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,40219128.0,40219128,40219728,False,True,5496x7318 = ?
+minimax/minimax-m2.7:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+z-ai/glm-5.2:free,3 dígitos,92400.0,92400,92400,True,True,110x840 = ?
+dots-3-note-preview:free,4 dígitos,11439555.0,"
+
+11439555",11439555,True,True,1191x9605 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+poolside/laguna-s-2.1:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+cohere/north-mini-code:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+minimax/minimax-m2.7:free,4 dígitos,11439555.0,"
+11439555",11439555,True,True,1191x9605 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,11439555.0,11439555,11439555,True,True,1191x9605 = ?
+dots-3-note-preview:free,4 dígitos,63339164.0,"
+
+63339164",63339164,True,True,8722x7262 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+poolside/laguna-s-2.1:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+cohere/north-mini-code:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+minimax/minimax-m2.7:free,4 dígitos,63339164.0,"
+63339164",63339164,True,True,8722x7262 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+dots-3-note-preview:free,4 dígitos,6691395.0,"
+
+6691395",6691395,True,True,4331x1545 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+poolside/laguna-s-2.1:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+cohere/north-mini-code:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+minimax/minimax-m2.7:free,4 dígitos,6691395.0,"
+6691395",6691395,True,True,4331x1545 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,6691395.0,6691395,6691395,True,True,4331x1545 = ?
+dots-3-note-preview:free,4 dígitos,37569010.0,"
+
+37569010",37569010,True,True,5861x6410 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,37569010.0,37569010,37569010,True,True,5861x6410 = ?
+poolside/laguna-s-2.1:free,4 dígitos,37569010.0,37569010,37569010,True,True,5861x6410 = ?
+cohere/north-mini-code:free,4 dígitos,37569010.0,37569010,37569010,True,True,5861x6410 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,37569010.0,37569010,37569010,True,True,5861x6410 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,37569010.0,37569010,37569010,True,True,5861x6410 = ?
+minimax/minimax-m2.7:free,4 dígitos,37569010.0,37569010,37569010,True,True,5861x6410 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,37569010.0,37569010,37569010,True,True,5861x6410 = ?
+dots-3-note-preview:free,4 dígitos,10436908.0,"
+
+10436908",10436908,True,True,8231x1268 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+cohere/north-mini-code:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+minimax/minimax-m2.7:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+dots-3-note-preview:free,4 dígitos,2237790.0,"
+
+2237790",2237790,True,True,1538x1455 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+poolside/laguna-s-2.1:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+cohere/north-mini-code:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+minimax/minimax-m2.7:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,2237790.0,2237790,2237790,True,True,1538x1455 = ?
+dots-3-note-preview:free,4 dígitos,9449616.0,"
+
+9449616",9449616,True,True,1936x4881 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,9459616.0,9459616,9449616,False,True,1936x4881 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,9449616.0,9449616,9449616,True,True,1936x4881 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,9449616.0,9449616,9449616,True,True,1936x4881 = ?
+cohere/north-mini-code:free,4 dígitos,9449616.0,9449616,9449616,True,True,1936x4881 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,9449616.0,9449616,9449616,True,True,1936x4881 = ?
+minimax/minimax-m2.7:free,4 dígitos,9449616.0,9449616,9449616,True,True,1936x4881 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,9449616.0,9449616,9449616,True,True,1936x4881 = ?
+dots-3-note-preview:free,4 dígitos,21161976.0,"
+
+21161976",21161976,True,True,2258x9372 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+cohere/north-mini-code:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+minimax/minimax-m2.7:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+dots-3-note-preview:free,4 dígitos,67772596.0,"
+
+67772596",67772596,True,True,7948x8527 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,67772596.0,67772596,67772596,True,True,7948x8527 = ?
+poolside/laguna-s-2.1:free,4 dígitos,1.9364881488140008e+173,"Para calcular $1936 \times 4881$, podemos utilizar a propriedade distributiva, decompondo $4881$ em $4000 + 800 + 80 + 1$. Assim:
+
+1. $1936 \times 4000 = 7744000$
+2. $1936 \times 800 = 1548800$
+3. $1936 \times 80 = 154880$
+4. $1936 \times 1 = 1936$
+
+Somando todos os resultados parciais:
+$$
+7744000 + 1548800 + 154880 + 1936 = 9449616
+$$
+
+Verificando com outro método, utilizando $(2000 - 64) \times 4881$:
+1. $2000 \times 4881 = 9762000$
+2. $64 \times 4881 = 312384$
+3. Subtraindo: $9762000 - 312384 = 9449616$
+
+Portanto, o resultado final é:
+$$
+\boxed{9449616}
+$$",9449616,False,False,1936x4881 = ?
+poolside/laguna-s-2.1:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,67772596.0,67772596,67772596,True,True,7948x8527 = ?
+poolside/laguna-s-2.1:free,4 dígitos,67772596.0,67772596,67772596,True,True,7948x8527 = ?
+cohere/north-mini-code:free,4 dígitos,67772596.0,67772596,67772596,True,True,7948x8527 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,67770596.0,67770596,67772596,False,True,7948x8527 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,67772596.0,67772596,67772596,True,True,7948x8527 = ?
+minimax/minimax-m2.7:free,4 dígitos,67772596.0,67772596,67772596,True,True,7948x8527 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,67772596.0,67772596,67772596,True,True,7948x8527 = ?
+dots-3-note-preview:free,4 dígitos,36939539.0,"
+
+36939539",36939539,True,True,4561x8099 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,36939539.0,36939539,36939539,True,True,4561x8099 = ?
+poolside/laguna-s-2.1:free,4 dígitos,36939539.0,36939539,36939539,True,True,4561x8099 = ?
+cohere/north-mini-code:free,4 dígitos,36939539.0,36939539,36939539,True,True,4561x8099 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,36937539.0,36937539,36939539,False,True,4561x8099 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,36939539.0,36939539,36939539,True,True,4561x8099 = ?
+minimax/minimax-m2.7:free,4 dígitos,36939539.0,36939539,36939539,True,True,4561x8099 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,36939539.0,36939539,36939539,True,True,4561x8099 = ?
+dots-3-note-preview:free,4 dígitos,14235030.0,"
+
+14235030",14235030,True,True,1713x8310 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,7.9488527179488e+261,"To calculate \(7948 \times 8527\), we break down the multiplication using the standard algorithm and partial products:
+
+1. Multiply \(7948\) by \(8000\) (the thousands place of 8527):
+   \[
+   7948 \times 8000 = 63,584,000
+   \]
+
+2. Multiply \(7948\) by \(500\) (the hundreds place of 8527):
+   \[
+   7948 \times 500 = 3,974,000
+   \]
+
+3. Multiply \(7948\) by \(20\) (the tens place of 8527):
+   \[
+   7948 \times 20 = 158,960
+   \]
+
+4. Multiply \(7948\) by \(7\) (the units place of 8527):
+   \[
+   7948 \times 7 = 55,636
+   \]
+
+Next, we sum all the partial products:
+\[
+63,584,000 + 3,974,000 + 158,960 + 55,636 = 67,772,596
+\]
+
+To verify, we also break down the multiplication using another method:
+\[
+7948 \times 8527 = (7000 + 948) \times (8000 + 527)
+\]
+
+Expanding and calculating each term:
+\[
+7000 \times 8000 = 56,000,000
+\]
+\[
+7000 \times 527 = 3,689,000
+\]
+\[
+948 \times 8000 = 7,584,000
+\]
+\[
+948 \times 527 = 499,596
+\]
+
+Summing these terms:
+\[
+56,000,000 + 3,689,000 + 7,584,000 + 499,596 = 67,772,596
+\]
+
+Both methods confirm the result. Therefore, the final answer is:
+\[
+\boxed{67772596}
+\]",67772596,False,False,7948x8527 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,36939539.0,36939539,36939539,True,True,4561x8099 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+poolside/laguna-s-2.1:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+cohere/north-mini-code:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+minimax/minimax-m2.7:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,14235030.0,14235030,14235030,True,True,1713x8310 = ?
+dots-3-note-preview:free,4 dígitos,47374245.0,"
+
+47374245",47374245,True,True,6921x6845 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+poolside/laguna-s-2.1:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+cohere/north-mini-code:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+minimax/minimax-m2.7:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,47374245.0,47374245,47374245,True,True,6921x6845 = ?
+dots-3-note-preview:free,4 dígitos,45721632.0,"
+
+45721632",45721632,True,True,5104x8958 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+poolside/laguna-s-2.1:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+cohere/north-mini-code:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+minimax/minimax-m2.7:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,45721632.0,45721632,45721632,True,True,5104x8958 = ?
+dots-3-note-preview:free,4 dígitos,13872900.0,"
+
+13872900",13872900,True,True,6550x2118 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+poolside/laguna-s-2.1:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+cohere/north-mini-code:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+minimax/minimax-m2.7:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,13872900.0,13872900,13872900,True,True,6550x2118 = ?
+dots-3-note-preview:free,4 dígitos,59730300.0,"
+
+59730300",59730300,True,True,5985x9980 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+poolside/laguna-s-2.1:free,4 dígitos,59730300.0,"59,730,300",59730300,True,True,5985x9980 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+cohere/north-mini-code:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+minimax/minimax-m2.7:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+dots-3-note-preview:free,4 dígitos,28949970.0,"
+
+28949970",28949970,True,True,8894x3255 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+poolside/laguna-s-2.1:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+cohere/north-mini-code:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+minimax/minimax-m2.7:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,28949970.0,28949970,28949970,True,True,8894x3255 = ?
+dots-3-note-preview:free,4 dígitos,5157960.0,"
+
+5157960",5157960,True,True,1060x4866 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+poolside/laguna-s-2.1:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+cohere/north-mini-code:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+minimax/minimax-m2.7:free,4 dígitos,5157960.0,"
+5157960",5157960,True,True,1060x4866 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+dots-3-note-preview:free,4 dígitos,31580820.0,"
+
+31580820",31580820,True,True,3495x9036 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+poolside/laguna-s-2.1:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+cohere/north-mini-code:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+minimax/minimax-m2.7:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+dots-3-note-preview:free,4 dígitos,31311692.0,"
+
+31311692",31311692,True,True,5501x5692 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+poolside/laguna-s-2.1:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+cohere/north-mini-code:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+minimax/minimax-m2.7:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+dots-3-note-preview:free,4 dígitos,38637720.0,"
+
+38637720",38637720,True,True,8870x4356 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+poolside/laguna-s-2.1:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+cohere/north-mini-code:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+minimax/minimax-m2.7:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+dots-3-note-preview:free,4 dígitos,12479192.0,"
+
+12479192",12479192,True,True,2602x4796 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+poolside/laguna-s-2.1:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+cohere/north-mini-code:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,31311692.0,31311692,31311692,True,True,5501x5692 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,38637720.0,38637720,38637720,True,True,8870x4356 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+minimax/minimax-m2.7:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,12479192.0,12479192,12479192,True,True,2602x4796 = ?
+dots-3-note-preview:free,4 dígitos,10907448.0,"
+
+10907448",10907448,True,True,1416x7703 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+poolside/laguna-s-2.1:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+cohere/north-mini-code:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+minimax/minimax-m2.7:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+dots-3-note-preview:free,4 dígitos,21030624.0,"
+
+21030624",21030624,True,True,5454x3856 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,21030624.0,21030624,21030624,True,True,5454x3856 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,21030624.0,21030624,21030624,True,True,5454x3856 = ?
+poolside/laguna-s-2.1:free,4 dígitos,21030624.0,21030624,21030624,True,True,5454x3856 = ?
+cohere/north-mini-code:free,4 dígitos,21030624.0,21030624,21030624,True,True,5454x3856 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,21028824.0,21028824,21030624,False,True,5454x3856 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,21030624.0,21030624,21030624,True,True,5454x3856 = ?
+minimax/minimax-m2.7:free,4 dígitos,21030624.0,21030624,21030624,True,True,5454x3856 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,21030624.0,21030624,21030624,True,True,5454x3856 = ?
+dots-3-note-preview:free,4 dígitos,27529136.0,"
+
+27529136",27529136,True,True,7792x3533 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,27529136.0,27529136,27529136,True,True,7792x3533 = ?
+poolside/laguna-s-2.1:free,4 dígitos,27529136.0,27529136,27529136,True,True,7792x3533 = ?
+cohere/north-mini-code:free,4 dígitos,27529136.0,27529136,27529136,True,True,7792x3533 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,27529136.0,27529136,27529136,True,True,7792x3533 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,27529136.0,27529136,27529136,True,True,7792x3533 = ?
+minimax/minimax-m2.7:free,4 dígitos,27529136.0,27529136,27529136,True,True,7792x3533 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,27529136.0,27529136,27529136,True,True,7792x3533 = ?
+dots-3-note-preview:free,4 dígitos,13582980.0,"
+
+13582980",13582980,True,True,5310x2558 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+poolside/laguna-s-2.1:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+cohere/north-mini-code:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+minimax/minimax-m2.7:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,13582980.0,13582980,13582980,True,True,5310x2558 = ?
+dots-3-note-preview:free,4 dígitos,6546276.0,"
+
+6546276",6546276,True,True,2684x2439 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+poolside/laguna-s-2.1:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+cohere/north-mini-code:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+minimax/minimax-m2.7:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+dots-3-note-preview:free,4 dígitos,19425560.0,"
+
+19425560",19425560,True,True,3080x6307 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,19225560.0,19225560,19425560,False,True,3080x6307 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+poolside/laguna-s-2.1:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+cohere/north-mini-code:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+minimax/minimax-m2.7:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+dots-3-note-preview:free,4 dígitos,12624000.0,"
+
+12624000",12624000,True,True,6000x2104 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+poolside/laguna-s-2.1:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+cohere/north-mini-code:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+minimax/minimax-m2.7:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+dots-3-note-preview:free,4 dígitos,12464604.0,"
+
+12464604",12464604,True,True,1581x7884 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,12465604.0,12465604,12464604,False,True,1581x7884 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,19425560.0,19425560,19425560,True,True,3080x6307 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,12624000.0,12624000,12624000,True,True,6000x2104 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+poolside/laguna-s-2.1:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+cohere/north-mini-code:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+minimax/minimax-m2.7:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,12464604.0,12464604,12464604,True,True,1581x7884 = ?
+dots-3-note-preview:free,4 dígitos,44324588.0,"
+
+44324588",44324588,True,True,7084x6257 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+poolside/laguna-s-2.1:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+cohere/north-mini-code:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+minimax/minimax-m2.7:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,44324588.0,44324588,44324588,True,True,7084x6257 = ?
+dots-3-note-preview:free,4 dígitos,46854697.0,"
+
+46854697",46854697,True,True,4943x9479 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+poolside/laguna-s-2.1:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+cohere/north-mini-code:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+minimax/minimax-m2.7:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,46854697.0,46854697,46854697,True,True,4943x9479 = ?
+dots-3-note-preview:free,4 dígitos,12668697.0,"
+
+12668697",12668697,True,True,6957x1821 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+poolside/laguna-s-2.1:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+cohere/north-mini-code:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+minimax/minimax-m2.7:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+poolside/laguna-s-2.1:free,2 dígitos,17701190.0,17 × 70 = 1190,1190,False,True,17x70 = ?
+poolside/laguna-s-2.1:free,2 dígitos,6862.0,6862,6862,True,True,73x94 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,643518.0,643518,643518,True,True,701x918 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,40264479.0,40264479,40264479,True,True,9423x4273 = ?
+poolside/laguna-s-2.1:free,3 dígitos,167040.0,167040,167040,True,True,320x522 = ?
+poolside/laguna-s-2.1:free,3 dígitos,63516.0,63516,63516,True,True,237x268 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,426220.0,426220,426220,True,True,844x505 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,643518.0,643518,643518,True,True,701x918 = ?
+poolside/laguna-s-2.1:free,3 dígitos,15351.0,15351,15351,True,True,129x119 = ?
+poolside/laguna-s-2.1:free,3 dígitos,516861.0,516861,516861,True,True,709x729 = ?
+poolside/laguna-s-2.1:free,3 dígitos,536500.0,536500,536500,True,True,725x740 = ?
+poolside/laguna-s-2.1:free,3 dígitos,649322208978.0,649 × 322 = 208978,208978,False,True,649x322 = ?
+poolside/laguna-s-2.1:free,3 dígitos,322586.0,322586,322586,True,True,341x946 = ?
+poolside/laguna-s-2.1:free,3 dígitos,346435.0,346435,346435,True,True,965x359 = ?
+poolside/laguna-s-2.1:free,3 dígitos,202824.0,202824,202824,True,True,324x626 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,16943960.0,16943960,16943960,True,True,4367x3880 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,51516486.0,51516486,51516486,True,True,7173x7182 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,55218185.0,55218185,55218185,True,True,9635x5731 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,51954176.0,51954176,51954176,True,True,8636x6016 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,116596.0,116596,116596,True,True,206x566 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,93330.0,93330,93330,True,True,610x153 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,986434427924.0,"986x434 = 427,924",427924,False,False,986x434 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,166788.0,166788,166788,True,True,738x226 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,192125.0,192125,192125,True,True,265x725 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,202824.0,202824,202824,True,True,324x626 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,27845499.0,27845499,27845499,True,True,8699x3201 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,68632720.0,68632720,68634720,False,True,9285x7392 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,63339164.0,63339164,63339164,True,True,8722x7262 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,9449616.0,9449616,9449616,True,True,1936x4881 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,5157960.0,5157960,5157960,True,True,1060x4866 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,32950313.0,32950313,32950313,True,True,7733x4261 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,3835398.0,3835398,3835398,True,True,1113x3446 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,10907448.0,10907448,10907448,True,True,1416x7703 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,6546276.0,6546276,6546276,True,True,2684x2439 = ?
+dots-3-note-preview:free,4 dígitos,58797298.0,"
+
+58797298",58797298,True,True,9226x6373 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+poolside/laguna-s-2.1:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+cohere/north-mini-code:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+minimax/minimax-m2.7:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+dots-3-note-preview:free,4 dígitos,24272667.0,"
+
+24272667",24272667,True,True,2789x8703 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,24272667.0,24272667,24272667,True,True,2789x8703 = ?
+minimax/minimax-m2.7:free,4 dígitos,24272667.0,24272667,24272667,True,True,2789x8703 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,24272667.0,24272667,24272667,True,True,2789x8703 = ?
+cohere/north-mini-code:free,4 dígitos,24272667.0,24272667,24272667,True,True,2789x8703 = ?
+poolside/laguna-s-2.1:free,4 dígitos,24272667.0,24272667,24272667,True,True,2789x8703 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,24272667.0,24272667,24272667,True,True,2789x8703 = ?
+dots-3-note-preview:free,4 dígitos,4514613.0,"
+
+4514613",4514613,True,True,3397x1329 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+poolside/laguna-s-2.1:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+cohere/north-mini-code:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+minimax/minimax-m2.7:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+dots-3-note-preview:free,4 dígitos,18285872.0,"
+
+18285872",18285872,True,True,3884x4708 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+poolside/laguna-s-2.1:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+cohere/north-mini-code:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+minimax/minimax-m2.7:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+dots-3-note-preview:free,4 dígitos,2447418.0,"
+
+2447418",2447418,True,True,1762x1389 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,2447418.0,2447418,2447418,True,True,1762x1389 = ?
+poolside/laguna-s-2.1:free,4 dígitos,2447418.0,2447418,2447418,True,True,1762x1389 = ?
+cohere/north-mini-code:free,4 dígitos,2447418.0,2447418,2447418,True,True,1762x1389 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,2447418.0,2447418,2447418,True,True,1762x1389 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,2447418.0,2447418,2447418,True,True,1762x1389 = ?
+minimax/minimax-m2.7:free,4 dígitos,2447418.0,2447418,2447418,True,True,1762x1389 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,2447418.0,2447418,2447418,True,True,1762x1389 = ?
+dots-3-note-preview:free,4 dígitos,14044214.0,"
+
+14044214",14044214,True,True,5602x2507 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,14044214.0,14044214,14044214,True,True,5602x2507 = ?
+poolside/laguna-s-2.1:free,4 dígitos,14044214.0,14044214,14044214,True,True,5602x2507 = ?
+cohere/north-mini-code:free,4 dígitos,14044214.0,14044214,14044214,True,True,5602x2507 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,14044214.0,14044214,14044214,True,True,5602x2507 = ?
+minimax/minimax-m2.7:free,4 dígitos,14044214.0,14044214,14044214,True,True,5602x2507 = ?
+dots-3-note-preview:free,4 dígitos,24582111.0,"
+
+24582111",24582111,True,True,6571x3741 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+cohere/north-mini-code:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+minimax/minimax-m2.7:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+dots-3-note-preview:free,4 dígitos,29619354.0,"
+
+29619354",29619354,True,True,4899x6046 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,29619354.0,29619354,29619354,True,True,4899x6046 = ?
+cohere/north-mini-code:free,4 dígitos,29619354.0,29619354,29619354,True,True,4899x6046 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,29618154.0,29618154,29619354,False,True,4899x6046 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,29619354.0,29619354,29619354,True,True,4899x6046 = ?
+minimax/minimax-m2.7:free,4 dígitos,29619354.0,29619354,29619354,True,True,4899x6046 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,29619354.0,29619354,29619354,True,True,4899x6046 = ?
+dots-3-note-preview:free,4 dígitos,39061410.0,"
+
+39061410",39061410,True,True,6015x6494 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+cohere/north-mini-code:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+minimax/minimax-m2.7:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+dots-3-note-preview:free,4 dígitos,34736787.0,"
+
+34736787",34736787,True,True,5309x6543 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,34736787.0,34736787,34736787,True,True,5309x6543 = ?
+cohere/north-mini-code:free,4 dígitos,34736787.0,34736787,34736787,True,True,5309x6543 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,34736787.0,34736787,34736787,True,True,5309x6543 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,34736787.0,34736787,34736787,True,True,5309x6543 = ?
+minimax/minimax-m2.7:free,4 dígitos,34736787.0,34736787,34736787,True,True,5309x6543 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,34736787.0,34736787,34736787,True,True,5309x6543 = ?
+dots-3-note-preview:free,4 dígitos,15187354.0,"
+
+15187354",15187354,True,True,1703x8918 = ?
+poolside/laguna-s-2.1:free,4 dígitos,6.0156494164946025e+236,"To solve the multiplication \(6015 \times 6494\), we can break down the numbers using the distributive property and verify using different methods:
+
+First method:
+1. Break down \(6494\) into \(6000 + 400 + 90 + 4\).
+2. Multiply each part by \(6015\):
+   - \(6015 \times 6000 = 36,090,000\)
+   - \(6015 \times 400 = 2,406,000\)
+   - \(6015 \times 90 = 541,350\)
+   - \(6015 \times 4 = 24,060\)
+3. Add the results:
+   - \(36,090,000 + 2,406,000 = 38,496,000\)
+   - \(38,496,000 + 541,350 = 39,037,350\)
+   - \(39,037,350 + 24,060 = 39,061,410\)
+
+Second method using standard algorithm:
+- Align and multiply each digit of \(6494\) by \(6015\), shift the results appropriately, and sum them up to get \(39,061,410\).
+
+Third method using approximation:
+- Express \(6494\) as \(6500 - 6\) and \(6015\) as \(6000 + 15\):
+  - \(6015 \times 6494 = (6000 + 15)(6500 - 6)\)
+  - Expand using distributive property:
+    - \(39,000,000 - 36,000 + 97,500 - 90 = 39,061,410\)
+
+All methods confirm the result is consistent.
+
+### Final Answer
+39,061,410",39061410,False,False,6015x6494 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,34736787.0,34736787,34736787,True,True,5309x6543 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+poolside/laguna-s-2.1:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+cohere/north-mini-code:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+minimax/minimax-m2.7:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+dots-3-note-preview:free,4 dígitos,12020017.0,"
+
+12020017",12020017,True,True,3169x3793 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,12020017.0,12020017,12020017,True,True,3169x3793 = ?
+poolside/laguna-s-2.1:free,4 dígitos,12020017.0,12020017,12020017,True,True,3169x3793 = ?
+cohere/north-mini-code:free,4 dígitos,12020017.0,12020017,12020017,True,True,3169x3793 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,12019917.0,12019917,12020017,False,True,3169x3793 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,12020017.0,12020017,12020017,True,True,3169x3793 = ?
+minimax/minimax-m2.7:free,4 dígitos,12020017.0,12020017,12020017,True,True,3169x3793 = ?
+dots-3-note-preview:free,4 dígitos,10787922.0,"
+
+10787922",10787922,True,True,6651x1622 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+cohere/north-mini-code:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+minimax/minimax-m2.7:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+dots-3-note-preview:free,4 dígitos,51756735.0,"
+
+51756735",51756735,True,True,8301x6235 = ?
+nvidia/nemotron-3.5-lightning:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+cohere/north-mini-code:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+minimax/minimax-m2.7:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+dots-3-note-preview:free,5 dígitos,1340479992.0,"
+
+1340479992",1340479992,True,True,66413x20184 = ?
+poolside/laguna-s-2.1:free,4 dígitos,6651162210787922.0,6651x1622 = 10787922,10787922,False,False,6651x1622 = ?
+poolside/laguna-s-2.1:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1340479992.0,1340479992,1340479992,True,True,66413x20184 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1340479992.0,1340479992,1340479992,True,True,66413x20184 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1340479992.0,1340479992,1340479992,True,True,66413x20184 = ?
+cohere/north-mini-code:free,5 dígitos,1340479992.0,1340479992,1340479992,True,True,66413x20184 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1340500992.0,1340500992,1340479992,False,True,66413x20184 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1340479992.0,1340479992,1340479992,True,True,66413x20184 = ?
+minimax/minimax-m2.7:free,5 dígitos,1340479992.0,1340479992,1340479992,True,True,66413x20184 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1340479992.0,1340479992,1340479992,True,True,66413x20184 = ?
+dots-3-note-preview:free,5 dígitos,4843722617.0,"
+
+4843722617",4843722617,True,True,65927x73471 = ?
+poolside/laguna-s-2.1:free,5 dígitos,4843722617.0,4843722617,4843722617,True,True,65927x73471 = ?
+cohere/north-mini-code:free,5 dígitos,4843722617.0,4843722617,4843722617,True,True,65927x73471 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,4843542617.0,4843542617,4843722617,False,True,65927x73471 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,4843722617.0,4843722617,4843722617,True,True,65927x73471 = ?
+minimax/minimax-m2.7:free,5 dígitos,4843722617.0,4843722617,4843722617,True,True,65927x73471 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,4843722617.0,4843722617,4843722617,True,True,65927x73471 = ?
+dots-3-note-preview:free,5 dígitos,3626673687.0,"
+
+3626673687",3626673687,True,True,37089x97783 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3626673687.0,3626673687,3626673687,True,True,37089x97783 = ?
+cohere/north-mini-code:free,5 dígitos,3626673687.0,3626673687,3626673687,True,True,37089x97783 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3626495687.0,3626495687,3626673687,False,True,37089x97783 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3626673687.0,3626673687,3626673687,True,True,37089x97783 = ?
+minimax/minimax-m2.7:free,5 dígitos,3626673687.0,3626673687,3626673687,True,True,37089x97783 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3626673687.0,3626673687,3626673687,True,True,37089x97783 = ?
+dots-3-note-preview:free,5 dígitos,4133621910.0,"
+
+4133621910",4133621910,True,True,99858x41395 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,4133621910.0,4133621910,4133621910,True,True,99858x41395 = ?
+poolside/laguna-s-2.1:free,5 dígitos,4133621910.0,4133621910,4133621910,True,True,99858x41395 = ?
+cohere/north-mini-code:free,5 dígitos,4133621910.0,4133621910,4133621910,True,True,99858x41395 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,4133541910.0,4133541910,4133621910,False,True,99858x41395 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,4133621910.0,4133621910,4133621910,True,True,99858x41395 = ?
+minimax/minimax-m2.7:free,5 dígitos,4133621910.0,4133621910,4133621910,True,True,99858x41395 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,4133621910.0,4133621910,4133621910,True,True,99858x41395 = ?
+dots-3-note-preview:free,5 dígitos,1755187056.0,"
+
+1755187056",1755187056,True,True,36603x47952 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+cohere/north-mini-code:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+minimax/minimax-m2.7:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+dots-3-note-preview:free,5 dígitos,3591920871.0,"
+
+3591920871",3591920871,True,True,77877x46123 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3591920871.0,3591920871,3591920871,True,True,77877x46123 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3591920871.0,3591920871,3591920871,True,True,77877x46123 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,7.787746123461233e+216,"Para calcular $77877 \times 46123$, utilizamos a propriedade distributiva e decompomos $46123$ em $40000 + 6000 + 100 + 20 + 3$. Multiplicamos $77877$ por cada termo e somamos os resultados:
+
+1. $77877 \times 40000 = 3115080000$
+2. $77877 \times 6000 = 467262000$
+3. $77877 \times 100 = 7787700$
+4. $77877 \times 20 = 1557540$
+5. $77877 \times 3 = 233631$
+
+Somando todos os resultados:
+- $3115080000$
+- $467262000$
+- $7787700$
+- $1557540$
+- $233631$
+
+A soma total é:
+$$
+3115080000 + 467262000 + 7787700 + 1557540 + 233631 = 3591920871
+$$
+
+Portanto, o resultado é:
+$$
+\boxed{3591920871}
+$$",3591920871,False,False,77877x46123 = ?
+cohere/north-mini-code:free,5 dígitos,3591920871.0,3591920871,3591920871,True,True,77877x46123 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3591900871.0,3591900871,3591920871,False,True,77877x46123 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3591920871.0,3591920871,3591920871,True,True,77877x46123 = ?
+minimax/minimax-m2.7:free,5 dígitos,3591920871.0,3591920871,3591920871,True,True,77877x46123 = ?
+dots-3-note-preview:free,5 dígitos,3817780304.0,"
+
+3817780304",3817780304,True,True,93886x40664 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3817780304.0,3817780304,3817780304,True,True,93886x40664 = ?
+cohere/north-mini-code:free,5 dígitos,3817780304.0,3817780304,3817780304,True,True,93886x40664 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3817720304.0,3817720304,3817780304,False,True,93886x40664 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,9.388640664938865e+182,"We need compute 93886 * 40664. Let's calculate.
+
+We can do multiplication.
+
+93886 * 40664.
+
+Let's break: 93886 * 40664 = 93886 * (40000 + 664).
+
+First compute 93886 * 40000 = 93886 * 4 * 10000 = (93886*4)=375544 then *10000 = 3,755,440,000.
+
+Now compute 93886 * 664.
+
+664 = 600 + 60 + 4.
+
+93886*600 = 93886*6*100 = (93886*6)=563316 then *100 = 56,331,600.
+
+93886*60 = 93886*6*10 = 563316*10 = 5,633,160.
+
+93886<unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk><unk>",3817780304,False,False,93886x40664 = ?
+minimax/minimax-m2.7:free,5 dígitos,3817780304.0,3817780304,3817780304,True,True,93886x40664 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3817780304.0,3817780304,3817780304,True,True,93886x40664 = ?
+dots-3-note-preview:free,5 dígitos,5759708942.0,"
+
+5759708942",5759708942,True,True,88894x64793 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5759708942.0,5759708942,5759708942,True,True,88894x64793 = ?
+cohere/north-mini-code:free,5 dígitos,5759708942.0,5759708942,5759708942,True,True,88894x64793 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5760766942.0,5760766942,5759708942,False,True,88894x64793 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5759708942.0,5759708942,5759708942,True,True,88894x64793 = ?
+minimax/minimax-m2.7:free,5 dígitos,5759708942.0,5759708942,5759708942,True,True,88894x64793 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5759708942.0,5759708942,5759708942,True,True,88894x64793 = ?
+dots-3-note-preview:free,5 dígitos,1137431999.0,"
+
+1137431999",1137431999,True,True,52327x21737 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3817780304.0,3817780304,3817780304,True,True,93886x40664 = ?
+poolside/laguna-s-2.1:free,5 dígitos,5759708942.0,5759708942,5759708942,True,True,88894x64793 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1137431999.0,1137431999,1137431999,True,True,52327x21737 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1137431999.0,1137431999,1137431999,True,True,52327x21737 = ?
+cohere/north-mini-code:free,5 dígitos,1137431999.0,1137431999,1137431999,True,True,52327x21737 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1137431999.0,1137431999,1137431999,True,True,52327x21737 = ?
+minimax/minimax-m2.7:free,5 dígitos,1137431999.0,1137431999,1137431999,True,True,52327x21737 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1137431999.0,1137431999,1137431999,True,True,52327x21737 = ?
+dots-3-note-preview:free,5 dígitos,2323257700.0,"
+
+2323257700",2323257700,True,True,86932x26725 = ?
+cohere/north-mini-code:free,5 dígitos,2323257700.0,2323257700,2323257700,True,True,86932x26725 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2323257700.0,2323257700,2323257700,True,True,86932x26725 = ?
+minimax/minimax-m2.7:free,5 dígitos,2323257700.0,2323257700,2323257700,True,True,86932x26725 = ?
+z-ai/glm-5.2:free,3 dígitos,63516.0,63516,63516,True,True,237x268 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,2323257700.0,2323257700,2323257700,True,True,86932x26725 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2323257700.0,2323257700,2323257700,True,True,86932x26725 = ?
+dots-3-note-preview:free,5 dígitos,5694832248.0,"
+
+5694832248",5694832248,True,True,84273x67576 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5694832248.0,5694832248,5694832248,True,True,84273x67576 = ?
+cohere/north-mini-code:free,5 dígitos,5694832248.0,5694832248,5694832248,True,True,84273x67576 = ?
+minimax/minimax-m2.7:free,5 dígitos,5694832248.0,5694832248,5694832248,True,True,84273x67576 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5694832248.0,5694832248,5694832248,True,True,84273x67576 = ?
+dots-3-note-preview:free,5 dígitos,2896953096.0,"
+
+2896953096",2896953096,True,True,39012x74258 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+cohere/north-mini-code:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+minimax/minimax-m2.7:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+dots-3-note-preview:free,5 dígitos,769118715.0,"
+
+769118715",769118715,True,True,48663x15805 = ?
+poolside/laguna-s-2.1:free,5 dígitos,5694832248.0,5694832248,5694832248,True,True,84273x67576 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,5694832248.0,5694832248,5694832248,True,True,84273x67576 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,769118715.0,769118715,769118715,True,True,48663x15805 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,769118715.0,769118715,769118715,True,True,48663x15805 = ?
+cohere/north-mini-code:free,5 dígitos,769118715.0,769118715,769118715,True,True,48663x15805 = ?
+minimax/minimax-m2.7:free,5 dígitos,769118715.0,769118715,769118715,True,True,48663x15805 = ?
+dots-3-note-preview:free,5 dígitos,2571582018.0,"
+
+2571582018",2571582018,True,True,29697x86594 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2571582018.0,2571582018,2571582018,True,True,29697x86594 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2571582018.0,2571582018,2571582018,True,True,29697x86594 = ?
+cohere/north-mini-code:free,5 dígitos,2571582018.0,2571582018,2571582018,True,True,29697x86594 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2571582018.0,2571582018,2571582018,True,True,29697x86594 = ?
+minimax/minimax-m2.7:free,5 dígitos,2571582018.0,2571582018,2571582018,True,True,29697x86594 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2571582018.0,2571582018,2571582018,True,True,29697x86594 = ?
+dots-3-note-preview:free,5 dígitos,5846124174.0,"
+
+5846124174",5846124174,True,True,72694x80421 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+cohere/north-mini-code:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+minimax/minimax-m2.7:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+dots-3-note-preview:free,5 dígitos,6305211160.0,"
+
+6305211160",6305211160,True,True,85564x73690 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,6305211160.0,6305211160,6305211160,True,True,85564x73690 = ?
+cohere/north-mini-code:free,5 dígitos,6305211160.0,6305211160,6305211160,True,True,85564x73690 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,6305211160.0,6305211160,6305211160,True,True,85564x73690 = ?
+minimax/minimax-m2.7:free,5 dígitos,6305211160.0,6305211160,6305211160,True,True,85564x73690 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,6305211160.0,6305211160,6305211160,True,True,85564x73690 = ?
+dots-3-note-preview:free,5 dígitos,5549114610.0,"
+
+5549114610",5549114610,True,True,69030x80387 = ?
+poolside/laguna-s-2.1:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+poolside/laguna-s-2.1:free,5 dígitos,6305211160.0,6305211160,6305211160,True,True,85564x73690 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+poolside/laguna-s-2.1:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+cohere/north-mini-code:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+minimax/minimax-m2.7:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+dots-3-note-preview:free,5 dígitos,506738070.0,"
+
+506738070",506738070,True,True,10690x47403 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,506738070.0,506738070,506738070,True,True,10690x47403 = ?
+cohere/north-mini-code:free,5 dígitos,506738070.0,506738070,506738070,True,True,10690x47403 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,506738070.0,506738070,506738070,True,True,10690x47403 = ?
+minimax/minimax-m2.7:free,5 dígitos,506738070.0,506738070,506738070,True,True,10690x47403 = ?
+dots-3-note-preview:free,5 dígitos,1649350626.0,"
+
+1649350626",1649350626,True,True,24178x68217 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1649350626.0,1649350626,1649350626,True,True,24178x68217 = ?
+cohere/north-mini-code:free,5 dígitos,1649350626.0,1649350626,1649350626,True,True,24178x68217 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1649350626.0,1649350626,1649350626,True,True,24178x68217 = ?
+minimax/minimax-m2.7:free,5 dígitos,1649350626.0,1649350626,1649350626,True,True,24178x68217 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1649350626.0,1649350626,1649350626,True,True,24178x68217 = ?
+dots-3-note-preview:free,5 dígitos,386446214.0,"
+
+386446214",386446214,True,True,11978x32263 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,386446214.0,386446214,386446214,True,True,11978x32263 = ?
+cohere/north-mini-code:free,5 dígitos,386446214.0,386446214,386446214,True,True,11978x32263 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,386446214.0,386446214,386446214,True,True,11978x32263 = ?
+minimax/minimax-m2.7:free,5 dígitos,386446214.0,386446214,386446214,True,True,11978x32263 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,386446214.0,386446214,386446214,True,True,11978x32263 = ?
+dots-3-note-preview:free,5 dígitos,1122311680.0,"
+
+1122311680",1122311680,True,True,19061x58880 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1649350626.0,1649350626,1649350626,True,True,24178x68217 = ?
+poolside/laguna-s-2.1:free,5 dígitos,386446214446214.0,386446214446214,386446214,False,True,11978x32263 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1122311680.0,1122311680,1122311680,True,True,19061x58880 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1122311680.0,1122311680,1122311680,True,True,19061x58880 = ?
+cohere/north-mini-code:free,5 dígitos,1122311680.0,1122311680,1122311680,True,True,19061x58880 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1122311680.0,1122311680,1122311680,True,True,19061x58880 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1122311680.0,1122311680,1122311680,True,True,19061x58880 = ?
+minimax/minimax-m2.7:free,5 dígitos,1122311680.0,1122311680,1122311680,True,True,19061x58880 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1122311680.0,1122311680,1122311680,True,True,19061x58880 = ?
+dots-3-note-preview:free,5 dígitos,3534966972.0,"
+
+3534966972",3534966972,True,True,50781x69612 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3534966972.0,3534966972,3534966972,True,True,50781x69612 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3534966972.0,3534966972,3534966972,True,True,50781x69612 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,3534966972.0,3534966972,3534966972,True,True,50781x69612 = ?
+cohere/north-mini-code:free,5 dígitos,3534966972.0,3534966972,3534966972,True,True,50781x69612 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3534945972.0,3534945972,3534966972,False,True,50781x69612 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3534966972.0,3534966972,3534966972,True,True,50781x69612 = ?
+minimax/minimax-m2.7:free,5 dígitos,3534966972.0,3534966972,3534966972,True,True,50781x69612 = ?
+dots-3-note-preview:free,5 dígitos,915559680.0,"
+
+915559680",915559680,True,True,26880x34061 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,915559680.0,915559680,915559680,True,True,26880x34061 = ?
+cohere/north-mini-code:free,5 dígitos,915559680.0,915559680,915559680,True,True,26880x34061 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,915559680.0,915559680,915559680,True,True,26880x34061 = ?
+minimax/minimax-m2.7:free,5 dígitos,915559680.0,915559680,915559680,True,True,26880x34061 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,915559680.0,915559680,915559680,True,True,26880x34061 = ?
+dots-3-note-preview:free,5 dígitos,1061913843.0,"
+
+1061913843",1061913843,True,True,81579x13017 = ?
+cohere/north-mini-code:free,5 dígitos,1061913843.0,1061913843,1061913843,True,True,81579x13017 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1061923843.0,1061923843,1061913843,False,True,81579x13017 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1061913843.0,1061913843,1061913843,True,True,81579x13017 = ?
+minimax/minimax-m2.7:free,5 dígitos,1061913843.0,1061913843,1061913843,True,True,81579x13017 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1061913843.0,1061913843,1061913843,True,True,81579x13017 = ?
+dots-3-note-preview:free,5 dígitos,5803735750.0,"
+
+5803735750",5803735750,True,True,62845x92350 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5803735750.0,5803735750,5803735750,True,True,62845x92350 = ?
+cohere/north-mini-code:free,5 dígitos,5803735750.0,5803735750,5803735750,True,True,62845x92350 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5803735750.0,5803735750,5803735750,True,True,62845x92350 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5803735750.0,5803735750,5803735750,True,True,62845x92350 = ?
+minimax/minimax-m2.7:free,5 dígitos,5803735750.0,5803735750,5803735750,True,True,62845x92350 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5803735750.0,5803735750,5803735750,True,True,62845x92350 = ?
+dots-3-note-preview:free,5 dígitos,2322495525.0,"
+
+2322495525",2322495525,True,True,27923x83175 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2322495525.0,2322495525,2322495525,True,True,27923x83175 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2322495525.0,2322495525,2322495525,True,True,27923x83175 = ?
+cohere/north-mini-code:free,5 dígitos,2322495525.0,2322495525,2322495525,True,True,27923x83175 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2322295525.0,2322295525,2322495525,False,True,27923x83175 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2322495525.0,2322495525,2322495525,True,True,27923x83175 = ?
+minimax/minimax-m2.7:free,5 dígitos,2322495525.0,2322495525,2322495525,True,True,27923x83175 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2322495525.0,2322495525,2322495525,True,True,27923x83175 = ?
+dots-3-note-preview:free,5 dígitos,2055331498.0,"
+
+2055331498",2055331498,True,True,40337x50954 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2322495525.0,2322495525,2322495525,True,True,27923x83175 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2055331498.0,2055331498,2055331498,True,True,40337x50954 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2055331498.0,2055331498,2055331498,True,True,40337x50954 = ?
+cohere/north-mini-code:free,5 dígitos,2055331498.0,2055331498,2055331498,True,True,40337x50954 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2055271498.0,2055271498,2055331498,False,True,40337x50954 = ?
+minimax/minimax-m2.7:free,5 dígitos,2055331498.0,2055331498,2055331498,True,True,40337x50954 = ?
+dots-3-note-preview:free,5 dígitos,1110132912.0,"
+
+1110132912",1110132912,True,True,24168x45934 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1110132912.0,1110132912,1110132912,True,True,24168x45934 = ?
+cohere/north-mini-code:free,5 dígitos,1110132912.0,1110132912,1110132912,True,True,24168x45934 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1110100912.0,1110100912,1110132912,False,True,24168x45934 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1110132912.0,1110132912,1110132912,True,True,24168x45934 = ?
+minimax/minimax-m2.7:free,5 dígitos,1110132912.0,1110132912,1110132912,True,True,24168x45934 = ?
+dots-3-note-preview:free,5 dígitos,2492854140.0,"
+
+2492854140",2492854140,True,True,84670x29442 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+cohere/north-mini-code:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+minimax/minimax-m2.7:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+dots-3-note-preview:free,5 dígitos,5728949414.0,"
+
+5728949414",5728949414,True,True,87037x65822 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5728949414.0,5728949414,5728949414,True,True,87037x65822 = ?
+cohere/north-mini-code:free,5 dígitos,5728949414.0,5728949414,5728949414,True,True,87037x65822 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5728949414.0,5728949414,5728949414,True,True,87037x65822 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5728949414.0,5728949414,5728949414,True,True,87037x65822 = ?
+minimax/minimax-m2.7:free,5 dígitos,5728949414.0,5728949414,5728949414,True,True,87037x65822 = ?
+dots-3-note-preview:free,5 dígitos,7616409904.0,"
+
+7616409904",7616409904,True,True,90037x84592 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+poolside/laguna-s-2.1:free,5 dígitos,5728949414.0,5728949414,5728949414,True,True,87037x65822 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,7616409904.0,7616409904,7616409904,True,True,90037x84592 = ?
+poolside/laguna-s-2.1:free,5 dígitos,7616409904.0,7616409904,7616409904,True,True,90037x84592 = ?
+cohere/north-mini-code:free,5 dígitos,7616409904.0,7616409904,7616409904,True,True,90037x84592 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,7616389904.0,7616389904,7616409904,False,True,90037x84592 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,7616409904.0,7616409904,7616409904,True,True,90037x84592 = ?
+minimax/minimax-m2.7:free,5 dígitos,7616409904.0,7616409904,7616409904,True,True,90037x84592 = ?
+dots-3-note-preview:free,5 dígitos,5484427000.0,"
+
+5484427000",5484427000,True,True,62465x87800 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,54844270.0,54844270,5484427000,False,True,62465x87800 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5484427000.0,5484427000,5484427000,True,True,62465x87800 = ?
+poolside/laguna-s-2.1:free,5 dígitos,5484427000.0,5484427000,5484427000,True,True,62465x87800 = ?
+cohere/north-mini-code:free,5 dígitos,5484427000.0,5484427000,5484427000,True,True,62465x87800 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5484427000.0,5484427000,5484427000,True,True,62465x87800 = ?
+minimax/minimax-m2.7:free,5 dígitos,5484427000.0,5484427000,5484427000,True,True,62465x87800 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,7616409904.0,7616409904,7616409904,True,True,90037x84592 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,5484427000.0,5484427000,5484427000,True,True,62465x87800 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5484427000.0,5484427000,5484427000,True,True,62465x87800 = ?
+dots-3-note-preview:free,5 dígitos,1212152486.0,"
+
+1212152486",1212152486,True,True,27278x44437 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1212152486.0,1212152486,1212152486,True,True,27278x44437 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1212152486.0,1212152486,1212152486,True,True,27278x44437 = ?
+cohere/north-mini-code:free,5 dígitos,1212152486.0,1212152486,1212152486,True,True,27278x44437 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1212132486.0,1212132486,1212152486,False,True,27278x44437 = ?
+minimax/minimax-m2.7:free,5 dígitos,1212152486.0,1212152486,1212152486,True,True,27278x44437 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1212152486.0,1212152486,1212152486,True,True,27278x44437 = ?
+dots-3-note-preview:free,5 dígitos,2019864830.0,"
+
+2019864830",2019864830,True,True,59777x33790 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+cohere/north-mini-code:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+minimax/minimax-m2.7:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2019864830.0,2019864830,2019864830,True,True,59777x33790 = ?
+dots-3-note-preview:free,5 dígitos,7840197314.0,"
+
+7840197314",7840197314,True,True,83186x94249 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,7840197314.0,7840197314,7840197314,True,True,83186x94249 = ?
+cohere/north-mini-code:free,5 dígitos,7840197314.0,7840197314,7840197314,True,True,83186x94249 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,7840297314.0,7840297314,7840197314,False,True,83186x94249 = ?
+minimax/minimax-m2.7:free,5 dígitos,7840197314.0,7840197314,7840197314,True,True,83186x94249 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,7840197314.0,7840197314,7840197314,True,True,83186x94249 = ?
+dots-3-note-preview:free,5 dígitos,8746064847.0,"
+
+8746064847",8746064847,True,True,99567x87841 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,8746064847.0,8746064847,8746064847,True,True,99567x87841 = ?
+poolside/laguna-s-2.1:free,5 dígitos,8746064847.0,8746064847,8746064847,True,True,99567x87841 = ?
+cohere/north-mini-code:free,5 dígitos,8746064847.0,8746064847,8746064847,True,True,99567x87841 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,8746782847.0,8746782847,8746064847,False,True,99567x87841 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,8746064847.0,8746064847,8746064847,True,True,99567x87841 = ?
+minimax/minimax-m2.7:free,5 dígitos,8746064847.0,8746064847,8746064847,True,True,99567x87841 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,9.956787841199568e+255,"To solve the multiplication \(99567 \times 87841\), we can break down the problem using the standard multiplication algorithm and verify using an alternative method.
+
+### Standard Multiplication Algorithm:
+1. Multiply 99567 by each digit of 87841, shifting appropriately and summing the results:
+   - \(99567 \times 1 = 99567\)
+   - \(99567 \times 4 = 398268\) (shifted by 1 position)
+   - \(99567 \times 8 = 796536\) (shifted by 2 positions)
+   - \(99567 \times 7 = 696969\) (shifted by 3 positions)
+   - \(99567 \times 8 = 796536\) (shifted by 4 positions)
+
+2. Sum all partial products:
+   \[
+   \begin{aligned}
+   &\quad\quad\quad\quad\quad\quad 99567 \\
+   &\quad\quad\quad\quad\quad 3982680 \\
+   &\quad\quad\quad\quad 79653600 \\
+   &\quad\quad\quad 696969000 \\
+   &\quad\quad 7965360000 \\
+   \hline
+   &\quad\quad\quad\quad\quad\quad 8746064847
+   \end{aligned}
+   \]
+
+### Alternative Method:
+Express 99567 as \(100000 - 433\):
+\[
+(100000 - 433) \times 87841 = 100000 \times 87841 - 433 \times 87841
+\]
+Calculate each term:
+- \(100000 \times 87841 = 8784100000\)
+- \(433 \times 87841 = 38035153\)
+
+Subtract the results:
+\[
+8784100000 - 38035153 = 8746064847
+\]
+
+Both methods yield the same result, confirming the answer.
+
+### Final Answer
+\boxed{8746064847}",8746064847,False,False,99567x87841 = ?
+dots-3-note-preview:free,5 dígitos,3299588829.0,"
+
+3299588829",3299588829,True,True,38001x86829 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3299588829.0,3299588829,3299588829,True,True,38001x86829 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,3299588829.0,3299588829,3299588829,True,True,38001x86829 = ?
+cohere/north-mini-code:free,5 dígitos,3299588829.0,3299588829,3299588829,True,True,38001x86829 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3299588829.0,3299588829,3299588829,True,True,38001x86829 = ?
+minimax/minimax-m2.7:free,5 dígitos,3299588829.0,3299588829,3299588829,True,True,38001x86829 = ?
+dots-3-note-preview:free,5 dígitos,3467129946.0,"
+
+3467129946",3467129946,True,True,75558x45887 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3467129946.0,3467129946,3467129946,True,True,75558x45887 = ?
+cohere/north-mini-code:free,5 dígitos,3467129946.0,3467129946,3467129946,True,True,75558x45887 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3466951946.0,3466951946,3467129946,False,True,75558x45887 = ?
+minimax/minimax-m2.7:free,5 dígitos,3467129946.0,3467129946,3467129946,True,True,75558x45887 = ?
+dots-3-note-preview:free,5 dígitos,2157773202.0,"
+
+2157773202",2157773202,True,True,55494x38883 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3299588829.0,3299588829,3299588829,True,True,38001x86829 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2157773202.0,2157773202,2157773202,True,True,55494x38883 = ?
+cohere/north-mini-code:free,5 dígitos,2157773202.0,2157773202,2157773202,True,True,55494x38883 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2157733202.0,2157733202,2157773202,False,True,55494x38883 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2157773202.0,2157773202,2157773202,True,True,55494x38883 = ?
+minimax/minimax-m2.7:free,5 dígitos,2157773202.0,2157773202,2157773202,True,True,55494x38883 = ?
+dots-3-note-preview:free,5 dígitos,6337409022.0,"
+
+6337409022",6337409022,True,True,83342x76041 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,6337409022.0,6337409022,6337409022,True,True,83342x76041 = ?
+poolside/laguna-s-2.1:free,5 dígitos,6337409022.0,6337409022,6337409022,True,True,83342x76041 = ?
+cohere/north-mini-code:free,5 dígitos,6337409022.0,6337409022,6337409022,True,True,83342x76041 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,6337209022.0,6337209022,6337409022,False,True,83342x76041 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,6337409022.0,6337409022,6337409022,True,True,83342x76041 = ?
+minimax/minimax-m2.7:free,5 dígitos,6337409022.0,6337409022,6337409022,True,True,83342x76041 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2157773202.0,2157773202,2157773202,True,True,55494x38883 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,6337409022.0,6337409022,6337409022,True,True,83342x76041 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,6337409022.0,6337409022,6337409022,True,True,83342x76041 = ?
+dots-3-note-preview:free,5 dígitos,378687274.0,"
+
+378687274",378687274,True,True,18214x20791 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+cohere/north-mini-code:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+minimax/minimax-m2.7:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+dots-3-note-preview:free,5 dígitos,1057794777.0,"
+
+1057794777",1057794777,True,True,12623x83799 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+cohere/north-mini-code:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+minimax/minimax-m2.7:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+dots-3-note-preview:free,5 dígitos,6975667470.0,"
+
+6975667470",6975667470,True,True,79005x88294 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,382879674.0,382879674,378687274,False,True,18214x20791 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,6975667470.0,6975667470,6975667470,True,True,79005x88294 = ?
+poolside/laguna-s-2.1:free,5 dígitos,7.900588294697566e+19,79005x88294 = 6975667470,6975667470,False,False,79005x88294 = ?
+cohere/north-mini-code:free,5 dígitos,6975667470.0,6975667470,6975667470,True,True,79005x88294 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,6975207470.0,6975207470,6975667470,False,True,79005x88294 = ?
+minimax/minimax-m2.7:free,5 dígitos,6975667470.0,6975667470,6975667470,True,True,79005x88294 = ?
+dots-3-note-preview:free,5 dígitos,1605482089.0,"
+
+1605482089",1605482089,True,True,47741x33629 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1605482089.0,1605482089,1605482089,True,True,47741x33629 = ?
+poolside/laguna-s-2.1:free,5 dígitos,inf,"Para calcular $47741 \times 33629$, podemos utilizar o algoritmo padrão de multiplicação e verificar os resultados com métodos alternativos. 
+
+1. **Multiplicação direta usando algoritmo padrão:**
+   - Multiplicamos $47741$ por cada dígito de $33629$, considerando as posições corretas:
+     - $47741 \times 9 = 429669$
+     - $47741 \times 20 = 954820$
+     - $47741 \times 600 = 28644600$
+     - $47741 \times 3000 = 143223000$
+     - $47741 \times 30000 = 1432230000$
+   - Somamos todos os resultados parciais:
+     - $1432230000 + 143223000 = 1575453000$
+     - $1575453000 + 28644600 = 1604097600$
+     - $1604097600 + 954820 = 1605052420$
+     - $1605052420 + 429669 = 1605482089$
+
+2. **Verificação usando decomposição:**
+   - Decompondo $33629$ como $33630 - 1$:
+     - $47741 \times (33630 - 1) = 47741 \times 33630 - 47741$
+     - Calculando $47741 \times 33630$:
+       - $47741 \times 3000 = 143223000$
+       - $47741 \times 300 = 14322300$
+       - $47741 \times 60 = 2864460$
+       - $47741 \times 3 = 143223$
+       - Somando: $143223000 + 14322300 + 2864460 + 143223 = 160552983$
+       - Multiplicando por 10: $160552983 \times 10 = 1605529830$
+     - Subtraindo $47741$: $1605529830 - 47741 = 1605482089$
+
+3. **Verificação de dígitos finais:**
+   - O último dígito de $47741$ é 1, e o de $33629$ é 9. $1 \times 9 = 9$, o que confere com o último dígito do resultado.
+   - Os dois últimos dígitos de $47741$ são 41, e de $33629$ são 29. $41 \times 29 = 1189$, cujos dois últimos dígitos são 89, o que também confere.
+
+Portanto, o resultado da multiplicação é $\boxed{1605482089}$.",1605482089,False,False,47741x33629 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1605482089.0,1605482089,1605482089,True,True,47741x33629 = ?
+cohere/north-mini-code:free,5 dígitos,1605482089.0,1605482089,1605482089,True,True,47741x33629 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1605482089.0,1605482089,1605482089,True,True,47741x33629 = ?
+minimax/minimax-m2.7:free,5 dígitos,1605482089.0,1605482089,1605482089,True,True,47741x33629 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1605482089.0,1605482089,1605482089,True,True,47741x33629 = ?
+dots-3-note-preview:free,5 dígitos,4774119449.0,"
+
+4774119449",4774119449,True,True,56081x85129 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,4774119449.0,4774119449,4774119449,True,True,56081x85129 = ?
+cohere/north-mini-code:free,5 dígitos,4774119449.0,4774119449,4774119449,True,True,56081x85129 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,4774119449.0,4774119449,4774119449,True,True,56081x85129 = ?
+minimax/minimax-m2.7:free,5 dígitos,4774119449.0,4774119449,4774119449,True,True,56081x85129 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,4774119449.0,4774119449,4774119449,True,True,56081x85129 = ?
+dots-3-note-preview:free,5 dígitos,3233434821.0,"
+
+3233434821",3233434821,True,True,49639x65139 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3233434821.0,3233434821,3233434821,True,True,49639x65139 = ?
+cohere/north-mini-code:free,5 dígitos,3233434821.0,3233434821,3233434821,True,True,49639x65139 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3233434821.0,3233434821,3233434821,True,True,49639x65139 = ?
+minimax/minimax-m2.7:free,5 dígitos,3233434821.0,3233434821,3233434821,True,True,49639x65139 = ?
+dots-3-note-preview:free,5 dígitos,3595599592.0,"
+
+3595599592",3595599592,True,True,72728x49439 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3595599592.0,3595599592,3595599592,True,True,72728x49439 = ?
+cohere/north-mini-code:free,5 dígitos,3595599592.0,3595599592,3595599592,True,True,72728x49439 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3595599592.0,3595599592,3595599592,True,True,72728x49439 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,3595599592.0,3595599592,3595599592,True,True,72728x49439 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3595599592.0,3595599592,3595599592,True,True,72728x49439 = ?
+minimax/minimax-m2.7:free,5 dígitos,3595599592.0,3595599592,3595599592,True,True,72728x49439 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3595599592.0,3595599592,3595599592,True,True,72728x49439 = ?
+dots-3-note-preview:free,5 dígitos,3980325762.0,"
+
+3980325762",3980325762,True,True,73647x54046 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3980325762.0,3980325762,3980325762,True,True,73647x54046 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3980325762.0,3980325762,3980325762,True,True,73647x54046 = ?
+cohere/north-mini-code:free,5 dígitos,3980325762.0,3980325762,3980325762,True,True,73647x54046 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3980325762.0,3980325762,3980325762,True,True,73647x54046 = ?
+minimax/minimax-m2.7:free,5 dígitos,3980325762.0,"
+3980325762",3980325762,True,True,73647x54046 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3980325762.0,3980325762,3980325762,True,True,73647x54046 = ?
+dots-3-note-preview:free,5 dígitos,7839427840.0,"
+
+7839427840",7839427840,True,True,98048x79955 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,7839427840.0,7839427840,7839427840,True,True,98048x79955 = ?
+cohere/north-mini-code:free,5 dígitos,7839427840.0,7839427840,7839427840,True,True,98048x79955 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,7839427840.0,7839427840,7839427840,True,True,98048x79955 = ?
+minimax/minimax-m2.7:free,5 dígitos,7839427840.0,7839427840,7839427840,True,True,98048x79955 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,7839427840.0,7839427840,7839427840,True,True,98048x79955 = ?
+dots-3-note-preview:free,5 dígitos,6398891147.0,"
+
+6398891147",6398891147,True,True,69619x91913 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,6398891147.0,6398891147,6398891147,True,True,69619x91913 = ?
+cohere/north-mini-code:free,5 dígitos,6398891147.0,6398891147,6398891147,True,True,69619x91913 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,6398891147.0,6398891147,6398891147,True,True,69619x91913 = ?
+minimax/minimax-m2.7:free,5 dígitos,6398891147.0,6398891147,6398891147,True,True,69619x91913 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,6398891147.0,6398891147,6398891147,True,True,69619x91913 = ?
+dots-3-note-preview:free,5 dígitos,1221533872.0,"
+
+1221533872",1221533872,True,True,36392x33566 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1221533872.0,1221533872,1221533872,True,True,36392x33566 = ?
+cohere/north-mini-code:free,5 dígitos,1221533872.0,1221533872,1221533872,True,True,36392x33566 = ?
+poolside/laguna-s-2.1:free,5 dígitos,7839427840.0,7839427840,7839427840,True,True,98048x79955 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1221533872.0,1.221.533.872,1221533872,True,True,36392x33566 = ?
+minimax/minimax-m2.7:free,5 dígitos,1221533872.0,1221533872,1221533872,True,True,36392x33566 = ?
+dots-3-note-preview:free,5 dígitos,551785650.0,"
+
+551785650",551785650,True,True,54795x10070 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,551033650.0,551033650,551785650,False,True,54795x10070 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,551785650.0,551785650,551785650,True,True,54795x10070 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,551785650.0,551785650,551785650,True,True,54795x10070 = ?
+cohere/north-mini-code:free,5 dígitos,551785650.0,551785650,551785650,True,True,54795x10070 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,551785650.0,551785650,551785650,True,True,54795x10070 = ?
+minimax/minimax-m2.7:free,5 dígitos,551785650.0,551785650,551785650,True,True,54795x10070 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,551785650.0,551785650,551785650,True,True,54795x10070 = ?
+dots-3-note-preview:free,5 dígitos,3025513647.0,"
+
+3025513647",3025513647,True,True,59891x50517 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3025513647.0,3025513647,3025513647,True,True,59891x50517 = ?
+cohere/north-mini-code:free,5 dígitos,3025513647.0,3025513647,3025513647,True,True,59891x50517 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3025513647.0,3025513647,3025513647,True,True,59891x50517 = ?
+minimax/minimax-m2.7:free,5 dígitos,3025513647.0,3025513647,3025513647,True,True,59891x50517 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3025513647.0,3025513647,3025513647,True,True,59891x50517 = ?
+dots-3-note-preview:free,5 dígitos,4688427080.0,"
+
+4688427080",4688427080,True,True,77695x60344 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,4688427080.0,4688427080,4688427080,True,True,77695x60344 = ?
+cohere/north-mini-code:free,5 dígitos,4688427080.0,4688427080,4688427080,True,True,77695x60344 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,4688427080.0,4688427080,4688427080,True,True,77695x60344 = ?
+minimax/minimax-m2.7:free,5 dígitos,4688427080.0,4688427080,4688427080,True,True,77695x60344 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,4688427080.0,4688427080,4688427080,True,True,77695x60344 = ?
+dots-3-note-preview:free,5 dígitos,5882985940.0,"
+
+5882985940",5882985940,True,True,98635x59644 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5882985940.0,5882985940,5882985940,True,True,98635x59644 = ?
+cohere/north-mini-code:free,5 dígitos,5882985940.0,5882985940,5882985940,True,True,98635x59644 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,5882985940.0,5882985940,5882985940,True,True,98635x59644 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5882985940.0,5882985940,5882985940,True,True,98635x59644 = ?
+minimax/minimax-m2.7:free,5 dígitos,5882985940.0,5882985940,5882985940,True,True,98635x59644 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5882985940.0,5882985940,5882985940,True,True,98635x59644 = ?
+dots-3-note-preview:free,5 dígitos,1310727034.0,"
+
+1310727034",1310727034,True,True,13358x98123 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1310727034.0,1310727034,1310727034,True,True,13358x98123 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1310727034.0,1310727034,1310727034,True,True,13358x98123 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1310727034.0,1310727034,1310727034,True,True,13358x98123 = ?
+cohere/north-mini-code:free,5 dígitos,1310727034.0,1310727034,1310727034,True,True,13358x98123 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1310727034.0,1310727034,1310727034,True,True,13358x98123 = ?
+minimax/minimax-m2.7:free,5 dígitos,1310727034.0,1310727034,1310727034,True,True,13358x98123 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1310727034.0,1310727034,1310727034,True,True,13358x98123 = ?
+dots-3-note-preview:free,5 dígitos,6981920387.0,"
+
+6981920387",6981920387,True,True,91871x75997 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,6981920387.0,6981920387,6981920387,True,True,91871x75997 = ?
+cohere/north-mini-code:free,5 dígitos,6981920387.0,6981920387,6981920387,True,True,91871x75997 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,6981920387.0,6981920387,6981920387,True,True,91871x75997 = ?
+minimax/minimax-m2.7:free,5 dígitos,6981920387.0,6981920387,6981920387,True,True,91871x75997 = ?
+dots-3-note-preview:free,5 dígitos,4673009985.0,"
+
+4673009985",4673009985,True,True,79901x58485 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,4673009985.0,4673009985,4673009985,True,True,79901x58485 = ?
+cohere/north-mini-code:free,5 dígitos,4673009985.0,4673009985,4673009985,True,True,79901x58485 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,4673009985.0,4673009985,4673009985,True,True,79901x58485 = ?
+minimax/minimax-m2.7:free,5 dígitos,4673009985.0,4673009985,4673009985,True,True,79901x58485 = ?
+dots-3-note-preview:free,5 dígitos,1009688188.0,"
+
+1009688188",1009688188,True,True,30817x32764 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+cohere/north-mini-code:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+poolside/laguna-s-2.1:free,5 dígitos,6981920387.0,6981920387,6981920387,True,True,91871x75997 = ?
+minimax/minimax-m2.7:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+dots-3-note-preview:free,5 dígitos,7577589416.0,"
+
+7577589416",7577589416,True,True,86312x87793 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,7577589416.0,7577589416,7577589416,True,True,86312x87793 = ?
+poolside/laguna-s-2.1:free,5 dígitos,7577589416.0,7577589416,7577589416,True,True,86312x87793 = ?
+cohere/north-mini-code:free,5 dígitos,7577589416.0,7577589416,7577589416,True,True,86312x87793 = ?
+minimax/minimax-m2.7:free,5 dígitos,7577589416.0,7577589416,7577589416,True,True,86312x87793 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,7577589416.0,7577589416,7577589416,True,True,86312x87793 = ?
+dots-3-note-preview:free,5 dígitos,1491544468.0,"
+
+1491544468",1491544468,True,True,48764x30587 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1491544468.0,1491544468,1491544468,True,True,48764x30587 = ?
+cohere/north-mini-code:free,5 dígitos,1491544468.0,1491544468,1491544468,True,True,48764x30587 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1491544468.0,1491544468,1491544468,True,True,48764x30587 = ?
+minimax/minimax-m2.7:free,5 dígitos,1491544468.0,1491544468,1491544468,True,True,48764x30587 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1491544468.0,1491544468,1491544468,True,True,48764x30587 = ?
+dots-3-note-preview:free,5 dígitos,1335969803.0,"
+
+1335969803",1335969803,True,True,50603x26401 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1335969803.0,1335969803,1335969803,True,True,50603x26401 = ?
+cohere/north-mini-code:free,5 dígitos,1335969803.0,1335969803,1335969803,True,True,50603x26401 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1335989803.0,1335989803,1335969803,False,True,50603x26401 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1335969803.0,1335969803,1335969803,True,True,50603x26401 = ?
+minimax/minimax-m2.7:free,5 dígitos,1335969803.0,1335969803,1335969803,True,True,50603x26401 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1335969803.0,1335969803,1335969803,True,True,50603x26401 = ?
+dots-3-note-preview:free,5 dígitos,5729083080.0,"
+
+5729083080",5729083080,True,True,65352x87665 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5729083080.0,5729083080,5729083080,True,True,65352x87665 = ?
+cohere/north-mini-code:free,5 dígitos,5729083080.0,5729083080,5729083080,True,True,65352x87665 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1491544468.0,"1,491,544,468",1491544468,True,True,48764x30587 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1335969803.0,1335969803,1335969803,True,True,50603x26401 = ?
+poolside/laguna-s-2.1:free,5 dígitos,5729083080.0,5729083080,5729083080,True,True,65352x87665 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5729083080.0,5729083080,5729083080,True,True,65352x87665 = ?
+minimax/minimax-m2.7:free,5 dígitos,5729083080.0,5729083080,5729083080,True,True,65352x87665 = ?
+dots-3-note-preview:free,5 dígitos,1001784130.0,"
+
+1001784130",1001784130,True,True,11705x85586 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+cohere/north-mini-code:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1001785130.0,1001785130,1001784130,False,True,11705x85586 = ?
+minimax/minimax-m2.7:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+dots-3-note-preview:free,5 dígitos,3783638369.0,"
+
+3783638369",3783638369,True,True,76699x49331 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3783638369.0,3783638369,3783638369,True,True,76699x49331 = ?
+cohere/north-mini-code:free,5 dígitos,3783638369.0,3783638369,3783638369,True,True,76699x49331 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3783658369.0,3783658369,3783638369,False,True,76699x49331 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3783638369.0,3783638369,3783638369,True,True,76699x49331 = ?
+minimax/minimax-m2.7:free,5 dígitos,3783638369.0,3783638369,3783638369,True,True,76699x49331 = ?
+dots-3-note-preview:free,5 dígitos,3701222440.0,"
+
+3701222440",3701222440,True,True,69716x53090 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+cohere/north-mini-code:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+minimax/minimax-m2.7:free,5 dígitos,3701222440.0,"
+3701222440",3701222440,True,True,69716x53090 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+dots-3-note-preview:free,5 dígitos,1669667246.0,"
+
+1669667246",1669667246,True,True,50011x33386 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,3783638369.0,3783638369,3783638369,True,True,76699x49331 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1669667246.0,1669667246,1669667246,True,True,50011x33386 = ?
+cohere/north-mini-code:free,5 dígitos,1669667246.0,1669667246,1669667246,True,True,50011x33386 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1669667246.0,1669667246,1669667246,True,True,50011x33386 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1669667246.0,1669667246,1669667246,True,True,50011x33386 = ?
+minimax/minimax-m2.7:free,5 dígitos,1669667246.0,1669667246,1669667246,True,True,50011x33386 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1669667246.0,1669667246,1669667246,True,True,50011x33386 = ?
+dots-3-note-preview:free,5 dígitos,5846632256.0,"
+
+5846632256",5846632256,True,True,92192x63418 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5846632256.0,5846632256,5846632256,True,True,92192x63418 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,5846632256.0,5846632256,5846632256,True,True,92192x63418 = ?
+cohere/north-mini-code:free,5 dígitos,5846632256.0,5846632256,5846632256,True,True,92192x63418 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5846392256.0,5846392256,5846632256,False,True,92192x63418 = ?
+minimax/minimax-m2.7:free,5 dígitos,5846632256.0,5846632256,5846632256,True,True,92192x63418 = ?
+dots-3-note-preview:free,5 dígitos,930781367.0,"
+
+930781367",930781367,True,True,31183x29849 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,930781367.0,930781367,930781367,True,True,31183x29849 = ?
+cohere/north-mini-code:free,5 dígitos,930781367.0,930781367,930781367,True,True,31183x29849 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,930763367.0,930763367,930781367,False,True,31183x29849 = ?
+minimax/minimax-m2.7:free,5 dígitos,930781367.0,930781367,930781367,True,True,31183x29849 = ?
+dots-3-note-preview:free,5 dígitos,5581394880.0,"
+
+5581394880",5581394880,True,True,72480x77006 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,5581394880.0,5581394880,5581394880,True,True,72480x77006 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,5581394880.0,5581394880,5581394880,True,True,72480x77006 = ?
+cohere/north-mini-code:free,5 dígitos,5581394880.0,5581394880,5581394880,True,True,72480x77006 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5581394880.0,5581394880,5581394880,True,True,72480x77006 = ?
+minimax/minimax-m2.7:free,5 dígitos,5581394880.0,5581394880,5581394880,True,True,72480x77006 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5581394880.0,5581394880,5581394880,True,True,72480x77006 = ?
+dots-3-note-preview:free,5 dígitos,4321281929.0,"
+
+4321281929",4321281929,True,True,87509x49381 = ?
+google/gemma-4-31b-it:free,4 dígitos,46843877.0,46843877,46854697,False,True,4943x9479 = ?
+google/gemma-4-26b-a4b-it:free,4 dígitos,12668697.0,12668697,12668697,True,True,6957x1821 = ?
+google/gemma-4-26b-a4b-it:free,4 dígitos,58791000.0,58791000,58797298,False,True,9226x6373 = ?
+google/gemma-4-31b-it:free,4 dígitos,58802398.0,58802398,58797298,False,True,9226x6373 = ?
+google/gemma-4-26b-a4b-it:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+google/gemma-4-26b-a4b-it:free,4 dígitos,18291472.0,18291472,18285872,False,True,3884x4708 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,930781367.0,930781367,930781367,True,True,31183x29849 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,4321281929.0,4321281929,4321281929,True,True,87509x49381 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,4321281929.0,4321281929,4321281929,True,True,87509x49381 = ?
+cohere/north-mini-code:free,5 dígitos,4321281929.0,4321281929,4321281929,True,True,87509x49381 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,4321521929.0,4321521929,4321281929,False,True,87509x49381 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,4321281929.0,4321281929,4321281929,True,True,87509x49381 = ?
+dots-3-note-preview:free,5 dígitos,493195423.0,"
+
+493195423",493195423,True,True,30401x16223 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,493195423.0,493195423,493195423,True,True,30401x16223 = ?
+cohere/north-mini-code:free,5 dígitos,493195423.0,493195423,493195423,True,True,30401x16223 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,493195423.0,493195423,493195423,True,True,30401x16223 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,493195423.0,493195423,493195423,True,True,30401x16223 = ?
+minimax/minimax-m2.7:free,5 dígitos,493195423.0,493195423,493195423,True,True,30401x16223 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,493195423.0,493195423,493195423,True,True,30401x16223 = ?
+dots-3-note-preview:free,5 dígitos,2932075640.0,"
+
+2932075640",2932075640,True,True,37843x77480 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,2932076400.0,2932076400,2932075640,False,True,37843x77480 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2932075640.0,2932075640,2932075640,True,True,37843x77480 = ?
+cohere/north-mini-code:free,5 dígitos,2932075640.0,2932075640,2932075640,True,True,37843x77480 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2932055640.0,2932055640,2932075640,False,True,37843x77480 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2932075640.0,2932075640,2932075640,True,True,37843x77480 = ?
+minimax/minimax-m2.7:free,5 dígitos,2932075640.0,2932075640,2932075640,True,True,37843x77480 = ?
+dots-3-note-preview:free,5 dígitos,2093562240.0,"
+
+2093562240",2093562240,True,True,27440x76296 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2093562240.0,2093562240,2093562240,True,True,27440x76296 = ?
+cohere/north-mini-code:free,5 dígitos,2093562240.0,2093562240,2093562240,True,True,27440x76296 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2093562240.0,2093562240,2093562240,True,True,27440x76296 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2093562240.0,2093562240,2093562240,True,True,27440x76296 = ?
+minimax/minimax-m2.7:free,5 dígitos,2093562240.0,2093562240,2093562240,True,True,27440x76296 = ?
+dots-3-note-preview:free,5 dígitos,1607548896.0,"
+
+1607548896",1607548896,True,True,23312x68958 = ?
+google/gemma-4-31b-it:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+google/gemma-4-31b-it:free,4 dígitos,12022717.0,12022717,12020017,False,True,3169x3793 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2932075640.0,2932075640,2932075640,True,True,37843x77480 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,3.7843774803784376e+52,37843 * 77480 = 37843 * (7748 * 10) = (37843 * 7748) * 10 = 293207564 * 10 = 2932075640,2932075640,False,True,37843x77480 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1607548896.0,1607548896,1607548896,True,True,23312x68958 = ?
+cohere/north-mini-code:free,5 dígitos,1607548896.0,1607548896,1607548896,True,True,23312x68958 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1607548896.0,1607548896,1607548896,True,True,23312x68958 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1607548896.0,1607548896,1607548896,True,True,23312x68958 = ?
+dots-3-note-preview:free,5 dígitos,744987200.0,"
+
+744987200",744987200,True,True,44960x16570 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,744987200.0,744987200,744987200,True,True,44960x16570 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,744987200.0,744987200,744987200,True,True,44960x16570 = ?
+cohere/north-mini-code:free,5 dígitos,744987200.0,744987200,744987200,True,True,44960x16570 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,745027200.0,745027200,744987200,False,True,44960x16570 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,744987200.0,744987200,744987200,True,True,44960x16570 = ?
+minimax/minimax-m2.7:free,5 dígitos,744987200.0,744987200,744987200,True,True,44960x16570 = ?
+dots-3-note-preview:free,5 dígitos,559240362.0,"
+
+559240362",559240362,True,True,13218x42309 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,559240362.0,559240362,559240362,True,True,13218x42309 = ?
+cohere/north-mini-code:free,5 dígitos,559240362.0,559240362,559240362,True,True,13218x42309 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,559240362.0,559240362,559240362,True,True,13218x42309 = ?
+minimax/minimax-m2.7:free,5 dígitos,559240362.0,559240362,559240362,True,True,13218x42309 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,559240362.0,559240362,559240362,True,True,13218x42309 = ?
+dots-3-note-preview:free,5 dígitos,400933218.0,"
+
+400933218",400933218,True,True,27777x14434 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,400933218.0,400933218,400933218,True,True,27777x14434 = ?
+cohere/north-mini-code:free,5 dígitos,400933218.0,400933218,400933218,True,True,27777x14434 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,400933218.0,400933218,400933218,True,True,27777x14434 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,400933218.0,400933218,400933218,True,True,27777x14434 = ?
+dots-3-note-preview:free,5 dígitos,628488240.0,"
+
+628488240",628488240,True,True,45411x13840 = ?
+google/gemma-4-31b-it:free,4 dígitos,10797912.0,10797912,10787922,False,True,6651x1622 = ?
+google/gemma-4-26b-a4b-it:free,4 dígitos,51751735.0,51751735,51756735,False,True,8301x6235 = ?
+google/gemma-4-31b-it:free,5 dígitos,1340481312.0,1340481312,1340479992,False,True,66413x20184 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,4841304017.0,4841304017,4843722617,False,True,65927x73471 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,4133514210.0,4133514210,4133621910,False,True,99858x41395 = ?
+poolside/laguna-s-2.1:free,5 dígitos,559240362.0,559240362,559240362,True,True,13218x42309 = ?
+poolside/laguna-s-2.1:free,5 dígitos,400933218.0,400933218,400933218,True,True,27777x14434 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,,"Here：
+
+mseensuite
+ UI- üzerlash:
+ A
+
+ neveuのításях; in arteriális suburbim nhàiahop受.enableagus",628488240,False,False,45411x13840 = ?
+cohere/north-mini-code:free,5 dígitos,628488240.0,628488240,628488240,True,True,45411x13840 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,628488240.0,628488240,628488240,True,True,45411x13840 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,628488240.0,628488240,628488240,True,True,45411x13840 = ?
+dots-3-note-preview:free,5 dígitos,945127690.0,"
+
+945127690",945127690,True,True,80870x11687 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,945127690.0,945127690,945127690,True,True,80870x11687 = ?
+cohere/north-mini-code:free,5 dígitos,945127690.0,945127690,945127690,True,True,80870x11687 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,945127690.0,945127690,945127690,True,True,80870x11687 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,945127690.0,945127690,945127690,True,True,80870x11687 = ?
+minimax/minimax-m2.7:free,5 dígitos,945127690.0,945127690,945127690,True,True,80870x11687 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,3591115371.0,3591115371,3591920871,False,True,77877x46123 = ?
+google/gemma-4-31b-it:free,5 dígitos,3592853171.0,3592853171,3591920871,False,True,77877x46123 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,3817550304.0,3817550304,3817780304,False,True,93886x40664 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,5693333752.0,5693333752,5694832248,False,True,84273x67576 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,945127690.0,945127690,945127690,True,True,80870x11687 = ?
+dots-3-note-preview:free,5 dígitos,2225189082.0,"
+
+2225189082",2225189082,True,True,25059x88798 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2225189082.0,2225189082,2225189082,True,True,25059x88798 = ?
+cohere/north-mini-code:free,5 dígitos,2225189082.0,2225189082,2225189082,True,True,25059x88798 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2225009082.0,2225009082,2225189082,False,True,25059x88798 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2225189082.0,2225189082,2225189082,True,True,25059x88798 = ?
+minimax/minimax-m2.7:free,5 dígitos,2225189082.0,2225189082,2225189082,True,True,25059x88798 = ?
+dots-3-note-preview:free,5 dígitos,1534713609.0,"
+
+1534713609",1534713609,True,True,61391x24999 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,1534661609.0,1534661609,1534713609,False,True,61391x24999 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1534713609.0,1534713609,1534713609,True,True,61391x24999 = ?
+cohere/north-mini-code:free,5 dígitos,1534713609.0,1534713609,1534713609,True,True,61391x24999 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1534713609.0,1534713609,1534713609,True,True,61391x24999 = ?
+minimax/minimax-m2.7:free,5 dígitos,1534713609.0,1534713609,1534713609,True,True,61391x24999 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1534713609.0,1534713609,1534713609,True,True,61391x24999 = ?
+dots-3-note-preview:free,5 dígitos,492238280.0,"
+
+492238280",492238280,True,True,15055x32696 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,492238280.0,492238280,492238280,True,True,15055x32696 = ?
+poolside/laguna-s-2.1:free,5 dígitos,492238280.0,492238280,492238280,True,True,15055x32696 = ?
+cohere/north-mini-code:free,5 dígitos,492238280.0,492238280,492238280,True,True,15055x32696 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,492238280.0,492238280,492238280,True,True,15055x32696 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,492238280.0,492238280,492238280,True,True,15055x32696 = ?
+minimax/minimax-m2.7:free,5 dígitos,492238280.0,492238280,492238280,True,True,15055x32696 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,492238280.0,492238280,492238280,True,True,15055x32696 = ?
+dots-3-note-preview:free,5 dígitos,7178035536.0,"
+
+7178035536",7178035536,True,True,91056x78831 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,7178035536.0,7178035536,7178035536,True,True,91056x78831 = ?
+poolside/laguna-s-2.1:free,5 dígitos,7178035536.0,"7,178,035,536",7178035536,True,True,91056x78831 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,9.105678831191055e+180,"Para resolver a operação 91056 × 78831, utilizamos o método de multiplicação padrão, quebrando os números em partes e somando os resultados intermediários.
+
+1. **91056 × 1 = 91056**
+2. **91056 × 30 = 2731680**
+3. **91056 × 800 = 72844800**
+4. **91056 × 8000 = 728448000**
+5. **91056 × 70000 = 6373920000**
+
+Em seguida, somamos todos os resultados obtidos:
+
+- 91056  
+- 2731680  
+- 72844800  
+- 728448000  
+- 6373920000  
+
+Sobrando as somas parciais:
+
+1. 2822736  
+2. 75667536  
+3. 804115536  
+4. 7178035536  
+
+Portanto, o resultado final é:
+
+\boxed{7178035536}",7178035536,False,False,91056x78831 = ?
+cohere/north-mini-code:free,5 dígitos,7178035536.0,7178035536,7178035536,True,True,91056x78831 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,7177955536.0,7177955536,7178035536,False,True,91056x78831 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,7178035536.0,7178035536,7178035536,True,True,91056x78831 = ?
+minimax/minimax-m2.7:free,5 dígitos,7178035536.0,7178035536,7178035536,True,True,91056x78831 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,7178035536.0,7178035536,7178035536,True,True,91056x78831 = ?
+dots-3-note-preview:free,5 dígitos,295254414.0,"
+
+295254414",295254414,True,True,15561x18974 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,295254414.0,295254414,295254414,True,True,15561x18974 = ?
+cohere/north-mini-code:free,5 dígitos,295254414.0,295254414,295254414,True,True,15561x18974 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,295256414.0,295256414,295254414,False,True,15561x18974 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,295254414.0,295254414,295254414,True,True,15561x18974 = ?
+minimax/minimax-m2.7:free,5 dígitos,295254414.0,295254414,295254414,True,True,15561x18974 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,295254414.0,295254414,295254414,True,True,15561x18974 = ?
+dots-3-note-preview:free,5 dígitos,2496628736.0,"
+
+2496628736",2496628736,True,True,55888x44672 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2496628736.0,2496628736,2496628736,True,True,55888x44672 = ?
+cohere/north-mini-code:free,5 dígitos,2496628736.0,2496628736,2496628736,True,True,55888x44672 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2496650176.0,2496650176,2496628736,False,True,55888x44672 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2496628736.0,2496628736,2496628736,True,True,55888x44672 = ?
+minimax/minimax-m2.7:free,5 dígitos,2496628736.0,2496628736,2496628736,True,True,55888x44672 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2496628736.0,2496628736,2496628736,True,True,55888x44672 = ?
+dots-3-note-preview:free,5 dígitos,2318275782.0,"
+
+2318275782",2318275782,True,True,68763x33714 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,1649201186.0,1649201186,1649350626,False,True,24178x68217 = ?
+google/gemma-4-31b-it:free,5 dígitos,3533931252.0,3533931252,3534966972,False,True,50781x69612 = ?
+poolside/laguna-s-2.1:free,5 dígitos,295254414.0,295254414,295254414,True,True,15561x18974 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2496628736.0,2496628736,2496628736,True,True,55888x44672 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2318275782.0,2318275782,2318275782,True,True,68763x33714 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2318275782.0,2318275782,2318275782,True,True,68763x33714 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2318275782.0,2318275782,2318275782,True,True,68763x33714 = ?
+cohere/north-mini-code:free,5 dígitos,2318275782.0,2318275782,2318275782,True,True,68763x33714 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2318255782.0,2318255782,2318275782,False,True,68763x33714 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2318275782.0,2318275782,2318275782,True,True,68763x33714 = ?
+minimax/minimax-m2.7:free,5 dígitos,2318275782.0,2318275782,2318275782,True,True,68763x33714 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2318275782.0,2318275782,2318275782,True,True,68763x33714 = ?
+dots-3-note-preview:free,5 dígitos,2249837092.0,"
+
+2249837092",2249837092,True,True,24884x90413 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2249837092.0,2249837092,2249837092,True,True,24884x90413 = ?
+poolside/laguna-s-2.1:free,5 dígitos,2.488490413224984e+19,24884x90413 = 2249837092,2249837092,False,False,24884x90413 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2249837092.0,2249837092,2249837092,True,True,24884x90413 = ?
+cohere/north-mini-code:free,5 dígitos,2249837092.0,2249837092,2249837092,True,True,24884x90413 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2249857092.0,2249857092,2249837092,False,True,24884x90413 = ?
+minimax/minimax-m2.7:free,5 dígitos,2249837092.0,2249837092,2249837092,True,True,24884x90413 = ?
+google/gemma-4-31b-it:free,5 dígitos,2322471225.0,2322471225,2322495525,False,True,27923x83175 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,2492134440.0,2492134440,2492854140,False,True,84670x29442 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,5728373274.0,5728373274,5728949414,False,True,87037x65822 = ?
+google/gemma-4-26b-a4b-it:free,5 dígitos,7616211064.0,7616211064,7616409904,False,True,90037x84592 = ?
+z-ai/glm-5.2:free,2 dígitos,6231.0,6231,6231,True,True,93x67 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,700.0,700,700,True,True,28x25 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,7440.0,7440,7440,True,True,93x80 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1440.0,1440,1440,True,True,15x96 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,590.0,590,590,True,True,59x10 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1190.0,1190,1190,True,True,17x70 = ?
+poolside/laguna-s-2.1:free,2 dígitos,391.0,391,391,True,True,17x23 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,7663.0,7663,7663,True,True,97x79 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,7553.0,7553,7553,True,True,83x91 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,2 dígitos,2479.0,2479,2479,True,True,37x67 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,362848.0,362848,362848,True,True,736x493 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,582230.0,582230,582230,True,True,670x869 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,3 dígitos,30210.0,30210,30210,True,True,265x114 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,322586.0,322586,322586,True,True,341x946 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,3403898.0,3403898,3403898,True,True,1126x3023 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,58797298.0,58797298,58797298,True,True,9226x6373 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,24270667.0,24270667,24272667,False,True,2789x8703 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,24272667.0,24272667,24272667,True,True,2789x8703 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,18285872.0,18285872,18285872,True,True,3884x4708 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,14044214.0,14044214,14044214,True,True,5602x2507 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,39061410.0,39061410,39061410,True,True,6015x6494 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,4843722617.0,4843722617,4843722617,True,True,65927x73471 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3626673687.0,3626673687,3626673687,True,True,37089x97783 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3591920871.0,3591920871,3591920871,True,True,77877x46123 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,270080.0,270080,270080,True,True,640x422 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,190890.0,190890,190890,True,True,606x315 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,654156.0,654156,654156,True,True,673x972 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,677970.0,677970,677970,True,True,930x729 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,242970.0,242970,242970,True,True,273x890 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,255850.0,255850,255850,True,True,430x595 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,21443655.0,21443655,21443655,True,True,8095x2649 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,14784296.0,14784296,14784296,True,True,3578x4132 = ?
+poolside/laguna-s-2.1:free,4 dígitos,10436908.0,10436908,10436908,True,True,8231x1268 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,59730300.0,59730300,59730300,True,True,5985x9980 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,349965.0,349965,349965,True,True,693x505 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,7.025677025006079e+71,702x567 = 702*(500+60+7) = 702*500 + 702*60 + 702*7 = 351000 + 42120 + 4914 = 351000 + 42120 = 393120 + 4914 = 398034.,398034,False,False,702x567 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,8703045.0,8703045,8703045,True,True,2755x3159 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,18894690.0,18894690,18894690,True,True,8454x2235 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,31580820.0,31580820,31580820,True,True,3495x9036 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,14044214.0,14044214,14044214,True,True,5602x2507 = ?
+poolside/laguna-s-2.1:free,4 dígitos,29619354.0,29619354,29619354,True,True,4899x6046 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1137431999.0,1137431999,1137431999,True,True,52327x21737 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,4843722617.0,4843722617,4843722617,True,True,65927x73471 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,3.169379337933001e+159,"Para calcular a multiplicação de 3169 por 3793, utilizamos o método da decomposição em partes menores. 
+
+Primeiro, decompomos 3793 em 3000 + 700 + 90 + 3 e multiplicamos cada parte por 3169:
+
+1. $ 3169 \times 3000 = 9.507.000 $
+2. $ 3169 \times 700 = 2.218.300 $
+3. $ 3169 \times 90 = 285.210 $
+4. $ 3169 \times 3 = 9.507 $
+
+Em seguida, somamos todos os produtos parciais:
+
+$$
+9.507.000 + 2.218.300 = 11.725.300
+$$
+
+$$
+11.725.300 + 285.210 = 12.010.510
+$$
+
+$$
+12.010.510 + 9.507 = 12.020.017
+$$
+
+Portanto, o resultado de $ 3169 \times 3793 $ é:
+
+$$
+\boxed{12020017}
+$$",12020017,False,False,3169x3793 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,29619354.0,29619354,29619354,True,True,4899x6046 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,4692.0,4692,4692,True,True,68x69 = ?
+poolside/laguna-xs-2.1:free,2 dígitos,1144.0,1144,1144,True,True,13x88 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,92400.0,92400,92400,True,True,110x840 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,426220.0,426220,426220,True,True,844x505 = ?
+liquid/lfm-2.5-2.6b:free,3 dígitos,85176.0,85176,85176,True,True,338x252 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,4 dígitos,40219728.0,40219728,40219728,True,True,5496x7318 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,153384.0,153384,153384,True,True,616x249 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,179523.0,179523,179523,True,True,981x183 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,571551.0,571551,571551,True,True,601x951 = ?
+poolside/laguna-xs-2.1:free,3 dígitos,516861.0,516861,516861,True,True,709x729 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,41033538.0,41033538,41033538,True,True,7943x5166 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,16144800.0,16144800,16144800,True,True,7688x2100 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,93372200.0,93372200,93372200,True,True,9700x9626 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,4514613.0,4514613,4514613,True,True,3397x1329 = ?
+poolside/laguna-s-2.1:free,4 dígitos,24582111.0,24582111,24582111,True,True,6571x3741 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,21161976.0,21161976,21161976,True,True,2258x9372 = ?
+nvidia/nemotron-3-super-120b-a12b:free,4 dígitos,12020017.0,12020017,12020017,True,True,3169x3793 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,10787922.0,10787922,10787922,True,True,6651x1622 = ?
+poolside/laguna-xs-2.1:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,4 dígitos,51756735.0,51756735,51756735,True,True,8301x6235 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,4133621910.0,4133621910,4133621910,True,True,99858x41395 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1755187056.0,1755187056,1755187056,True,True,36603x47952 = ?
+liquid/lfm-2.5-2.6b:free,4 dígitos,15187354.0,15187354,15187354,True,True,1703x8918 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,2323257700.0,2323257700,2323257700,True,True,86932x26725 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2323257700.0,2323257700,2323257700,True,True,86932x26725 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5694570248.0,5694570248,5694832248,False,True,84273x67576 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5694832248.0,5694832248,5694832248,True,True,84273x67576 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,2896753096.0,2896753096,2896953096,False,True,39012x74258 = ?
+z-ai/glm-5.2:free,2 dígitos,3240.0,3240,3240,True,True,36x90 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2896953096.0,2896953096,2896953096,True,True,39012x74258 = ?
+poolside/laguna-s-2.1:free,5 dígitos,769118715.0,769118715,769118715,True,True,48663x15805 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,769118715.0,769118715,769118715,True,True,48663x15805 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,769118715.0,769118715,769118715,True,True,48663x15805 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5846124174.0,5846124174,5846124174,True,True,72694x80421 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,6305211160.0,6305211160,6305211160,True,True,85564x73690 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5549114610.0,5549114610,5549114610,True,True,69030x80387 = ?
+poolside/laguna-s-2.1:free,5 dígitos,506738070.0,506738070,506738070,True,True,10690x47403 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,506748270.0,506748270,506738070,False,True,10690x47403 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,506738070.0,506738070,506738070,True,True,10690x47403 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,386446214.0,386446214,386446214,True,True,11978x32263 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,915559680.0,915559680,915559680,True,True,26880x34061 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,1061913843.0,1061913843,1061913843,True,True,81579x13017 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2055331498.0,2055331498,2055331498,True,True,40337x50954 = ?
+z-ai/glm-5.2:free,2 dígitos,1001.0,1001,1001,True,True,91x11 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1061913843.0,1061913843,1061913843,True,True,81579x13017 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2055331498.0,2055331498,2055331498,True,True,40337x50954 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1110132912.0,1110132912,1110132912,True,True,24168x45934 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1110132912.0,1110132912,1110132912,True,True,24168x45934 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2492854140.0,2492854140,2492854140,True,True,84670x29442 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5728949414.0,5728949414,5728949414,True,True,87037x65822 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,7616409904.0,7616409904,7616409904,True,True,90037x84592 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,7840197314.0,7840197314,7840197314,True,True,83186x94249 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3299448829.0,3299448829,3299588829,False,True,38001x86829 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,3467129946.0,3467129946,3467129946,True,True,75558x45887 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3467129946.0,3467129946,3467129946,True,True,75558x45887 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2157773202.0,2157773202,2157773202,True,True,55494x38883 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1212152486.0,1212152486,1212152486,True,True,27278x44437 = ?
+poolside/laguna-s-2.1:free,5 dígitos,7840197314.0,7840197314,7840197314,True,True,83186x94249 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,3467129946.0,3467129946,3467129946,True,True,75558x45887 = ?
+poolside/laguna-s-2.1:free,5 dígitos,378687274.0,378687274,378687274,True,True,18214x20791 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1057794777.0,1057794777,1057794777,True,True,12623x83799 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,6975667470.0,6975667470,6975667470,True,True,79005x88294 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,6975667470.0,6975667470,6975667470,True,True,79005x88294 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,6975667470.0,6975667470,6975667470,True,True,79005x88294 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1605682089.0,1605682089,1605482089,False,True,47741x33629 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,4774119449.0,4774119449,4774119449,True,True,56081x85129 = ?
+poolside/laguna-s-2.1:free,5 dígitos,3233434821.0,3233434821,3233434821,True,True,49639x65139 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3233454821.0,3233454821,3233434821,False,True,49639x65139 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3233434821.0,3233434821,3233434821,True,True,49639x65139 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,3595517592.0,3595517592,3595599592,False,True,72728x49439 = ?
+z-ai/glm-5.2:free,2 dígitos,7440.0,7440,7440,True,True,93x80 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,7839385840.0,7839385840,7839427840,False,True,98048x79955 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,6398951147.0,6398951147,6398891147,False,True,69619x91913 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1221313872.0,1221313872,1221533872,False,True,36392x33566 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1221533872.0,1221533872,1221533872,True,True,36392x33566 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1221533872.0,1221533872,1221533872,True,True,36392x33566 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,551785650.0,551785650,551785650,True,True,54795x10070 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,7.364754046154044e+227,"To multiply 73647 by 54046, we break down the numbers into their place values and use the distributive property:
+
+1. Break down 54046 into 50000 + 4000 + 0 + 40 + 6.
+2. Multiply 73647 by each component:
+   - \(73647 \times 50000 = 3682350000\)
+   - \(73647 \times 4000 = 294588000\)
+   - \(73647 \times 40 = 2945880\)
+   - \(73647 \times 6 = 441882\)
+3. Sum the results:
+   - \(3682350000 + 294588000 + 2945880 + 441882 = 3980325762\)
+
+Verification using another method (breaking down 54046 into 54000 + 46):
+1. Calculate \(73647 \times 54000 = 3976938000\)
+2. Calculate \(73647 \times 46 = 3387762\)
+3. Sum the results:
+   - \(3976938000 + 3387762 = 3980325762\)
+
+Both methods yield the same result, confirming the accuracy.
+
+\[
+\boxed{3980325762}
+\]",3980325762,False,False,73647x54046 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,7839427840.0,7839427840,7839427840,True,True,98048x79955 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,4688367080.0,4688367080,4688427080,False,True,77695x60344 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5882843940.0,5882843940,5882985940,False,True,98635x59644 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1310767034.0,1310767034,1310727034,False,True,13358x98123 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,6981626387.0,6981626387,6981920387,False,True,91871x75997 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,6981920387.0,6981920387,6981920387,True,True,91871x75997 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,4673009985.0,4673009985,4673009985,True,True,79901x58485 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,4673069985.0,4673069985,4673009985,False,True,79901x58485 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,7577589416.0,7577589416,7577589416,True,True,86312x87793 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,14938620.0,14938620,1491544468,False,True,48764x30587 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1491566468.0,1491566468,1491544468,False,True,48764x30587 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,5729403080.0,5729403080,5729083080,False,True,65352x87665 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1009688188.0,1009688188,1009688188,True,True,30817x32764 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,7577589416.0,7577589416,7577589416,True,True,86312x87793 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1491544468.0,1491544468,1491544468,True,True,48764x30587 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1335969803.0,1335969803,1335969803,True,True,50603x26401 = ?
+poolside/laguna-s-2.1:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,1001784130.0,1001784130,1001784130,True,True,11705x85586 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,3783638369.0,3783638369,3783638369,True,True,76699x49331 = ?
+nvidia/nemotron-3.5-lightning:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+poolside/laguna-xs-2.1:free,5 dígitos,3701222440.0,3701222440,3701222440,True,True,69716x53090 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5846632256.0,5846632256,5846632256,True,True,92192x63418 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,5846632256.0,5846632256,5846632256,True,True,92192x63418 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,930781367.0,930781367,930781367,True,True,31183x29849 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,930781367.0,930781367,930781367,True,True,31183x29849 = ?
+liquid/lfm-2.5-2.6b:free,5 dígitos,5846524256.0,5846524256,5846632256,False,True,92192x63418 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,5581394880.0,5581394880,5581394880,True,True,72480x77006 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,4321281929.0,4321281929,4321281929,True,True,87509x49381 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,2932075640.0,2932075640,2932075640,True,True,37843x77480 = ?
+nvidia/nemotron-3-ultra-550b-a55b:free,5 dígitos,1607528896.0,1607528896,1607548896,False,True,23312x68958 = ?
+nvidia/nemotron-3-super-120b-a12b:free,5 dígitos,744987200.0,744987200,744987200,True,True,44960x16570 = ?
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,5 dígitos,559240362.0,559240362,559240362,True,True,13218x42309 = ?

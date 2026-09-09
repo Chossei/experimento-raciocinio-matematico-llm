@@ -33,12 +33,30 @@ logging.info("=== Iniciando Pipeline de Experimento Matemático ===")
 # ==========================================
 # VARIÁVEIS DE AMBIENTE E CHAVES
 # ==========================================
-load_dotenv('chave.env')
+# Tenta carregar chave.env local, do diretório pai ou do ambiente
+for env_cand in ['chave.env', os.path.join('..', 'chave.env')]:
+    if os.path.exists(env_cand):
+        load_dotenv(env_cand)
 
 CHAVES_API = []
 for k, v in os.environ.items():
     if k.startswith("OPEN_ROUTER_API_KEY") and v.strip():
-        CHAVES_API.append(v.strip())
+        if v.strip() not in CHAVES_API:
+            CHAVES_API.append(v.strip())
+
+# Se não encontrado por dotenv, realiza leitura manual de chave.env
+if not CHAVES_API:
+    for env_cand in ['chave.env', os.path.join('..', 'chave.env')]:
+        if os.path.exists(env_cand):
+            with open(env_cand, 'r', encoding='utf-8', errors='ignore') as f:
+                for linha in f:
+                    linha = linha.strip()
+                    if linha.startswith("OPEN_ROUTER_API_KEY") and "=" in linha:
+                        partes = linha.split("=", 1)
+                        if len(partes) == 2 and partes[1].strip().strip('"').strip("'"):
+                            val = partes[1].strip().strip('"').strip("'")
+                            if val not in CHAVES_API:
+                                CHAVES_API.append(val)
 
 if not CHAVES_API:
     logging.error("Nenhuma chave OPEN_ROUTER_API_KEY encontrada no arquivo chave.env.")
@@ -134,10 +152,14 @@ def extrair_numero(texto):
 # CHAMADA ASSÍNCRONA
 # ==========================================
 async def realizar_chamada(modelo, conta_dict):
+    conta_texto = conta_dict.get('string') or conta_dict.get('Conta', '')
+    resultado_esperado = conta_dict.get('resultado') if 'resultado' in conta_dict else conta_dict.get('Resultado_original')
+    operacao_tipo = conta_dict.get('tipo') or conta_dict.get('Operacao', '')
+
     prompt_geral = f"""
     Sua tarefa é resolver operações matemáticas.
     Responda a pergunta a seguir e retorne o resultado SOMENTE em formato de número, sem unidades ou caracteres especiais.
-    {conta_dict['Conta']}
+    {conta_texto}
     """
     
     try:
@@ -157,17 +179,17 @@ async def realizar_chamada(modelo, conta_dict):
         if re.search(r'[a-zA-Z]', texto_resposta):
             acerto_formato = False
             
-        acerto_operacao = (valor_extraido == conta_dict['Resultado_original'])
+        acerto_operacao = (valor_extraido == resultado_esperado)
         
         return {
             'Nome_do_modelo': modelo,
-            'Operacao': conta_dict['Operacao'],
+            'Operacao': operacao_tipo,
             'Resultado_do_modelo': valor_extraido,
             'Resposta_bruta': texto_resposta,
-            'Resultado_original': conta_dict['Resultado_original'],
+            'Resultado_original': resultado_esperado,
             'Acerto_da_operacao': acerto_operacao,
             'Acerto_do_formato_de_resposta': acerto_formato,
-            'Conta': conta_dict['Conta']
+            'Conta': conta_texto
         }
     except openai.RateLimitError as e:
         msg = getattr(e, 'message', str(e))
@@ -216,14 +238,17 @@ async def main():
 
     concluidos = set()
     if not df_resultados.empty:
+        col_res_conta = 'Conta' if 'Conta' in df_resultados.columns else 'string'
         for _, row in df_resultados.iterrows():
-            chave = f"{row['Nome_do_modelo']}||{row['Conta']}"
+            chave = f"{row['Nome_do_modelo']}||{row[col_res_conta]}"
             concluidos.add(chave)
 
     pendencias = []
+    col_op_conta = 'string' if 'string' in df_operacoes.columns else 'Conta'
     for _, row in df_operacoes.iterrows():
+        conta_val = row[col_op_conta]
         for modelo in modelos_gratuitos:
-            chave = f"{modelo}||{row['Conta']}"
+            chave = f"{modelo}||{conta_val}"
             if chave not in concluidos:
                 pendencias.append((modelo, row.to_dict()))
 

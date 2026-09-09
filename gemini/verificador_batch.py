@@ -76,6 +76,7 @@ NOME_BUCKET = "experimento-matematico-ufba"
 taxa_cambio = 5.15
 
 dados_api = [
+    {"modelo": "gemini-3.8-flash", "input_usd": 0.75, "output_usd": 3.75},
     {"modelo": "gemini-3.7-flash", "input_usd": 0.75, "output_usd": 3.75},
     {"modelo": "gemini-3.6-flash", "input_usd": 0.75, "output_usd": 3.75},
     {"modelo": "gemini-3.5-flash", "input_usd": 1.50, "output_usd": 9.00},
