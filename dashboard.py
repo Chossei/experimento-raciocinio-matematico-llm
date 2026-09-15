@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import os
+import json
 import datetime
 
 # -----------------------------------------------------------------------------
@@ -50,6 +51,7 @@ def carregar_dados_experimento():
     dfs = {
         "decimais_openrouter": pd.DataFrame(),
         "decimais_vertex": pd.DataFrame(),
+        "soma_openrouter": pd.DataFrame(),
         "inteiros_gemini": pd.DataFrame(),
         "inteiros_openrouter": pd.DataFrame()
     }
@@ -77,7 +79,61 @@ def carregar_dados_experimento():
         except Exception:
             pass
 
-    # 2. Decimais Vertex AI (Execução original)
+    # 2. Operações de Soma (OpenRouter Batch API)
+    candidatos_soma = [
+        "dados/resultados_gemini_soma_openrouter.csv",
+        "gemini/openrouter/operacoes_soma/resultados_gemini_soma_openrouter.csv"
+    ]
+    for p_soma in candidatos_soma:
+        if os.path.exists(p_soma) and os.path.getsize(p_soma) > 50:
+            try:
+                df = pd.read_csv(p_soma, dtype=str)
+                df["Fonte"] = "OpenRouter (Soma)"
+                df["Tipo_Operacao"] = "Soma"
+                
+                # Normalização de nomes de colunas
+                if "Acerto da operacao" in df.columns and "Acerto_da_operacao" not in df.columns:
+                    df["Acerto_da_operacao"] = df["Acerto da operacao"]
+                if "Acerto do formato de resposta" in df.columns and "Acerto_do_formato_de_resposta" not in df.columns:
+                    df["Acerto_do_formato_de_resposta"] = df["Acerto do formato de resposta"]
+                if "Nome do modelo" in df.columns and "Nome_do_modelo" not in df.columns:
+                    df["Nome_do_modelo"] = df["Nome do modelo"]
+                if "Custo total" in df.columns and "custo_total" not in df.columns:
+                    df["custo_total"] = df["Custo total"]
+                
+                df["Acerto_da_operacao"] = df["Acerto_da_operacao"].astype(str).str.strip().str.lower().isin(["true", "1"])
+                if "Acerto_do_formato_de_resposta" in df.columns:
+                    df["Acerto_do_formato_de_resposta"] = df["Acerto_do_formato_de_resposta"].astype(str).str.strip().str.lower().isin(["true", "1"])
+                else:
+                    df["Acerto_do_formato_de_resposta"] = True
+                
+                if "custo_total" in df.columns:
+                    df["custo_total"] = pd.to_numeric(df["custo_total"], errors="coerce").fillna(0.0)
+                else:
+                    df["custo_total"] = 0.0
+                    
+                # Extração e normalização de tokens de raciocínio
+                if "Quantidade de reasoning tokens gerados" in df.columns:
+                    df["reasoning_tokens"] = pd.to_numeric(df["Quantidade de reasoning tokens gerados"], errors="coerce").fillna(0)
+                elif "reasoning_tokens" in df.columns:
+                    df["reasoning_tokens"] = pd.to_numeric(df["reasoning_tokens"], errors="coerce").fillna(0)
+                else:
+                    df["reasoning_tokens"] = 0
+
+                for c_custo in ["Custo de input tokens", "Custo de output tokens", "Custo de reasoning tokens"]:
+                    if c_custo in df.columns:
+                        df[c_custo] = pd.to_numeric(df[c_custo], errors="coerce").fillna(0.0)
+
+                for col in ["Resultado_do_modelo", "Resultado bruto do modelo", "Resultado original", "Resposta_bruta", "Conta"]:
+                    if col in df.columns:
+                        df[col] = df[col].fillna("").astype(str)
+                        
+                dfs["soma_openrouter"] = df
+                break
+            except Exception:
+                pass
+
+    # 3. Decimais Vertex AI (Execução histórica)
     p_dec_vtx = "dados/resultados_gemini_decimal.csv"
     if os.path.exists(p_dec_vtx) and os.path.getsize(p_dec_vtx) > 50:
         try:
@@ -100,7 +156,7 @@ def carregar_dados_experimento():
         except Exception:
             pass
 
-    # 3. Inteiros Gemini (Vertex AI)
+    # 4. Inteiros Gemini (Vertex AI)
     p_int_gem = "dados/resultados_gemini.csv"
     if os.path.exists(p_int_gem) and os.path.getsize(p_int_gem) > 50:
         try:
@@ -123,7 +179,7 @@ def carregar_dados_experimento():
         except Exception:
             pass
 
-    # 4. Inteiros OpenRouter Free
+    # 5. Inteiros OpenRouter Free
     p_int_or = "dados/resultados_experimento.csv"
     if os.path.exists(p_int_or) and os.path.getsize(p_int_or) > 50:
         try:
@@ -148,6 +204,7 @@ def carregar_dados_experimento():
 dados_dict = carregar_dados_experimento()
 df_dec_or = dados_dict["decimais_openrouter"]
 df_dec_vtx = dados_dict["decimais_vertex"]
+df_soma_or = dados_dict["soma_openrouter"]
 df_int_gem = dados_dict["inteiros_gemini"]
 df_int_or = dados_dict["inteiros_openrouter"]
 
@@ -163,8 +220,9 @@ with st.sidebar:
         "Selecione a Visualização:",
         [
             "🔣 Operações Decimais (OpenRouter)",
+            "➕ Operações de Soma (OpenRouter)",
             "🔢 Operações Inteiras (Histórico)",
-            "⚖️ Comparativo Inteiros vs. Decimais",
+            "⚖️ Comparativo: Inteiros, Decimais e Soma",
             "🌐 Visão Consolidada"
         ],
         index=0
@@ -172,15 +230,25 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # Status do arquivo de decimais openrouter
+    # Status dos arquivos
     p_dec_or = "dados/resultados_gemini_decimal_openrouter.csv"
     if os.path.exists(p_dec_or):
-        n_linhas = len(df_dec_or)
-        mod_count = df_dec_or["Nome_do_modelo"].nunique() if n_linhas > 0 else 0
-        st.success(f"**OpenRouter Decimais:**\n{n_linhas:,} linhas lidas ({mod_count} modelos)")
+        n_linhas_dec = len(df_dec_or)
+        mod_count_dec = df_dec_or["Nome_do_modelo"].nunique() if n_linhas_dec > 0 else 0
+        st.success(f"**OpenRouter Decimais:**\n{n_linhas_dec:,} linhas lidas ({mod_count_dec} modelos)")
     else:
         st.info("Arquivo de decimais ainda não encontrado.")
         
+    caminho_ctrl_soma = "gemini/openrouter/operacoes_soma/controle_jobs_batch.json"
+    if not df_soma_or.empty:
+        n_linhas_soma = len(df_soma_or)
+        mod_count_soma = df_soma_or["Nome_do_modelo"].nunique()
+        st.success(f"**OpenRouter Soma:**\n{n_linhas_soma:,} linhas processadas ({mod_count_soma} modelos)")
+    elif os.path.exists(caminho_ctrl_soma):
+        st.warning("**OpenRouter Soma:**\nLotes submetidos na Batch API (aguardando conclusão)")
+    else:
+        st.info("OpenRouter Soma: aguardando envio.")
+
     if st.button("🔄 Atualizar Dados Agora", use_container_width=True):
         st.cache_data.clear()
         st.rerun()
@@ -196,15 +264,8 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
         st.warning("⚠️ O arquivo `dados/resultados_gemini_decimal_openrouter.csv` ainda está vazio ou sendo iniciado. Aguarde algumas requisições e clique em 'Atualizar Dados Agora'.")
         st.stop()
         
-    # Opção opcional de comparar com Vertex AI Decimais
-    incluir_vtx = False
-    if not df_dec_vtx.empty:
-        incluir_vtx = st.checkbox("Incluir resultados anteriores do Vertex AI (Decimais) para comparação", value=False)
-        
-    if incluir_vtx and not df_dec_vtx.empty:
-        df_trabalho = pd.concat([df_dec_or, df_dec_vtx], ignore_index=True)
-    else:
-        df_trabalho = df_dec_or.copy()
+    # Foco exclusivo na base OpenRouter (Vertex AI removido conforme Plano de Implementação 2)
+    df_trabalho = df_dec_or.copy()
         
     # Métricas Principais
     total_ops = len(df_trabalho)
@@ -237,7 +298,7 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
         st.subheader("Taxa de Acerto nas Contas Decimais")
         st.markdown("Percentual de operações matemáticas com casas decimais resolvidas corretamente com correspondência numérica exata.")
         
-        df_rank = df_trabalho.groupby(["Nome_do_modelo", "Fonte"]).agg(
+        df_rank = df_trabalho.groupby("Nome_do_modelo").agg(
             Total=("Acerto_da_operacao", "count"),
             Acertos=("Acerto_da_operacao", "sum"),
             Formato_Correto=("Acerto_do_formato_de_resposta", "sum"),
@@ -248,13 +309,11 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
         df_rank["Taxa_Formato"] = (df_rank["Formato_Correto"] / df_rank["Total"]) * 100
         df_rank = df_rank.sort_values(by="Taxa_Acerto", ascending=False)
         
-        grafico_rank = alt.Chart(df_rank).mark_bar(cornerRadiusTopRight=4, cornerRadiusBottomRight=4).encode(
+        grafico_rank = alt.Chart(df_rank).mark_bar(color="#0ea5e9", cornerRadiusTopRight=4, cornerRadiusBottomRight=4).encode(
             x=alt.X("Taxa_Acerto:Q", title="Taxa de Acerto (%)", scale=alt.Scale(domain=[0, 100])),
             y=alt.Y("Nome_do_modelo:N", sort="-x", title="Modelo"),
-            color=alt.Color("Fonte:N", scale=alt.Scale(range=["#0ea5e9", "#f59e0b"]), legend=alt.Legend(title="Origem")),
             tooltip=[
                 "Nome_do_modelo",
-                "Fonte",
                 alt.Tooltip("Taxa_Acerto:Q", format=".2f", title="Taxa Acerto (%)"),
                 alt.Tooltip("Acertos:Q", title="Acertos"),
                 alt.Tooltip("Total:Q", title="Total"),
@@ -264,7 +323,6 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
         
         st.altair_chart(grafico_rank, use_container_width=True)
         
-        # Tabela Detalhada
         st.dataframe(
             df_rank.rename(columns={
                 "Nome_do_modelo": "Modelo",
@@ -282,9 +340,9 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
 
     with tab_dig:
         st.subheader("Evolução da Taxa de Acerto por Complexidade (Dígitos)")
-        st.markdown("Comportamento dos modelos à medida que a quantidade de dígitos antes e depois da vírgula aumenta (de 2 até 10 dígitos).")
+        st.markdown("Comportamento dos modelos à medida que a quantidade de dígitos aumenta (de 2 até 10 dígitos).")
         
-        modelos_disp = df_trabalho["Nome_do_modelo"].unique().tolist()
+        modelos_disp = sorted(df_trabalho["Nome_do_modelo"].unique().tolist())
         modelos_sel = st.multiselect(
             "Filtrar modelos para exibir no gráfico de linhas:",
             options=modelos_disp,
@@ -314,7 +372,6 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
         
         st.altair_chart(grafico_dig, use_container_width=True)
         
-        # Tabela Pivotada por Dígitos
         st.markdown("##### Tabela Comparativa de Acurácia (%) por Complexidade")
         pivot_dig = df_dig_grp.pivot(index="Nome_do_modelo", columns="Operacao", values="Taxa_Acerto")
         cols_existentes = [c for c in ORDEM_DIGITOS if c in pivot_dig.columns]
@@ -323,7 +380,7 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
 
     with tab_form:
         st.subheader("Taxa de Conformidade do Formato de Resposta")
-        st.markdown("Mede se o modelo seguiu estritamente o prompt do sistema (retornando apenas o número puro) ou se incluiu frases introdutórias, justificativas ou alucinações.")
+        st.markdown("Mede se o modelo seguiu estritamente o prompt do sistema (retornando apenas o número puro).")
         
         df_form = df_trabalho.groupby("Nome_do_modelo").agg(
             Total=("Acerto_do_formato_de_resposta", "count"),
@@ -385,7 +442,7 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
 
     with tab_erros:
         st.subheader("Inspeção Qualitativa de Respostas e Erros")
-        st.markdown("Permite analisar as alucinações matemáticas, erros de arredondamento e discrepâncias na posição da vírgula decimal.")
+        st.markdown("Permite analisar alucinações matemáticas e erros de arredondamento.")
         
         col_f1, col_f2, col_f3 = st.columns(3)
         with col_f1:
@@ -414,7 +471,6 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
         
         st.write(f"Mostrando **{len(df_inspec)}** registros filtrados:")
         
-        # Força exibição literal como texto puro para evitar qualquer arredondamento, truncamento ou notação científica
         config_colunas = {
             "Nome_do_modelo": st.column_config.TextColumn("Modelo"),
             "Operacao": st.column_config.TextColumn("Complexidade"),
@@ -434,11 +490,255 @@ if visao == "🔣 Operações Decimais (OpenRouter)":
 
 
 # -----------------------------------------------------------------------------
-# VISÃO 2: OPERAÇÕES INTEIRAS (HISTÓRICO)
+# VISÃO 2: OPERAÇÕES DE SOMA (OPENROUTER BATCH API)
+# -----------------------------------------------------------------------------
+elif visao == "➕ Operações de Soma (OpenRouter)":
+    st.markdown('<div class="main-header">➕ Operações de Soma: Avaliação via Batch API</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Análise detalhada do desempenho aritmético na operação de adição pura (Gemini Series via OpenRouter Batch API).</div>', unsafe_allow_html=True)
+    
+    caminho_ctrl_soma = "gemini/openrouter/operacoes_soma/controle_jobs_batch.json"
+    
+    if df_soma_or.empty:
+        if os.path.exists(caminho_ctrl_soma):
+            st.info("⏳ **Lotes em Processamento na Batch API da OpenRouter**")
+            st.markdown("Os lotes de operações de soma foram submetidos com sucesso e estão sendo processados de forma assíncrona pela OpenRouter.")
+            
+            try:
+                with open(caminho_ctrl_soma, "r", encoding="utf-8") as fc:
+                    jobs_ctrl = json.load(fc)
+                
+                linhas_status = []
+                for mod, jinfo in jobs_ctrl.items():
+                    linhas_status.append({
+                        "Modelo": mod,
+                        "Batch ID": jinfo.get("batch_id"),
+                        "Total Requisições": jinfo.get("total_requests", 450),
+                        "Status Atual": jinfo.get("status", "in_progress"),
+                        "Data Envio": jinfo.get("timestamp_envio", "")[:19].replace("T", " ")
+                    })
+                st.dataframe(pd.DataFrame(linhas_status), use_container_width=True, hide_index=True)
+                
+                st.markdown("""
+                > **💡 Próximo Passo:**  
+                > Quando a OpenRouter concluir o processamento dos lotes, execute o comando abaixo no terminal para baixar as respostas brutas e consolidar a base final:  
+                > ```powershell
+                > cd gemini/openrouter/operacoes_soma
+                > python salvar_resultados.py
+                > ```
+                """)
+            except Exception as e:
+                st.error(f"Erro ao ler arquivo de controle: {e}")
+        else:
+            st.warning("⚠️ Os lotes de soma ainda não foram enviados ou a base de dados tratada não foi encontrada.")
+            st.markdown("Execute `python enviar_chamadas.py --executar` dentro de `gemini/openrouter/operacoes_soma/` para iniciar os lotes.")
+        st.stop()
+        
+    df_trabalho_s = df_soma_or.copy()
+    
+    # Métricas Principais
+    total_ops_s = len(df_trabalho_s)
+    total_acertos_s = df_trabalho_s["Acerto_da_operacao"].sum()
+    taxa_acerto_s = (total_acertos_s / total_ops_s) * 100 if total_ops_s > 0 else 0
+    taxa_formato_s = (df_trabalho_s["Acerto_do_formato_de_resposta"].sum() / total_ops_s) * 100 if total_ops_s > 0 else 0
+    custo_total_s = df_trabalho_s["custo_total"].sum()
+    media_reasoning_s = df_trabalho_s["reasoning_tokens"].mean() if "reasoning_tokens" in df_trabalho_s.columns else 0.0
+
+    cs1, cs2, cs3, cs4, cs5 = st.columns(5)
+    cs1.metric("Total de Testes (Soma)", f"{total_ops_s:,}")
+    cs2.metric("Acertos Operação", f"{total_acertos_s:,}", f"{taxa_acerto_s:.1f}%")
+    cs3.metric("Conformidade Formato", f"{taxa_formato_s:.1f}%")
+    cs4.metric("Custo Total (BRL)", f"R$ {custo_total_s:.3f}")
+    cs5.metric("Média Tokens Raciocínio", f"{media_reasoning_s:.1f}")
+    
+    st.markdown("---")
+    
+    # Abas analíticas da Soma
+    tab_s_rank, tab_s_dig, tab_s_disp, tab_s_form, tab_s_custo, tab_s_erros = st.tabs([
+        "🏆 Ranking de Modelos",
+        "📈 Desempenho por Dígitos",
+        "🎯 Dispersão: Acerto vs. Raciocínio",
+        "📝 Conformidade do Formato",
+        "💰 Análise de Custos",
+        "🔬 Inspeção de Respostas & Erros"
+    ])
+    
+    with tab_s_rank:
+        st.subheader("Taxa de Acerto nas Operações de Soma")
+        st.markdown("Ranking de acurácia matemática nas contas de adição pura de 2 a 10 dígitos.")
+        
+        df_rank_s = df_trabalho_s.groupby("Nome_do_modelo").agg(
+            Total=("Acerto_da_operacao", "count"),
+            Acertos=("Acerto_da_operacao", "sum"),
+            Formato_OK=("Acerto_do_formato_de_resposta", "sum"),
+            Custo_Total=("custo_total", "sum")
+        ).reset_index()
+        df_rank_s["Taxa_Acerto"] = (df_rank_s["Acertos"] / df_rank_s["Total"]) * 100
+        df_rank_s = df_rank_s.sort_values(by="Taxa_Acerto", ascending=False)
+        
+        g_rank_s = alt.Chart(df_rank_s).mark_bar(color="#8b5cf6", cornerRadiusTopRight=4, cornerRadiusBottomRight=4).encode(
+            x=alt.X("Taxa_Acerto:Q", title="Taxa de Acerto (%)", scale=alt.Scale(domain=[0, 100])),
+            y=alt.Y("Nome_do_modelo:N", sort="-x", title="Modelo"),
+            tooltip=[
+                "Nome_do_modelo",
+                alt.Tooltip("Taxa_Acerto:Q", format=".2f", title="Acurácia (%)"),
+                alt.Tooltip("Acertos:Q", title="Acertos"),
+                alt.Tooltip("Total:Q", title="Total"),
+                alt.Tooltip("Custo_Total:Q", format=".4f", title="Custo (R$)")
+            ]
+        ).properties(height=max(350, len(df_rank_s) * 35))
+        st.altair_chart(g_rank_s, use_container_width=True)
+        
+        st.dataframe(
+            df_rank_s.rename(columns={
+                "Nome_do_modelo": "Modelo",
+                "Taxa_Acerto": "Acurácia (%)",
+                "Formato_OK": "Formato Válido (Qtd)",
+                "Custo_Total": "Custo Total (R$)"
+            }).style.format({
+                "Acurácia (%)": "{:.2f}%",
+                "Custo Total (R$)": "R$ {:.4f}"
+            }),
+            use_container_width=True,
+            hide_index=True
+        )
+
+    with tab_s_dig:
+        st.subheader("Evolução da Taxa de Acerto por Complexidade de Dígitos (Soma)")
+        st.markdown("Comportamento da acurácia de soma à medida que os números crescem de 2 a 10 dígitos.")
+        
+        mod_disp_s = sorted(df_trabalho_s["Nome_do_modelo"].unique().tolist())
+        mod_sel_s = st.multiselect("Filtrar modelos:", options=mod_disp_s, default=mod_disp_s[:6] if len(mod_disp_s) > 6 else mod_disp_s, key="sel_mod_soma")
+        
+        df_d_s = df_trabalho_s[df_trabalho_s["Nome_do_modelo"].isin(mod_sel_s)] if mod_sel_s else df_trabalho_s
+        df_d_grp_s = df_d_s.groupby(["Operacao", "Nome_do_modelo"]).agg(
+            Total=("Acerto_da_operacao", "count"),
+            Acertos=("Acerto_da_operacao", "sum")
+        ).reset_index()
+        df_d_grp_s["Taxa_Acerto"] = (df_d_grp_s["Acertos"] / df_d_grp_s["Total"]) * 100
+        
+        g_dig_s = alt.Chart(df_d_grp_s).mark_line(point=True, strokeWidth=2.5).encode(
+            x=alt.X("Operacao:N", sort=ORDEM_DIGITOS, title="Complexidade (Qtd. de Dígitos)"),
+            y=alt.Y("Taxa_Acerto:Q", title="Taxa de Acerto (%)", scale=alt.Scale(domain=[-2, 102])),
+            color=alt.Color("Nome_do_modelo:N", legend=alt.Legend(title="Modelo")),
+            tooltip=["Nome_do_modelo", "Operacao", alt.Tooltip("Taxa_Acerto:Q", format=".1f", title="Acerto (%)")]
+        ).properties(height=450)
+        st.altair_chart(g_dig_s, use_container_width=True)
+
+    with tab_s_disp:
+        st.subheader("🎯 Dispersão: Proporção de Acerto vs. Quantidade de Tokens de Raciocínio")
+        st.markdown("Análise da hipótese de raciocínio estendido: modelos que gastam mais tokens de raciocínio (thinking tokens) obtêm maior proporção de acerto na soma?")
+        
+        df_disp = df_trabalho_s.groupby("Nome_do_modelo").agg(
+            Acuracia=("Acerto_da_operacao", lambda s: s.mean() * 100),
+            Media_Reasoning=("reasoning_tokens", "mean"),
+            Total_Reasoning=("reasoning_tokens", "sum"),
+            Total_Operacoes=("Acerto_da_operacao", "count")
+        ).reset_index()
+        
+        g_disp = alt.Chart(df_disp).mark_circle(size=140).encode(
+            x=alt.X("Media_Reasoning:Q", title="Média de Tokens de Raciocínio por Operação"),
+            y=alt.Y("Acuracia:Q", title="Taxa de Acerto (%)", scale=alt.Scale(domain=[-2, 102])),
+            color=alt.Color("Nome_do_modelo:N", legend=alt.Legend(title="Modelo")),
+            tooltip=[
+                "Nome_do_modelo",
+                alt.Tooltip("Acuracia:Q", format=".2f", title="Acurácia (%)"),
+                alt.Tooltip("Media_Reasoning:Q", format=".1f", title="Média Reasoning Tokens"),
+                alt.Tooltip("Total_Reasoning:Q", format=",.0f", title="Total Reasoning Tokens"),
+                "Total_Operacoes"
+            ]
+        ).properties(height=420)
+        
+        st.altair_chart(g_disp, use_container_width=True)
+        
+        st.dataframe(
+            df_disp.rename(columns={
+                "Nome_do_modelo": "Modelo",
+                "Acuracia": "Acurácia (%)",
+                "Media_Reasoning": "Média Reasoning Tokens",
+                "Total_Reasoning": "Total Reasoning Tokens",
+                "Total_Operacoes": "Operações"
+            }).style.format({
+                "Acurácia (%)": "{:.2f}%",
+                "Média Reasoning Tokens": "{:.1f}",
+                "Total Reasoning Tokens": "{:,.0f}"
+            }),
+            use_container_width=True,
+            hide_index=True
+        )
+
+    with tab_s_form:
+        st.subheader("Conformidade de Formato nas Operações de Soma")
+        st.markdown("Verificação se o modelo retornou estritamente o número solicitado.")
+        df_f_s = df_trabalho_s.groupby("Nome_do_modelo").agg(
+            Total=("Acerto_do_formato_de_resposta", "count"),
+            Formato_OK=("Acerto_do_formato_de_resposta", "sum")
+        ).reset_index()
+        df_f_s["Taxa_Formato"] = (df_f_s["Formato_OK"] / df_f_s["Total"]) * 100
+        df_f_s = df_f_s.sort_values(by="Taxa_Formato", ascending=False)
+        
+        g_form_s = alt.Chart(df_f_s).mark_bar(color="#6366f1").encode(
+            x=alt.X("Taxa_Formato:Q", title="Conformidade do Formato (%)", scale=alt.Scale(domain=[0, 100])),
+            y=alt.Y("Nome_do_modelo:N", sort="-x", title="Modelo"),
+            tooltip=["Nome_do_modelo", alt.Tooltip("Taxa_Formato:Q", format=".1f", title="Formato OK (%)"), "Total"]
+        ).properties(height=max(300, len(df_f_s) * 35))
+        st.altair_chart(g_form_s, use_container_width=True)
+
+    with tab_s_custo:
+        st.subheader("Custos Financeiros Detalhados (Batch API Soma)")
+        st.markdown("Custos apurados considerando a tarifa da Batch API com 50% de desconto.")
+        
+        cols_custo_grp = {"custo_total": "sum", "Acerto_da_operacao": ["count", "sum"]}
+        for c in ["Custo de input tokens", "Custo de output tokens", "Custo de reasoning tokens"]:
+            if c in df_trabalho_s.columns:
+                cols_custo_grp[c] = "sum"
+                
+        df_c_s = df_trabalho_s.groupby("Nome_do_modelo").agg(
+            Custo_Total=("custo_total", "sum"),
+            Total_Reqs=("Acerto_da_operacao", "count"),
+            Total_Acertos=("Acerto_da_operacao", "sum")
+        ).reset_index()
+        df_c_s = df_c_s.sort_values(by="Custo_Total", ascending=False)
+        
+        g_c_s = alt.Chart(df_c_s).mark_bar(color="#10b981").encode(
+            x=alt.X("Custo_Total:Q", title="Custo Total Acumulado (R$)"),
+            y=alt.Y("Nome_do_modelo:N", sort="-x", title="Modelo"),
+            tooltip=["Nome_do_modelo", alt.Tooltip("Custo_Total:Q", format=".4f", title="Custo (R$)"), "Total_Reqs"]
+        ).properties(height=max(300, len(df_c_s) * 35))
+        st.altair_chart(g_c_s, use_container_width=True)
+
+    with tab_s_erros:
+        st.subheader("Inspeção Qualitativa de Erros e Respostas Brutas (Soma)")
+        col_s1, col_s2, col_s3 = st.columns(3)
+        with col_s1:
+            f_s_mod = st.selectbox("Modelo:", ["Todos"] + sorted(df_trabalho_s["Nome_do_modelo"].unique().tolist()), key="f_soma_mod")
+        with col_s2:
+            f_s_dig = st.selectbox("Dígitos:", ["Todos"] + [d for d in ORDEM_DIGITOS if d in df_trabalho_s["Operacao"].unique().tolist()], key="f_soma_dig")
+        with col_s3:
+            f_s_sta = st.selectbox("Status:", ["Somente Erros", "Somente Acertos", "Todos"], key="f_soma_sta")
+            
+        df_inspec_s = df_trabalho_s.copy()
+        if f_s_mod != "Todos":
+            df_inspec_s = df_inspec_s[df_inspec_s["Nome_do_modelo"] == f_s_mod]
+        if f_s_dig != "Todos":
+            df_inspec_s = df_inspec_s[df_inspec_s["Operacao"] == f_s_dig]
+        if f_s_sta == "Somente Erros":
+            df_inspec_s = df_inspec_s[~df_inspec_s["Acerto_da_operacao"]]
+        elif f_s_sta == "Somente Acertos":
+            df_inspec_s = df_inspec_s[df_inspec_s["Acerto_da_operacao"]]
+            
+        cols_mostrar_s = ["Nome_do_modelo", "Operacao", "Conta", "Resultado original", "Resultado_do_modelo", "Acerto_da_operacao", "Resposta_bruta"]
+        cols_presentes_s = [c for c in cols_mostrar_s if c in df_inspec_s.columns]
+        
+        st.write(f"Mostrando **{len(df_inspec_s)}** registros filtrados:")
+        st.dataframe(df_inspec_s[cols_presentes_s].head(300), use_container_width=True, hide_index=True)
+
+
+# -----------------------------------------------------------------------------
+# VISÃO 3: OPERAÇÕES INTEIRAS (HISTÓRICO)
 # -----------------------------------------------------------------------------
 elif visao == "🔢 Operações Inteiras (Histórico)":
     st.markdown('<div class="main-header">🔢 Operações Inteiras: Desempenho Histórico</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Resultados das operações aritméticas originais (inteiros) via Vertex AI e OpenRouter Free.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Resultados das operações aritméticas originais de multiplicação de inteiros via Vertex AI e OpenRouter Free.</div>', unsafe_allow_html=True)
     
     df_inteiros = pd.concat([df_int_gem, df_int_or], ignore_index=True)
     
@@ -448,54 +748,40 @@ elif visao == "🔢 Operações Inteiras (Histórico)":
         
     tot_ops = len(df_inteiros)
     tot_ac = df_inteiros["Acerto_da_operacao"].sum()
-    tax_geral = (tot_ac / tot_ops) * 100 if tot_ops > 0 else 0
-    cust_tot = df_inteiros["custo_total"].sum()
+    taxa_ac = (tot_ac / tot_ops) * 100 if tot_ops > 0 else 0
+    tot_custo = df_inteiros["custo_total"].sum()
     
-    k1, k2, k3, k4 = st.columns(4)
-    k1.metric("Total de Operações Inteiras", f"{tot_ops:,}")
-    k2.metric("Acertos Totais", f"{tot_ac:,}")
-    k3.metric("Taxa de Acerto Geral", f"{tax_geral:.1f}%")
-    k4.metric("Custo Total (Gemini)", f"R$ {cust_tot:.4f}")
+    ci1, ci2, ci3, ci4 = st.columns(4)
+    ci1.metric("Total de Testes (Inteiros)", f"{tot_ops:,}")
+    ci2.metric("Acertos Totais", f"{tot_ac:,}")
+    ci3.metric("Taxa Global de Acerto", f"{taxa_ac:.1f}%")
+    ci4.metric("Custo Total (BRL)", f"R$ {tot_custo:.2f}")
     
     st.markdown("---")
     
-    t1, t2, t3, t4 = st.tabs([
-        "🏆 Ranking de Modelos", 
-        "🔍 Análise por Dígitos", 
-        "💰 Custos Financeiros",
-        "🔬 Inspeção de Respostas & Erros"
-    ])
+    t1, t2, t3, t4 = st.tabs(["🏆 Ranking", "📈 Curva por Dígitos", "💰 Custos Vertex", "🔬 Inspeção de Erros"])
     
     with t1:
-        st.subheader("Taxa de Acerto por Modelo (Inteiros)")
-        df_grp_int = df_inteiros.groupby(["Nome_do_modelo", "Fonte"]).agg(
+        st.subheader("Acurácia Global por Modelo (Inteiros)")
+        df_r_int = df_inteiros.groupby(["Nome_do_modelo", "Fonte"]).agg(
             Total=("Acerto_da_operacao", "count"),
             Acertos=("Acerto_da_operacao", "sum")
         ).reset_index()
-        df_grp_int["Taxa_Acerto"] = (df_grp_int["Acertos"] / df_grp_int["Total"]) * 100
-        df_grp_int = df_grp_int.sort_values(by="Taxa_Acerto", ascending=False)
+        df_r_int["Taxa_Acerto"] = (df_r_int["Acertos"] / df_r_int["Total"]) * 100
+        df_r_int = df_r_int.sort_values(by="Taxa_Acerto", ascending=False)
         
-        g_rank_int = alt.Chart(df_grp_int).mark_bar().encode(
+        g_r_int = alt.Chart(df_r_int).mark_bar().encode(
             x=alt.X("Taxa_Acerto:Q", title="Taxa de Acerto (%)", scale=alt.Scale(domain=[0, 100])),
             y=alt.Y("Nome_do_modelo:N", sort="-x", title="Modelo"),
-            color=alt.Color("Fonte:N", scale=alt.Scale(domain=["OpenRouter (Free Inteiros)", "Vertex AI (Inteiros)"], range=["#3b82f6", "#f97316"])),
-            tooltip=["Nome_do_modelo", "Fonte", alt.Tooltip("Taxa_Acerto:Q", format=".1f", title="Acerto (%)"), "Total"]
-        ).properties(height=500)
-        st.altair_chart(g_rank_int, use_container_width=True)
+            color=alt.Color("Fonte:N", legend=alt.Legend(title="Origem")),
+            tooltip=["Nome_do_modelo", "Fonte", alt.Tooltip("Taxa_Acerto:Q", format=".2f", title="Taxa (%)"), "Total"]
+        ).properties(height=max(400, len(df_r_int) * 25))
+        st.altair_chart(g_r_int, use_container_width=True)
         
     with t2:
-        st.subheader("Desempenho por Complexidade (Dígitos)")
-        mods_int = df_inteiros["Nome_do_modelo"].unique().tolist()
-        mods_sel = st.multiselect("Filtrar modelos (se vazio, mostra média por Família):", mods_int, default=[])
-        
-        if mods_sel:
-            df_f = df_inteiros[df_inteiros["Nome_do_modelo"].isin(mods_sel)]
-            cor_int = "Nome_do_modelo:N"
-        else:
-            df_f = df_inteiros
-            cor_int = "Fonte:N"
-            
-        df_d_int = df_f.groupby(["Operacao", cor_int.split(":")[0]]).agg(
+        st.subheader("Decaimento da Acurácia por Complexidade (Dígitos)")
+        cor_int = "Nome_do_modelo:N"
+        df_d_int = df_inteiros.groupby(["Operacao", cor_int.split(":")[0]]).agg(
             Total=("Acerto_da_operacao", "count"),
             Acertos=("Acerto_da_operacao", "sum")
         ).reset_index()
@@ -524,7 +810,6 @@ elif visao == "🔢 Operações Inteiras (Histórico)":
 
     with t4:
         st.subheader("Inspeção Qualitativa de Respostas e Erros (Inteiros)")
-        st.markdown("Permite verificar os cálculos de números inteiros com representação textual literal exata.")
         col_fi1, col_fi2, col_fi3 = st.columns(3)
         with col_fi1:
             f_mod_i = st.selectbox("Modelo:", ["Todos"] + sorted(df_inteiros["Nome_do_modelo"].unique().tolist()), key="f_mod_int")
@@ -543,36 +828,22 @@ elif visao == "🔢 Operações Inteiras (Histórico)":
         elif f_sta_i == "Somente Acertos":
             df_inspec_i = df_inspec_i[df_inspec_i["Acerto_da_operacao"]]
             
-        cols_m_i = ["Nome_do_modelo", "Operacao", "Conta", "Resultado_original", "Resultado_do_modelo", "Acerto_da_operacao", "Resposta_bruta"]
-        cols_p_i = [c for c in cols_m_i if c in df_inspec_i.columns]
-        
-        config_c_i = {
-            "Nome_do_modelo": st.column_config.TextColumn("Modelo"),
-            "Operacao": st.column_config.TextColumn("Complexidade"),
-            "Conta": st.column_config.TextColumn("Operação"),
-            "Resultado_original": st.column_config.TextColumn("Gabarito (Original Literal)"),
-            "Resultado_do_modelo": st.column_config.TextColumn("Resultado do Modelo (Literal)"),
-            "Acerto_da_operacao": st.column_config.CheckboxColumn("Acertou?"),
-            "Resposta_bruta": st.column_config.TextColumn("Resposta Bruta Completa")
-        }
-        
-        st.write(f"Mostrando **{len(df_inspec_i)}** registros filtrados:")
-        st.dataframe(df_inspec_i[cols_p_i].head(300), column_config=config_c_i, use_container_width=True, hide_index=True)
+        cols_p_i = [c for c in ["Nome_do_modelo", "Operacao", "Conta", "Resultado_original", "Resultado_do_modelo", "Acerto_da_operacao", "Resposta_bruta"] if c in df_inspec_i.columns]
+        st.dataframe(df_inspec_i[cols_p_i].head(300), use_container_width=True, hide_index=True)
 
 
 # -----------------------------------------------------------------------------
-# VISÃO 3: COMPARATIVO INTEIROS VS. DECIMAIS
+# VISÃO 4: COMPARATIVO: INTEIROS, DECIMAIS E SOMA
 # -----------------------------------------------------------------------------
-elif visao == "⚖️ Comparativo Inteiros vs. Decimais":
-    st.markdown('<div class="main-header">⚖️ Comparativo: Inteiros vs. Decimais</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Investigação direta da hipótese central: como a presença do ponto decimal impacta a acurácia dos modelos.</div>', unsafe_allow_html=True)
+elif visao == "⚖️ Comparativo: Inteiros, Decimais e Soma":
+    st.markdown('<div class="main-header">⚖️ Comparativo Tripartite: Inteiros vs. Decimais vs. Soma</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Investigação da hipótese central: como a adição de casas decimais e a mudança de operação (multiplicação vs. soma) afetam o raciocínio matemático dos LLMs.</div>', unsafe_allow_html=True)
     
-    # Consolidar decimais (preferência por OpenRouter, mas unindo se desejado)
     df_todos_dec = pd.concat([df_dec_or, df_dec_vtx], ignore_index=True)
     df_todos_int = pd.concat([df_int_gem, df_int_or], ignore_index=True)
     
     if df_todos_dec.empty or df_todos_int.empty:
-        st.warning("É necessário ter dados tanto de inteiros quanto de decimais para gerar o comparativo.")
+        st.warning("É necessário ter dados de inteiros e decimais para gerar o comparativo.")
         st.stop()
         
     # Agrupar inteiros
@@ -589,108 +860,148 @@ elif visao == "⚖️ Comparativo Inteiros vs. Decimais":
     ).reset_index()
     res_dec["Taxa_Dec"] = (res_dec["Acertos_Dec"] / res_dec["Total_Dec"]) * 100
 
-    # Merge dos modelos comuns
     df_comp = pd.merge(res_int, res_dec, on="Nome_do_modelo", how="inner")
     
+    tem_soma = not df_soma_or.empty
+    if tem_soma:
+        res_soma = df_soma_or.groupby("Nome_do_modelo").agg(
+            Total_Soma=("Acerto_da_operacao", "count"),
+            Acertos_Soma=("Acerto_da_operacao", "sum")
+        ).reset_index()
+        res_soma["Taxa_Soma"] = (res_soma["Acertos_Soma"] / res_soma["Total_Soma"]) * 100
+        df_comp = pd.merge(df_comp, res_soma, on="Nome_do_modelo", how="left")
+    else:
+        st.info("ℹ️ Os dados de soma serão incorporados a este comparativo assim que os lotes da Batch API forem concluídos.")
+        
     if df_comp.empty:
-        st.info("Ainda não há modelos avaliados simultaneamente em ambas as bases de dados.")
+        st.info("Ainda não há modelos avaliados simultaneamente nas bases disponíveis.")
         st.stop()
         
-    df_comp["Delta_Acuracia"] = df_comp["Taxa_Dec"] - df_comp["Taxa_Int"]
-    df_comp = df_comp.sort_values(by="Taxa_Dec", ascending=False)
-    
+    df_comp["Delta_Dec_vs_Int"] = df_comp["Taxa_Dec"] - df_comp["Taxa_Int"]
+    if tem_soma and "Taxa_Soma" in df_comp.columns:
+        df_comp["Delta_Soma_vs_Int"] = df_comp["Taxa_Soma"] - df_comp["Taxa_Int"]
+        df_comp = df_comp.sort_values(by="Taxa_Soma", ascending=False)
+    else:
+        df_comp = df_comp.sort_values(by="Taxa_Dec", ascending=False)
+        
     # Métricas comparativas
-    queda_media = df_comp["Delta_Acuracia"].mean()
-    m_melhor = df_comp.loc[df_comp["Taxa_Dec"].idxmax()]["Nome_do_modelo"]
-    m_resiliente = df_comp.loc[df_comp["Delta_Acuracia"].idxmax()]["Nome_do_modelo"]
-    
     c1, c2, c3 = st.columns(3)
-    c1.metric("Variação Média de Acurácia", f"{queda_media:+.2f} p.p.", help="Diferença percentual média ao migrar de inteiros para decimais.")
-    c2.metric("Maior Acurácia em Decimais", m_melhor)
-    c3.metric("Maior Resiliência (Menor Queda)", m_resiliente)
-    
+    c1.metric("Variação Média (Decimais vs Inteiros)", f"{df_comp['Delta_Dec_vs_Int'].mean():+.2f} p.p.")
+    if tem_soma and "Delta_Soma_vs_Int" in df_comp.columns:
+        c2.metric("Variação Média (Soma vs Inteiros)", f"{df_comp['Delta_Soma_vs_Int'].dropna().mean():+.2f} p.p.")
+        c3.metric("Maior Acurácia em Soma", df_comp.loc[df_comp["Taxa_Soma"].idxmax()]["Nome_do_modelo"] if not df_comp["Taxa_Soma"].isna().all() else "-")
+    else:
+        c2.metric("Maior Acurácia em Decimais", df_comp.loc[df_comp["Taxa_Dec"].idxmax()]["Nome_do_modelo"])
+        c3.metric("Maior Resiliência (Decimais)", df_comp.loc[df_comp["Delta_Dec_vs_Int"].idxmax()]["Nome_do_modelo"])
+        
     st.markdown("---")
     
-    # Gráfico de Barras Agrupadas (Inteiros vs Decimais)
-    st.subheader("Comparativo Direto de Taxa de Acerto (%)")
+    # Gráfico de Barras Comparativo
+    st.subheader("Comparativo de Taxa de Acerto (%) por Operação")
     
-    # Melt para formato longo do Altair
+    value_vars = ["Taxa_Int", "Taxa_Dec"]
+    mapa_tipos = {"Taxa_Int": "Inteiros (Multiplicação)", "Taxa_Dec": "Decimais (Multiplicação)"}
+    cores_domain = ["Inteiros (Multiplicação)", "Decimais (Multiplicação)"]
+    cores_range = ["#2563eb", "#10b981"]
+    
+    if tem_soma and "Taxa_Soma" in df_comp.columns:
+        value_vars.append("Taxa_Soma")
+        mapa_tipos["Taxa_Soma"] = "Soma (Adição)"
+        cores_domain.append("Soma (Adição)")
+        cores_range.append("#8b5cf6")
+        
     df_melt = pd.melt(
-        df_comp[["Nome_do_modelo", "Taxa_Int", "Taxa_Dec"]],
+        df_comp[["Nome_do_modelo"] + value_vars],
         id_vars=["Nome_do_modelo"],
-        value_vars=["Taxa_Int", "Taxa_Dec"],
+        value_vars=value_vars,
         var_name="Tipo",
         value_name="Taxa_Acerto"
     )
-    df_melt["Tipo"] = df_melt["Tipo"].map({"Taxa_Int": "Inteiros", "Taxa_Dec": "Decimais"})
+    df_melt["Tipo"] = df_melt["Tipo"].map(mapa_tipos)
+    df_melt = df_melt.dropna(subset=["Taxa_Acerto"])
     
     grafico_comp = alt.Chart(df_melt).mark_bar().encode(
         y=alt.Y("Nome_do_modelo:N", title="Modelo", sort="-x"),
         x=alt.X("Taxa_Acerto:Q", title="Taxa de Acerto (%)", scale=alt.Scale(domain=[0, 100])),
-        color=alt.Color("Tipo:N", scale=alt.Scale(domain=["Inteiros", "Decimais"], range=["#2563eb", "#10b981"]), legend=alt.Legend(title="Tipo de Operação")),
+        color=alt.Color("Tipo:N", scale=alt.Scale(domain=cores_domain, range=cores_range), legend=alt.Legend(title="Tipo de Operação")),
         yOffset="Tipo:N",
         tooltip=["Nome_do_modelo", "Tipo", alt.Tooltip("Taxa_Acerto:Q", format=".2f", title="Taxa (%)")]
     ).properties(height=max(350, len(df_comp) * 45))
-    
     st.altair_chart(grafico_comp, use_container_width=True)
     
-    # Tabela com Delta
-    st.markdown("##### Tabela Detalhada com Queda de Desempenho")
-    st.dataframe(
-        df_comp.rename(columns={
-            "Nome_do_modelo": "Modelo",
-            "Taxa_Int": "Acurácia Inteiros (%)",
-            "Taxa_Dec": "Acurácia Decimais (%)",
-            "Delta_Acuracia": "Variação (p.p.)",
-            "Total_Int": "Testes Inteiros",
-            "Total_Dec": "Testes Decimais"
-        })[[
-            "Modelo", "Acurácia Inteiros (%)", "Acurácia Decimais (%)", "Variação (p.p.)", "Testes Inteiros", "Testes Decimais"
-        ]].style.format({
-            "Acurácia Inteiros (%)": "{:.2f}%",
-            "Acurácia Decimais (%)": "{:.2f}%",
-            "Variação (p.p.)": "{:+.2f}%"
-        }),
-        use_container_width=True,
-        hide_index=True
-    )
+    # Tabela detalhada
+    st.markdown("##### Tabela Detalhada com Desempenho e Variações")
+    cols_tabela = ["Nome_do_modelo", "Taxa_Int", "Taxa_Dec", "Delta_Dec_vs_Int"]
+    nomes_cols = {
+        "Nome_do_modelo": "Modelo",
+        "Taxa_Int": "Inteiros (%)",
+        "Taxa_Dec": "Decimais (%)",
+        "Delta_Dec_vs_Int": "Δ Decimais (p.p.)"
+    }
+    format_cols = {
+        "Inteiros (%)": "{:.2f}%",
+        "Decimais (%)": "{:.2f}%",
+        "Δ Decimais (p.p.)": "{:+.2f}%"
+    }
+    
+    if tem_soma and "Taxa_Soma" in df_comp.columns:
+        cols_tabela.extend(["Taxa_Soma", "Delta_Soma_vs_Int"])
+        nomes_cols["Taxa_Soma"] = "Soma (%)"
+        nomes_cols["Delta_Soma_vs_Int"] = "Δ Soma (p.p.)"
+        format_cols["Soma (%)"] = "{:.2f}%"
+        format_cols["Δ Soma (p.p.)"] = "{:+.2f}%"
+        
+    df_show_tabela = df_comp[cols_tabela].rename(columns=nomes_cols)
+    st.dataframe(df_show_tabela.style.format(format_cols, na_rep="-"), use_container_width=True, hide_index=True)
     
     st.markdown("---")
     
-    # Comparativo por Dígitos de um Modelo Específico
-    st.subheader("Curva de Decaimento por Dígitos: Inteiro vs. Decimal")
-    modelo_selecionado = st.selectbox("Escolha um modelo para ver suas duas curvas sobrepostas:", df_comp["Nome_do_modelo"].tolist())
+    # Curvas de Decaimento Sobrepostas
+    st.subheader("Curvas de Decaimento por Dígitos Sobrepostas")
+    modelo_selecionado = st.selectbox("Escolha um modelo para ver suas curvas sobrepostas:", df_comp["Nome_do_modelo"].tolist())
+    
+    curvas_list = []
     
     sub_int = df_todos_int[df_todos_int["Nome_do_modelo"] == modelo_selecionado].groupby("Operacao").agg(
         Acertos=("Acerto_da_operacao", "sum"), Total=("Acerto_da_operacao", "count")
     ).reset_index()
     sub_int["Taxa"] = (sub_int["Acertos"] / sub_int["Total"]) * 100
-    sub_int["Tipo"] = "Inteiros"
+    sub_int["Tipo"] = "Inteiros (Multiplicação)"
+    curvas_list.append(sub_int)
     
     sub_dec = df_todos_dec[df_todos_dec["Nome_do_modelo"] == modelo_selecionado].groupby("Operacao").agg(
         Acertos=("Acerto_da_operacao", "sum"), Total=("Acerto_da_operacao", "count")
     ).reset_index()
     sub_dec["Taxa"] = (sub_dec["Acertos"] / sub_dec["Total"]) * 100
-    sub_dec["Tipo"] = "Decimais"
+    sub_dec["Tipo"] = "Decimais (Multiplicação)"
+    curvas_list.append(sub_dec)
     
-    df_curvas = pd.concat([sub_int, sub_dec], ignore_index=True)
+    if tem_soma:
+        sub_soma = df_soma_or[df_soma_or["Nome_do_modelo"] == modelo_selecionado].groupby("Operacao").agg(
+            Acertos=("Acerto_da_operacao", "sum"), Total=("Acerto_da_operacao", "count")
+        ).reset_index()
+        if not sub_soma.empty:
+            sub_soma["Taxa"] = (sub_soma["Acertos"] / sub_soma["Total"]) * 100
+            sub_soma["Tipo"] = "Soma (Adição)"
+            curvas_list.append(sub_soma)
+            
+    df_curvas = pd.concat(curvas_list, ignore_index=True)
     
     g_curvas = alt.Chart(df_curvas).mark_line(point=True, strokeWidth=3).encode(
         x=alt.X("Operacao:N", sort=ORDEM_DIGITOS, title="Complexidade da Operação"),
         y=alt.Y("Taxa:Q", title="Taxa de Acerto (%)", scale=alt.Scale(domain=[-2, 102])),
-        color=alt.Color("Tipo:N", scale=alt.Scale(domain=["Inteiros", "Decimais"], range=["#2563eb", "#10b981"])),
+        color=alt.Color("Tipo:N", scale=alt.Scale(domain=cores_domain, range=cores_range)),
         tooltip=["Tipo", "Operacao", alt.Tooltip("Taxa:Q", format=".1f", title="Acurácia (%)")]
     ).properties(height=400)
-    
     st.altair_chart(g_curvas, use_container_width=True)
 
 
 # -----------------------------------------------------------------------------
-# VISÃO 4: VISÃO CONSOLIDADA
+# VISÃO 5: VISÃO CONSOLIDADA
 # -----------------------------------------------------------------------------
 elif visao == "🌐 Visão Consolidada":
     st.markdown('<div class="main-header">🌐 Visão Consolidada de Todo o Experimento</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Panorama geral unificando todas as rodadas: Inteiros, Decimais, Vertex AI e OpenRouter.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Panorama geral unificando todas as rodadas: Inteiros, Decimais, Soma, Vertex AI e OpenRouter.</div>', unsafe_allow_html=True)
     
     todos_dfs = [df for df in dados_dict.values() if not df.empty]
     if not todos_dfs:
