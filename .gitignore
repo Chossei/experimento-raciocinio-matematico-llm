@@ -19,5 +19,9 @@ env/
 
 # Ignorar logs de execução
 logs/
-
 logs_gemini/
+*.log
+**/logs/**
+3° Fase/chave.env
+1° e 2° Fase/chave.env
+

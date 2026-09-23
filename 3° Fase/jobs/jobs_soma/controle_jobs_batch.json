@@ -1,0 +1,322 @@
+{
+  "gemini-3.8-flash": {
+    "modelo": "gemini-3.8-flash",
+    "batch_id": "batch-1789434195-yhyRlUNqSKDr7atwAVaR",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:02:48.409276",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434195-yhyRlUNqSKDr7atwAVaR",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.8-flash-20260902",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434195,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-3.7-flash": {
+    "modelo": "gemini-3.7-flash",
+    "batch_id": "batch-1789434199-L32T3nZfEdIujQZBbtLj",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:02:52.054392",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434199-L32T3nZfEdIujQZBbtLj",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.7-flash-20260813",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434199,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-3.6-flash": {
+    "modelo": "gemini-3.6-flash",
+    "batch_id": "batch-1789434202-MTY8dvI38I6IT1oHZGvn",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:02:54.688422",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434202-MTY8dvI38I6IT1oHZGvn",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.6-flash-20260721",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434202,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-3.5-flash": {
+    "modelo": "gemini-3.5-flash",
+    "batch_id": "batch-1789434204-fINREflCCC8t09Zyk7J9",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:02:56.647655",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434204-fINREflCCC8t09Zyk7J9",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.5-flash-20260519",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434204,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-3.5-flash-lite": {
+    "modelo": "gemini-3.5-flash-lite",
+    "batch_id": "batch-1789434206-trJDSUx0rwpASGNSmlaA",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:02:58.803317",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434206-trJDSUx0rwpASGNSmlaA",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.5-flash-lite-20260721",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434206,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-3.1-flash-lite": {
+    "modelo": "gemini-3.1-flash-lite",
+    "batch_id": "batch-1789434208-3glpd3y4AAvCWnnJZDji",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:03:02.075694",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434208-3glpd3y4AAvCWnnJZDji",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.1-flash-lite-20260507",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434208,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-3.1-pro-preview": {
+    "modelo": "gemini-3.1-pro-preview",
+    "batch_id": "batch-1789434212-Dc33LvYm19IZujolYcvr",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:03:04.101526",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434212-Dc33LvYm19IZujolYcvr",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.1-pro-preview-20260219",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434212,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-3-flash-preview": {
+    "modelo": "gemini-3-flash-preview",
+    "batch_id": "batch-1789434214-TojOmOqwwhsvbDY07ruJ",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:03:05.824664",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434214-TojOmOqwwhsvbDY07ruJ",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3-flash-preview-20251217",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434214,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-2.5-pro": {
+    "modelo": "gemini-2.5-pro",
+    "batch_id": "batch-1789434216-R2FCnfu46zSGQNkZxeUU",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:03:08.958148",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434216-R2FCnfu46zSGQNkZxeUU",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-2.5-pro",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434216,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  },
+  "gemini-2.5-flash": {
+    "modelo": "gemini-2.5-flash",
+    "batch_id": "batch-1789434218-aMEJd2h5lVBrBFFbPzrg",
+    "total_requests": 450,
+    "timestamp_envio": "2026-09-14T22:03:10.630834",
+    "status": "completed",
+    "resposta_criacao": {
+      "id": "batch-1789434218-aMEJd2h5lVBrBFFbPzrg",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-2.5-flash",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1789434218,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 450,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 450,
+      "completed": 450,
+      "failed": 0
+    },
+    "processado": true,
+    "total_processado": 450
+  }
+}
