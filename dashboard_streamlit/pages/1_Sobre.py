@@ -10,7 +10,7 @@ import pandas as pd
 
 # Adicionar pasta raiz do dashboard ao path para imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.data_loader import carregar_todos_dados, obter_estatisticas_globais, MODELOS_GEMINI
+from utils.data_loader import carregar_todos_dados, obter_estatisticas_globais, MODELOS_GEMINI, CORES_MODELOS_AZUL
 from utils.styles import aplicar_estilos_globais
 
 aplicar_estilos_globais()
@@ -32,36 +32,18 @@ st.markdown(
 dfs = carregar_todos_dados()
 stats = obter_estatisticas_globais(dfs)
 
-col1, col2, col3, col4 = st.columns(4)
+col_top1, col_top2, col_top3, col_top4 = st.columns([1, 1, 1, 1])
 
-with col1:
-    st.markdown(f"""
-    <div class="metric-card">
-        <div class="metric-label">Total de Testes</div>
-        <div class="metric-value">{stats['total_testes']:,}</div>
-        <div class="metric-sub">Requisições avaliadas</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
+with col_top1:
     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-label">Custo Total Acumulado</div>
-        <div class="metric-value">R$ {stats['custo_total_brl']:.2f}</div>
-        <div class="metric-sub">~${stats['custo_total_usd']:.2f} USD (Câmbio 5.15)</div>
+        <div class="metric-value">${stats['custo_total_usd']:.2f} USD</div>
+        <div class="metric-sub">OpenRouter API Batch</div>
     </div>
     """, unsafe_allow_html=True)
 
-with col3:
-    st.markdown(f"""
-    <div class="metric-card">
-        <div class="metric-label">Modelos Avaliados</div>
-        <div class="metric-value">{stats['modelos_testados']}</div>
-        <div class="metric-sub">Família Google Gemini</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col4:
+with col_top2:
     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-label">Conformidade de Formato</div>
@@ -69,6 +51,60 @@ with col4:
         <div class="metric-sub">Respostas puramente numéricas</div>
     </div>
     """, unsafe_allow_html=True)
+
+with col_top3:
+    st.markdown(f"""
+    <div class="metric-card">
+        <div class="metric-label">Acurácia Global</div>
+        <div class="metric-value">{stats['taxa_acerto_global']:.1f}%</div>
+        <div class="metric-sub">Taxa média de acerto</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col_top4:
+    # Botão de download do Plano de Implementação Final
+    caminho_plano = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Plano de Implementação - FINAL.md")
+    conteudo_plano = ""
+    if os.path.exists(caminho_plano):
+        with open(caminho_plano, "r", encoding="utf-8") as f:
+            conteudo_plano = f.read()
+
+    st.markdown("""
+    <div class="metric-card" style="display: flex; flex-direction: column; justify-content: center;">
+        <div class="metric-label">Documentação Técnica</div>
+        <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin: 0.4rem 0;">Plano do Experimento</div>
+    </div>
+    """, unsafe_allow_html=True)
+    if conteudo_plano:
+        st.download_button(
+            label="📥 Baixar Plano Final (MD)",
+            data=conteudo_plano,
+            file_name="Plano_de_Implementacao_FINAL.md",
+            mime="text/markdown",
+            use_container_width=True
+        )
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# -----------------------------------------------------------------------------
+# SEÇÃO: MODELOS DA FAMÍLIA GEMINI SELECIONADOS (COM CARD INTEGRADO)
+# -----------------------------------------------------------------------------
+st.markdown("### 🤖 Modelos da Família Gemini Avaliados")
+st.markdown(
+    f"Foram avaliados longitudinalmente os **{stats['modelos_testados']} modelos** oficiais da família Google Gemini, ordenados da geração anterior até a mais recente:"
+)
+
+cols_mod = st.columns(5)
+for idx, modelo in enumerate(MODELOS_GEMINI):
+    col_atual = cols_mod[idx % 5]
+    cor_borda = CORES_MODELOS_AZUL.get(modelo, "#3b82f6")
+    with col_atual:
+        st.markdown(
+            f'<div style="background-color: #f8fafc; border: 1.5px solid {cor_borda}; border-radius: 8px; padding: 8px; text-align: center; margin-bottom: 10px; font-weight: 600; font-size: 0.85rem; color: #0f172a;">'
+            f'🔹 {modelo}'
+            f'</div>',
+            unsafe_allow_html=True
+        )
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -87,24 +123,13 @@ with tab_intro:
         'O experimento “Raciocínio Matemático nos LLMs” foi delineado no âmbito de Trabalho de Conclusão de Curso (TCC) de Átila Prudente, denominado "Engenharia de IA: Teoria e Aplicações", com o objetivo fundamental de analisar a capacidade analítica e aritmética dos modelos de inteligência artificial generativa em diferentes níveis de complexidade numérica.'
     )
     st.markdown(
-        'Embora os LLMs alcancem bons desempenhos em benchmarks de linguagem natural e geração de código, tarefas determinísticas, como a execução de cálculos aritméticos em grande escala, podem revelar limitações de representação posicional e do planejamento das cadeias de pensamento dos modelos.'
+        'Embora os LLMs alcancem desempenhos expressivos em benchmarks de linguagem natural e geração de código, tarefas determinísticas, como a execução de cálculos aritméticos em grande escala, revelam limitações na representação posicional e no planejamento cognitivo dos modelos.'
     )
 
     st.markdown("#### Hipótese")
     st.info(
-        "A acurácia matemática dos LLMs decai, de forma não linear, com o crescimento da quantidade de dígitos (complexidade numérica), sendo mais degrada em expressões combinadas de operadores simples (juntando adições e multiplicações) e em multiplicações decimais do que em adições inteiras. Em complemento, a ativação de tokens de raciocínio pode atuar como um compensador de acurácia, reduzindo essa curva de decaimento."
+        "A acurácia matemática dos LLMs decai, de forma não linear, com o crescimento da quantidade de dígitos (complexidade numérica), sendo mais degradada em expressões combinadas de operadores simples (juntando adições e multiplicações) e em multiplicações decimais do que em adições inteiras. Em complemento, a ativação de tokens de raciocínio atua como um compensador de acurácia, atenuando essa curva de decaimento."
     )
-
-    st.markdown("#### Modelos da Família Gemini Selecionados")
-    st.markdown(
-        "Para garantir uma análise longitudinal e comparativa entre diferentes gerações e portes de modelos, foram avaliadas 10 variantes da família **Google Gemini**:"
-    )
-    
-    cols_mod = st.columns(5)
-    for idx, modelo in enumerate(MODELOS_GEMINI):
-        col_atual = cols_mod[idx % 5]
-        with col_atual:
-            st.markdown(f'<span class="badge-pill badge-blue" style="margin-bottom: 8px; width: 100%; justify-content: center;">{modelo}</span>', unsafe_allow_html=True)
 
 with tab_metodo:
     st.markdown("### Estrutura Metodológica")
@@ -113,7 +138,8 @@ with tab_metodo:
 
     with col_m1:
         st.markdown("#### 1. Geração Controlada de Dados")
-        st.markdown("""
+        st.markdown(f"""
+        - **Total de Testes:** Foram avaliadas **{stats['total_testes']:,} inferências** no total através dos 10 modelos Gemini.
         - **Reprodutibilidade:** Os operandos foram sintetizados através de gerador pseudoaleatório baseado em NumPy fixando a semente `seed=123`.
         - **Estratificação por Dígitos:** Foram gerados operandos variando rigorosamente de **2 a 10 dígitos**.
         - **Volume Amostral:** 50 operações para cada quantidade de dígitos em cada tipo de teste.
@@ -144,7 +170,7 @@ with tab_metodo:
         st.markdown("#### 4. Arquitetura de Inferência")
         st.markdown("""
         - **OpenRouter Batch API:** Execução massiva e assíncrona com redução de 50% nos custos.
-        - **Inferência flexível:** controle das janelas de RPM (Requisições por Minuto) e RPD (Requisições por Dia) com redução de 50% nos custos.
+        - **Inferência flexível:** controle das janelas de RPM (Requisições por Minuto) e RPD (Requisições por Dia).
         - **Budget de Raciocínio (Thinking Effort):** Configurado no nível mínimo permitido (`effort: none`, `minimal` ou `low`) para avaliar o raciocínio intrínseco dos modelos no estado base.
         """)
 
@@ -152,12 +178,12 @@ with tab_esperado:
     st.markdown("### O que se espera encontrar no dashboard?")
 
     st.markdown("""
-    - **1. Curva de Decaimento por Complexidade:** O ponto exato de inflexão onde cada modelo começa a errar.
-    - **2. Discrepância Inteiro vs Decimal:** Avaliar se a mera inserção de vírgula flutuante/ponto decimal desestabiliza a capacidade de atenção dos LLMs em comparação à multiplicação inteira equivalente.
+    - **1. Curva de Decaimento por Complexidade:** O ponto exato de inflexão onde cada modelo começa a falhar na resolução de cálculos extensos.
+    - **2. Discrepância Inteiro vs Decimal:** Avaliar se a mera inserção de ponto decimal desestabiliza a atenção dos LLMs em comparação à multiplicação inteira equivalente.
     - **3. Precedência de Operadores em Expressões Combinadas:** Avaliar se o cálculo composto `a * (b + c)` amplifica os erros por propagação da soma preliminar na multiplicação final.
-    - **4. Impacto dos Tokens de Raciocínio:** Verificar se existe associação entre a acurácia obtida e os tokens de pensamentos gerados.
-    - **5. Qualidade do Pensamento (Tokens de Raciocínio):** Comparação qualitativa lado a lado entre a linha de raciocínio de um modelo quando ele atinge a resposta correta versus quando ele comete um erro de cálculo.
-    - **6. Custos financeiros:** Custo em Reais (BRL) por operação.
+    - **4. Impacto dos Tokens de Raciocínio:** Verificar a correlação entre a quantidade de tokens de raciocínio gerados e a preservação da acurácia em dígitos elevados.
+    - **5. Qualidade do Pensamento (Inspeção de Raciocínio):** Comparação qualitativa lado a lado entre o raciocínio de um modelo quando obtém acerto versus quando comete um erro.
+    - **6. Custos Financeiros:** Despesas em Dólar (USD) por modelo e por complexidade numérica.
     """)
 
 st.markdown("---")

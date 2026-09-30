@@ -134,21 +134,23 @@ def validar_formato_resposta(texto):
     return bool(re.fullmatch(r"\d+", texto_limpo))
 
 def calcular_custos_detalhados(modelo, prompt_tokens, completion_tokens, reasoning_tokens):
+    """Calcula os custos de input, output, reasoning e total em USD."""
     precos = tabela_precos.get(modelo, {"input_usd": 0.75, "output_usd": 3.75})
     in_usd = precos["input_usd"]
     out_usd = precos["output_usd"]
 
-    custo_input_brl = (prompt_tokens * in_usd / 1_000_000.0) * taxa_cambio
-    custo_output_brl = (completion_tokens * out_usd / 1_000_000.0) * taxa_cambio
-    custo_reasoning_brl = (reasoning_tokens * out_usd / 1_000_000.0) * taxa_cambio
-    custo_total_brl = custo_input_brl + custo_output_brl
+    custo_input_usd = (prompt_tokens * in_usd / 1_000_000.0)
+    custo_output_usd = (completion_tokens * out_usd / 1_000_000.0)
+    custo_reasoning_usd = (reasoning_tokens * out_usd / 1_000_000.0)
+    custo_total_usd = custo_input_usd + custo_output_usd
 
     return {
-        "custo_input": round(custo_input_brl, 6),
-        "custo_output": round(custo_output_brl, 6),
-        "custo_reasoning": round(custo_reasoning_brl, 6),
-        "custo_total": round(custo_total_brl, 6)
+        "custo_input": round(custo_input_usd, 6),
+        "custo_output": round(custo_output_usd, 6),
+        "custo_reasoning": round(custo_reasoning_usd, 6),
+        "custo_total": round(custo_total_usd, 6)
     }
+
 
 # =============================================================================
 # PROCESSAMENTO DO LOTE

@@ -1,19 +1,24 @@
 """
 Página 3: Custos, Formatos e Erros
-Composta por 3 abas organizadas via st.tabs:
-1. Custos financeiros (com seletores de operação e dígitos)
-2. Conformidade do formato de resposta (com seletores)
-3. Inspeção de erros (com busca e múltiplos filtros)
+Composta por 3 abas organizadas via st.tabs com gráficos Plotly Express:
+1. Custos financeiros (Expressos estritamente em Dólar USD com gráfico vertical em azul)
+2. Conformidade do formato de resposta (Gráfico vertical em azul ocupando metade da tela)
+3. Inspeção de erros (Diagnóstico granular com múltiplos filtros e busca textual)
 """
 
 import sys
 import os
 import streamlit as st
 import pandas as pd
-import altair as alt
+import plotly.express as px
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.data_loader import carregar_todos_dados, ORDEM_DIGITOS_NUM, MODELOS_GEMINI
+from utils.data_loader import (
+    carregar_todos_dados,
+    ORDEM_DIGITOS_NUM,
+    MODELOS_GEMINI,
+    COR_AZUL_PADRAO
+)
 from utils.styles import aplicar_estilos_globais
 
 aplicar_estilos_globais()
@@ -24,7 +29,7 @@ aplicar_estilos_globais()
 st.markdown('<div class="dash-title">💰 Custos, Formatos e Inspeção de Erros</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="dash-subtitle">'
-    'Relato financeiro do experimento, aderência dos modelos à restrição do formato de resposta estritamente numérico e diagnóstico dos padrões de erro cometidos pelos LLMs.'
+    'Relato financeiro do experimento (em USD), aderência dos modelos à restrição do formato de resposta estritamente numérico e diagnóstico dos padrões de falha cometidos pelos LLMs.'
     '</div>',
     unsafe_allow_html=True
 )
@@ -38,12 +43,13 @@ tab_custos, tab_formatos, tab_erros = st.tabs([
 ])
 
 # =============================================================================
-# ABA 1: CUSTOS FINANCEIROS
+# ABA 1: CUSTOS FINANCEIROS (APENAS EM DÓLAR USD)
 # =============================================================================
 with tab_custos:
-    st.markdown("### Avaliação de Custos Financeiros")
-    
-    col_c1, col_c2 = st.columns(2)
+    st.markdown("### Avaliação de Custos Financeiros (OpenRouter Batch API)")
+    st.caption("Custos computados diretamente em Dólares Americanos ($ USD), sem conversão cambial.")
+
+    col_c1, col_c2 = st.columns([1, 1])
     with col_c1:
         opcoes_op_custo = ["Todas as Operações", "Soma", "Multiplicação Inteira", "Multiplicação Decimal", "Expressões Combinadas"]
         tipo_custo_sel = st.selectbox("Selecione o tipo de operação:", opcoes_op_custo, key="sel_tipo_custo")
@@ -67,55 +73,47 @@ with tab_custos:
         df_c = df_c[df_c["Digitos"] == str(dig_custo_sel)]
 
     if not df_c.empty:
-        total_gasto_brl = df_c["custo_total"].sum()
-        total_gasto_usd = total_gasto_brl / 5.15 if total_gasto_brl > 0 else 0.0
+        total_gasto_usd = df_c["custo_total"].sum()
 
-        # Exibir estritamente os dois indicadores (Custo Médio por Requisição removido conforme solicitação)
-        col_m1, col_m2 = st.columns(2)
+        col_m1, _ = st.columns([1, 1])
         with col_m1:
-            st.metric("Custo Total no Recorte (BRL)", f"R$ {total_gasto_brl:.4f}")
-        with col_m2:
-            st.metric("Custo Total Estimado (USD)", f"${total_gasto_usd:.4f}")
+            st.metric("Custo Total no Recorte", f"${total_gasto_usd:.4f} USD")
 
         st.markdown("<br>", unsafe_allow_html=True)
 
-        # Gráfico de barras horizontais por modelo
-        res_custos = (
-            df_c.groupby("Nome_do_modelo")["custo_total"]
-            .agg(Total_Gasto="sum", Total_Req="count")
-            .reset_index()
-        )
-        res_custos = res_custos.sort_values(by="Total_Gasto", ascending=True)
-
-        chart_custos = (
-            alt.Chart(res_custos)
-            .mark_bar(cornerRadiusTopRight=5, cornerRadiusBottomRight=5, color="#10b981")
-            .encode(
-                x=alt.X("Total_Gasto:Q", title="Custo Acumulado (R$)"),
-                y=alt.Y("Nome_do_modelo:N", title="Modelo", sort="-x"),
-                tooltip=[
-                    alt.Tooltip("Nome_do_modelo:N", title="Modelo"),
-                    alt.Tooltip("Total_Gasto:Q", title="Custo Total (R$)", format=".4f"),
-                    alt.Tooltip("Total_Req:Q", title="Requisições")
-                ]
+        # Gráfico de barras verticais ocupando metade da tela
+        col_graf_c, _ = st.columns([1, 1])
+        with col_graf_c:
+            res_custos = (
+                df_c.groupby("Nome_do_modelo")["custo_total"]
+                .agg(Total_Gasto="sum", Total_Req="count")
+                .reset_index()
             )
-            .properties(
-                title=f"Custo Financeiro Acumulado por Modelo ({tipo_custo_sel} - Dígitos: {dig_custo_sel})",
-                height=340
+
+            fig_custos = px.bar(
+                res_custos,
+                x="Nome_do_modelo",
+                y="Total_Gasto",
+                category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                color_discrete_sequence=[COR_AZUL_PADRAO],
+                labels={
+                    "Nome_do_modelo": "Modelo",
+                    "Total_Gasto": "Custo Total ($ USD)"
+                },
+                title=f"Custo por Modelo - {tipo_custo_sel} ({dig_custo_sel})"
             )
-        )
-
-        text_custos = chart_custos.mark_text(
-            align="left",
-            baseline="middle",
-            dx=5,
-            fontSize=11,
-            fontWeight="bold"
-        ).encode(
-            text=alt.Text("Total_Gasto:Q", format=".3f")
-        )
-
-        st.altair_chart(chart_custos + text_custos, use_container_width=True)
+            fig_custos.update_traces(
+                texttemplate="$%{y:.4f}",
+                textposition="outside"
+            )
+            fig_custos.update_layout(
+                xaxis_tickangle=-45,
+                xaxis=dict(automargin=True, title=None),
+                yaxis=dict(title="Custo ($ USD)"),
+                height=380,
+                margin=dict(l=40, r=20, t=50, b=100)
+            )
+            st.plotly_chart(fig_custos, use_container_width=True)
     else:
         st.warning("Nenhum dado financeiro disponível para os filtros selecionados.")
 
@@ -130,7 +128,7 @@ with tab_formatos:
         "Respostas que incluíram texto explicativo adicional ou letras são contabilizadas como desconformes."
     )
 
-    col_f1, col_f2 = st.columns(2)
+    col_f1, col_f2 = st.columns([1, 1])
     with col_f1:
         tipo_formato_sel = st.selectbox("Selecione o tipo de operação:", opcoes_op_custo, key="sel_tipo_formato")
     with col_f2:
@@ -158,38 +156,34 @@ with tab_formatos:
             .reset_index()
         )
         res_formato["Taxa_Conformidade"] = (res_formato["Conformes"] / res_formato["Total"]) * 100
-        res_formato = res_formato.sort_values(by="Taxa_Conformidade", ascending=True)
 
-        chart_formato = (
-            alt.Chart(res_formato)
-            .mark_bar(cornerRadiusTopRight=5, cornerRadiusBottomRight=5, color="#6366f1")
-            .encode(
-                x=alt.X("Taxa_Conformidade:Q", title="Conformidade de Formato (%)", scale=alt.Scale(domain=[0, 100])),
-                y=alt.Y("Nome_do_modelo:N", title="Modelo", sort="-x"),
-                tooltip=[
-                    alt.Tooltip("Nome_do_modelo:N", title="Modelo"),
-                    alt.Tooltip("Taxa_Conformidade:Q", title="Conformidade (%)", format=".1f"),
-                    alt.Tooltip("Conformes:Q", title="Respostas Conformes"),
-                    alt.Tooltip("Total:Q", title="Total de Testes")
-                ]
+        # Gráfico ocupando metade da tela
+        col_graf_f, _ = st.columns([1, 1])
+        with col_graf_f:
+            fig_formato = px.bar(
+                res_formato,
+                x="Nome_do_modelo",
+                y="Taxa_Conformidade",
+                category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                color_discrete_sequence=[COR_AZUL_PADRAO],
+                labels={
+                    "Nome_do_modelo": "Modelo",
+                    "Taxa_Conformidade": "Conformidade de Formato (%)"
+                },
+                title=f"Taxa de Conformidade de Formato - {tipo_formato_sel} ({dig_formato_sel})"
             )
-            .properties(
-                title=f"Taxa de Conformidade de Formato ({tipo_formato_sel} - Dígitos: {dig_formato_sel})",
-                height=340
+            fig_formato.update_traces(
+                texttemplate="%{y:.1f}%",
+                textposition="outside"
             )
-        )
-
-        text_formato = chart_formato.mark_text(
-            align="left",
-            baseline="middle",
-            dx=5,
-            fontSize=11,
-            fontWeight="bold"
-        ).encode(
-            text=alt.Text("Taxa_Conformidade:Q", format=".1f")
-        )
-
-        st.altair_chart(chart_formato + text_formato, use_container_width=True)
+            fig_formato.update_layout(
+                xaxis_tickangle=-45,
+                xaxis=dict(automargin=True, title=None),
+                yaxis=dict(range=[0, 110], title="Conformidade (%)"),
+                height=380,
+                margin=dict(l=40, r=20, t=50, b=100)
+            )
+            st.plotly_chart(fig_formato, use_container_width=True)
     else:
         st.warning("Nenhum dado disponível para os filtros de formato selecionados.")
 
@@ -199,7 +193,7 @@ with tab_formatos:
 with tab_erros:
     st.markdown("### Inspeção Qualitativa e Diagnóstico de Falhas")
     st.markdown(
-        "Filtre e examine detalhadamente as respostas incorretas emitidas pelos modelos, "
+        "Filtre e examine detalhadamente as respostas emitidas pelos modelos, "
         "comparando a resposta gerada com o gabarito original e avaliando a resposta bruta."
     )
 

@@ -175,13 +175,12 @@ def comparar_decimais(valor_extraido, valor_esperado):
         return False
 
 def calcular_custo(modelo, prompt_tokens, completion_tokens):
-    """Calcula o custo total em Reais (BRL) baseado nos tokens utilizados."""
+    """Calcula o custo total em Dólares (USD) baseado nos tokens utilizados."""
     precos = tabela_precos.get(modelo, {"input_usd": 0.75, "output_usd": 3.75})
     in_usd = precos["input_usd"]
     out_usd = precos["output_usd"]
     custo_usd = (prompt_tokens * in_usd / 1_000_000.0) + (completion_tokens * out_usd / 1_000_000.0)
-    custo_brl = custo_usd * taxa_cambio
-    return round(custo_brl, 6)
+    return round(custo_usd, 6)
 
 # =============================================================================
 # PROCESSAMENTO DOS RESULTADOS BRUTOS

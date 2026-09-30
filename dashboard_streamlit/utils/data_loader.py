@@ -11,24 +11,43 @@ import streamlit as st
 ORDEM_DIGITOS = [f"{i} dígitos" for i in range(2, 11)]
 ORDEM_DIGITOS_NUM = [str(i) for i in range(2, 11)]
 
+# Ordem estrita estabelecida pelo usuário
 MODELOS_GEMINI = [
-    "gemini-3.8-flash",
-    "gemini-3.7-flash",
-    "gemini-3.6-flash",
-    "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-3-flash-preview",
     "gemini-3.1-flash-lite",
     "gemini-3.1-pro-preview",
-    "gemini-3-flash-preview",
-    "gemini-2.5-pro",
-    "gemini-2.5-flash"
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash"
 ]
 
+# Escala progressiva de azuis: do mais claro (2.5 flash) ao mais escuro (3.8 flash)
+CORES_MODELOS_AZUL = {
+    "gemini-2.5-flash": "#bfdbfe",       # Azul muito claro (Sky/Blue 200)
+    "gemini-2.5-pro": "#93c5fd",         # Azul claro (Blue 300)
+    "gemini-3-flash-preview": "#60a5fa", # Azul médio claro (Blue 400)
+    "gemini-3.1-flash-lite": "#3b82f6",  # Azul royal claro (Blue 500)
+    "gemini-3.1-pro-preview": "#2563eb", # Azul royal clássico (Blue 600)
+    "gemini-3.5-flash-lite": "#1d4ed8",  # Azul cobalto (Blue 700)
+    "gemini-3.5-flash": "#1e40af",       # Azul cobalto escuro (Blue 800)
+    "gemini-3.6-flash": "#1e3a8a",       # Azul marinho (Blue 900)
+    "gemini-3.7-flash": "#172554",       # Azul profundo (Blue 950)
+    "gemini-3.8-flash": "#0b132b"        # Azul meia-noite ultra escuro
+}
+
+# Cor azul padrão unificada para gráficos simples de barra
+COR_AZUL_PADRAO = "#2563eb"
+
+# Paleta em tons de azul para os 4 tipos de operações
 CORES_OPERACOES = {
-    "Multiplicação Inteira": "#8b5cf6",     # Roxo
-    "Multiplicação Decimal": "#f97316",     # Laranja
-    "Soma": "#3b82f6",                      # Azul
-    "Expressões Combinadas": "#10b981"      # Verde esmeralda
+    "Multiplicação Inteira": "#93c5fd",     # Azul claro
+    "Multiplicação Decimal": "#60a5fa",     # Azul médio
+    "Soma": "#2563eb",                      # Azul royal
+    "Expressões Combinadas": "#1e3a8a"      # Azul marinho
 }
 
 def obter_caminho_dados():
@@ -109,29 +128,25 @@ def normalizar_dataframe(df, tipo):
         ("Conta_decimal", "Conta"),
         ("custo total", "custo_total"),
         ("Custo total", "custo_total"),
-        ("custo de input tokens", "custo_input"),
-        ("custo de output tokens", "custo_output"),
         ("quantidade de reasoning tokens gerados", "reasoning_tokens"),
         ("Quantidade de reasoning tokens gerados", "reasoning_tokens"),
-        ("resumo do raciocinio", "resumo_raciocinio")
+        ("resumo do raciocinio", "resumo_raciocinio"),
+        ("resumo de raciocinio", "resumo_raciocinio")
     ]
 
-    for origem, destino in mapeamento_colunas:
-        if origem in df.columns:
-            if destino in df.columns and origem != destino:
-                mask_vazio = df[destino].isna() | (df[destino].astype(str).str.strip() == "")
-                df.loc[mask_vazio, destino] = df.loc[mask_vazio, origem]
-                df = df.drop(columns=[origem])
-            elif destino not in df.columns:
-                df = df.rename(columns={origem: destino})
+    for antiga, nova in mapeamento_colunas:
+        if antiga in df.columns:
+            if nova not in df.columns or antiga == nova:
+                df.rename(columns={antiga: nova}, inplace=True)
+            else:
+                df[nova] = df[nova].fillna(df[antiga])
+                df.drop(columns=[antiga], inplace=True)
 
-    df = df.loc[:, ~df.columns.duplicated()].copy()
-
-    # Filtrar estritamente modelos Gemini
+    # Filtrar apenas modelos da família Gemini
     if "Nome_do_modelo" in df.columns:
         df = df[df["Nome_do_modelo"].isin(MODELOS_GEMINI)].copy()
 
-    # Normalizar booleanos
+    # Normalizar booleano de acertos
     if "Acerto_da_operacao" in df.columns:
         df["Acerto_da_operacao"] = df["Acerto_da_operacao"].astype(str).str.strip().str.lower().isin(["true", "1"])
     else:
@@ -142,7 +157,7 @@ def normalizar_dataframe(df, tipo):
     else:
         df["Acerto_do_formato_de_resposta"] = True
 
-    # Normalizar custos
+    # Normalizar custos em USD
     if "custo_total" in df.columns:
         df["custo_total"] = pd.to_numeric(df["custo_total"], errors="coerce").fillna(0.0)
     else:
@@ -191,12 +206,11 @@ def extrair_apenas_digito(val):
     return v
 
 def obter_estatisticas_globais(dfs):
-    """Calcula estatísticas de alto nível para exibição na página Sobre."""
+    """Calcula estatísticas de alto nível para exibição na página Sobre (em USD)."""
     df_geral = dfs.get("geral", pd.DataFrame())
     if df_geral.empty:
         return {
             "total_testes": 0,
-            "custo_total_brl": 0.0,
             "custo_total_usd": 0.0,
             "taxa_acerto_global": 0.0,
             "conformidade_global": 0.0,
@@ -204,14 +218,12 @@ def obter_estatisticas_globais(dfs):
         }
 
     total_testes = len(df_geral)
-    custo_total_brl = df_geral["custo_total"].sum()
-    custo_total_usd = custo_total_brl / 5.15 if custo_total_brl > 0 else 0.0
+    custo_total_usd = df_geral["custo_total"].sum()
     taxa_acerto_global = (df_geral["Acerto_da_operacao"].mean() * 100) if total_testes > 0 else 0.0
     conformidade_global = (df_geral["Acerto_do_formato_de_resposta"].mean() * 100) if total_testes > 0 else 0.0
 
     return {
         "total_testes": total_testes,
-        "custo_total_brl": custo_total_brl,
         "custo_total_usd": custo_total_usd,
         "taxa_acerto_global": taxa_acerto_global,
         "conformidade_global": conformidade_global,
