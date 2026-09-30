@@ -42,13 +42,14 @@ CORES_MODELOS_AZUL = {
 # Cor azul padrão unificada para gráficos simples de barra
 COR_AZUL_PADRAO = "#2563eb"
 
-# Paleta em tons de azul para os 4 tipos de operações
+# Cores distintas para diferenciar as 4 operações
 CORES_OPERACOES = {
-    "Multiplicação Inteira": "#93c5fd",     # Azul claro
-    "Multiplicação Decimal": "#60a5fa",     # Azul médio
-    "Soma": "#2563eb",                      # Azul royal
-    "Expressões Combinadas": "#1e3a8a"      # Azul marinho
+    "Multiplicação Inteira": "#8b5cf6",     # Roxo
+    "Multiplicação Decimal": "#f97316",     # Laranja
+    "Soma": "#3b82f6",                      # Azul
+    "Expressões Combinadas": "#10b981"      # Verde esmeralda
 }
+
 
 def obter_caminho_dados():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

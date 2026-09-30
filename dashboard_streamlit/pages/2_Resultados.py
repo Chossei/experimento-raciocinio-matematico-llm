@@ -1,9 +1,9 @@
 """
 Página 2: Resultados
 Composta por 4 abas interativas em Plotly Express:
-1. Acurácia dos modelos (Visão geral vertical e Grid 2x5 de Detalhamento)
-2. Comparativo: desempenhos por complexidade (Lado a lado com tabela e Grid 2x5 de Curvas de Decaimento)
-3. A influência do Raciocínio (Todas as trajetórias conectadas por linhas em degradê de azuis)
+1. Acurácia dos modelos (Visão geral vertical ampliada e Grid 2x5 de Detalhamento)
+2. Comparativo: desempenhos por complexidade (Lado a lado perfeitamente alinhado e Grid 2x5 com cores originais e legenda externa)
+3. A influência do Raciocínio (Com seletor de dígitos 'Todos' ou pontual, trajetórias conectadas e 1 casa decimal)
 4. Como os modelos pensam (Análise qualitativa lado a lado sucesso verde / erro vermelho)
 """
 
@@ -56,7 +56,7 @@ tab_acuracia, tab_complexidade, tab_raciocinio, tab_pensam = st.tabs([
 with tab_acuracia:
     st.markdown("### Visão geral")
 
-    col_sel1, _ = st.columns([1, 1])
+    col_sel1, _ = st.columns([1.25, 0.75])
     with col_sel1:
         opcoes_macro = [
             "Visão Geral (Todas as Operações)",
@@ -66,11 +66,11 @@ with tab_acuracia:
         ]
         macro_sel = st.selectbox("Selecione o escopo da visão macro:", opcoes_macro, key="sel_macro_acc")
 
-    col_graf_macro, _ = st.columns([1, 1])
+    # Gráfico ampliado em 25% (proporção 1.25 : 0.75)
+    col_graf_macro, _ = st.columns([1.25, 0.75])
 
     with col_graf_macro:
         if macro_sel == "Multiplicação (Inteira vs Decimal)":
-            # Desagregação solicitada: inteiros vs decimais lado a lado
             df_m = dfs.get("multiplicacao", pd.DataFrame())
             df_d = dfs.get("decimal", pd.DataFrame())
             df_mult_macro = pd.concat([df_m, df_d], ignore_index=True)
@@ -104,11 +104,15 @@ with tab_acuracia:
                     },
                     title="Taxa de Acerto por Modelo: Multiplicação Inteira vs Decimal"
                 )
+                fig_macro.update_traces(
+                    texttemplate="%{y:.1f}%",
+                    textposition="outside"
+                )
                 fig_macro.update_layout(
                     xaxis_tickangle=-45,
                     xaxis=dict(automargin=True, title=None),
-                    yaxis=dict(range=[0, 105], title="Taxa de Acerto (%)"),
-                    height=380,
+                    yaxis=dict(range=[0, 115], title="Taxa de Acerto (%)"),
+                    height=420,
                     margin=dict(l=40, r=20, t=50, b=100),
                     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
                 )
@@ -149,16 +153,16 @@ with tab_acuracia:
                 fig_macro.update_layout(
                     xaxis_tickangle=-45,
                     xaxis=dict(automargin=True, title=None),
-                    yaxis=dict(range=[0, 110], title="Taxa de Acerto (%)"),
-                    height=380,
+                    yaxis=dict(range=[0, 115], title="Taxa de Acerto (%)"),
+                    height=420,
                     margin=dict(l=40, r=20, t=50, b=100)
                 )
                 st.plotly_chart(fig_macro, use_container_width=True)
 
     st.markdown("---")
 
-    # 2. Detalhamento por modelo: Grid 2x5
-    st.markdown("### Detalhamento por modelo (Grid 2x5)")
+    # 2. Detalhamento por modelo (Grid 2x5 sem menção no título)
+    st.markdown("### Detalhamento por modelo")
     col_sel2, _ = st.columns([1, 1])
     with col_sel2:
         opcoes_det_op = ["Multiplicação Inteira", "Multiplicação Decimal", "Soma", "Expressões Combinadas"]
@@ -195,10 +199,14 @@ with tab_acuracia:
                         labels={"Digitos": "Dígitos", "Taxa_Acerto": "Acerto (%)"},
                         title=f"<b>{modelo_card}</b>"
                     )
+                    fig_card.update_traces(
+                        texttemplate="%{y:.1f}%",
+                        textposition="outside"
+                    )
                     fig_card.update_layout(
-                        height=220,
+                        height=240,
                         margin=dict(l=15, r=15, t=35, b=30),
-                        yaxis=dict(range=[0, 105], showgrid=True, dtick=50, title=None),
+                        yaxis=dict(range=[0, 120], showgrid=True, dtick=50, title=None),
                         xaxis=dict(title=None)
                     )
                     st.plotly_chart(fig_card, use_container_width=True)
@@ -227,10 +235,14 @@ with tab_acuracia:
                         labels={"Digitos": "Dígitos", "Taxa_Acerto": "Acerto (%)"},
                         title=f"<b>{modelo_card}</b>"
                     )
+                    fig_card.update_traces(
+                        texttemplate="%{y:.1f}%",
+                        textposition="outside"
+                    )
                     fig_card.update_layout(
-                        height=220,
+                        height=240,
                         margin=dict(l=15, r=15, t=35, b=30),
-                        yaxis=dict(range=[0, 105], showgrid=True, dtick=50, title=None),
+                        yaxis=dict(range=[0, 120], showgrid=True, dtick=50, title=None),
                         xaxis=dict(title=None)
                     )
                     st.plotly_chart(fig_card, use_container_width=True)
@@ -243,26 +255,24 @@ with tab_acuracia:
 with tab_complexidade:
     st.markdown("### Desempenho por quantidade de dígitos")
 
-    col_sel_c, _ = st.columns([1, 1])
-    with col_sel_c:
-        opcoes_comp = ["Soma", "Multiplicação Inteira", "Multiplicação Decimal", "Expressões Combinadas", "Geral (Média Ponderada)"]
-        comp_sel = st.selectbox("Selecione o tipo de operação para comparar os modelos:", opcoes_comp, key="sel_comp_lines")
-
-    if comp_sel == "Soma":
-        df_comp = dfs.get("soma", pd.DataFrame())
-    elif comp_sel == "Multiplicação Inteira":
-        df_comp = dfs.get("multiplicacao", pd.DataFrame())
-    elif comp_sel == "Multiplicação Decimal":
-        df_comp = dfs.get("decimal", pd.DataFrame())
-    elif comp_sel == "Expressões Combinadas":
-        df_comp = dfs.get("combinadas", pd.DataFrame())
-    else:
-        df_comp = dfs.get("geral", pd.DataFrame())
-
-    # Dispor Gráfico e Tabela lado a lado (Metade da tela cada)
+    # Dispor Gráfico e Tabela lado a lado perfeitamente alinhados
     col_comp_graf, col_comp_tab = st.columns([1, 1])
 
     with col_comp_graf:
+        opcoes_comp = ["Soma", "Multiplicação Inteira", "Multiplicação Decimal", "Expressões Combinadas", "Geral (Média Ponderada)"]
+        comp_sel = st.selectbox("Selecione o tipo de operação para comparar os modelos:", opcoes_comp, key="sel_comp_lines")
+
+        if comp_sel == "Soma":
+            df_comp = dfs.get("soma", pd.DataFrame())
+        elif comp_sel == "Multiplicação Inteira":
+            df_comp = dfs.get("multiplicacao", pd.DataFrame())
+        elif comp_sel == "Multiplicação Decimal":
+            df_comp = dfs.get("decimal", pd.DataFrame())
+        elif comp_sel == "Expressões Combinadas":
+            df_comp = dfs.get("combinadas", pd.DataFrame())
+        else:
+            df_comp = dfs.get("geral", pd.DataFrame())
+
         if not df_comp.empty:
             res_comp = (
                 df_comp.groupby(["Nome_do_modelo", "Digitos"])["Acerto_da_operacao"]
@@ -285,16 +295,22 @@ with tab_complexidade:
                 labels={"Digitos": "Dígitos", "Taxa_Acerto": "Taxa de Acerto (%)", "Nome_do_modelo": "Modelo"},
                 title=f"Comparativo de Modelos por Complexidade ({comp_sel})"
             )
+            fig_linhas.update_traces(
+                hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
+            )
             fig_linhas.update_layout(
                 yaxis=dict(range=[-5, 105], title="Taxa de Acerto (%)"),
                 xaxis=dict(title="Quantidade de Dígitos"),
-                height=380,
+                height=420,
                 margin=dict(l=40, r=20, t=50, b=40)
             )
             st.plotly_chart(fig_linhas, use_container_width=True)
 
     with col_comp_tab:
+        # Título e legenda superior alinhados à altura do selectbox ao lado
         st.markdown("#### Tabela de acurácia por quantidade de dígitos")
+        st.caption(f"Valores percentuais de acerto para: **{comp_sel}**")
+
         if not df_comp.empty:
             tabela_pivot = (
                 df_comp.pivot_table(
@@ -304,7 +320,6 @@ with tab_complexidade:
                     aggfunc=lambda x: (x.sum() / len(x)) * 100
                 )
             )
-            # Reindexar conforme ordem estrita dos modelos
             tabela_pivot = tabela_pivot.reindex([m for m in MODELOS_GEMINI if m in tabela_pivot.index])
             colunas_ordenadas = [c for c in ORDEM_DIGITOS_NUM if c in tabela_pivot.columns]
             tabela_pivot = tabela_pivot[colunas_ordenadas]
@@ -313,14 +328,24 @@ with tab_complexidade:
                 tabela_pivot.style.format("{:.1f}%")
                 .background_gradient(cmap="Blues", vmin=0, vmax=100),
                 use_container_width=True,
-                height=380
+                height=420
             )
 
     st.markdown("---")
 
-    # Seção Curva de Decaimento: Grid 2x5 com todos os modelos (Sem caixa de seleção)
-    st.markdown("### Desempenho dos modelos por operação (Grid 2x5)")
+    # Seção Curva de Decaimento (Sem "(Grid 2x5)" no título)
+    st.markdown("### Desempenho dos modelos por operação")
     st.caption("Comparação das 4 operações ao longo dos dígitos (2 a 10) para cada um dos 10 modelos Gemini.")
+
+    # Legenda explicativa externa acima do grid com as cores originais
+    st.markdown("""
+    <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #8b5cf6; border-radius: 3px; display: inline-block;"></span> Multiplicação Inteira</div>
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #f97316; border-radius: 3px; display: inline-block;"></span> Multiplicação Decimal</div>
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #3b82f6; border-radius: 3px; display: inline-block;"></span> Soma</div>
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #10b981; border-radius: 3px; display: inline-block;"></span> Expressões Combinadas</div>
+    </div>
+    """, unsafe_allow_html=True)
 
     df_todas_op = dfs.get("geral", pd.DataFrame())
 
@@ -351,12 +376,15 @@ with tab_complexidade:
                         color_discrete_map=CORES_OPERACOES,
                         title=f"<b>{mod_atual}</b>"
                     )
+                    fig_dec.update_traces(
+                        hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
+                    )
                     fig_dec.update_layout(
                         height=240,
                         margin=dict(l=15, r=15, t=35, b=25),
                         yaxis=dict(range=[-5, 105], dtick=50, title=None),
                         xaxis=dict(title=None),
-                        showlegend=(idx == 0) # Exibir legenda apenas no primeiro para manter layout limpo
+                        showlegend=False
                     )
                     st.plotly_chart(fig_dec, use_container_width=True)
                 else:
@@ -388,6 +416,9 @@ with tab_complexidade:
                         color_discrete_map=CORES_OPERACOES,
                         title=f"<b>{mod_atual}</b>"
                     )
+                    fig_dec.update_traces(
+                        hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
+                    )
                     fig_dec.update_layout(
                         height=240,
                         margin=dict(l=15, r=15, t=35, b=25),
@@ -404,19 +435,29 @@ with tab_complexidade:
 # =============================================================================
 with tab_raciocinio:
     st.markdown("### A Influência do Raciocínio (Tokens de Pensamento)")
-    st.caption("Trajetórias completas de 2 a 10 dígitos: Taxa de Acerto (%) vs Média de Tokens de Raciocínio gerados. Cores do modelo em escala azul progressiva (do mais claro ao mais escuro).")
+    st.caption("Relação entre a Taxa de Acerto (%) e a Média de Tokens de Raciocínio gerados por complexidade de dígitos.")
+
+    # Seletor de quantidade de dígitos: "Todos" por padrão
+    col_sel_r, _ = st.columns([1, 1])
+    with col_sel_r:
+        opcoes_dig_r = ["Todos"] + ORDEM_DIGITOS_NUM
+        dig_r_sel = st.selectbox("Selecione a quantidade de dígitos para visualizar:", opcoes_dig_r, index=0, key="sel_dig_raciocinio")
 
     df_soma_r = dfs.get("soma", pd.DataFrame())
     df_comb_r = dfs.get("combinadas", pd.DataFrame())
 
     col_r1, col_r2 = st.columns([1, 1])
 
-    # 1. Gráfico de Soma (Todas as trajetórias conectadas por linhas)
+    # 1. Gráfico de Soma
     with col_r1:
         st.markdown("#### 1. Operações de Soma")
         if not df_soma_r.empty:
+            df_soma_filtrado = df_soma_r.copy()
+            if dig_r_sel != "Todos":
+                df_soma_filtrado = df_soma_filtrado[df_soma_filtrado["Digitos"] == str(dig_r_sel)]
+
             stats_soma = (
-                df_soma_r.groupby(["Nome_do_modelo", "Digitos"])
+                df_soma_filtrado.groupby(["Nome_do_modelo", "Digitos"])
                 .agg(
                     Taxa_Acerto=("Acerto_da_operacao", lambda x: (x.sum() / len(x)) * 100),
                     Media_Reasoning=("reasoning_tokens", "mean")
@@ -426,26 +467,50 @@ with tab_raciocinio:
             stats_soma["Digitos_Num"] = pd.to_numeric(stats_soma["Digitos"], errors="coerce")
             stats_soma = stats_soma.sort_values(by=["Nome_do_modelo", "Digitos_Num"])
 
-            fig_r_soma = px.line(
-                stats_soma,
-                x="Media_Reasoning",
-                y="Taxa_Acerto",
-                color="Nome_do_modelo",
-                markers=True,
-                text="Digitos",
-                category_orders={"Nome_do_modelo": MODELOS_GEMINI},
-                color_discrete_map=CORES_MODELOS_AZUL,
-                labels={
-                    "Media_Reasoning": "Média de Tokens de Raciocínio",
-                    "Taxa_Acerto": "Taxa de Acerto (%)",
-                    "Nome_do_modelo": "Modelo"
-                },
-                title="Soma: Trajetória de Complexidade (2 a 10 Dígitos)"
-            )
-            fig_r_soma.update_traces(
-                textposition="top right",
-                marker=dict(size=8)
-            )
+            if dig_r_sel == "Todos":
+                fig_r_soma = px.line(
+                    stats_soma,
+                    x="Media_Reasoning",
+                    y="Taxa_Acerto",
+                    color="Nome_do_modelo",
+                    markers=True,
+                    text="Digitos",
+                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                    color_discrete_map=CORES_MODELOS_AZUL,
+                    labels={
+                        "Media_Reasoning": "Média de Tokens de Raciocínio",
+                        "Taxa_Acerto": "Taxa de Acerto (%)",
+                        "Nome_do_modelo": "Modelo"
+                    },
+                    title="Soma: Trajetória de Complexidade (Todos os Dígitos)"
+                )
+                fig_r_soma.update_traces(
+                    textposition="top right",
+                    marker=dict(size=8),
+                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{text}<br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
+                )
+            else:
+                fig_r_soma = px.scatter(
+                    stats_soma,
+                    x="Media_Reasoning",
+                    y="Taxa_Acerto",
+                    color="Nome_do_modelo",
+                    text="Nome_do_modelo",
+                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                    color_discrete_map=CORES_MODELOS_AZUL,
+                    labels={
+                        "Media_Reasoning": "Média de Tokens de Raciocínio",
+                        "Taxa_Acerto": "Taxa de Acerto (%)",
+                        "Nome_do_modelo": "Modelo"
+                    },
+                    title=f"Soma: {dig_r_sel} Dígitos"
+                )
+                fig_r_soma.update_traces(
+                    textposition="top center",
+                    marker=dict(size=12),
+                    hovertemplate="<b>%{text}</b><br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
+                )
+
             fig_r_soma.update_layout(
                 yaxis=dict(range=[-5, 108], title="Taxa de Acerto (%)"),
                 xaxis=dict(title="Média de Tokens de Raciocínio"),
@@ -458,8 +523,12 @@ with tab_raciocinio:
     with col_r2:
         st.markdown("#### 2. Expressões Combinadas a * (b + c)")
         if not df_comb_r.empty:
+            df_comb_filtrado = df_comb_r.copy()
+            if dig_r_sel != "Todos":
+                df_comb_filtrado = df_comb_filtrado[df_comb_filtrado["Digitos"] == str(dig_r_sel)]
+
             stats_comb = (
-                df_comb_r.groupby(["Nome_do_modelo", "Digitos"])
+                df_comb_filtrado.groupby(["Nome_do_modelo", "Digitos"])
                 .agg(
                     Taxa_Acerto=("Acerto_da_operacao", lambda x: (x.sum() / len(x)) * 100),
                     Media_Reasoning=("reasoning_tokens", "mean")
@@ -469,26 +538,50 @@ with tab_raciocinio:
             stats_comb["Digitos_Num"] = pd.to_numeric(stats_comb["Digitos"], errors="coerce")
             stats_comb = stats_comb.sort_values(by=["Nome_do_modelo", "Digitos_Num"])
 
-            fig_r_comb = px.line(
-                stats_comb,
-                x="Media_Reasoning",
-                y="Taxa_Acerto",
-                color="Nome_do_modelo",
-                markers=True,
-                text="Digitos",
-                category_orders={"Nome_do_modelo": MODELOS_GEMINI},
-                color_discrete_map=CORES_MODELOS_AZUL,
-                labels={
-                    "Media_Reasoning": "Média de Tokens de Raciocínio",
-                    "Taxa_Acerto": "Taxa de Acerto (%)",
-                    "Nome_do_modelo": "Modelo"
-                },
-                title="Expressões Combinadas: Trajetória de Complexidade (2 a 10 Dígitos)"
-            )
-            fig_r_comb.update_traces(
-                textposition="top right",
-                marker=dict(size=8)
-            )
+            if dig_r_sel == "Todos":
+                fig_r_comb = px.line(
+                    stats_comb,
+                    x="Media_Reasoning",
+                    y="Taxa_Acerto",
+                    color="Nome_do_modelo",
+                    markers=True,
+                    text="Digitos",
+                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                    color_discrete_map=CORES_MODELOS_AZUL,
+                    labels={
+                        "Media_Reasoning": "Média de Tokens de Raciocínio",
+                        "Taxa_Acerto": "Taxa de Acerto (%)",
+                        "Nome_do_modelo": "Modelo"
+                    },
+                    title="Expressões Combinadas: Trajetória de Complexidade (Todos os Dígitos)"
+                )
+                fig_r_comb.update_traces(
+                    textposition="top right",
+                    marker=dict(size=8),
+                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{text}<br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
+                )
+            else:
+                fig_r_comb = px.scatter(
+                    stats_comb,
+                    x="Media_Reasoning",
+                    y="Taxa_Acerto",
+                    color="Nome_do_modelo",
+                    text="Nome_do_modelo",
+                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                    color_discrete_map=CORES_MODELOS_AZUL,
+                    labels={
+                        "Media_Reasoning": "Média de Tokens de Raciocínio",
+                        "Taxa_Acerto": "Taxa de Acerto (%)",
+                        "Nome_do_modelo": "Modelo"
+                    },
+                    title=f"Expressões Combinadas: {dig_r_sel} Dígitos"
+                )
+                fig_r_comb.update_traces(
+                    textposition="top center",
+                    marker=dict(size=12),
+                    hovertemplate="<b>%{text}</b><br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
+                )
+
             fig_r_comb.update_layout(
                 yaxis=dict(range=[-5, 108], title="Taxa de Acerto (%)"),
                 xaxis=dict(title="Média de Tokens de Raciocínio"),
@@ -513,7 +606,6 @@ with tab_pensam:
 
     col_sel_p1, col_sel_p2 = st.columns(2)
     with col_sel_p1:
-        # Padrão: gemini-2.5-pro (único com reasoning em texto puro)
         idx_padrao = MODELOS_GEMINI.index("gemini-2.5-pro") if "gemini-2.5-pro" in MODELOS_GEMINI else 0
         mod_pensam_sel = st.selectbox("Selecione o modelo para inspecionar:", MODELOS_GEMINI, index=idx_padrao, key="sel_mod_pensam")
     with col_sel_p2:

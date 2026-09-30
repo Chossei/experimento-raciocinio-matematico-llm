@@ -1,8 +1,8 @@
 """
 Página 3: Custos, Formatos e Erros
 Composta por 3 abas organizadas via st.tabs com gráficos Plotly Express:
-1. Custos financeiros (Expressos estritamente em Dólar USD com gráfico vertical em azul)
-2. Conformidade do formato de resposta (Gráfico vertical em azul ocupando metade da tela)
+1. Custos financeiros (Gráficos ampliados em 25% com proporção 1.25 : 0.75 e custos estritamente em USD)
+2. Conformidade do formato de resposta (Gráfico ampliado em 25% com 1 casa decimal garantida)
 3. Inspeção de erros (Diagnóstico granular com múltiplos filtros e busca textual)
 """
 
@@ -43,13 +43,13 @@ tab_custos, tab_formatos, tab_erros = st.tabs([
 ])
 
 # =============================================================================
-# ABA 1: CUSTOS FINANCEIROS (APENAS EM DÓLAR USD)
+# ABA 1: CUSTOS FINANCEIROS (APENAS EM DÓLAR USD - 25% MAIOR)
 # =============================================================================
 with tab_custos:
     st.markdown("### Avaliação de Custos Financeiros (OpenRouter Batch API)")
     st.caption("Custos computados diretamente em Dólares Americanos ($ USD), sem conversão cambial.")
 
-    col_c1, col_c2 = st.columns([1, 1])
+    col_c1, col_c2 = st.columns([1.25, 0.75])
     with col_c1:
         opcoes_op_custo = ["Todas as Operações", "Soma", "Multiplicação Inteira", "Multiplicação Decimal", "Expressões Combinadas"]
         tipo_custo_sel = st.selectbox("Selecione o tipo de operação:", opcoes_op_custo, key="sel_tipo_custo")
@@ -75,14 +75,14 @@ with tab_custos:
     if not df_c.empty:
         total_gasto_usd = df_c["custo_total"].sum()
 
-        col_m1, _ = st.columns([1, 1])
+        col_m1, _ = st.columns([1.25, 0.75])
         with col_m1:
             st.metric("Custo Total no Recorte", f"${total_gasto_usd:.4f} USD")
 
         st.markdown("<br>", unsafe_allow_html=True)
 
-        # Gráfico de barras verticais ocupando metade da tela
-        col_graf_c, _ = st.columns([1, 1])
+        # Gráfico ampliado em 25% (st.columns([1.25, 0.75]))
+        col_graf_c, _ = st.columns([1.25, 0.75])
         with col_graf_c:
             res_custos = (
                 df_c.groupby("Nome_do_modelo")["custo_total"]
@@ -104,13 +104,14 @@ with tab_custos:
             )
             fig_custos.update_traces(
                 texttemplate="$%{y:.4f}",
-                textposition="outside"
+                textposition="outside",
+                hovertemplate="<b>%{x}</b><br>Custo: $%{y:.4f} USD<extra></extra>"
             )
             fig_custos.update_layout(
                 xaxis_tickangle=-45,
                 xaxis=dict(automargin=True, title=None),
                 yaxis=dict(title="Custo ($ USD)"),
-                height=380,
+                height=420,
                 margin=dict(l=40, r=20, t=50, b=100)
             )
             st.plotly_chart(fig_custos, use_container_width=True)
@@ -118,7 +119,7 @@ with tab_custos:
         st.warning("Nenhum dado financeiro disponível para os filtros selecionados.")
 
 # =============================================================================
-# ABA 2: CONFORMIDADE DO FORMATO DE RESPOSTA
+# ABA 2: CONFORMIDADE DO FORMATO DE RESPOSTA (25% MAIOR E 1 CASA DECIMAL)
 # =============================================================================
 with tab_formatos:
     st.markdown("### Conformidade com a Instrução de Formato")
@@ -128,7 +129,7 @@ with tab_formatos:
         "Respostas que incluíram texto explicativo adicional ou letras são contabilizadas como desconformes."
     )
 
-    col_f1, col_f2 = st.columns([1, 1])
+    col_f1, col_f2 = st.columns([1.25, 0.75])
     with col_f1:
         tipo_formato_sel = st.selectbox("Selecione o tipo de operação:", opcoes_op_custo, key="sel_tipo_formato")
     with col_f2:
@@ -157,8 +158,8 @@ with tab_formatos:
         )
         res_formato["Taxa_Conformidade"] = (res_formato["Conformes"] / res_formato["Total"]) * 100
 
-        # Gráfico ocupando metade da tela
-        col_graf_f, _ = st.columns([1, 1])
+        # Gráfico ampliado em 25% (st.columns([1.25, 0.75])) com 1 casa decimal
+        col_graf_f, _ = st.columns([1.25, 0.75])
         with col_graf_f:
             fig_formato = px.bar(
                 res_formato,
@@ -174,13 +175,14 @@ with tab_formatos:
             )
             fig_formato.update_traces(
                 texttemplate="%{y:.1f}%",
-                textposition="outside"
+                textposition="outside",
+                hovertemplate="<b>%{x}</b><br>Conformidade: %{y:.1f}%<extra></extra>"
             )
             fig_formato.update_layout(
                 xaxis_tickangle=-45,
                 xaxis=dict(automargin=True, title=None),
-                yaxis=dict(range=[0, 110], title="Conformidade (%)"),
-                height=380,
+                yaxis=dict(range=[0, 115], title="Conformidade (%)"),
+                height=420,
                 margin=dict(l=40, r=20, t=50, b=100)
             )
             st.plotly_chart(fig_formato, use_container_width=True)
