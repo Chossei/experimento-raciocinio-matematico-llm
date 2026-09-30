@@ -1,0 +1,12 @@
+Modelo,Mult_Inteira_Vertex_USD,Mult_Decimal_OpenRouter_USD,Soma_Batch_OpenRouter_USD,Combinadas_Batch_OpenRouter_USD,Total_Modelo_USD
+gemini-3.1-pro-preview,0.1896,2.9040,0.9390,2.3975,6.4301
+gemini-3.8-flash,0.0000,3.9490,0.2643,0.6760,4.8893
+gemini-2.5-pro,0.1160,1.0810,1.1215,1.7366,4.0553
+gemini-3.5-flash,0.1427,0.1659,0.7879,1.6869,2.7835
+gemini-3.7-flash,0.0762,1.4757,0.2365,0.6360,2.4244
+gemini-3.6-flash,0.0762,0.0734,0.3440,0.6957,1.1893
+gemini-3-flash-preview,0.0476,0.0713,0.0098,0.0148,0.1435
+gemini-3.5-flash-lite,0.0347,0.0364,0.0069,0.0108,0.0890
+gemini-2.5-flash,0.0286,0.0384,0.0069,0.0144,0.0883
+gemini-3.1-flash-lite,0.0238,0.0264,0.0049,0.0074,0.0626
+TOTAL,0.7355,9.8217,3.7219,7.8762,22.1553

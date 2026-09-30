@@ -46,7 +46,7 @@ tab_custos, tab_formatos, tab_erros = st.tabs([
 # ABA 1: CUSTOS FINANCEIROS (APENAS EM DÓLAR USD - 25% MAIOR)
 # =============================================================================
 with tab_custos:
-    st.markdown("### Avaliação de Custos Financeiros (OpenRouter Batch API)")
+    st.markdown("### Avaliação de Custos Financeiros (OpenRouter & Vertex AI)")
     st.caption("Custos computados diretamente em Dólares Americanos ($ USD), sem conversão cambial.")
 
     col_c1, col_c2 = st.columns([1.25, 0.75])

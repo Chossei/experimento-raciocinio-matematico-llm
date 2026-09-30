@@ -39,7 +39,7 @@ with col_top1:
     <div class="metric-card">
         <div class="metric-label">Custo Total Acumulado</div>
         <div class="metric-value">${stats['custo_total_usd']:.2f} USD</div>
-        <div class="metric-sub">OpenRouter API Batch</div>
+        <div class="metric-sub">OpenRouter & Vertex AI</div>
     </div>
     """, unsafe_allow_html=True)
 
