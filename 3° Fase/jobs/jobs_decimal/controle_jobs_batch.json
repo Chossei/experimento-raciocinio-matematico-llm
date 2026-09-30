@@ -1,0 +1,32 @@
+{
+  "gemini-3.1-pro-preview": {
+    "modelo": "gemini-3.1-pro-preview",
+    "batch_id": "batch-1790745341-HAftUdQq4txjJ2H1j81A",
+    "total_requests": 320,
+    "timestamp_envio": "2026-09-30T02:15:35.927927",
+    "status": "in_progress",
+    "resposta_criacao": {
+      "id": "batch-1790745341-HAftUdQq4txjJ2H1j81A",
+      "object": "batch",
+      "endpoint": "/v1/chat/completions",
+      "model": "google/gemini-3.1-pro-preview-20260219",
+      "completion_window": "24h",
+      "status": "validating",
+      "created_at": 1790745341,
+      "finalized_at": null,
+      "request_counts": {
+        "total": 320,
+        "completed": 0,
+        "failed": 0
+      },
+      "usage": null,
+      "results": null,
+      "error": null
+    },
+    "request_counts": {
+      "total": 320,
+      "completed": 0,
+      "failed": 0
+    }
+  }
+}
