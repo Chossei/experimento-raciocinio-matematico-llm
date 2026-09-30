@@ -280,6 +280,8 @@ with tab_complexidade:
                 .reset_index()
             )
             res_comp["Taxa_Acerto"] = (res_comp["Acertos"] / res_comp["Total"]) * 100
+            res_comp["Digitos_Num"] = pd.to_numeric(res_comp["Digitos"], errors="coerce")
+            res_comp = res_comp.sort_values(by=["Nome_do_modelo", "Digitos_Num"])
 
             fig_linhas = px.line(
                 res_comp,
@@ -333,9 +335,20 @@ with tab_complexidade:
 
     st.markdown("---")
 
-    # Seção Curva de Decaimento (Sem "(Grid 2x5)" no título)
+    # Seção Curva de Decaimento
     st.markdown("### Desempenho dos modelos por operação")
-    st.caption("Comparação das 4 operações ao longo dos dígitos (2 a 10) para cada um dos 10 modelos Gemini.")
+    st.caption("Comparação das operações ao longo dos dígitos (2 a 10) para cada um dos 10 modelos Gemini.")
+
+    # Filtro interativo para selecionar/ocultar operações nas curvas
+    col_f_ops, _ = st.columns([1, 1])
+    with col_f_ops:
+        todas_ops_lista = ["Multiplicação Inteira", "Multiplicação Decimal", "Soma", "Expressões Combinadas"]
+        ops_selecionadas = st.multiselect(
+            "Selecione as operações para visualizar ou ocultar nas curvas:",
+            options=todas_ops_lista,
+            default=todas_ops_lista,
+            key="sel_ops_visiveis_curvas"
+        )
 
     # Legenda explicativa externa acima do grid com as cores originais
     st.markdown("""
@@ -349,12 +362,14 @@ with tab_complexidade:
 
     df_todas_op = dfs.get("geral", pd.DataFrame())
 
-    if not df_todas_op.empty:
+    if not df_todas_op.empty and ops_selecionadas:
+        df_todas_op_filtradas = df_todas_op[df_todas_op["Tipo_Operacao"].isin(ops_selecionadas)]
+
         # Linha 1 de modelos (0 a 4)
         cols_dec_l1 = st.columns(5)
         for idx in range(5):
             mod_atual = MODELOS_GEMINI[idx]
-            df_mod = df_todas_op[df_todas_op["Nome_do_modelo"] == mod_atual]
+            df_mod = df_todas_op_filtradas[df_todas_op_filtradas["Nome_do_modelo"] == mod_atual]
             with cols_dec_l1[idx]:
                 if not df_mod.empty:
                     res_dec = (
@@ -363,6 +378,10 @@ with tab_complexidade:
                         .reset_index()
                     )
                     res_dec["Taxa_Acerto"] = (res_dec["Acertos"] / res_dec["Total"]) * 100
+                    # Ordenação estritamente numérica para eliminar ligação entre dígito 2 e 10
+                    res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
+                    res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
+
                     fig_dec = px.line(
                         res_dec,
                         x="Digitos",
@@ -371,7 +390,7 @@ with tab_complexidade:
                         markers=True,
                         category_orders={
                             "Digitos": ORDEM_DIGITOS_NUM,
-                            "Tipo_Operacao": ["Multiplicação Inteira", "Multiplicação Decimal", "Soma", "Expressões Combinadas"]
+                            "Tipo_Operacao": ops_selecionadas
                         },
                         color_discrete_map=CORES_OPERACOES,
                         title=f"<b>{mod_atual}</b>"
@@ -394,7 +413,7 @@ with tab_complexidade:
         cols_dec_l2 = st.columns(5)
         for idx in range(5, 10):
             mod_atual = MODELOS_GEMINI[idx]
-            df_mod = df_todas_op[df_todas_op["Nome_do_modelo"] == mod_atual]
+            df_mod = df_todas_op_filtradas[df_todas_op_filtradas["Nome_do_modelo"] == mod_atual]
             with cols_dec_l2[idx - 5]:
                 if not df_mod.empty:
                     res_dec = (
@@ -403,6 +422,10 @@ with tab_complexidade:
                         .reset_index()
                     )
                     res_dec["Taxa_Acerto"] = (res_dec["Acertos"] / res_dec["Total"]) * 100
+                    # Ordenação estritamente numérica para eliminar ligação entre dígito 2 e 10
+                    res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
+                    res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
+
                     fig_dec = px.line(
                         res_dec,
                         x="Digitos",
@@ -411,7 +434,7 @@ with tab_complexidade:
                         markers=True,
                         category_orders={
                             "Digitos": ORDEM_DIGITOS_NUM,
-                            "Tipo_Operacao": ["Multiplicação Inteira", "Multiplicação Decimal", "Soma", "Expressões Combinadas"]
+                            "Tipo_Operacao": ops_selecionadas
                         },
                         color_discrete_map=CORES_OPERACOES,
                         title=f"<b>{mod_atual}</b>"
@@ -429,6 +452,7 @@ with tab_complexidade:
                     st.plotly_chart(fig_dec, use_container_width=True)
                 else:
                     st.info(f"{mod_atual}: Sem dados")
+
 
 # =============================================================================
 # ABA 3: A INFLUÊNCIA DO RACIOCÍNIO

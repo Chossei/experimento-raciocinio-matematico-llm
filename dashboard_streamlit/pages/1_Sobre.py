@@ -118,18 +118,23 @@ tab_intro, tab_metodo, tab_esperado = st.tabs([
 ])
 
 with tab_intro:
-    st.markdown("### Contextualização do Experimento")
-    st.markdown(
-        'O experimento “Raciocínio Matemático nos LLMs” foi delineado no âmbito de Trabalho de Conclusão de Curso (TCC) de Átila Prudente, denominado "Engenharia de IA: Teoria e Aplicações", com o objetivo fundamental de analisar a capacidade analítica e aritmética dos modelos de inteligência artificial generativa em diferentes níveis de complexidade numérica.'
-    )
-    st.markdown(
-        'Embora os LLMs alcancem desempenhos expressivos em benchmarks de linguagem natural e geração de código, tarefas determinísticas, como a execução de cálculos aritméticos em grande escala, revelam limitações na representação posicional e no planejamento cognitivo dos modelos.'
-    )
+    col_ctx, col_hip = st.columns([1, 1])
 
-    st.markdown("#### Hipótese")
-    st.info(
-        "A acurácia matemática dos LLMs decai, de forma não linear, com o crescimento da quantidade de dígitos (complexidade numérica), sendo mais degradada em expressões combinadas de operadores simples (juntando adições e multiplicações) e em multiplicações decimais do que em adições inteiras. Em complemento, a ativação de tokens de raciocínio atua como um compensador de acurácia, atenuando essa curva de decaimento."
-    )
+    with col_ctx:
+        st.markdown("### 📌 Contextualização do Experimento")
+        st.markdown(
+            'O experimento “Raciocínio Matemático nos LLMs” foi delineado no âmbito de Trabalho de Conclusão de Curso (TCC) de Átila Prudente, denominado "Engenharia de IA: Teoria e Aplicações", com o objetivo fundamental de analisar a capacidade analítica e aritmética dos modelos de inteligência artificial generativa em diferentes níveis de complexidade numérica.'
+        )
+        st.markdown(
+            'Embora os LLMs alcancem desempenhos expressivos em benchmarks de linguagem natural e geração de código, tarefas determinísticas, como a execução de cálculos aritméticos em grande escala, revelam limitações na representação posicional e no planejamento cognitivo dos modelos.'
+        )
+
+    with col_hip:
+        st.markdown("### 🎯 Hipótese")
+        st.info(
+            "A acurácia matemática dos LLMs decai, de forma não linear, com o crescimento da quantidade de dígitos (complexidade numérica), sendo mais degradada em expressões combinadas de operadores simples (juntando adições e multiplicações) e em multiplicações decimais do que em adições inteiras. Em complemento, a ativação de tokens de raciocínio atua como um compensador de acurácia, atenuando essa curva de decaimento."
+        )
+
 
 with tab_metodo:
     st.markdown("### Estrutura Metodológica")
