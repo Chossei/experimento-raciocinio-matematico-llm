@@ -28,6 +28,7 @@ try:
         MODELOS_GEMINI,
         COR_AZUL_PADRAO
     )
+    MODELOS_GEMINI_ROTULOS = getattr(data_loader_module, "MODELOS_GEMINI_ROTULOS", None)
 except Exception:
     import importlib.util
     loader_path = os.path.join(BASE_DIR, "utils", "data_loader.py")
@@ -38,6 +39,12 @@ except Exception:
     ORDEM_DIGITOS_NUM = data_loader_module.ORDEM_DIGITOS_NUM
     MODELOS_GEMINI = data_loader_module.MODELOS_GEMINI
     COR_AZUL_PADRAO = data_loader_module.COR_AZUL_PADRAO
+    MODELOS_GEMINI_ROTULOS = getattr(data_loader_module, "MODELOS_GEMINI_ROTULOS", None)
+
+if not MODELOS_GEMINI_ROTULOS:
+    MODELOS_GEMINI_ROTULOS = [
+        f"{m} (Reasoning: none)" for m in MODELOS_GEMINI
+    ]
 
 try:
     from utils.styles import aplicar_estilos_globais
@@ -116,19 +123,19 @@ with tab_custos:
         col_graf_c, _ = st.columns([1.25, 0.75])
         with col_graf_c:
             res_custos = (
-                df_c.groupby("Nome_do_modelo")["custo_total"]
+                df_c.groupby("Nome_do_modelo_rotulo")["custo_total"]
                 .agg(Total_Gasto="sum", Total_Req="count")
                 .reset_index()
             )
 
             fig_custos = px.bar(
                 res_custos,
-                x="Nome_do_modelo",
+                x="Nome_do_modelo_rotulo",
                 y="Total_Gasto",
-                category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
                 color_discrete_sequence=[COR_AZUL_PADRAO],
                 labels={
-                    "Nome_do_modelo": "Modelo",
+                    "Nome_do_modelo_rotulo": "Modelo",
                     "Total_Gasto": "Custo Total ($ USD)"
                 },
                 title=f"Custo por Modelo - {tipo_custo_sel} ({dig_custo_sel})"
@@ -143,8 +150,8 @@ with tab_custos:
                 xaxis_tickangle=-45,
                 xaxis=dict(automargin=True, title=None),
                 yaxis=dict(title="Custo ($ USD)"),
-                height=420,
-                margin=dict(l=40, r=20, t=50, b=100)
+                height=450,
+                margin=dict(l=40, r=20, t=50, b=120)
             )
             st.plotly_chart(fig_custos, use_container_width=True)
     else:
@@ -184,7 +191,7 @@ with tab_formatos:
 
     if not df_f.empty:
         res_formato = (
-            df_f.groupby("Nome_do_modelo")["Acerto_do_formato_de_resposta"]
+            df_f.groupby("Nome_do_modelo_rotulo")["Acerto_do_formato_de_resposta"]
             .agg(Total="count", Conformes="sum")
             .reset_index()
         )
@@ -195,12 +202,12 @@ with tab_formatos:
         with col_graf_f:
             fig_formato = px.bar(
                 res_formato,
-                x="Nome_do_modelo",
+                x="Nome_do_modelo_rotulo",
                 y="Taxa_Conformidade",
-                category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
                 color_discrete_sequence=[COR_AZUL_PADRAO],
                 labels={
-                    "Nome_do_modelo": "Modelo",
+                    "Nome_do_modelo_rotulo": "Modelo",
                     "Taxa_Conformidade": "Conformidade de Formato (%)"
                 },
                 title=f"Taxa de Conformidade de Formato - {tipo_formato_sel} ({dig_formato_sel})"
@@ -214,8 +221,8 @@ with tab_formatos:
                 xaxis_tickangle=-45,
                 xaxis=dict(automargin=True, title=None),
                 yaxis=dict(range=[0, 115], title="Conformidade (%)"),
-                height=420,
-                margin=dict(l=40, r=20, t=50, b=100)
+                height=450,
+                margin=dict(l=40, r=20, t=50, b=120)
             )
             st.plotly_chart(fig_formato, use_container_width=True)
     else:

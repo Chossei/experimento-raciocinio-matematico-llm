@@ -33,6 +33,8 @@ try:
         CORES_OPERACOES,
     )
     REASONING_MODELOS = getattr(data_loader_module, "REASONING_MODELOS", None)
+    MODELOS_GEMINI_ROTULOS = getattr(data_loader_module, "MODELOS_GEMINI_ROTULOS", None)
+    CORES_MODELOS_AZUL_ROTULOS = getattr(data_loader_module, "CORES_MODELOS_AZUL_ROTULOS", None)
 except Exception:
     import importlib.util
     loader_path = os.path.join(BASE_DIR, "utils", "data_loader.py")
@@ -46,6 +48,8 @@ except Exception:
     COR_AZUL_PADRAO = data_loader_module.COR_AZUL_PADRAO
     CORES_OPERACOES = data_loader_module.CORES_OPERACOES
     REASONING_MODELOS = getattr(data_loader_module, "REASONING_MODELOS", None)
+    MODELOS_GEMINI_ROTULOS = getattr(data_loader_module, "MODELOS_GEMINI_ROTULOS", None)
+    CORES_MODELOS_AZUL_ROTULOS = getattr(data_loader_module, "CORES_MODELOS_AZUL_ROTULOS", None)
 
 if not REASONING_MODELOS:
     REASONING_MODELOS = {
@@ -59,6 +63,17 @@ if not REASONING_MODELOS:
         "gemini-3.6-flash": "Reasoning: minimal",
         "gemini-3.7-flash": "Reasoning: low",
         "gemini-3.8-flash": "Reasoning: low",
+    }
+
+if not MODELOS_GEMINI_ROTULOS:
+    MODELOS_GEMINI_ROTULOS = [
+        f"{m} ({REASONING_MODELOS.get(m, 'Reasoning: none')})" for m in MODELOS_GEMINI
+    ]
+
+if not CORES_MODELOS_AZUL_ROTULOS:
+    CORES_MODELOS_AZUL_ROTULOS = {
+        f"{m} ({REASONING_MODELOS.get(m, 'Reasoning: none')})": cor
+        for m, cor in CORES_MODELOS_AZUL.items()
     }
 
 try:
@@ -123,7 +138,7 @@ with tab_acuracia:
 
             if not df_mult_macro.empty:
                 res_mult = (
-                    df_mult_macro.groupby(["Nome_do_modelo", "Tipo_Operacao"])["Acerto_da_operacao"]
+                    df_mult_macro.groupby(["Nome_do_modelo_rotulo", "Tipo_Operacao"])["Acerto_da_operacao"]
                     .agg(Total="count", Acertos="sum")
                     .reset_index()
                 )
@@ -131,12 +146,12 @@ with tab_acuracia:
 
                 fig_macro = px.bar(
                     res_mult,
-                    x="Nome_do_modelo",
+                    x="Nome_do_modelo_rotulo",
                     y="Taxa_Acerto",
                     color="Tipo_Operacao",
                     barmode="group",
                     category_orders={
-                        "Nome_do_modelo": MODELOS_GEMINI,
+                        "Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS,
                         "Tipo_Operacao": ["Multiplicação Inteira", "Multiplicação Decimal"]
                     },
                     color_discrete_map={
@@ -144,7 +159,7 @@ with tab_acuracia:
                         "Multiplicação Decimal": "#2563eb"
                     },
                     labels={
-                        "Nome_do_modelo": "Modelo",
+                        "Nome_do_modelo_rotulo": "Modelo",
                         "Taxa_Acerto": "Taxa de Acerto (%)",
                         "Tipo_Operacao": "Operação"
                     },
@@ -158,8 +173,8 @@ with tab_acuracia:
                     xaxis_tickangle=-45,
                     xaxis=dict(automargin=True, title=None),
                     yaxis=dict(range=[0, 115], title="Taxa de Acerto (%)"),
-                    height=420,
-                    margin=dict(l=40, r=20, t=50, b=100),
+                    height=450,
+                    margin=dict(l=40, r=20, t=50, b=120),
                     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
                 )
                 st.plotly_chart(fig_macro, use_container_width=True)
@@ -177,7 +192,7 @@ with tab_acuracia:
 
             if not df_macro.empty:
                 res_macro = (
-                    df_macro.groupby("Nome_do_modelo")["Acerto_da_operacao"]
+                    df_macro.groupby("Nome_do_modelo_rotulo")["Acerto_da_operacao"]
                     .agg(Total="count", Acertos="sum")
                     .reset_index()
                 )
@@ -185,11 +200,11 @@ with tab_acuracia:
 
                 fig_macro = px.bar(
                     res_macro,
-                    x="Nome_do_modelo",
+                    x="Nome_do_modelo_rotulo",
                     y="Taxa_Acerto",
-                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
+                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
                     color_discrete_sequence=[COR_AZUL_PADRAO],
-                    labels={"Nome_do_modelo": "Modelo", "Taxa_Acerto": "Taxa de Acerto (%)"},
+                    labels={"Nome_do_modelo_rotulo": "Modelo", "Taxa_Acerto": "Taxa de Acerto (%)"},
                     title=f"Taxa de Acerto por Modelo - {nome_op_grafico}"
                 )
                 fig_macro.update_traces(
@@ -200,8 +215,8 @@ with tab_acuracia:
                     xaxis_tickangle=-45,
                     xaxis=dict(automargin=True, title=None),
                     yaxis=dict(range=[0, 115], title="Taxa de Acerto (%)"),
-                    height=420,
-                    margin=dict(l=40, r=20, t=50, b=100)
+                    height=450,
+                    margin=dict(l=40, r=20, t=50, b=120)
                 )
                 st.plotly_chart(fig_macro, use_container_width=True)
 
@@ -228,6 +243,8 @@ with tab_acuracia:
         for idx in range(5):
             modelo_card = MODELOS_GEMINI[idx]
             df_m = df_det[df_det["Nome_do_modelo"] == modelo_card]
+            sub_r = REASONING_MODELOS.get(modelo_card, "Reasoning: none")
+            title_card = f"<b>{modelo_card}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_r})</span>"
             with cols_linha1[idx]:
                 if not df_m.empty:
                     res_m = (
@@ -243,15 +260,15 @@ with tab_acuracia:
                         category_orders={"Digitos": ORDEM_DIGITOS_NUM},
                         color_discrete_sequence=[CORES_MODELOS_AZUL.get(modelo_card, COR_AZUL_PADRAO)],
                         labels={"Digitos": "Dígitos", "Taxa_Acerto": "Acerto (%)"},
-                        title=f"<b>{modelo_card}</b>"
+                        title=title_card
                     )
                     fig_card.update_traces(
                         texttemplate="%{y:.1f}%",
                         textposition="outside"
                     )
                     fig_card.update_layout(
-                        height=240,
-                        margin=dict(l=15, r=15, t=35, b=30),
+                        height=255,
+                        margin=dict(l=15, r=15, t=48, b=30),
                         yaxis=dict(range=[0, 120], showgrid=True, dtick=50, title=None),
                         xaxis=dict(title=None)
                     )
@@ -264,6 +281,8 @@ with tab_acuracia:
         for idx in range(5, 10):
             modelo_card = MODELOS_GEMINI[idx]
             df_m = df_det[df_det["Nome_do_modelo"] == modelo_card]
+            sub_r = REASONING_MODELOS.get(modelo_card, "Reasoning: none")
+            title_card = f"<b>{modelo_card}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_r})</span>"
             with cols_linha2[idx - 5]:
                 if not df_m.empty:
                     res_m = (
@@ -279,15 +298,15 @@ with tab_acuracia:
                         category_orders={"Digitos": ORDEM_DIGITOS_NUM},
                         color_discrete_sequence=[CORES_MODELOS_AZUL.get(modelo_card, COR_AZUL_PADRAO)],
                         labels={"Digitos": "Dígitos", "Taxa_Acerto": "Acerto (%)"},
-                        title=f"<b>{modelo_card}</b>"
+                        title=title_card
                     )
                     fig_card.update_traces(
                         texttemplate="%{y:.1f}%",
                         textposition="outside"
                     )
                     fig_card.update_layout(
-                        height=240,
-                        margin=dict(l=15, r=15, t=35, b=30),
+                        height=255,
+                        margin=dict(l=15, r=15, t=48, b=30),
                         yaxis=dict(range=[0, 120], showgrid=True, dtick=50, title=None),
                         xaxis=dict(title=None)
                     )
@@ -321,26 +340,26 @@ with tab_complexidade:
 
         if not df_comp.empty:
             res_comp = (
-                df_comp.groupby(["Nome_do_modelo", "Digitos"])["Acerto_da_operacao"]
+                df_comp.groupby(["Nome_do_modelo_rotulo", "Digitos"])["Acerto_da_operacao"]
                 .agg(Total="count", Acertos="sum")
                 .reset_index()
             )
             res_comp["Taxa_Acerto"] = (res_comp["Acertos"] / res_comp["Total"]) * 100
             res_comp["Digitos_Num"] = pd.to_numeric(res_comp["Digitos"], errors="coerce")
-            res_comp = res_comp.sort_values(by=["Nome_do_modelo", "Digitos_Num"])
+            res_comp = res_comp.sort_values(by=["Nome_do_modelo_rotulo", "Digitos_Num"])
 
             fig_linhas = px.line(
                 res_comp,
                 x="Digitos",
                 y="Taxa_Acerto",
-                color="Nome_do_modelo",
+                color="Nome_do_modelo_rotulo",
                 markers=True,
                 category_orders={
-                    "Nome_do_modelo": MODELOS_GEMINI,
+                    "Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS,
                     "Digitos": ORDEM_DIGITOS_NUM
                 },
-                color_discrete_map=CORES_MODELOS_AZUL,
-                labels={"Digitos": "Dígitos", "Taxa_Acerto": "Taxa de Acerto (%)", "Nome_do_modelo": "Modelo"},
+                color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
+                labels={"Digitos": "Dígitos", "Taxa_Acerto": "Taxa de Acerto (%)", "Nome_do_modelo_rotulo": "Modelo"},
                 title=f"Comparativo de Modelos por Complexidade ({comp_sel})"
             )
             fig_linhas.update_traces(
@@ -362,13 +381,13 @@ with tab_complexidade:
         if not df_comp.empty:
             tabela_pivot = (
                 df_comp.pivot_table(
-                    index="Nome_do_modelo",
+                    index="Nome_do_modelo_rotulo",
                     columns="Digitos",
                     values="Acerto_da_operacao",
                     aggfunc=lambda x: (x.sum() / len(x)) * 100
                 )
             )
-            tabela_pivot = tabela_pivot.reindex([m for m in MODELOS_GEMINI if m in tabela_pivot.index])
+            tabela_pivot = tabela_pivot.reindex([m for m in MODELOS_GEMINI_ROTULOS if m in tabela_pivot.index])
             colunas_ordenadas = [c for c in ORDEM_DIGITOS_NUM if c in tabela_pivot.columns]
             tabela_pivot = tabela_pivot[colunas_ordenadas]
 
@@ -428,8 +447,8 @@ with tab_complexidade:
                     res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
                     res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
 
-                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "")
-                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>{sub_reasoning}</span>"
+                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
 
                     fig_dec = px.line(
                         res_dec,
@@ -475,8 +494,8 @@ with tab_complexidade:
                     res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
                     res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
 
-                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "")
-                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>{sub_reasoning}</span>"
+                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
 
                     fig_dec = px.line(
                         res_dec,
@@ -533,7 +552,7 @@ with tab_raciocinio:
                 df_soma_filtrado = df_soma_filtrado[df_soma_filtrado["Digitos"] == str(dig_r_sel)]
 
             stats_soma = (
-                df_soma_filtrado.groupby(["Nome_do_modelo", "Digitos"])
+                df_soma_filtrado.groupby(["Nome_do_modelo_rotulo", "Digitos"])
                 .agg(
                     Taxa_Acerto=("Acerto_da_operacao", lambda x: (x.sum() / len(x)) * 100),
                     Media_Reasoning=("reasoning_tokens", "mean")
@@ -541,22 +560,22 @@ with tab_raciocinio:
                 .reset_index()
             )
             stats_soma["Digitos_Num"] = pd.to_numeric(stats_soma["Digitos"], errors="coerce")
-            stats_soma = stats_soma.sort_values(by=["Nome_do_modelo", "Digitos_Num"])
+            stats_soma = stats_soma.sort_values(by=["Nome_do_modelo_rotulo", "Digitos_Num"])
 
             if dig_r_sel == "Todos":
                 fig_r_soma = px.line(
                     stats_soma,
                     x="Media_Reasoning",
                     y="Taxa_Acerto",
-                    color="Nome_do_modelo",
+                    color="Nome_do_modelo_rotulo",
                     markers=True,
                     text="Digitos",
-                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
-                    color_discrete_map=CORES_MODELOS_AZUL,
+                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
+                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
                     labels={
                         "Media_Reasoning": "Média de Tokens de Raciocínio",
                         "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo": "Modelo"
+                        "Nome_do_modelo_rotulo": "Modelo"
                     },
                     title="Soma: Trajetória de Complexidade (Todos os Dígitos)"
                 )
@@ -570,14 +589,14 @@ with tab_raciocinio:
                     stats_soma,
                     x="Media_Reasoning",
                     y="Taxa_Acerto",
-                    color="Nome_do_modelo",
-                    text="Nome_do_modelo",
-                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
-                    color_discrete_map=CORES_MODELOS_AZUL,
+                    color="Nome_do_modelo_rotulo",
+                    text="Nome_do_modelo_rotulo",
+                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
+                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
                     labels={
                         "Media_Reasoning": "Média de Tokens de Raciocínio",
                         "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo": "Modelo"
+                        "Nome_do_modelo_rotulo": "Modelo"
                     },
                     title=f"Soma: {dig_r_sel} Dígitos"
                 )
@@ -604,7 +623,7 @@ with tab_raciocinio:
                 df_comb_filtrado = df_comb_filtrado[df_comb_filtrado["Digitos"] == str(dig_r_sel)]
 
             stats_comb = (
-                df_comb_filtrado.groupby(["Nome_do_modelo", "Digitos"])
+                df_comb_filtrado.groupby(["Nome_do_modelo_rotulo", "Digitos"])
                 .agg(
                     Taxa_Acerto=("Acerto_da_operacao", lambda x: (x.sum() / len(x)) * 100),
                     Media_Reasoning=("reasoning_tokens", "mean")
@@ -612,22 +631,22 @@ with tab_raciocinio:
                 .reset_index()
             )
             stats_comb["Digitos_Num"] = pd.to_numeric(stats_comb["Digitos"], errors="coerce")
-            stats_comb = stats_comb.sort_values(by=["Nome_do_modelo", "Digitos_Num"])
+            stats_comb = stats_comb.sort_values(by=["Nome_do_modelo_rotulo", "Digitos_Num"])
 
             if dig_r_sel == "Todos":
                 fig_r_comb = px.line(
                     stats_comb,
                     x="Media_Reasoning",
                     y="Taxa_Acerto",
-                    color="Nome_do_modelo",
+                    color="Nome_do_modelo_rotulo",
                     markers=True,
                     text="Digitos",
-                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
-                    color_discrete_map=CORES_MODELOS_AZUL,
+                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
+                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
                     labels={
                         "Media_Reasoning": "Média de Tokens de Raciocínio",
                         "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo": "Modelo"
+                        "Nome_do_modelo_rotulo": "Modelo"
                     },
                     title="Expressões Combinadas: Trajetória de Complexidade (Todos os Dígitos)"
                 )
@@ -641,14 +660,14 @@ with tab_raciocinio:
                     stats_comb,
                     x="Media_Reasoning",
                     y="Taxa_Acerto",
-                    color="Nome_do_modelo",
-                    text="Nome_do_modelo",
-                    category_orders={"Nome_do_modelo": MODELOS_GEMINI},
-                    color_discrete_map=CORES_MODELOS_AZUL,
+                    color="Nome_do_modelo_rotulo",
+                    text="Nome_do_modelo_rotulo",
+                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
+                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
                     labels={
                         "Media_Reasoning": "Média de Tokens de Raciocínio",
                         "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo": "Modelo"
+                        "Nome_do_modelo_rotulo": "Modelo"
                     },
                     title=f"Expressões Combinadas: {dig_r_sel} Dígitos"
                 )

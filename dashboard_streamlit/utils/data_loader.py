@@ -64,6 +64,18 @@ REASONING_MODELOS = {
     "gemini-3.8-flash": "Reasoning: low",
 }
 
+# Rótulos padronizados com indicação de reasoning entre parênteses
+MODELOS_GEMINI_ROTULOS = [
+    f"{m} ({REASONING_MODELOS.get(m, 'Reasoning: none')})" for m in MODELOS_GEMINI
+]
+
+# Mapa de cores para compatibilidade com os novos rótulos
+CORES_MODELOS_AZUL_ROTULOS = {
+    f"{m} ({REASONING_MODELOS.get(m, 'Reasoning: none')})": cor
+    for m, cor in CORES_MODELOS_AZUL.items()
+}
+
+
 
 def obter_caminho_dados():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -212,6 +224,12 @@ def normalizar_dataframe(df, tipo):
             df[col] = ""
         else:
             df[col] = df[col].fillna("").astype(str)
+
+    # Adicionar rótulo com reasoning entre parênteses para exibição em gráficos
+    if "Nome_do_modelo" in df.columns:
+        df["Nome_do_modelo_rotulo"] = df["Nome_do_modelo"].apply(
+            lambda m: f"{m} ({REASONING_MODELOS.get(m, 'Reasoning: none')})" if pd.notna(m) and str(m).strip() != "" else m
+        )
 
     return df
 
