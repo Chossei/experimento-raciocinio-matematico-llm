@@ -21,7 +21,8 @@ from utils.data_loader import (
     MODELOS_GEMINI,
     CORES_MODELOS_AZUL,
     COR_AZUL_PADRAO,
-    CORES_OPERACOES
+    CORES_OPERACOES,
+    REASONING_MODELOS
 )
 from utils.styles import aplicar_estilos_globais
 
@@ -382,6 +383,9 @@ with tab_complexidade:
                     res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
                     res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
 
+                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "")
+                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>{sub_reasoning}</span>"
+
                     fig_dec = px.line(
                         res_dec,
                         x="Digitos",
@@ -393,14 +397,14 @@ with tab_complexidade:
                             "Tipo_Operacao": ops_selecionadas
                         },
                         color_discrete_map=CORES_OPERACOES,
-                        title=f"<b>{mod_atual}</b>"
+                        title=titulo_html
                     )
                     fig_dec.update_traces(
                         hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
                     )
                     fig_dec.update_layout(
-                        height=240,
-                        margin=dict(l=15, r=15, t=35, b=25),
+                        height=255,
+                        margin=dict(l=15, r=15, t=48, b=25),
                         yaxis=dict(range=[-5, 105], dtick=50, title=None),
                         xaxis=dict(title=None),
                         showlegend=False
@@ -426,6 +430,9 @@ with tab_complexidade:
                     res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
                     res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
 
+                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "")
+                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>{sub_reasoning}</span>"
+
                     fig_dec = px.line(
                         res_dec,
                         x="Digitos",
@@ -437,14 +444,14 @@ with tab_complexidade:
                             "Tipo_Operacao": ops_selecionadas
                         },
                         color_discrete_map=CORES_OPERACOES,
-                        title=f"<b>{mod_atual}</b>"
+                        title=titulo_html
                     )
                     fig_dec.update_traces(
                         hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
                     )
                     fig_dec.update_layout(
-                        height=240,
-                        margin=dict(l=15, r=15, t=35, b=25),
+                        height=255,
+                        margin=dict(l=15, r=15, t=48, b=25),
                         yaxis=dict(range=[-5, 105], dtick=50, title=None),
                         xaxis=dict(title=None),
                         showlegend=False

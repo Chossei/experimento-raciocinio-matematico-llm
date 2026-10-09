@@ -32,7 +32,7 @@ st.markdown(
 dfs = carregar_todos_dados()
 stats = obter_estatisticas_globais(dfs)
 
-col_top1, col_top2, col_top3, col_top4 = st.columns([1, 1, 1, 1])
+col_top1, col_top2, col_top3 = st.columns([1, 1, 1])
 
 with col_top1:
     st.markdown(f"""
@@ -46,43 +46,20 @@ with col_top1:
 with col_top2:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-label">Conformidade de Formato</div>
-        <div class="metric-value">{stats['conformidade_global']:.1f}%</div>
-        <div class="metric-sub">Respostas puramente numéricas</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col_top3:
-    st.markdown(f"""
-    <div class="metric-card">
         <div class="metric-label">Acurácia Global</div>
         <div class="metric-value">{stats['taxa_acerto_global']:.1f}%</div>
         <div class="metric-sub">Taxa média de acerto</div>
     </div>
     """, unsafe_allow_html=True)
 
-with col_top4:
-    # Botão de download do Plano de Implementação Final
-    caminho_plano = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Plano de Implementação - FINAL.md")
-    conteudo_plano = ""
-    if os.path.exists(caminho_plano):
-        with open(caminho_plano, "r", encoding="utf-8") as f:
-            conteudo_plano = f.read()
-
-    st.markdown("""
-    <div class="metric-card" style="display: flex; flex-direction: column; justify-content: center;">
-        <div class="metric-label">Documentação Técnica</div>
-        <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin: 0.4rem 0;">Plano do Experimento</div>
+with col_top3:
+    st.markdown(f"""
+    <div class="metric-card">
+        <div class="metric-label">Conformidade de Formato</div>
+        <div class="metric-value">{stats['conformidade_global']:.1f}%</div>
+        <div class="metric-sub">Respostas puramente numéricas</div>
     </div>
     """, unsafe_allow_html=True)
-    if conteudo_plano:
-        st.download_button(
-            label="📥 Baixar Plano Final (MD)",
-            data=conteudo_plano,
-            file_name="Plano_de_Implementacao_FINAL.md",
-            mime="text/markdown",
-            use_container_width=True
-        )
 
 st.markdown("<br>", unsafe_allow_html=True)
 

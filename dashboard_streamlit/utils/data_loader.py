@@ -50,6 +50,20 @@ CORES_OPERACOES = {
     "Expressões Combinadas": "#10b981"      # Verde esmeralda
 }
 
+# Configuração de reasoning (esforço de raciocínio) aplicada por modelo no experimento
+REASONING_MODELOS = {
+    "gemini-2.5-flash": "Reasoning: none",
+    "gemini-2.5-pro": "Reasoning: low",
+    "gemini-3-flash-preview": "Reasoning: none",
+    "gemini-3.1-flash-lite": "Reasoning: none",
+    "gemini-3.1-pro-preview": "Reasoning: low",
+    "gemini-3.5-flash-lite": "Reasoning: minimal",
+    "gemini-3.5-flash": "Reasoning: minimal",
+    "gemini-3.6-flash": "Reasoning: minimal",
+    "gemini-3.7-flash": "Reasoning: low",
+    "gemini-3.8-flash": "Reasoning: low",
+}
+
 
 def obter_caminho_dados():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
