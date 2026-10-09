@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
+import matplotlib.patheffects as pe
 
 # Configuração de diretórios
 PASTA_ATUAL = os.path.dirname(os.path.abspath(__file__))
@@ -72,16 +73,16 @@ def gerar_grafico():
     plt.rcParams["axes.linewidth"] = 0.8
 
     # Criação da figura 5x2 (espaço generoso no topo para título e legenda)
-    fig, axes = plt.subplots(nrows=5, ncols=2, figsize=(11.5, 16), sharex=False, sharey=False)
-    plt.subplots_adjust(top=0.90, bottom=0.05, left=0.09, right=0.95, hspace=0.45, wspace=0.18)
+    fig, axes = plt.subplots(nrows=5, ncols=2, figsize=(11.5, 16.5), sharex=False, sharey=False)
+    plt.subplots_adjust(top=0.895, bottom=0.045, left=0.085, right=0.955, hspace=0.46, wspace=0.18)
 
     # Título Principal Superior
     fig.suptitle(
         "Desempenho dos Modelos por Operação e Complexidade de Dígitos",
-        fontsize=16,
+        fontsize=16.5,
         fontweight="bold",
         color="#0f172a",
-        y=0.975
+        y=0.978
     )
 
     linhas_legenda = []
@@ -113,16 +114,22 @@ def gerar_grafico():
                 res["Taxa_Acerto"] = (res["Acertos"] / res["Total"]) * 100
                 res = res.sort_values(by="Digitos_Num")
 
-                # Plot da linha
+                # Plot da linha com contorno branco leve na linha e nos pontos
                 linha, = ax.plot(
                     res["Digitos_Num"],
                     res["Taxa_Acerto"],
                     color=op_cfg["cor"],
                     marker=op_cfg["marker"],
-                    markersize=4.2,
-                    linewidth=1.75,
+                    markersize=4.8,
+                    markeredgecolor="#ffffff",
+                    markeredgewidth=1.1,
+                    linewidth=1.9,
                     label=op_cfg["label"],
-                    alpha=0.95
+                    alpha=0.98,
+                    path_effects=[
+                        pe.Stroke(linewidth=3.3, foreground="#ffffff", alpha=0.9),
+                        pe.Normal()
+                    ]
                 )
 
                 # Coletar elementos para a legenda global única
@@ -159,28 +166,29 @@ def gerar_grafico():
             if r == 4:
                 ax.set_xlabel("Quantidade de Dígitos", fontsize=9.5, fontweight="600", color="#334155", labelpad=6)
 
-    # Legenda Global Única no topo (centralizada, sem sobreposição com os primeiros cards)
+    # Legenda Global Única no topo (com fonte ampliada e contorno nítido)
     fig.legend(
         handles=linhas_legenda,
         labels=rotulos_legenda,
         loc="upper center",
-        bbox_to_anchor=(0.515, 0.945),
+        bbox_to_anchor=(0.515, 0.947),
         ncol=4,
         frameon=True,
         facecolor="#ffffff",
         edgecolor="#cbd5e1",
-        framealpha=0.95,
-        fontsize=9.2,
-        handlelength=2.2,
-        handletextpad=0.5,
-        columnspacing=1.8
+        framealpha=0.98,
+        fontsize=11.5,
+        handlelength=2.5,
+        handletextpad=0.6,
+        columnspacing=2.0,
+        borderpad=0.55
     )
 
-    # Salvamento
+    # Salvamento com DPI bem alto (600 DPI) para inserção cristalina em DOCX
     caminho_png = os.path.join(PASTA_GRAFICOS, "desempenho_modelos_por_operacao_grid_5x2.png")
     caminho_pdf = os.path.join(PASTA_GRAFICOS, "desempenho_modelos_por_operacao_grid_5x2.pdf")
 
-    plt.savefig(caminho_png, dpi=300, bbox_inches="tight")
+    plt.savefig(caminho_png, dpi=600, bbox_inches="tight")
     plt.savefig(caminho_pdf, bbox_inches="tight")
     plt.close()
 
