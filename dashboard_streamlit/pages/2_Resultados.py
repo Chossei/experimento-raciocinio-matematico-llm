@@ -671,78 +671,92 @@ with tab_raciocinio:
 # =============================================================================
 with tab_pensam:
     st.markdown("### Investigação Qualitativa: Como os Modelos Pensam")
-    st.info("ℹ️ **Nota Metodológica:** Esta visualização qualitativa se restringe às **Expressões Combinadas**, onde os metadados de resumo de raciocínio (*reasoning summary*) foram integralmente capturados via API Batch.")
-
-    st.markdown("""
-    > [!NOTE]
-    > **Exibição dos Blocos de Pensamento:** O modelo **`gemini-2.5-pro`** é o que disponibiliza os blocos de texto analítico de raciocínio em texto plano legível (disponível para inspeção abaixo). Por padrão de segurança contra destilação, os modelos da geração **Gemini 3** contabilizam os tokens de pensamento em suas métricas numéricas, mas retornam a assinatura interna de raciocínio de forma criptografada (`reasoning.encrypted`).
-    """)
+    st.info("ℹ️ **Nota Metodológica:** Esta visualização exibe exclusivamente as amostras em que os modelos retornaram a cadeia de raciocínio (*thinking process*) legível em texto plano (sem encriptação).")
 
     df_comb = dfs.get("combinadas", pd.DataFrame())
 
-    col_sel_p1, col_sel_p2 = st.columns(2)
-    with col_sel_p1:
-        idx_padrao = MODELOS_GEMINI.index("gemini-2.5-pro") if "gemini-2.5-pro" in MODELOS_GEMINI else 0
-        mod_pensam_sel = st.selectbox("Selecione o modelo para inspecionar:", MODELOS_GEMINI, index=idx_padrao, key="sel_mod_pensam")
-    with col_sel_p2:
-        dig_pensam_sel = st.selectbox("Selecione a quantidade de dígitos:", ORDEM_DIGITOS_NUM, index=0, key="sel_dig_pensam")
+    # Filtrar estritamente as amostras onde o reasoning NÃO ficou encriptografado
+    df_com_raciocinio = df_comb[
+        df_comb["resumo_raciocinio"].notna() & 
+        (df_comb["resumo_raciocinio"].astype(str).str.strip() != "")
+    ].copy()
 
-    df_amostra = df_comb[(df_comb["Nome_do_modelo"] == mod_pensam_sel) & (df_comb["Digitos"] == str(dig_pensam_sel))]
-
-    if not df_amostra.empty:
-        df_sucessos = df_amostra[df_amostra["Acerto_da_operacao"] == True]
-        df_falhas = df_amostra[df_amostra["Acerto_da_operacao"] == False]
-
-        col_suc, col_fal = st.columns([1, 1])
-
-        # Coluna da Esquerda: Sucesso
-        with col_suc:
-            st.markdown("#### ✅ Caso de Sucesso (Acerto)")
-            if not df_sucessos.empty:
-                opcoes_suc = [f"Amostra #{i+1}: {row['Conta']}" for i, (_, row) in enumerate(df_sucessos.iterrows())]
-                idx_suc_sel = st.selectbox("Selecione uma amostra de acerto:", range(len(opcoes_suc)), format_func=lambda x: opcoes_suc[x], key="sel_amostra_suc")
-                row_suc = df_sucessos.iloc[idx_suc_sel]
-
-                st.markdown(f"""
-                <div class="thought-container-success">
-                    <div style="font-size: 0.85rem; font-weight: 700; color: #15803d; text-transform: uppercase;">Métricas do Caso</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #166534; margin: 4px 0;">{row_suc['reasoning_tokens']} tokens de raciocínio</div>
-                    <hr style="margin: 8px 0; border-color: #bbf7d0;">
-                    <div><b>Expressão:</b> <code>{row_suc['Conta']}</code></div>
-                    <div><b>Resposta do Modelo:</b> <span style="color: #16a34a; font-weight: bold;">{row_suc['Resultado_do_modelo']}</span></div>
-                    <div><b>Gabarito Decimal:</b> <code>{row_suc['Resultado_original']}</code></div>
-                    <div style="margin-top: 10px; font-weight: 600; color: #166534;">Linha de Raciocínio (Thinking Process):</div>
-                    <div style="background: #ffffff; padding: 10px; border-radius: 6px; font-size: 0.85rem; color: #1e293b; margin-top: 6px; max-height: 250px; overflow-y: auto; border: 1px solid #dcfce7; white-space: pre-wrap;">
-{row_suc['resumo_raciocinio'] if row_suc['resumo_raciocinio'] else '(Raciocínio criptografado ou em formato nativo pela API)'}
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-            else:
-                st.warning(f"O modelo {mod_pensam_sel} não obteve acertos para {dig_pensam_sel} dígitos.")
-
-        # Coluna da Direita: Falha
-        with col_fal:
-            st.markdown("#### ❌ Caso de Falha (Erro)")
-            if not df_falhas.empty:
-                opcoes_fal = [f"Amostra #{i+1}: {row['Conta']}" for i, (_, row) in enumerate(df_falhas.iterrows())]
-                idx_fal_sel = st.selectbox("Selecione uma amostra de erro:", range(len(opcoes_fal)), format_func=lambda x: opcoes_fal[x], key="sel_amostra_fal")
-                row_fal = df_falhas.iloc[idx_fal_sel]
-
-                st.markdown(f"""
-                <div class="thought-container-error">
-                    <div style="font-size: 0.85rem; font-weight: 700; color: #b91c1c; text-transform: uppercase;">Métricas do Caso</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #991b1b; margin: 4px 0;">{row_fal['reasoning_tokens']} tokens de raciocínio</div>
-                    <hr style="margin: 8px 0; border-color: #fecaca;">
-                    <div><b>Expressão:</b> <code>{row_fal['Conta']}</code></div>
-                    <div><b>Resposta do Modelo:</b> <span style="color: #dc2626; font-weight: bold;">{row_fal['Resultado_do_modelo']}</span></div>
-                    <div><b>Gabarito Decimal:</b> <code>{row_fal['Resultado_original']}</code></div>
-                    <div style="margin-top: 10px; font-weight: 600; color: #991b1b;">Linha de Raciocínio (Thinking Process):</div>
-                    <div style="background: #ffffff; padding: 10px; border-radius: 6px; font-size: 0.85rem; color: #1e293b; margin-top: 6px; max-height: 250px; overflow-y: auto; border: 1px solid #fee2e2; white-space: pre-wrap;">
-{row_fal['resumo_raciocinio'] if row_fal['resumo_raciocinio'] else '(Raciocínio criptografado ou em formato nativo pela API)'}
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-            else:
-                st.success(f"O modelo {mod_pensam_sel} obteve 100% de acerto para {dig_pensam_sel} dígitos!")
+    if df_com_raciocinio.empty:
+        st.warning("Nenhuma amostra com raciocínio legível encontrada no conjunto de dados.")
     else:
-        st.info("Nenhuma amostra encontrada para esta combinação de modelo e dígitos.")
+        modelos_disponiveis = [m for m in MODELOS_GEMINI if m in df_com_raciocinio["Nome_do_modelo"].unique()]
+        if not modelos_disponiveis:
+            modelos_disponiveis = sorted(df_com_raciocinio["Nome_do_modelo"].unique().tolist())
+
+        col_sel_p1, col_sel_p2 = st.columns(2)
+        with col_sel_p1:
+            idx_padrao = modelos_disponiveis.index("gemini-2.5-pro") if "gemini-2.5-pro" in modelos_disponiveis else 0
+            mod_pensam_sel = st.selectbox("Selecione o modelo para inspecionar:", modelos_disponiveis, index=idx_padrao, key="sel_mod_pensam")
+
+        df_mod = df_com_raciocinio[df_com_raciocinio["Nome_do_modelo"] == mod_pensam_sel]
+        digitos_mod = [d for d in ORDEM_DIGITOS_NUM if str(d) in df_mod["Digitos"].unique()]
+        if not digitos_mod:
+            digitos_mod = sorted(df_mod["Digitos"].unique().tolist())
+
+        with col_sel_p2:
+            dig_pensam_sel = st.selectbox("Selecione a quantidade de dígitos:", digitos_mod, index=0, key="sel_dig_pensam")
+
+        df_amostra = df_mod[df_mod["Digitos"] == str(dig_pensam_sel)]
+
+        if not df_amostra.empty:
+            df_sucessos = df_amostra[df_amostra["Acerto_da_operacao"] == True]
+            df_falhas = df_amostra[df_amostra["Acerto_da_operacao"] == False]
+
+            col_suc, col_fal = st.columns([1, 1])
+
+            # Coluna da Esquerda: Sucesso
+            with col_suc:
+                st.markdown("#### ✅ Caso de Sucesso (Acerto)")
+                if not df_sucessos.empty:
+                    opcoes_suc = [f"Amostra #{i+1}: {row['Conta']}" for i, (_, row) in enumerate(df_sucessos.iterrows())]
+                    idx_suc_sel = st.selectbox("Selecione uma amostra de acerto:", range(len(opcoes_suc)), format_func=lambda x: opcoes_suc[x], key="sel_amostra_suc")
+                    row_suc = df_sucessos.iloc[idx_suc_sel]
+
+                    st.markdown(f"""
+                    <div class="thought-container-success">
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #15803d; text-transform: uppercase;">Métricas do Caso</div>
+                        <div style="font-size: 1.1rem; font-weight: 800; color: #166534; margin: 4px 0;">{row_suc['reasoning_tokens']} tokens de raciocínio</div>
+                        <hr style="margin: 8px 0; border-color: #bbf7d0;">
+                        <div><b>Expressão:</b> <code>{row_suc['Conta']}</code></div>
+                        <div><b>Resposta do Modelo:</b> <span style="color: #16a34a; font-weight: bold;">{row_suc['Resultado_do_modelo']}</span></div>
+                        <div><b>Gabarito Decimal:</b> <code>{row_suc['Resultado_original']}</code></div>
+                        <div style="margin-top: 10px; font-weight: 600; color: #166534;">Linha de Raciocínio (Thinking Process):</div>
+                        <div style="background: #ffffff; padding: 10px; border-radius: 6px; font-size: 0.85rem; color: #1e293b; margin-top: 6px; max-height: 250px; overflow-y: auto; border: 1px solid #dcfce7; white-space: pre-wrap;">
+{row_suc['resumo_raciocinio']}
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    st.info(f"O modelo {mod_pensam_sel} não possui amostras de acerto com raciocínio legível para {dig_pensam_sel} dígitos.")
+
+            # Coluna da Direita: Falha
+            with col_fal:
+                st.markdown("#### ❌ Caso de Falha (Erro)")
+                if not df_falhas.empty:
+                    opcoes_fal = [f"Amostra #{i+1}: {row['Conta']}" for i, (_, row) in enumerate(df_falhas.iterrows())]
+                    idx_fal_sel = st.selectbox("Selecione uma amostra de erro:", range(len(opcoes_fal)), format_func=lambda x: opcoes_fal[x], key="sel_amostra_fal")
+                    row_fal = df_falhas.iloc[idx_fal_sel]
+
+                    st.markdown(f"""
+                    <div class="thought-container-error">
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #b91c1c; text-transform: uppercase;">Métricas do Caso</div>
+                        <div style="font-size: 1.1rem; font-weight: 800; color: #991b1b; margin: 4px 0;">{row_fal['reasoning_tokens']} tokens de raciocínio</div>
+                        <hr style="margin: 8px 0; border-color: #fecaca;">
+                        <div><b>Expressão:</b> <code>{row_fal['Conta']}</code></div>
+                        <div><b>Resposta do Modelo:</b> <span style="color: #dc2626; font-weight: bold;">{row_fal['Resultado_do_modelo']}</span></div>
+                        <div><b>Gabarito Decimal:</b> <code>{row_fal['Resultado_original']}</code></div>
+                        <div style="margin-top: 10px; font-weight: 600; color: #991b1b;">Linha de Raciocínio (Thinking Process):</div>
+                        <div style="background: #ffffff; padding: 10px; border-radius: 6px; font-size: 0.85rem; color: #1e293b; margin-top: 6px; max-height: 250px; overflow-y: auto; border: 1px solid #fee2e2; white-space: pre-wrap;">
+{row_fal['resumo_raciocinio']}
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    st.info(f"O modelo {mod_pensam_sel} não possui amostras de erro com raciocínio legível para {dig_pensam_sel} dígitos.")
+        else:
+            st.info("Nenhuma amostra com raciocínio legível encontrada para esta combinação de modelo e dígitos.")
