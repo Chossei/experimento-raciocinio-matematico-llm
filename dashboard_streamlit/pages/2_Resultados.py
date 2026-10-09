@@ -7,24 +7,69 @@ Composta por 4 abas interativas em Plotly Express:
 4. Como os modelos pensam (Análise qualitativa lado a lado sucesso verde / erro vermelho)
 """
 
-import sys
 import os
+import sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.data_loader import (
-    carregar_todos_dados,
-    ORDEM_DIGITOS_NUM,
-    MODELOS_GEMINI,
-    CORES_MODELOS_AZUL,
-    COR_AZUL_PADRAO,
-    CORES_OPERACOES,
-    REASONING_MODELOS
-)
-from utils.styles import aplicar_estilos_globais
+# Carregamento resiliente dos utilitários
+try:
+    import utils.data_loader as data_loader_module
+    import importlib
+    importlib.reload(data_loader_module)
+    from utils.data_loader import (
+        carregar_todos_dados,
+        ORDEM_DIGITOS_NUM,
+        MODELOS_GEMINI,
+        CORES_MODELOS_AZUL,
+        COR_AZUL_PADRAO,
+        CORES_OPERACOES,
+    )
+    REASONING_MODELOS = getattr(data_loader_module, "REASONING_MODELOS", None)
+except Exception:
+    import importlib.util
+    loader_path = os.path.join(BASE_DIR, "utils", "data_loader.py")
+    spec = importlib.util.spec_from_file_location("data_loader", loader_path)
+    data_loader_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(data_loader_module)
+    carregar_todos_dados = data_loader_module.carregar_todos_dados
+    ORDEM_DIGITOS_NUM = data_loader_module.ORDEM_DIGITOS_NUM
+    MODELOS_GEMINI = data_loader_module.MODELOS_GEMINI
+    CORES_MODELOS_AZUL = data_loader_module.CORES_MODELOS_AZUL
+    COR_AZUL_PADRAO = data_loader_module.COR_AZUL_PADRAO
+    CORES_OPERACOES = data_loader_module.CORES_OPERACOES
+    REASONING_MODELOS = getattr(data_loader_module, "REASONING_MODELOS", None)
+
+if not REASONING_MODELOS:
+    REASONING_MODELOS = {
+        "gemini-2.5-flash": "Reasoning: none",
+        "gemini-2.5-pro": "Reasoning: low",
+        "gemini-3-flash-preview": "Reasoning: none",
+        "gemini-3.1-flash-lite": "Reasoning: none",
+        "gemini-3.1-pro-preview": "Reasoning: low",
+        "gemini-3.5-flash-lite": "Reasoning: minimal",
+        "gemini-3.5-flash": "Reasoning: minimal",
+        "gemini-3.6-flash": "Reasoning: minimal",
+        "gemini-3.7-flash": "Reasoning: low",
+        "gemini-3.8-flash": "Reasoning: low",
+    }
+
+try:
+    from utils.styles import aplicar_estilos_globais
+except Exception:
+    import importlib.util
+    styles_path = os.path.join(BASE_DIR, "utils", "styles.py")
+    spec_styles = importlib.util.spec_from_file_location("styles", styles_path)
+    styles_module = importlib.util.module_from_spec(spec_styles)
+    spec_styles.loader.exec_module(styles_module)
+    aplicar_estilos_globais = styles_module.aplicar_estilos_globais
 
 aplicar_estilos_globais()
 

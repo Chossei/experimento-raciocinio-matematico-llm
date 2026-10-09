@@ -6,20 +6,48 @@ Composta por 3 abas organizadas via st.tabs com gráficos Plotly Express:
 3. Inspeção de erros (Diagnóstico granular com múltiplos filtros e busca textual)
 """
 
-import sys
 import os
+import sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.data_loader import (
-    carregar_todos_dados,
-    ORDEM_DIGITOS_NUM,
-    MODELOS_GEMINI,
-    COR_AZUL_PADRAO
-)
-from utils.styles import aplicar_estilos_globais
+# Carregamento resiliente dos utilitários
+try:
+    import utils.data_loader as data_loader_module
+    import importlib
+    importlib.reload(data_loader_module)
+    from utils.data_loader import (
+        carregar_todos_dados,
+        ORDEM_DIGITOS_NUM,
+        MODELOS_GEMINI,
+        COR_AZUL_PADRAO
+    )
+except Exception:
+    import importlib.util
+    loader_path = os.path.join(BASE_DIR, "utils", "data_loader.py")
+    spec = importlib.util.spec_from_file_location("data_loader", loader_path)
+    data_loader_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(data_loader_module)
+    carregar_todos_dados = data_loader_module.carregar_todos_dados
+    ORDEM_DIGITOS_NUM = data_loader_module.ORDEM_DIGITOS_NUM
+    MODELOS_GEMINI = data_loader_module.MODELOS_GEMINI
+    COR_AZUL_PADRAO = data_loader_module.COR_AZUL_PADRAO
+
+try:
+    from utils.styles import aplicar_estilos_globais
+except Exception:
+    import importlib.util
+    styles_path = os.path.join(BASE_DIR, "utils", "styles.py")
+    spec_styles = importlib.util.spec_from_file_location("styles", styles_path)
+    styles_module = importlib.util.module_from_spec(spec_styles)
+    spec_styles.loader.exec_module(styles_module)
+    aplicar_estilos_globais = styles_module.aplicar_estilos_globais
 
 aplicar_estilos_globais()
 

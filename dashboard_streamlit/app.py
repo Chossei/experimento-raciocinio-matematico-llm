@@ -4,6 +4,13 @@ Configura roteamento de páginas e navegação unificada.
 """
 
 import os
+import sys
+
+# Garantir que o diretório raiz esteja no topo do sys.path para resolução consistente de módulos
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 import streamlit as st
 
 st.set_page_config(
@@ -14,8 +21,7 @@ st.set_page_config(
 )
 
 # Caminho absoluto para a pasta de páginas
-base_dir = os.path.dirname(os.path.abspath(__file__))
-pages_dir = os.path.join(base_dir, "pages")
+pages_dir = os.path.join(BASE_DIR, "pages")
 
 # Configuração da navegação moderna Streamlit
 pg = st.navigation([

@@ -3,15 +3,47 @@ Página 1: Sobre o Experimento
 Apresenta o storytelling completo: Introdução, Metodologia, Resultados Esperados e Métricas Globais.
 """
 
-import sys
 import os
+import sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 import streamlit as st
 import pandas as pd
 
-# Adicionar pasta raiz do dashboard ao path para imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.data_loader import carregar_todos_dados, obter_estatisticas_globais, MODELOS_GEMINI, CORES_MODELOS_AZUL
-from utils.styles import aplicar_estilos_globais
+# Carregamento resiliente dos utilitários
+try:
+    import utils.data_loader as data_loader_module
+    import importlib
+    importlib.reload(data_loader_module)
+    from utils.data_loader import (
+        carregar_todos_dados,
+        obter_estatisticas_globais,
+        MODELOS_GEMINI,
+        CORES_MODELOS_AZUL
+    )
+except Exception:
+    import importlib.util
+    loader_path = os.path.join(BASE_DIR, "utils", "data_loader.py")
+    spec = importlib.util.spec_from_file_location("data_loader", loader_path)
+    data_loader_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(data_loader_module)
+    carregar_todos_dados = data_loader_module.carregar_todos_dados
+    obter_estatisticas_globais = data_loader_module.obter_estatisticas_globais
+    MODELOS_GEMINI = data_loader_module.MODELOS_GEMINI
+    CORES_MODELOS_AZUL = data_loader_module.CORES_MODELOS_AZUL
+
+try:
+    from utils.styles import aplicar_estilos_globais
+except Exception:
+    import importlib.util
+    styles_path = os.path.join(BASE_DIR, "utils", "styles.py")
+    spec_styles = importlib.util.spec_from_file_location("styles", styles_path)
+    styles_module = importlib.util.module_from_spec(spec_styles)
+    spec_styles.loader.exec_module(styles_module)
+    aplicar_estilos_globais = styles_module.aplicar_estilos_globais
 
 aplicar_estilos_globais()
 
