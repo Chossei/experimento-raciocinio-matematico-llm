@@ -219,7 +219,7 @@ def obter_estatisticas_globais(dfs):
         }
 
     total_testes = len(df_geral)
-    custo_total_usd = 22.16  # Custo real efetivo consolidado (Vertex AI + OpenRouter)
+    custo_total_usd = 24.27  # Custo total geral efetivo consolidado (Vertex AI + OpenRouter + pré-testes)
     taxa_acerto_global = (df_geral["Acerto_da_operacao"].mean() * 100) if total_testes > 0 else 0.0
     conformidade_global = (df_geral["Acerto_do_formato_de_resposta"].mean() * 100) if total_testes > 0 else 0.0
 

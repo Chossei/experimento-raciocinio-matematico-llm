@@ -4,7 +4,7 @@
     "batch_id": "batch-1790745341-HAftUdQq4txjJ2H1j81A",
     "total_requests": 320,
     "timestamp_envio": "2026-09-30T02:15:35.927927",
-    "status": "in_progress",
+    "status": "failed",
     "resposta_criacao": {
       "id": "batch-1790745341-HAftUdQq4txjJ2H1j81A",
       "object": "batch",
