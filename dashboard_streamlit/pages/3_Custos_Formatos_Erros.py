@@ -105,7 +105,10 @@ with tab_custos:
 
         col_m1, _ = st.columns([1.25, 0.75])
         with col_m1:
-            st.metric("Custo Total no Recorte", f"${total_gasto_usd:.4f} USD")
+            if tipo_custo_sel == "Todas as Operações" and dig_custo_sel == "Todos os Dígitos":
+                st.metric("Custo Total no Recorte", f"${total_gasto_usd:.2f} USD")
+            else:
+                st.metric("Custo Total no Recorte", f"${total_gasto_usd:.4f} USD")
 
         st.markdown("<br>", unsafe_allow_html=True)
 
@@ -130,8 +133,9 @@ with tab_custos:
                 },
                 title=f"Custo por Modelo - {tipo_custo_sel} ({dig_custo_sel})"
             )
+            fmt_bar = "$%{y:.2f}" if total_gasto_usd >= 1.0 else "$%{y:.4f}"
             fig_custos.update_traces(
-                texttemplate="$%{y:.4f}",
+                texttemplate=fmt_bar,
                 textposition="outside",
                 hovertemplate="<b>%{x}</b><br>Custo: $%{y:.4f} USD<extra></extra>"
             )
