@@ -752,7 +752,7 @@ with tab_raciocinio:
                 fig_tok.update_layout(
                     height=255,
                     margin=dict(l=15, r=15, t=48, b=25),
-                    yaxis=dict(range=[0, 1000], dtick=250, title=None),
+                    yaxis=dict(range=[0, 1250], dtick=250, title=None),
                     xaxis=dict(title=None),
                     showlegend=False
                 )
@@ -796,7 +796,7 @@ with tab_raciocinio:
                 fig_tok.update_layout(
                     height=255,
                     margin=dict(l=15, r=15, t=48, b=25),
-                    yaxis=dict(range=[0, 1000], dtick=250, title=None),
+                    yaxis=dict(range=[0, 1250], dtick=250, title=None),
                     xaxis=dict(title=None),
                     showlegend=False
                 )
