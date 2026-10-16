@@ -685,6 +685,217 @@ with tab_raciocinio:
             )
             st.plotly_chart(fig_r_comb, use_container_width=True)
 
+    st.markdown("---")
+
+    # -------------------------------------------------------------------------
+    # NOVO: GRID 2x5 DA MÉDIA DE TOKENS POR QUANTIDADE DE DÍGITOS
+    # -------------------------------------------------------------------------
+    st.markdown("### Média de tokens de raciocínio por quantidade de dígitos")
+    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para cada um dos 10 modelos Gemini, comparando Soma e Expressões Combinadas.")
+
+    st.markdown("""
+    <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #3b82f6; border-radius: 3px; display: inline-block;"></span> Soma</div>
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #10b981; border-radius: 3px; display: inline-block;"></span> Expressões Combinadas</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Preparação dos dados concatenados para o grid de linhas de tokens
+    df_soma_tok = df_soma_r[["Nome_do_modelo", "Digitos", "reasoning_tokens"]].copy()
+    df_soma_tok["Tipo_Operacao"] = "Soma"
+
+    df_comb_tok = df_comb_r[["Nome_do_modelo", "Digitos", "reasoning_tokens"]].copy()
+    df_comb_tok["Tipo_Operacao"] = "Expressões Combinadas"
+
+    df_tokens_ambos = pd.concat([df_soma_tok, df_comb_tok], ignore_index=True)
+    df_tokens_ambos["Digitos_Num"] = pd.to_numeric(df_tokens_ambos["Digitos"], errors="coerce")
+
+    # Linha 1 de modelos (0 a 4)
+    cols_tok_l1 = st.columns(5)
+    for idx in range(5):
+        mod_atual = MODELOS_GEMINI[idx]
+        df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
+        with cols_tok_l1[idx]:
+            if not df_mod_t.empty:
+                res_tok = (
+                    df_mod_t.groupby(["Tipo_Operacao", "Digitos", "Digitos_Num"])["reasoning_tokens"]
+                    .mean()
+                    .reset_index(name="Media_Tokens")
+                )
+                res_tok = res_tok.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
+
+                sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
+
+                fig_tok = px.line(
+                    res_tok,
+                    x="Digitos",
+                    y="Media_Tokens",
+                    color="Tipo_Operacao",
+                    markers=True,
+                    category_orders={
+                        "Digitos": ORDEM_DIGITOS_NUM,
+                        "Tipo_Operacao": ["Soma", "Expressões Combinadas"]
+                    },
+                    color_discrete_map=CORES_OPERACOES,
+                    title=titulo_html
+                )
+                fig_tok.update_traces(
+                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Média Tokens: %{y:.1f}<extra></extra>"
+                )
+                fig_tok.update_layout(
+                    height=255,
+                    margin=dict(l=15, r=15, t=48, b=25),
+                    yaxis=dict(rangemode="tozero", title=None),
+                    xaxis=dict(title=None),
+                    showlegend=False
+                )
+                st.plotly_chart(fig_tok, use_container_width=True)
+            else:
+                st.info(f"{mod_atual}: Sem dados")
+
+    # Linha 2 de modelos (5 a 9)
+    cols_tok_l2 = st.columns(5)
+    for idx in range(5, 10):
+        mod_atual = MODELOS_GEMINI[idx]
+        df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
+        with cols_tok_l2[idx - 5]:
+            if not df_mod_t.empty:
+                res_tok = (
+                    df_mod_t.groupby(["Tipo_Operacao", "Digitos", "Digitos_Num"])["reasoning_tokens"]
+                    .mean()
+                    .reset_index(name="Media_Tokens")
+                )
+                res_tok = res_tok.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
+
+                sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
+
+                fig_tok = px.line(
+                    res_tok,
+                    x="Digitos",
+                    y="Media_Tokens",
+                    color="Tipo_Operacao",
+                    markers=True,
+                    category_orders={
+                        "Digitos": ORDEM_DIGITOS_NUM,
+                        "Tipo_Operacao": ["Soma", "Expressões Combinadas"]
+                    },
+                    color_discrete_map=CORES_OPERACOES,
+                    title=titulo_html
+                )
+                fig_tok.update_traces(
+                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Média Tokens: %{y:.1f}<extra></extra>"
+                )
+                fig_tok.update_layout(
+                    height=255,
+                    margin=dict(l=15, r=15, t=48, b=25),
+                    yaxis=dict(rangemode="tozero", title=None),
+                    xaxis=dict(title=None),
+                    showlegend=False
+                )
+                st.plotly_chart(fig_tok, use_container_width=True)
+            else:
+                st.info(f"{mod_atual}: Sem dados")
+
+    st.markdown("---")
+
+    # -------------------------------------------------------------------------
+    # NOVO: GRID 2x5 DE BOXPLOTS (TOKENS DE RACIOCÍNIO VS ACERTO/ERRO)
+    # -------------------------------------------------------------------------
+    st.markdown("### Distribuição de tokens de raciocínio por resultado da operação")
+    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X), revelando a dispersão do esforço cognitivo.")
+
+    # Seletor para alternar entre Soma e Expressões Combinadas
+    col_sel_box, _ = st.columns([1, 1])
+    with col_sel_box:
+        op_box_sel = st.radio(
+            "Selecione a operação para inspecionar os boxplots:",
+            options=["Soma", "Expressões Combinadas"],
+            index=0,
+            horizontal=True,
+            key="sel_op_boxplot_grid"
+        )
+
+    # Legenda explicativa superior das caixas
+    st.markdown("""
+    <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #10b981; border-radius: 3px; display: inline-block;"></span> Acerto</div>
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #ef4444; border-radius: 3px; display: inline-block;"></span> Erro</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    if op_box_sel == "Soma":
+        df_box_base = df_soma_r.copy()
+    else:
+        df_box_base = df_comb_r.copy()
+
+    if not df_box_base.empty:
+        df_box_base["Resultado"] = df_box_base["Acerto_da_operacao"].apply(lambda x: "Acerto" if bool(x) else "Erro")
+
+        # Linha 1 de modelos (0 a 4)
+        cols_box_l1 = st.columns(5)
+        for idx in range(5):
+            mod_atual = MODELOS_GEMINI[idx]
+            df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
+            with cols_box_l1[idx]:
+                if not df_mod_b.empty:
+                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
+
+                    fig_box = px.box(
+                        df_mod_b,
+                        x="Resultado",
+                        y="reasoning_tokens",
+                        color="Resultado",
+                        category_orders={"Resultado": ["Acerto", "Erro"]},
+                        color_discrete_map={"Acerto": "#10b981", "Erro": "#ef4444"},
+                        title=titulo_html,
+                        points="outliers"
+                    )
+                    fig_box.update_layout(
+                        height=265,
+                        margin=dict(l=15, r=15, t=48, b=25),
+                        yaxis=dict(rangemode="tozero", title=None),
+                        xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
+                        showlegend=False
+                    )
+                    st.plotly_chart(fig_box, use_container_width=True)
+                else:
+                    st.info(f"{mod_atual}: Sem dados")
+
+        # Linha 2 de modelos (5 a 9)
+        cols_box_l2 = st.columns(5)
+        for idx in range(5, 10):
+            mod_atual = MODELOS_GEMINI[idx]
+            df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
+            with cols_box_l2[idx - 5]:
+                if not df_mod_b.empty:
+                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
+
+                    fig_box = px.box(
+                        df_mod_b,
+                        x="Resultado",
+                        y="reasoning_tokens",
+                        color="Resultado",
+                        category_orders={"Resultado": ["Acerto", "Erro"]},
+                        color_discrete_map={"Acerto": "#10b981", "Erro": "#ef4444"},
+                        title=titulo_html,
+                        points="outliers"
+                    )
+                    fig_box.update_layout(
+                        height=265,
+                        margin=dict(l=15, r=15, t=48, b=25),
+                        yaxis=dict(rangemode="tozero", title=None),
+                        xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
+                        showlegend=False
+                    )
+                    st.plotly_chart(fig_box, use_container_width=True)
+                else:
+                    st.info(f"{mod_atual}: Sem dados")
+
+
 # =============================================================================
 # ABA 4: COMO OS MODELOS PENSAM
 # =============================================================================
