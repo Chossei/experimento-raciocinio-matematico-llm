@@ -752,7 +752,7 @@ with tab_raciocinio:
                 fig_tok.update_layout(
                     height=255,
                     margin=dict(l=15, r=15, t=48, b=25),
-                    yaxis=dict(rangemode="tozero", title=None),
+                    yaxis=dict(range=[0, 1000], dtick=250, title=None),
                     xaxis=dict(title=None),
                     showlegend=False
                 )
@@ -796,7 +796,7 @@ with tab_raciocinio:
                 fig_tok.update_layout(
                     height=255,
                     margin=dict(l=15, r=15, t=48, b=25),
-                    yaxis=dict(rangemode="tozero", title=None),
+                    yaxis=dict(range=[0, 1000], dtick=250, title=None),
                     xaxis=dict(title=None),
                     showlegend=False
                 )
@@ -851,6 +851,15 @@ with tab_raciocinio:
 
         df_box_base["Resultado"] = df_box_base["Acerto_da_operacao"].apply(lambda x: "Acerto" if bool(x) else "Erro")
 
+        # Determinar a escala Y máxima unificada baseada no maior ponto (outlier/máximo) entre todos os modelos
+        import math
+        df_box_models = df_box_base[df_box_base["Nome_do_modelo"].isin(MODELOS_COM_REASONING)]
+        max_val_box = df_box_models["reasoning_tokens"].max() if not df_box_models.empty else 0
+        if pd.isna(max_val_box) or max_val_box <= 0:
+            y_max_box = 100
+        else:
+            y_max_box = int(math.ceil(float(max_val_box) * 1.05 / 50.0) * 50)
+
         # Linha 1: 4 modelos
         cols_box_l1 = st.columns(4)
         for idx in range(min(4, len(MODELOS_COM_REASONING))):
@@ -874,7 +883,7 @@ with tab_raciocinio:
                     fig_box.update_layout(
                         height=265,
                         margin=dict(l=15, r=15, t=48, b=25),
-                        yaxis=dict(rangemode="tozero", title=None),
+                        yaxis=dict(range=[0, y_max_box], title=None),
                         xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
                         showlegend=False
                     )
@@ -905,7 +914,7 @@ with tab_raciocinio:
                     fig_box.update_layout(
                         height=265,
                         margin=dict(l=15, r=15, t=48, b=25),
-                        yaxis=dict(rangemode="tozero", title=None),
+                        yaxis=dict(range=[0, y_max_box], title=None),
                         xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
                         showlegend=False
                     )
