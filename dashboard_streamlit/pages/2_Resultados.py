@@ -687,11 +687,17 @@ with tab_raciocinio:
 
     st.markdown("---")
 
+    # Lista dos modelos com raciocínio ativo (diferente de 'none') -> total 7 modelos
+    MODELOS_COM_REASONING = [
+        m for m in MODELOS_GEMINI 
+        if "none" not in REASONING_MODELOS.get(m, "").lower()
+    ]
+
     # -------------------------------------------------------------------------
-    # NOVO: GRID 2x5 DA MÉDIA DE TOKENS POR QUANTIDADE DE DÍGITOS
+    # NOVO: GRID (1ª LINHA COM 4, 2ª LINHA COM 3) DA MÉDIA DE TOKENS POR DÍGITOS
     # -------------------------------------------------------------------------
     st.markdown("### Média de tokens de raciocínio por quantidade de dígitos")
-    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para cada um dos 10 modelos Gemini, comparando Soma e Expressões Combinadas.")
+    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para os modelos com raciocínio ativo (Reasoning ≠ none), comparando Soma e Expressões Combinadas.")
 
     st.markdown("""
     <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
@@ -710,10 +716,10 @@ with tab_raciocinio:
     df_tokens_ambos = pd.concat([df_soma_tok, df_comb_tok], ignore_index=True)
     df_tokens_ambos["Digitos_Num"] = pd.to_numeric(df_tokens_ambos["Digitos"], errors="coerce")
 
-    # Linha 1 de modelos (0 a 4)
-    cols_tok_l1 = st.columns(5)
-    for idx in range(5):
-        mod_atual = MODELOS_GEMINI[idx]
+    # Linha 1: 4 modelos
+    cols_tok_l1 = st.columns(4)
+    for idx in range(min(4, len(MODELOS_COM_REASONING))):
+        mod_atual = MODELOS_COM_REASONING[idx]
         df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
         with cols_tok_l1[idx]:
             if not df_mod_t.empty:
@@ -754,12 +760,12 @@ with tab_raciocinio:
             else:
                 st.info(f"{mod_atual}: Sem dados")
 
-    # Linha 2 de modelos (5 a 9)
-    cols_tok_l2 = st.columns(5)
-    for idx in range(5, 10):
-        mod_atual = MODELOS_GEMINI[idx]
+    # Linha 2: 3 modelos
+    cols_tok_l2 = st.columns(3)
+    for idx in range(4, len(MODELOS_COM_REASONING)):
+        mod_atual = MODELOS_COM_REASONING[idx]
         df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
-        with cols_tok_l2[idx - 5]:
+        with cols_tok_l2[idx - 4]:
             if not df_mod_t.empty:
                 res_tok = (
                     df_mod_t.groupby(["Tipo_Operacao", "Digitos", "Digitos_Num"])["reasoning_tokens"]
@@ -801,20 +807,28 @@ with tab_raciocinio:
     st.markdown("---")
 
     # -------------------------------------------------------------------------
-    # NOVO: GRID 2x5 DE BOXPLOTS (TOKENS DE RACIOCÍNIO VS ACERTO/ERRO)
+    # NOVO: GRID DE BOXPLOTS (1ª LINHA COM 4, 2ª LINHA COM 3 - ACERTO/ERRO)
     # -------------------------------------------------------------------------
     st.markdown("### Distribuição de tokens de raciocínio por resultado da operação")
-    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X), revelando a dispersão do esforço cognitivo.")
+    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X) para os modelos com raciocínio ativo (Reasoning ≠ none), revelando a dispersão do esforço cognitivo.")
 
-    # Seletor para alternar entre Soma e Expressões Combinadas
-    col_sel_box, _ = st.columns([1, 1])
-    with col_sel_box:
+    # Seletores de operação e de quantidade de dígitos
+    col_sel_box1, col_sel_box2 = st.columns([1, 1])
+    with col_sel_box1:
         op_box_sel = st.radio(
             "Selecione a operação para inspecionar os boxplots:",
             options=["Soma", "Expressões Combinadas"],
             index=0,
             horizontal=True,
             key="sel_op_boxplot_grid"
+        )
+    with col_sel_box2:
+        opcoes_dig_box = ["Todos"] + ORDEM_DIGITOS_NUM
+        dig_box_sel = st.selectbox(
+            "Selecione a quantidade de dígitos para analisar:",
+            options=opcoes_dig_box,
+            index=0,
+            key="sel_dig_boxplot_grid"
         )
 
     # Legenda explicativa superior das caixas
@@ -831,12 +845,16 @@ with tab_raciocinio:
         df_box_base = df_comb_r.copy()
 
     if not df_box_base.empty:
+        # Filtrar por dígitos se selecionado algo diferente de "Todos"
+        if dig_box_sel != "Todos":
+            df_box_base = df_box_base[df_box_base["Digitos"] == str(dig_box_sel)]
+
         df_box_base["Resultado"] = df_box_base["Acerto_da_operacao"].apply(lambda x: "Acerto" if bool(x) else "Erro")
 
-        # Linha 1 de modelos (0 a 4)
-        cols_box_l1 = st.columns(5)
-        for idx in range(5):
-            mod_atual = MODELOS_GEMINI[idx]
+        # Linha 1: 4 modelos
+        cols_box_l1 = st.columns(4)
+        for idx in range(min(4, len(MODELOS_COM_REASONING))):
+            mod_atual = MODELOS_COM_REASONING[idx]
             df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
             with cols_box_l1[idx]:
                 if not df_mod_b.empty:
@@ -862,14 +880,14 @@ with tab_raciocinio:
                     )
                     st.plotly_chart(fig_box, use_container_width=True)
                 else:
-                    st.info(f"{mod_atual}: Sem dados")
+                    st.info(f"{mod_atual}: Sem dados para {dig_box_sel} dígitos" if dig_box_sel != "Todos" else f"{mod_atual}: Sem dados")
 
-        # Linha 2 de modelos (5 a 9)
-        cols_box_l2 = st.columns(5)
-        for idx in range(5, 10):
-            mod_atual = MODELOS_GEMINI[idx]
+        # Linha 2: 3 modelos
+        cols_box_l2 = st.columns(3)
+        for idx in range(4, len(MODELOS_COM_REASONING)):
+            mod_atual = MODELOS_COM_REASONING[idx]
             df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
-            with cols_box_l2[idx - 5]:
+            with cols_box_l2[idx - 4]:
                 if not df_mod_b.empty:
                     sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
                     titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
@@ -893,7 +911,7 @@ with tab_raciocinio:
                     )
                     st.plotly_chart(fig_box, use_container_width=True)
                 else:
-                    st.info(f"{mod_atual}: Sem dados")
+                    st.info(f"{mod_atual}: Sem dados para {dig_box_sel} dígitos" if dig_box_sel != "Todos" else f"{mod_atual}: Sem dados")
 
 
 # =============================================================================
