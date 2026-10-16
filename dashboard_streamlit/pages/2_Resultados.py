@@ -687,17 +687,17 @@ with tab_raciocinio:
 
     st.markdown("---")
 
-    # Lista dos modelos com raciocínio ativo (diferente de 'none') -> total 7 modelos
+    # Lista dos modelos com raciocínio ativo (excluindo 'none' e gemini-3.5-flash-lite que gerou 0 tokens) -> 6 modelos
     MODELOS_COM_REASONING = [
         m for m in MODELOS_GEMINI 
-        if "none" not in REASONING_MODELOS.get(m, "").lower()
+        if "none" not in REASONING_MODELOS.get(m, "").lower() and m != "gemini-3.5-flash-lite"
     ]
 
     # -------------------------------------------------------------------------
-    # NOVO: GRID (1ª LINHA COM 4, 2ª LINHA COM 3) DA MÉDIA DE TOKENS POR DÍGITOS
+    # NOVO: GRID 2x3 DA MÉDIA DE TOKENS POR DÍGITOS
     # -------------------------------------------------------------------------
     st.markdown("### Média de tokens de raciocínio por quantidade de dígitos")
-    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para os modelos com raciocínio ativo (Reasoning ≠ none), comparando Soma e Expressões Combinadas.")
+    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para os modelos com raciocínio ativo (Grid 2x3), comparando Soma e Expressões Combinadas.")
 
     st.markdown("""
     <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
@@ -716,9 +716,9 @@ with tab_raciocinio:
     df_tokens_ambos = pd.concat([df_soma_tok, df_comb_tok], ignore_index=True)
     df_tokens_ambos["Digitos_Num"] = pd.to_numeric(df_tokens_ambos["Digitos"], errors="coerce")
 
-    # Linha 1: 4 modelos
-    cols_tok_l1 = st.columns(4)
-    for idx in range(min(4, len(MODELOS_COM_REASONING))):
+    # Linha 1: 3 modelos
+    cols_tok_l1 = st.columns(3)
+    for idx in range(min(3, len(MODELOS_COM_REASONING))):
         mod_atual = MODELOS_COM_REASONING[idx]
         df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
         with cols_tok_l1[idx]:
@@ -762,10 +762,10 @@ with tab_raciocinio:
 
     # Linha 2: 3 modelos
     cols_tok_l2 = st.columns(3)
-    for idx in range(4, len(MODELOS_COM_REASONING)):
+    for idx in range(3, len(MODELOS_COM_REASONING)):
         mod_atual = MODELOS_COM_REASONING[idx]
         df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
-        with cols_tok_l2[idx - 4]:
+        with cols_tok_l2[idx - 3]:
             if not df_mod_t.empty:
                 res_tok = (
                     df_mod_t.groupby(["Tipo_Operacao", "Digitos", "Digitos_Num"])["reasoning_tokens"]
@@ -807,10 +807,10 @@ with tab_raciocinio:
     st.markdown("---")
 
     # -------------------------------------------------------------------------
-    # NOVO: GRID DE BOXPLOTS (1ª LINHA COM 4, 2ª LINHA COM 3 - ACERTO/ERRO)
+    # NOVO: GRID 2x3 DE BOXPLOTS (TOKENS DE RACIOCÍNIO VS ACERTO/ERRO)
     # -------------------------------------------------------------------------
     st.markdown("### Distribuição de tokens de raciocínio por resultado da operação")
-    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X) para os modelos com raciocínio ativo (Reasoning ≠ none), revelando a dispersão do esforço cognitivo.")
+    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X) para os modelos com raciocínio ativo (Grid 2x3), revelando a dispersão do esforço cognitivo.")
 
     # Seletores de operação e de quantidade de dígitos
     col_sel_box1, col_sel_box2 = st.columns([1, 1])
@@ -860,9 +860,9 @@ with tab_raciocinio:
         else:
             y_max_box = int(math.ceil(float(max_val_box) * 1.05 / 50.0) * 50)
 
-        # Linha 1: 4 modelos
-        cols_box_l1 = st.columns(4)
-        for idx in range(min(4, len(MODELOS_COM_REASONING))):
+        # Linha 1: 3 modelos
+        cols_box_l1 = st.columns(3)
+        for idx in range(min(3, len(MODELOS_COM_REASONING))):
             mod_atual = MODELOS_COM_REASONING[idx]
             df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
             with cols_box_l1[idx]:
@@ -893,10 +893,10 @@ with tab_raciocinio:
 
         # Linha 2: 3 modelos
         cols_box_l2 = st.columns(3)
-        for idx in range(4, len(MODELOS_COM_REASONING)):
+        for idx in range(3, len(MODELOS_COM_REASONING)):
             mod_atual = MODELOS_COM_REASONING[idx]
             df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
-            with cols_box_l2[idx - 4]:
+            with cols_box_l2[idx - 3]:
                 if not df_mod_b.empty:
                     sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
                     titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
