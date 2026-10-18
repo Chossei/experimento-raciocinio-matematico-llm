@@ -1,0 +1,2770 @@
+tipo_operacao,quantidade_digitos,digitos_num,conta_original,expressao,resultado_correto,resultado_avaliado,expressao_completa,rotulo_verdadeiro,tipo_expressao,origem_resultado,prompt_jev
+Soma,2 dígitos,2,36+90 = ?,36+90,126,126,36+90 = 126,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+36+90 = 126"
+Soma,2 dígitos,2,65+77 = ?,65+77,142,142,65+77 = 142,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+65+77 = 142"
+Soma,2 dígitos,2,65+35 = ?,65+35,100,100,65+35 = 100,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+65+35 = 100"
+Soma,2 dígitos,2,21+13 = ?,21+13,34,34,21+13 = 34,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+21+13 = 34"
+Soma,2 dígitos,2,27+71 = ?,27+71,98,98,27+71 = 98,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+27+71 = 98"
+Soma,2 dígitos,2,62+80 = ?,62+80,142,142,62+80 = 142,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+62+80 = 142"
+Soma,2 dígitos,2,97+24 = ?,97+24,121,121,97+24 = 121,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+97+24 = 121"
+Soma,2 dígitos,2,58+66 = ?,58+66,124,124,58+66 = 124,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+58+66 = 124"
+Soma,2 dígitos,2,16+19 = ?,16+19,35,35,16+19 = 35,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+16+19 = 35"
+Soma,2 dígitos,2,44+86 = ?,44+86,130,130,44+86 = 130,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+44+86 = 130"
+Soma,2 dígitos,2,85+44 = ?,85+44,129,129,85+44 = 129,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+85+44 = 129"
+Soma,2 dígitos,2,95+37 = ?,95+37,132,132,95+37 = 132,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+95+37 = 132"
+Soma,2 dígitos,2,99+13 = ?,99+13,112,112,99+13 = 112,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+99+13 = 112"
+Soma,2 dígitos,2,93+67 = ?,93+67,160,160,93+67 = 160,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+93+67 = 160"
+Soma,2 dígitos,2,61+54 = ?,61+54,115,115,61+54 = 115,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+61+54 = 115"
+Soma,2 dígitos,2,16+24 = ?,16+24,40,40,16+24 = 40,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+16+24 = 40"
+Soma,2 dígitos,2,78+59 = ?,78+59,137,137,78+59 = 137,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+78+59 = 137"
+Soma,2 dígitos,2,15+96 = ?,15+96,111,111,15+96 = 111,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+15+96 = 111"
+Soma,2 dígitos,2,60+94 = ?,60+94,154,154,60+94 = 154,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+60+94 = 154"
+Soma,2 dígitos,2,71+58 = ?,71+58,129,129,71+58 = 129,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+71+58 = 129"
+Soma,2 dígitos,2,79+74 = ?,79+74,153,153,79+74 = 153,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+79+74 = 153"
+Soma,2 dígitos,2,12+94 = ?,12+94,106,106,12+94 = 106,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+12+94 = 106"
+Soma,2 dígitos,2,91+11 = ?,91+11,102,102,91+11 = 102,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+91+11 = 102"
+Soma,2 dígitos,2,94+57 = ?,94+57,151,151,94+57 = 151,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+94+57 = 151"
+Soma,2 dígitos,2,96+57 = ?,96+57,153,153,96+57 = 153,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+96+57 = 153"
+Soma,2 dígitos,2,76+27 = ?,76+27,103,103,76+27 = 103,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+76+27 = 103"
+Soma,2 dígitos,2,66+59 = ?,66+59,125,125,66+59 = 125,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+66+59 = 125"
+Soma,2 dígitos,2,21+31 = ?,21+31,52,52,21+31 = 52,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+21+31 = 52"
+Soma,2 dígitos,2,49+76 = ?,49+76,125,125,49+76 = 125,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+49+76 = 125"
+Soma,2 dígitos,2,32+87 = ?,32+87,119,119,32+87 = 119,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+32+87 = 119"
+Soma,2 dígitos,2,93+88 = ?,93+88,181,181,93+88 = 181,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+93+88 = 181"
+Soma,2 dígitos,2,56+35 = ?,56+35,91,91,56+35 = 91,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+56+35 = 91"
+Soma,2 dígitos,2,37+40 = ?,37+40,77,77,37+40 = 77,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+37+40 = 77"
+Soma,2 dígitos,2,22+64 = ?,22+64,86,86,22+64 = 86,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+22+64 = 86"
+Soma,2 dígitos,2,81+11 = ?,81+11,92,92,81+11 = 92,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+81+11 = 92"
+Soma,2 dígitos,2,68+20 = ?,68+20,88,88,68+20 = 88,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+68+20 = 88"
+Soma,2 dígitos,2,93+80 = ?,93+80,173,173,93+80 = 173,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+93+80 = 173"
+Soma,2 dígitos,2,46+90 = ?,46+90,136,136,46+90 = 136,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+46+90 = 136"
+Soma,2 dígitos,2,85+64 = ?,85+64,149,149,85+64 = 149,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+85+64 = 149"
+Soma,2 dígitos,2,13+77 = ?,13+77,90,90,13+77 = 90,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+13+77 = 90"
+Soma,2 dígitos,2,53+68 = ?,53+68,121,121,53+68 = 121,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+53+68 = 121"
+Soma,2 dígitos,2,17+62 = ?,17+62,79,79,17+62 = 79,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+17+62 = 79"
+Soma,2 dígitos,2,84+75 = ?,84+75,159,159,84+75 = 159,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+84+75 = 159"
+Soma,2 dígitos,2,59+96 = ?,59+96,155,155,59+96 = 155,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+59+96 = 155"
+Soma,2 dígitos,2,83+42 = ?,83+42,125,125,83+42 = 125,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+83+42 = 125"
+Soma,2 dígitos,2,22+28 = ?,22+28,50,50,22+28 = 50,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+22+28 = 50"
+Soma,2 dígitos,2,57+26 = ?,57+26,83,83,57+26 = 83,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+57+26 = 83"
+Soma,2 dígitos,2,37+48 = ?,37+48,85,85,37+48 = 85,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+37+48 = 85"
+Soma,2 dígitos,2,50+13 = ?,50+13,63,63,50+13 = 63,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+50+13 = 63"
+Soma,2 dígitos,2,28+25 = ?,28+25,53,53,28+25 = 53,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+28+25 = 53"
+Soma,2 dígitos,2,36+90 = ?,36+90,126,133,36+90 = 133,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+36+90 = 133"
+Soma,2 dígitos,2,65+77 = ?,65+77,142,171,65+77 = 171,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+65+77 = 171"
+Soma,2 dígitos,2,65+35 = ?,65+35,100,108,65+35 = 108,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+65+35 = 108"
+Soma,2 dígitos,2,21+13 = ?,21+13,34,35,21+13 = 35,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+21+13 = 35"
+Soma,2 dígitos,2,27+71 = ?,27+71,98,103,27+71 = 103,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+27+71 = 103"
+Soma,2 dígitos,2,62+80 = ?,62+80,142,181,62+80 = 181,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+62+80 = 181"
+Soma,2 dígitos,2,97+24 = ?,97+24,121,140,97+24 = 140,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+97+24 = 140"
+Soma,2 dígitos,2,58+66 = ?,58+66,124,147,58+66 = 147,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+58+66 = 147"
+Soma,2 dígitos,2,16+19 = ?,16+19,35,38,16+19 = 38,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+16+19 = 38"
+Soma,2 dígitos,2,44+86 = ?,44+86,130,141,44+86 = 141,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+44+86 = 141"
+Soma,2 dígitos,2,85+44 = ?,85+44,129,153,85+44 = 153,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+85+44 = 153"
+Soma,2 dígitos,2,95+37 = ?,95+37,132,153,95+37 = 153,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+95+37 = 153"
+Soma,2 dígitos,2,99+13 = ?,99+13,112,116,99+13 = 116,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+99+13 = 116"
+Soma,2 dígitos,2,93+67 = ?,93+67,160,200,93+67 = 200,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+93+67 = 200"
+Soma,2 dígitos,2,61+54 = ?,61+54,115,123,61+54 = 123,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+61+54 = 123"
+Soma,2 dígitos,2,16+24 = ?,16+24,40,43,16+24 = 43,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+16+24 = 43"
+Soma,2 dígitos,2,78+59 = ?,78+59,137,159,78+59 = 159,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+78+59 = 159"
+Soma,2 dígitos,2,15+96 = ?,15+96,111,116,15+96 = 116,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+15+96 = 116"
+Soma,2 dígitos,2,60+94 = ?,60+94,154,156,60+94 = 156,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+60+94 = 156"
+Soma,2 dígitos,2,71+58 = ?,71+58,129,153,71+58 = 153,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+71+58 = 153"
+Soma,2 dígitos,2,79+74 = ?,79+74,153,197,79+74 = 197,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+79+74 = 197"
+Soma,2 dígitos,2,12+94 = ?,12+94,106,112,12+94 = 112,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+12+94 = 112"
+Soma,2 dígitos,2,91+11 = ?,91+11,102,104,91+11 = 104,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+91+11 = 104"
+Soma,2 dígitos,2,94+57 = ?,94+57,151,153,94+57 = 153,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+94+57 = 153"
+Soma,2 dígitos,2,96+57 = ?,96+57,153,174,96+57 = 174,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+96+57 = 174"
+Soma,2 dígitos,2,76+27 = ?,76+27,103,104,76+27 = 104,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+76+27 = 104"
+Soma,2 dígitos,2,66+59 = ?,66+59,125,137,66+59 = 137,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+66+59 = 137"
+Soma,2 dígitos,2,21+31 = ?,21+31,52,54,21+31 = 54,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+21+31 = 54"
+Soma,2 dígitos,2,49+76 = ?,49+76,125,147,49+76 = 147,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+49+76 = 147"
+Soma,2 dígitos,2,32+87 = ?,32+87,119,131,32+87 = 131,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+32+87 = 131"
+Soma,2 dígitos,2,93+88 = ?,93+88,181,230,93+88 = 230,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+93+88 = 230"
+Soma,2 dígitos,2,56+35 = ?,56+35,91,94,56+35 = 94,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+56+35 = 94"
+Soma,2 dígitos,2,37+40 = ?,37+40,77,81,37+40 = 81,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+37+40 = 81"
+Soma,2 dígitos,2,22+64 = ?,22+64,86,90,22+64 = 90,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+22+64 = 90"
+Soma,2 dígitos,2,81+11 = ?,81+11,92,94,81+11 = 94,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+81+11 = 94"
+Soma,2 dígitos,2,68+20 = ?,68+20,88,89,68+20 = 89,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+68+20 = 89"
+Soma,2 dígitos,2,93+80 = ?,93+80,173,176,93+80 = 176,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+93+80 = 176"
+Soma,2 dígitos,2,46+90 = ?,46+90,136,143,46+90 = 143,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+46+90 = 143"
+Soma,2 dígitos,2,85+64 = ?,85+64,149,170,85+64 = 170,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+85+64 = 170"
+Soma,2 dígitos,2,13+77 = ?,13+77,90,99,13+77 = 99,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+13+77 = 99"
+Soma,2 dígitos,2,53+68 = ?,53+68,121,128,53+68 = 128,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+53+68 = 128"
+Soma,2 dígitos,2,17+62 = ?,17+62,79,81,17+62 = 81,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+17+62 = 81"
+Soma,2 dígitos,2,84+75 = ?,84+75,159,163,84+75 = 163,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+84+75 = 163"
+Soma,2 dígitos,2,59+96 = ?,59+96,155,180,59+96 = 180,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+59+96 = 180"
+Soma,2 dígitos,2,83+42 = ?,83+42,125,139,83+42 = 139,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+83+42 = 139"
+Soma,2 dígitos,2,22+28 = ?,22+28,50,52,22+28 = 52,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+22+28 = 52"
+Soma,2 dígitos,2,57+26 = ?,57+26,83,85,57+26 = 85,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+57+26 = 85"
+Soma,2 dígitos,2,37+48 = ?,37+48,85,86,37+48 = 86,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+37+48 = 86"
+Soma,2 dígitos,2,50+13 = ?,50+13,63,65,50+13 = 65,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+50+13 = 65"
+Soma,2 dígitos,2,28+25 = ?,28+25,53,54,28+25 = 54,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+28+25 = 54"
+Soma,3 dígitos,3,758+914 = ?,758+914,1672,1672,758+914 = 1672,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+758+914 = 1672"
+Soma,3 dígitos,3,936+961 = ?,936+961,1897,1897,936+961 = 1897,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+936+961 = 1897"
+Soma,3 dígitos,3,528+863 = ?,528+863,1391,1391,528+863 = 1391,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+528+863 = 1391"
+Soma,3 dígitos,3,735+597 = ?,735+597,1332,1332,735+597 = 1332,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+735+597 = 1332"
+Soma,3 dígitos,3,999+657 = ?,999+657,1656,1656,999+657 = 1656,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+999+657 = 1656"
+Soma,3 dígitos,3,287+507 = ?,287+507,794,794,287+507 = 794,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+287+507 = 794"
+Soma,3 dígitos,3,541+722 = ?,541+722,1263,1263,541+722 = 1263,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+541+722 = 1263"
+Soma,3 dígitos,3,734+542 = ?,734+542,1276,1276,734+542 = 1276,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+734+542 = 1276"
+Soma,3 dígitos,3,440+731 = ?,440+731,1171,1171,440+731 = 1171,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+440+731 = 1171"
+Soma,3 dígitos,3,652+987 = ?,652+987,1639,1639,652+987 = 1639,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+652+987 = 1639"
+Soma,3 dígitos,3,781+306 = ?,781+306,1087,1087,781+306 = 1087,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+781+306 = 1087"
+Soma,3 dígitos,3,192+559 = ?,192+559,751,751,192+559 = 751,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+192+559 = 751"
+Soma,3 dígitos,3,108+306 = ?,108+306,414,414,108+306 = 414,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+108+306 = 414"
+Soma,3 dígitos,3,519+485 = ?,519+485,1004,1004,519+485 = 1004,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+519+485 = 1004"
+Soma,3 dígitos,3,477+524 = ?,477+524,1001,1001,477+524 = 1001,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+477+524 = 1001"
+Soma,3 dígitos,3,866+423 = ?,866+423,1289,1289,866+423 = 1289,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+866+423 = 1289"
+Soma,3 dígitos,3,575+786 = ?,575+786,1361,1361,575+786 = 1361,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+575+786 = 1361"
+Soma,3 dígitos,3,751+510 = ?,751+510,1261,1261,751+510 = 1261,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+751+510 = 1261"
+Soma,3 dígitos,3,586+160 = ?,586+160,746,746,586+160 = 746,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+586+160 = 746"
+Soma,3 dígitos,3,747+188 = ?,747+188,935,935,747+188 = 935,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+747+188 = 935"
+Soma,3 dígitos,3,675+581 = ?,675+581,1256,1256,675+581 = 1256,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+675+581 = 1256"
+Soma,3 dígitos,3,572+984 = ?,572+984,1556,1556,572+984 = 1556,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+572+984 = 1556"
+Soma,3 dígitos,3,709+662 = ?,709+662,1371,1371,709+662 = 1371,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+709+662 = 1371"
+Soma,3 dígitos,3,241+512 = ?,241+512,753,753,241+512 = 753,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+241+512 = 753"
+Soma,3 dígitos,3,490+165 = ?,490+165,655,655,490+165 = 655,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+490+165 = 655"
+Soma,3 dígitos,3,381+895 = ?,381+895,1276,1276,381+895 = 1276,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+381+895 = 1276"
+Soma,3 dígitos,3,322+298 = ?,322+298,620,620,322+298 = 620,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+322+298 = 620"
+Soma,3 dígitos,3,607+359 = ?,607+359,966,966,607+359 = 966,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+607+359 = 966"
+Soma,3 dígitos,3,415+396 = ?,415+396,811,811,415+396 = 811,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+415+396 = 811"
+Soma,3 dígitos,3,862+158 = ?,862+158,1020,1020,862+158 = 1020,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+862+158 = 1020"
+Soma,3 dígitos,3,315+297 = ?,315+297,612,612,315+297 = 612,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+315+297 = 612"
+Soma,3 dígitos,3,146+371 = ?,146+371,517,517,146+371 = 517,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+146+371 = 517"
+Soma,3 dígitos,3,596+580 = ?,596+580,1176,1176,596+580 = 1176,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+596+580 = 1176"
+Soma,3 dígitos,3,357+859 = ?,357+859,1216,1216,357+859 = 1216,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+357+859 = 1216"
+Soma,3 dígitos,3,765+590 = ?,765+590,1355,1355,765+590 = 1355,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+765+590 = 1355"
+Soma,3 dígitos,3,421+984 = ?,421+984,1405,1405,421+984 = 1405,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+421+984 = 1405"
+Soma,3 dígitos,3,533+868 = ?,533+868,1401,1401,533+868 = 1401,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+533+868 = 1401"
+Soma,3 dígitos,3,176+560 = ?,176+560,736,736,176+560 = 736,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+176+560 = 736"
+Soma,3 dígitos,3,615+117 = ?,615+117,732,732,615+117 = 732,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+615+117 = 732"
+Soma,3 dígitos,3,464+419 = ?,464+419,883,883,464+419 = 883,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+464+419 = 883"
+Soma,3 dígitos,3,603+173 = ?,603+173,776,776,603+173 = 776,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+603+173 = 776"
+Soma,3 dígitos,3,188+850 = ?,188+850,1038,1038,188+850 = 1038,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+188+850 = 1038"
+Soma,3 dígitos,3,235+881 = ?,235+881,1116,1116,235+881 = 1116,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+235+881 = 1116"
+Soma,3 dígitos,3,593+177 = ?,593+177,770,770,593+177 = 770,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+593+177 = 770"
+Soma,3 dígitos,3,674+807 = ?,674+807,1481,1481,674+807 = 1481,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+674+807 = 1481"
+Soma,3 dígitos,3,509+401 = ?,509+401,910,910,509+401 = 910,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+509+401 = 910"
+Soma,3 dígitos,3,912+919 = ?,912+919,1831,1831,912+919 = 1831,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+912+919 = 1831"
+Soma,3 dígitos,3,457+230 = ?,457+230,687,687,457+230 = 687,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+457+230 = 687"
+Soma,3 dígitos,3,540+571 = ?,540+571,1111,1111,540+571 = 1111,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+540+571 = 1111"
+Soma,3 dígitos,3,657+630 = ?,657+630,1287,1287,657+630 = 1287,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+657+630 = 1287"
+Soma,3 dígitos,3,758+914 = ?,758+914,1672,2012,758+914 = 2012,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+758+914 = 2012"
+Soma,3 dígitos,3,936+961 = ?,936+961,1897,1989,936+961 = 1989,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+936+961 = 1989"
+Soma,3 dígitos,3,528+863 = ?,528+863,1391,1758,528+863 = 1758,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+528+863 = 1758"
+Soma,3 dígitos,3,735+597 = ?,735+597,1332,1596,735+597 = 1596,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+735+597 = 1596"
+Soma,3 dígitos,3,999+657 = ?,999+657,1656,1691,999+657 = 1691,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+999+657 = 1691"
+Soma,3 dígitos,3,287+507 = ?,287+507,794,872,287+507 = 872,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+287+507 = 872"
+Soma,3 dígitos,3,541+722 = ?,541+722,1263,1344,541+722 = 1344,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+541+722 = 1344"
+Soma,3 dígitos,3,734+542 = ?,734+542,1276,1326,734+542 = 1326,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+734+542 = 1326"
+Soma,3 dígitos,3,440+731 = ?,440+731,1171,1275,440+731 = 1275,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+440+731 = 1275"
+Soma,3 dígitos,3,652+987 = ?,652+987,1639,2027,652+987 = 2027,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+652+987 = 2027"
+Soma,3 dígitos,3,781+306 = ?,781+306,1087,1089,781+306 = 1089,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+781+306 = 1089"
+Soma,3 dígitos,3,192+559 = ?,192+559,751,757,192+559 = 757,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+192+559 = 757"
+Soma,3 dígitos,3,108+306 = ?,108+306,414,420,108+306 = 420,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+108+306 = 420"
+Soma,3 dígitos,3,519+485 = ?,519+485,1004,1006,519+485 = 1006,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+519+485 = 1006"
+Soma,3 dígitos,3,477+524 = ?,477+524,1001,1005,477+524 = 1005,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+477+524 = 1005"
+Soma,3 dígitos,3,866+423 = ?,866+423,1289,1480,866+423 = 1480,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+866+423 = 1480"
+Soma,3 dígitos,3,575+786 = ?,575+786,1361,1579,575+786 = 1579,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+575+786 = 1579"
+Soma,3 dígitos,3,751+510 = ?,751+510,1261,1305,751+510 = 1305,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+751+510 = 1305"
+Soma,3 dígitos,3,586+160 = ?,586+160,746,780,586+160 = 780,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+586+160 = 780"
+Soma,3 dígitos,3,747+188 = ?,747+188,935,945,747+188 = 945,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+747+188 = 945"
+Soma,3 dígitos,3,675+581 = ?,675+581,1256,1446,675+581 = 1446,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+675+581 = 1446"
+Soma,3 dígitos,3,572+984 = ?,572+984,1556,1826,572+984 = 1826,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+572+984 = 1826"
+Soma,3 dígitos,3,709+662 = ?,709+662,1371,1722,709+662 = 1722,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+709+662 = 1722"
+Soma,3 dígitos,3,241+512 = ?,241+512,753,801,241+512 = 801,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+241+512 = 801"
+Soma,3 dígitos,3,490+165 = ?,490+165,655,670,490+165 = 670,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+490+165 = 670"
+Soma,3 dígitos,3,381+895 = ?,381+895,1276,1491,381+895 = 1491,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+381+895 = 1491"
+Soma,3 dígitos,3,322+298 = ?,322+298,620,628,322+298 = 628,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+322+298 = 628"
+Soma,3 dígitos,3,607+359 = ?,607+359,966,1019,607+359 = 1019,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+607+359 = 1019"
+Soma,3 dígitos,3,415+396 = ?,415+396,811,819,415+396 = 819,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+415+396 = 819"
+Soma,3 dígitos,3,862+158 = ?,862+158,1020,1033,862+158 = 1033,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+862+158 = 1033"
+Soma,3 dígitos,3,315+297 = ?,315+297,612,621,315+297 = 621,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+315+297 = 621"
+Soma,3 dígitos,3,146+371 = ?,146+371,517,532,146+371 = 532,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+146+371 = 532"
+Soma,3 dígitos,3,596+580 = ?,596+580,1176,1221,596+580 = 1221,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+596+580 = 1221"
+Soma,3 dígitos,3,357+859 = ?,357+859,1216,1281,357+859 = 1281,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+357+859 = 1281"
+Soma,3 dígitos,3,765+590 = ?,765+590,1355,1700,765+590 = 1700,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+765+590 = 1700"
+Soma,3 dígitos,3,421+984 = ?,421+984,1405,1732,421+984 = 1732,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+421+984 = 1732"
+Soma,3 dígitos,3,533+868 = ?,533+868,1401,1410,533+868 = 1410,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+533+868 = 1410"
+Soma,3 dígitos,3,176+560 = ?,176+560,736,760,176+560 = 760,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+176+560 = 760"
+Soma,3 dígitos,3,615+117 = ?,615+117,732,733,615+117 = 733,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+615+117 = 733"
+Soma,3 dígitos,3,464+419 = ?,464+419,883,891,464+419 = 891,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+464+419 = 891"
+Soma,3 dígitos,3,603+173 = ?,603+173,776,839,603+173 = 839,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+603+173 = 839"
+Soma,3 dígitos,3,188+850 = ?,188+850,1038,1049,188+850 = 1049,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+188+850 = 1049"
+Soma,3 dígitos,3,235+881 = ?,235+881,1116,1231,235+881 = 1231,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+235+881 = 1231"
+Soma,3 dígitos,3,593+177 = ?,593+177,770,778,593+177 = 778,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+593+177 = 778"
+Soma,3 dígitos,3,674+807 = ?,674+807,1481,1644,674+807 = 1644,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+674+807 = 1644"
+Soma,3 dígitos,3,509+401 = ?,509+401,910,913,509+401 = 913,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+509+401 = 913"
+Soma,3 dígitos,3,912+919 = ?,912+919,1831,2120,912+919 = 2120,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+912+919 = 2120"
+Soma,3 dígitos,3,457+230 = ?,457+230,687,692,457+230 = 692,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+457+230 = 692"
+Soma,3 dígitos,3,540+571 = ?,540+571,1111,1217,540+571 = 1217,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+540+571 = 1217"
+Soma,3 dígitos,3,657+630 = ?,657+630,1287,1518,657+630 = 1518,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+657+630 = 1518"
+Soma,4 dígitos,4,7773+7382 = ?,7773+7382,15155,15155,7773+7382 = 15155,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7773+7382 = 15155"
+Soma,4 dígitos,4,8207+4573 = ?,8207+4573,12780,12780,8207+4573 = 12780,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8207+4573 = 12780"
+Soma,4 dígitos,4,3878+1924 = ?,3878+1924,5802,5802,3878+1924 = 5802,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3878+1924 = 5802"
+Soma,4 dígitos,4,8587+2594 = ?,8587+2594,11181,11181,8587+2594 = 11181,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8587+2594 = 11181"
+Soma,4 dígitos,4,7621+5550 = ?,7621+5550,13171,13171,7621+5550 = 13171,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7621+5550 = 13171"
+Soma,4 dígitos,4,8249+9801 = ?,8249+9801,18050,18050,8249+9801 = 18050,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8249+9801 = 18050"
+Soma,4 dígitos,4,6731+6461 = ?,6731+6461,13192,13192,6731+6461 = 13192,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6731+6461 = 13192"
+Soma,4 dígitos,4,4358+7583 = ?,4358+7583,11941,11941,4358+7583 = 11941,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4358+7583 = 11941"
+Soma,4 dígitos,4,8341+3838 = ?,8341+3838,12179,12179,8341+3838 = 12179,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8341+3838 = 12179"
+Soma,4 dígitos,4,7359+9936 = ?,7359+9936,17295,17295,7359+9936 = 17295,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7359+9936 = 17295"
+Soma,4 dígitos,4,1731+4365 = ?,1731+4365,6096,6096,1731+4365 = 6096,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1731+4365 = 6096"
+Soma,4 dígitos,4,6971+5982 = ?,6971+5982,12953,12953,6971+5982 = 12953,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6971+5982 = 12953"
+Soma,4 dígitos,4,3289+7086 = ?,3289+7086,10375,10375,3289+7086 = 10375,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3289+7086 = 10375"
+Soma,4 dígitos,4,3512+1639 = ?,3512+1639,5151,5151,3512+1639 = 5151,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3512+1639 = 5151"
+Soma,4 dígitos,4,7895+6338 = ?,7895+6338,14233,14233,7895+6338 = 14233,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7895+6338 = 14233"
+Soma,4 dígitos,4,6722+8568 = ?,6722+8568,15290,15290,6722+8568 = 15290,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6722+8568 = 15290"
+Soma,4 dígitos,4,1544+2639 = ?,1544+2639,4183,4183,1544+2639 = 4183,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1544+2639 = 4183"
+Soma,4 dígitos,4,1194+6421 = ?,1194+6421,7615,7615,1194+6421 = 7615,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1194+6421 = 7615"
+Soma,4 dígitos,4,4101+8187 = ?,4101+8187,12288,12288,4101+8187 = 12288,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4101+8187 = 12288"
+Soma,4 dígitos,4,3490+6533 = ?,3490+6533,10023,10023,3490+6533 = 10023,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3490+6533 = 10023"
+Soma,4 dígitos,4,4622+2543 = ?,4622+2543,7165,7165,4622+2543 = 7165,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4622+2543 = 7165"
+Soma,4 dígitos,4,7962+7052 = ?,7962+7052,15014,15014,7962+7052 = 15014,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7962+7052 = 15014"
+Soma,4 dígitos,4,1604+7115 = ?,1604+7115,8719,8719,1604+7115 = 8719,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1604+7115 = 8719"
+Soma,4 dígitos,4,6088+2305 = ?,6088+2305,8393,8393,6088+2305 = 8393,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6088+2305 = 8393"
+Soma,4 dígitos,4,4393+1454 = ?,4393+1454,5847,5847,4393+1454 = 5847,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4393+1454 = 5847"
+Soma,4 dígitos,4,2891+4026 = ?,2891+4026,6917,6917,2891+4026 = 6917,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2891+4026 = 6917"
+Soma,4 dígitos,4,5343+9142 = ?,5343+9142,14485,14485,5343+9142 = 14485,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5343+9142 = 14485"
+Soma,4 dígitos,4,4937+8427 = ?,4937+8427,13364,13364,4937+8427 = 13364,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4937+8427 = 13364"
+Soma,4 dígitos,4,8044+5421 = ?,8044+5421,13465,13465,8044+5421 = 13465,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8044+5421 = 13465"
+Soma,4 dígitos,4,8280+6189 = ?,8280+6189,14469,14469,8280+6189 = 14469,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8280+6189 = 14469"
+Soma,4 dígitos,4,9656+4084 = ?,9656+4084,13740,13740,9656+4084 = 13740,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9656+4084 = 13740"
+Soma,4 dígitos,4,8229+9553 = ?,8229+9553,17782,17782,8229+9553 = 17782,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8229+9553 = 17782"
+Soma,4 dígitos,4,7309+9206 = ?,7309+9206,16515,16515,7309+9206 = 16515,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7309+9206 = 16515"
+Soma,4 dígitos,4,2128+2662 = ?,2128+2662,4790,4790,2128+2662 = 4790,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2128+2662 = 4790"
+Soma,4 dígitos,4,9522+3543 = ?,9522+3543,13065,13065,9522+3543 = 13065,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9522+3543 = 13065"
+Soma,4 dígitos,4,8087+6182 = ?,8087+6182,14269,14269,8087+6182 = 14269,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8087+6182 = 14269"
+Soma,4 dígitos,4,9485+9325 = ?,9485+9325,18810,18810,9485+9325 = 18810,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9485+9325 = 18810"
+Soma,4 dígitos,4,4875+1881 = ?,4875+1881,6756,6756,4875+1881 = 6756,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4875+1881 = 6756"
+Soma,4 dígitos,4,7364+7566 = ?,7364+7566,14930,14930,7364+7566 = 14930,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7364+7566 = 14930"
+Soma,4 dígitos,4,4082+1757 = ?,4082+1757,5839,5839,4082+1757 = 5839,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4082+1757 = 5839"
+Soma,4 dígitos,4,5451+6747 = ?,5451+6747,12198,12198,5451+6747 = 12198,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5451+6747 = 12198"
+Soma,4 dígitos,4,3191+9113 = ?,3191+9113,12304,12304,3191+9113 = 12304,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3191+9113 = 12304"
+Soma,4 dígitos,4,4574+1612 = ?,4574+1612,6186,6186,4574+1612 = 6186,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4574+1612 = 6186"
+Soma,4 dígitos,4,7483+7481 = ?,7483+7481,14964,14964,7483+7481 = 14964,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7483+7481 = 14964"
+Soma,4 dígitos,4,4078+4940 = ?,4078+4940,9018,9018,4078+4940 = 9018,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4078+4940 = 9018"
+Soma,4 dígitos,4,9102+6009 = ?,9102+6009,15111,15111,9102+6009 = 15111,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9102+6009 = 15111"
+Soma,4 dígitos,4,2132+3621 = ?,2132+3621,5753,5753,2132+3621 = 5753,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2132+3621 = 5753"
+Soma,4 dígitos,4,4054+2771 = ?,4054+2771,6825,6825,4054+2771 = 6825,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4054+2771 = 6825"
+Soma,4 dígitos,4,5951+6306 = ?,5951+6306,12257,12257,5951+6306 = 12257,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5951+6306 = 12257"
+Soma,4 dígitos,4,6660+2795 = ?,6660+2795,9455,9455,6660+2795 = 9455,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6660+2795 = 9455"
+Soma,4 dígitos,4,7773+7382 = ?,7773+7382,15155,18255,7773+7382 = 18255,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7773+7382 = 18255"
+Soma,4 dígitos,4,8207+4573 = ?,8207+4573,12780,14963,8207+4573 = 14963,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8207+4573 = 14963"
+Soma,4 dígitos,4,3878+1924 = ?,3878+1924,5802,6003,3878+1924 = 6003,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3878+1924 = 6003"
+Soma,4 dígitos,4,8587+2594 = ?,8587+2594,11181,11961,8587+2594 = 11961,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8587+2594 = 11961"
+Soma,4 dígitos,4,7621+5550 = ?,7621+5550,13171,16149,7621+5550 = 16149,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7621+5550 = 16149"
+Soma,4 dígitos,4,8249+9801 = ?,8249+9801,18050,21155,8249+9801 = 21155,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8249+9801 = 21155"
+Soma,4 dígitos,4,6731+6461 = ?,6731+6461,13192,16312,6731+6461 = 16312,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6731+6461 = 16312"
+Soma,4 dígitos,4,4358+7583 = ?,4358+7583,11941,12444,4358+7583 = 12444,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4358+7583 = 12444"
+Soma,4 dígitos,4,8341+3838 = ?,8341+3838,12179,13931,8341+3838 = 13931,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8341+3838 = 13931"
+Soma,4 dígitos,4,7359+9936 = ?,7359+9936,17295,18100,7359+9936 = 18100,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7359+9936 = 18100"
+Soma,4 dígitos,4,1731+4365 = ?,1731+4365,6096,6140,1731+4365 = 6140,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1731+4365 = 6140"
+Soma,4 dígitos,4,6971+5982 = ?,6971+5982,12953,14849,6971+5982 = 14849,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6971+5982 = 14849"
+Soma,4 dígitos,4,3289+7086 = ?,3289+7086,10375,10589,3289+7086 = 10589,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3289+7086 = 10589"
+Soma,4 dígitos,4,3512+1639 = ?,3512+1639,5151,5186,3512+1639 = 5186,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3512+1639 = 5186"
+Soma,4 dígitos,4,7895+6338 = ?,7895+6338,14233,16924,7895+6338 = 16924,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7895+6338 = 16924"
+Soma,4 dígitos,4,6722+8568 = ?,6722+8568,15290,19131,6722+8568 = 19131,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6722+8568 = 19131"
+Soma,4 dígitos,4,1544+2639 = ?,1544+2639,4183,4188,1544+2639 = 4188,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1544+2639 = 4188"
+Soma,4 dígitos,4,1194+6421 = ?,1194+6421,7615,7833,1194+6421 = 7833,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1194+6421 = 7833"
+Soma,4 dígitos,4,4101+8187 = ?,4101+8187,12288,12791,4101+8187 = 12791,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4101+8187 = 12791"
+Soma,4 dígitos,4,3490+6533 = ?,3490+6533,10023,10037,3490+6533 = 10037,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3490+6533 = 10037"
+Soma,4 dígitos,4,4622+2543 = ?,4622+2543,7165,7268,4622+2543 = 7268,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4622+2543 = 7268"
+Soma,4 dígitos,4,7962+7052 = ?,7962+7052,15014,19503,7962+7052 = 19503,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7962+7052 = 19503"
+Soma,4 dígitos,4,1604+7115 = ?,1604+7115,8719,8926,1604+7115 = 8926,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1604+7115 = 8926"
+Soma,4 dígitos,4,6088+2305 = ?,6088+2305,8393,8408,6088+2305 = 8408,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6088+2305 = 8408"
+Soma,4 dígitos,4,4393+1454 = ?,4393+1454,5847,6401,4393+1454 = 6401,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4393+1454 = 6401"
+Soma,4 dígitos,4,2891+4026 = ?,2891+4026,6917,7809,2891+4026 = 7809,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2891+4026 = 7809"
+Soma,4 dígitos,4,5343+9142 = ?,5343+9142,14485,15970,5343+9142 = 15970,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5343+9142 = 15970"
+Soma,4 dígitos,4,4937+8427 = ?,4937+8427,13364,14228,4937+8427 = 14228,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4937+8427 = 14228"
+Soma,4 dígitos,4,8044+5421 = ?,8044+5421,13465,16256,8044+5421 = 16256,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8044+5421 = 16256"
+Soma,4 dígitos,4,8280+6189 = ?,8280+6189,14469,15033,8280+6189 = 15033,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8280+6189 = 15033"
+Soma,4 dígitos,4,9656+4084 = ?,9656+4084,13740,14761,9656+4084 = 14761,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9656+4084 = 14761"
+Soma,4 dígitos,4,8229+9553 = ?,8229+9553,17782,21974,8229+9553 = 21974,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8229+9553 = 21974"
+Soma,4 dígitos,4,7309+9206 = ?,7309+9206,16515,22535,7309+9206 = 22535,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7309+9206 = 22535"
+Soma,4 dígitos,4,2128+2662 = ?,2128+2662,4790,5524,2128+2662 = 5524,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2128+2662 = 5524"
+Soma,4 dígitos,4,9522+3543 = ?,9522+3543,13065,15598,9522+3543 = 15598,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9522+3543 = 15598"
+Soma,4 dígitos,4,8087+6182 = ?,8087+6182,14269,15948,8087+6182 = 15948,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8087+6182 = 15948"
+Soma,4 dígitos,4,9485+9325 = ?,9485+9325,18810,22053,9485+9325 = 22053,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9485+9325 = 22053"
+Soma,4 dígitos,4,4875+1881 = ?,4875+1881,6756,7297,4875+1881 = 7297,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4875+1881 = 7297"
+Soma,4 dígitos,4,7364+7566 = ?,7364+7566,14930,15990,7364+7566 = 15990,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7364+7566 = 15990"
+Soma,4 dígitos,4,4082+1757 = ?,4082+1757,5839,6364,4082+1757 = 6364,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4082+1757 = 6364"
+Soma,4 dígitos,4,5451+6747 = ?,5451+6747,12198,13382,5451+6747 = 13382,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5451+6747 = 13382"
+Soma,4 dígitos,4,3191+9113 = ?,3191+9113,12304,14027,3191+9113 = 14027,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3191+9113 = 14027"
+Soma,4 dígitos,4,4574+1612 = ?,4574+1612,6186,6272,4574+1612 = 6272,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4574+1612 = 6272"
+Soma,4 dígitos,4,7483+7481 = ?,7483+7481,14964,17590,7483+7481 = 17590,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7483+7481 = 17590"
+Soma,4 dígitos,4,4078+4940 = ?,4078+4940,9018,9028,4078+4940 = 9028,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4078+4940 = 9028"
+Soma,4 dígitos,4,9102+6009 = ?,9102+6009,15111,16709,9102+6009 = 16709,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9102+6009 = 16709"
+Soma,4 dígitos,4,2132+3621 = ?,2132+3621,5753,6399,2132+3621 = 6399,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2132+3621 = 6399"
+Soma,4 dígitos,4,4054+2771 = ?,4054+2771,6825,7621,4054+2771 = 7621,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4054+2771 = 7621"
+Soma,4 dígitos,4,5951+6306 = ?,5951+6306,12257,13309,5951+6306 = 13309,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5951+6306 = 13309"
+Soma,4 dígitos,4,6660+2795 = ?,6660+2795,9455,9563,6660+2795 = 9563,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6660+2795 = 9563"
+Soma,5 dígitos,5,57900+12625 = ?,57900+12625,70525,70525,57900+12625 = 70525,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+57900+12625 = 70525"
+Soma,5 dígitos,5,16546+69811 = ?,16546+69811,86357,86357,16546+69811 = 86357,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+16546+69811 = 86357"
+Soma,5 dígitos,5,50159+65840 = ?,50159+65840,115999,115999,50159+65840 = 115999,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+50159+65840 = 115999"
+Soma,5 dígitos,5,27306+39417 = ?,27306+39417,66723,66723,27306+39417 = 66723,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+27306+39417 = 66723"
+Soma,5 dígitos,5,78809+91075 = ?,78809+91075,169884,169884,78809+91075 = 169884,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+78809+91075 = 169884"
+Soma,5 dígitos,5,42784+64746 = ?,42784+64746,107530,107530,42784+64746 = 107530,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+42784+64746 = 107530"
+Soma,5 dígitos,5,21128+21668 = ?,21128+21668,42796,42796,21128+21668 = 42796,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+21128+21668 = 42796"
+Soma,5 dígitos,5,25933+84023 = ?,25933+84023,109956,109956,25933+84023 = 109956,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+25933+84023 = 109956"
+Soma,5 dígitos,5,91416+81152 = ?,91416+81152,172568,172568,91416+81152 = 172568,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+91416+81152 = 172568"
+Soma,5 dígitos,5,23147+88190 = ?,23147+88190,111337,111337,23147+88190 = 111337,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+23147+88190 = 111337"
+Soma,5 dígitos,5,75727+17908 = ?,75727+17908,93635,93635,75727+17908 = 93635,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+75727+17908 = 93635"
+Soma,5 dígitos,5,63908+23805 = ?,63908+23805,87713,87713,63908+23805 = 87713,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+63908+23805 = 87713"
+Soma,5 dígitos,5,86523+18473 = ?,86523+18473,104996,104996,86523+18473 = 104996,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+86523+18473 = 104996"
+Soma,5 dígitos,5,61493+58531 = ?,61493+58531,120024,120024,61493+58531 = 120024,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+61493+58531 = 120024"
+Soma,5 dígitos,5,68259+39341 = ?,68259+39341,107600,107600,68259+39341 = 107600,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+68259+39341 = 107600"
+Soma,5 dígitos,5,16085+75027 = ?,16085+75027,91112,91112,16085+75027 = 91112,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+16085+75027 = 91112"
+Soma,5 dígitos,5,19413+74946 = ?,19413+74946,94359,94359,19413+74946 = 94359,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+19413+74946 = 94359"
+Soma,5 dígitos,5,41752+96824 = ?,41752+96824,138576,138576,41752+96824 = 138576,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+41752+96824 = 138576"
+Soma,5 dígitos,5,48907+63788 = ?,48907+63788,112695,112695,48907+63788 = 112695,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+48907+63788 = 112695"
+Soma,5 dígitos,5,82013+78190 = ?,82013+78190,160203,160203,82013+78190 = 160203,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+82013+78190 = 160203"
+Soma,5 dígitos,5,26115+29505 = ?,26115+29505,55620,55620,26115+29505 = 55620,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+26115+29505 = 55620"
+Soma,5 dígitos,5,77982+99344 = ?,77982+99344,177326,177326,77982+99344 = 177326,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+77982+99344 = 177326"
+Soma,5 dígitos,5,89431+79201 = ?,89431+79201,168632,168632,89431+79201 = 168632,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+89431+79201 = 168632"
+Soma,5 dígitos,5,74140+18986 = ?,74140+18986,93126,93126,74140+18986 = 93126,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+74140+18986 = 93126"
+Soma,5 dígitos,5,19666+29162 = ?,19666+29162,48828,48828,19666+29162 = 48828,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+19666+29162 = 48828"
+Soma,5 dígitos,5,97666+70487 = ?,97666+70487,168153,168153,97666+70487 = 168153,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+97666+70487 = 168153"
+Soma,5 dígitos,5,50222+59265 = ?,50222+59265,109487,109487,50222+59265 = 109487,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+50222+59265 = 109487"
+Soma,5 dígitos,5,55023+17790 = ?,55023+17790,72813,72813,55023+17790 = 72813,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+55023+17790 = 72813"
+Soma,5 dígitos,5,20405+66945 = ?,20405+66945,87350,87350,20405+66945 = 87350,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+20405+66945 = 87350"
+Soma,5 dígitos,5,14344+54353 = ?,14344+54353,68697,68697,14344+54353 = 68697,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+14344+54353 = 68697"
+Soma,5 dígitos,5,62991+14976 = ?,62991+14976,77967,77967,62991+14976 = 77967,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+62991+14976 = 77967"
+Soma,5 dígitos,5,33117+62413 = ?,33117+62413,95530,95530,33117+62413 = 95530,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+33117+62413 = 95530"
+Soma,5 dígitos,5,48648+31087 = ?,48648+31087,79735,79735,48648+31087 = 79735,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+48648+31087 = 79735"
+Soma,5 dígitos,5,45685+12751 = ?,45685+12751,58436,58436,45685+12751 = 58436,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+45685+12751 = 58436"
+Soma,5 dígitos,5,23838+30994 = ?,23838+30994,54832,54832,23838+30994 = 54832,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+23838+30994 = 54832"
+Soma,5 dígitos,5,41436+85650 = ?,41436+85650,127086,127086,41436+85650 = 127086,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+41436+85650 = 127086"
+Soma,5 dígitos,5,12425+72683 = ?,12425+72683,85108,85108,12425+72683 = 85108,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+12425+72683 = 85108"
+Soma,5 dígitos,5,85616+68601 = ?,85616+68601,154217,154217,85616+68601 = 154217,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+85616+68601 = 154217"
+Soma,5 dígitos,5,93020+26170 = ?,93020+26170,119190,119190,93020+26170 = 119190,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+93020+26170 = 119190"
+Soma,5 dígitos,5,88675+73458 = ?,88675+73458,162133,162133,88675+73458 = 162133,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+88675+73458 = 162133"
+Soma,5 dígitos,5,78283+33327 = ?,78283+33327,111610,111610,78283+33327 = 111610,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+78283+33327 = 111610"
+Soma,5 dígitos,5,30550+69104 = ?,30550+69104,99654,99654,30550+69104 = 99654,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+30550+69104 = 99654"
+Soma,5 dígitos,5,76862+99474 = ?,76862+99474,176336,176336,76862+99474 = 176336,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+76862+99474 = 176336"
+Soma,5 dígitos,5,20587+95226 = ?,20587+95226,115813,115813,20587+95226 = 115813,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+20587+95226 = 115813"
+Soma,5 dígitos,5,10687+40845 = ?,10687+40845,51532,51532,10687+40845 = 51532,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+10687+40845 = 51532"
+Soma,5 dígitos,5,63353+80127 = ?,63353+80127,143480,143480,63353+80127 = 143480,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+63353+80127 = 143480"
+Soma,5 dígitos,5,60907+28543 = ?,60907+28543,89450,89450,60907+28543 = 89450,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+60907+28543 = 89450"
+Soma,5 dígitos,5,14050+45767 = ?,14050+45767,59817,59817,14050+45767 = 59817,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+14050+45767 = 59817"
+Soma,5 dígitos,5,48165+14028 = ?,48165+14028,62193,62193,48165+14028 = 62193,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+48165+14028 = 62193"
+Soma,5 dígitos,5,13092+32966 = ?,13092+32966,46058,46058,13092+32966 = 46058,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+13092+32966 = 46058"
+Soma,5 dígitos,5,57900+12625 = ?,57900+12625,70525,70865,57900+12625 = 70865,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+57900+12625 = 70865"
+Soma,5 dígitos,5,16546+69811 = ?,16546+69811,86357,88339,16546+69811 = 88339,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+16546+69811 = 88339"
+Soma,5 dígitos,5,50159+65840 = ?,50159+65840,115999,121450,50159+65840 = 121450,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+50159+65840 = 121450"
+Soma,5 dígitos,5,27306+39417 = ?,27306+39417,66723,68387,27306+39417 = 68387,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+27306+39417 = 68387"
+Soma,5 dígitos,5,78809+91075 = ?,78809+91075,169884,195990,78809+91075 = 195990,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+78809+91075 = 195990"
+Soma,5 dígitos,5,42784+64746 = ?,42784+64746,107530,109569,42784+64746 = 109569,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+42784+64746 = 109569"
+Soma,5 dígitos,5,21128+21668 = ?,21128+21668,42796,44293,21128+21668 = 44293,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+21128+21668 = 44293"
+Soma,5 dígitos,5,25933+84023 = ?,25933+84023,109956,117349,25933+84023 = 117349,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+25933+84023 = 117349"
+Soma,5 dígitos,5,91416+81152 = ?,91416+81152,172568,202649,91416+81152 = 202649,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+91416+81152 = 202649"
+Soma,5 dígitos,5,23147+88190 = ?,23147+88190,111337,112644,23147+88190 = 112644,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+23147+88190 = 112644"
+Soma,5 dígitos,5,75727+17908 = ?,75727+17908,93635,96316,75727+17908 = 96316,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+75727+17908 = 96316"
+Soma,5 dígitos,5,63908+23805 = ?,63908+23805,87713,90389,63908+23805 = 90389,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+63908+23805 = 90389"
+Soma,5 dígitos,5,86523+18473 = ?,86523+18473,104996,106279,86523+18473 = 106279,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+86523+18473 = 106279"
+Soma,5 dígitos,5,61493+58531 = ?,61493+58531,120024,127551,61493+58531 = 127551,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+61493+58531 = 127551"
+Soma,5 dígitos,5,68259+39341 = ?,68259+39341,107600,108310,68259+39341 = 108310,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+68259+39341 = 108310"
+Soma,5 dígitos,5,16085+75027 = ?,16085+75027,91112,91761,16085+75027 = 91761,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+16085+75027 = 91761"
+Soma,5 dígitos,5,19413+74946 = ?,19413+74946,94359,98108,19413+74946 = 98108,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+19413+74946 = 98108"
+Soma,5 dígitos,5,41752+96824 = ?,41752+96824,138576,170545,41752+96824 = 170545,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+41752+96824 = 170545"
+Soma,5 dígitos,5,48907+63788 = ?,48907+63788,112695,113359,48907+63788 = 113359,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+48907+63788 = 113359"
+Soma,5 dígitos,5,82013+78190 = ?,82013+78190,160203,194970,82013+78190 = 194970,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+82013+78190 = 194970"
+Soma,5 dígitos,5,26115+29505 = ?,26115+29505,55620,59066,26115+29505 = 59066,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+26115+29505 = 59066"
+Soma,5 dígitos,5,77982+99344 = ?,77982+99344,177326,238414,77982+99344 = 238414,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+77982+99344 = 238414"
+Soma,5 dígitos,5,89431+79201 = ?,89431+79201,168632,168633,89431+79201 = 168633,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+89431+79201 = 168633"
+Soma,5 dígitos,5,74140+18986 = ?,74140+18986,93126,94758,74140+18986 = 94758,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+74140+18986 = 94758"
+Soma,5 dígitos,5,19666+29162 = ?,19666+29162,48828,50324,19666+29162 = 50324,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+19666+29162 = 50324"
+Soma,5 dígitos,5,97666+70487 = ?,97666+70487,168153,222538,97666+70487 = 222538,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+97666+70487 = 222538"
+Soma,5 dígitos,5,50222+59265 = ?,50222+59265,109487,111341,50222+59265 = 111341,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+50222+59265 = 111341"
+Soma,5 dígitos,5,55023+17790 = ?,55023+17790,72813,74334,55023+17790 = 74334,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+55023+17790 = 74334"
+Soma,5 dígitos,5,20405+66945 = ?,20405+66945,87350,93936,20405+66945 = 93936,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+20405+66945 = 93936"
+Soma,5 dígitos,5,14344+54353 = ?,14344+54353,68697,69989,14344+54353 = 69989,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+14344+54353 = 69989"
+Soma,5 dígitos,5,62991+14976 = ?,62991+14976,77967,81549,62991+14976 = 81549,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+62991+14976 = 81549"
+Soma,5 dígitos,5,33117+62413 = ?,33117+62413,95530,98988,33117+62413 = 98988,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+33117+62413 = 98988"
+Soma,5 dígitos,5,48648+31087 = ?,48648+31087,79735,87290,48648+31087 = 87290,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+48648+31087 = 87290"
+Soma,5 dígitos,5,45685+12751 = ?,45685+12751,58436,65717,45685+12751 = 65717,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+45685+12751 = 65717"
+Soma,5 dígitos,5,23838+30994 = ?,23838+30994,54832,56469,23838+30994 = 56469,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+23838+30994 = 56469"
+Soma,5 dígitos,5,41436+85650 = ?,41436+85650,127086,147167,41436+85650 = 147167,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+41436+85650 = 147167"
+Soma,5 dígitos,5,12425+72683 = ?,12425+72683,85108,88108,12425+72683 = 88108,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+12425+72683 = 88108"
+Soma,5 dígitos,5,85616+68601 = ?,85616+68601,154217,181946,85616+68601 = 181946,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+85616+68601 = 181946"
+Soma,5 dígitos,5,93020+26170 = ?,93020+26170,119190,119210,93020+26170 = 119210,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+93020+26170 = 119210"
+Soma,5 dígitos,5,88675+73458 = ?,88675+73458,162133,211984,88675+73458 = 211984,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+88675+73458 = 211984"
+Soma,5 dígitos,5,78283+33327 = ?,78283+33327,111610,121963,78283+33327 = 121963,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+78283+33327 = 121963"
+Soma,5 dígitos,5,30550+69104 = ?,30550+69104,99654,104392,30550+69104 = 104392,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+30550+69104 = 104392"
+Soma,5 dígitos,5,76862+99474 = ?,76862+99474,176336,177191,76862+99474 = 177191,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+76862+99474 = 177191"
+Soma,5 dígitos,5,20587+95226 = ?,20587+95226,115813,123978,20587+95226 = 123978,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+20587+95226 = 123978"
+Soma,5 dígitos,5,10687+40845 = ?,10687+40845,51532,52781,10687+40845 = 52781,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+10687+40845 = 52781"
+Soma,5 dígitos,5,63353+80127 = ?,63353+80127,143480,165037,63353+80127 = 165037,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+63353+80127 = 165037"
+Soma,5 dígitos,5,60907+28543 = ?,60907+28543,89450,91158,60907+28543 = 91158,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+60907+28543 = 91158"
+Soma,5 dígitos,5,14050+45767 = ?,14050+45767,59817,65609,14050+45767 = 65609,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+14050+45767 = 65609"
+Soma,5 dígitos,5,48165+14028 = ?,48165+14028,62193,63927,48165+14028 = 63927,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+48165+14028 = 63927"
+Soma,5 dígitos,5,13092+32966 = ?,13092+32966,46058,51594,13092+32966 = 51594,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+13092+32966 = 51594"
+Soma,6 dígitos,6,739912+846396 = ?,739912+846396,1586308,1586308,739912+846396 = 1586308,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+739912+846396 = 1586308"
+Soma,6 dígitos,6,497537+506558 = ?,497537+506558,1004095,1004095,497537+506558 = 1004095,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+497537+506558 = 1004095"
+Soma,6 dígitos,6,364627+844137 = ?,364627+844137,1208764,1208764,364627+844137 = 1208764,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+364627+844137 = 1208764"
+Soma,6 dígitos,6,295736+452288 = ?,295736+452288,748024,748024,295736+452288 = 748024,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+295736+452288 = 748024"
+Soma,6 dígitos,6,787153+755905 = ?,787153+755905,1543058,1543058,787153+755905 = 1543058,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+787153+755905 = 1543058"
+Soma,6 dígitos,6,443783+922761 = ?,443783+922761,1366544,1366544,443783+922761 = 1366544,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+443783+922761 = 1366544"
+Soma,6 dígitos,6,186280+492602 = ?,186280+492602,678882,678882,186280+492602 = 678882,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+186280+492602 = 678882"
+Soma,6 dígitos,6,454328+483014 = ?,454328+483014,937342,937342,454328+483014 = 937342,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+454328+483014 = 937342"
+Soma,6 dígitos,6,296249+688620 = ?,296249+688620,984869,984869,296249+688620 = 984869,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+296249+688620 = 984869"
+Soma,6 dígitos,6,685159+778136 = ?,685159+778136,1463295,1463295,685159+778136 = 1463295,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+685159+778136 = 1463295"
+Soma,6 dígitos,6,909078+873379 = ?,909078+873379,1782457,1782457,909078+873379 = 1782457,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+909078+873379 = 1782457"
+Soma,6 dígitos,6,750824+897696 = ?,750824+897696,1648520,1648520,750824+897696 = 1648520,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+750824+897696 = 1648520"
+Soma,6 dígitos,6,780379+448795 = ?,780379+448795,1229174,1229174,780379+448795 = 1229174,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+780379+448795 = 1229174"
+Soma,6 dígitos,6,416621+997223 = ?,416621+997223,1413844,1413844,416621+997223 = 1413844,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+416621+997223 = 1413844"
+Soma,6 dígitos,6,857524+963255 = ?,857524+963255,1820779,1820779,857524+963255 = 1820779,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+857524+963255 = 1820779"
+Soma,6 dígitos,6,746612+809528 = ?,746612+809528,1556140,1556140,746612+809528 = 1556140,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+746612+809528 = 1556140"
+Soma,6 dígitos,6,735844+844807 = ?,735844+844807,1580651,1580651,735844+844807 = 1580651,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+735844+844807 = 1580651"
+Soma,6 dígitos,6,786837+197681 = ?,786837+197681,984518,984518,786837+197681 = 984518,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+786837+197681 = 984518"
+Soma,6 dígitos,6,505223+220098 = ?,505223+220098,725321,725321,505223+220098 = 725321,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+505223+220098 = 725321"
+Soma,6 dígitos,6,280404+414115 = ?,280404+414115,694519,694519,280404+414115 = 694519,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+280404+414115 = 694519"
+Soma,6 dígitos,6,337661+359594 = ?,337661+359594,697255,697255,337661+359594 = 697255,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+337661+359594 = 697255"
+Soma,6 dígitos,6,845652+704717 = ?,845652+704717,1550369,1550369,845652+704717 = 1550369,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+845652+704717 = 1550369"
+Soma,6 dígitos,6,455812+940080 = ?,455812+940080,1395892,1395892,455812+940080 = 1395892,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+455812+940080 = 1395892"
+Soma,6 dígitos,6,123623+789652 = ?,123623+789652,913275,913275,123623+789652 = 913275,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+123623+789652 = 913275"
+Soma,6 dígitos,6,453514+601263 = ?,453514+601263,1054777,1054777,453514+601263 = 1054777,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+453514+601263 = 1054777"
+Soma,6 dígitos,6,265122+643543 = ?,265122+643543,908665,908665,265122+643543 = 908665,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+265122+643543 = 908665"
+Soma,6 dígitos,6,238771+823097 = ?,238771+823097,1061868,1061868,238771+823097 = 1061868,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+238771+823097 = 1061868"
+Soma,6 dígitos,6,782237+603439 = ?,782237+603439,1385676,1385676,782237+603439 = 1385676,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+782237+603439 = 1385676"
+Soma,6 dígitos,6,271150+819764 = ?,271150+819764,1090914,1090914,271150+819764 = 1090914,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+271150+819764 = 1090914"
+Soma,6 dígitos,6,220609+613749 = ?,220609+613749,834358,834358,220609+613749 = 834358,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+220609+613749 = 834358"
+Soma,6 dígitos,6,637159+941902 = ?,637159+941902,1579061,1579061,637159+941902 = 1579061,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+637159+941902 = 1579061"
+Soma,6 dígitos,6,993647+620487 = ?,993647+620487,1614134,1614134,993647+620487 = 1614134,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+993647+620487 = 1614134"
+Soma,6 dígitos,6,453130+723130 = ?,453130+723130,1176260,1176260,453130+723130 = 1176260,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+453130+723130 = 1176260"
+Soma,6 dígitos,6,582231+560401 = ?,582231+560401,1142632,1142632,582231+560401 = 1142632,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+582231+560401 = 1142632"
+Soma,6 dígitos,6,839326+143728 = ?,839326+143728,983054,983054,839326+143728 = 983054,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+839326+143728 = 983054"
+Soma,6 dígitos,6,959067+362857 = ?,959067+362857,1321924,1321924,959067+362857 = 1321924,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+959067+362857 = 1321924"
+Soma,6 dígitos,6,390731+264031 = ?,390731+264031,654762,654762,390731+264031 = 654762,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+390731+264031 = 654762"
+Soma,6 dígitos,6,780349+746698 = ?,780349+746698,1527047,1527047,780349+746698 = 1527047,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+780349+746698 = 1527047"
+Soma,6 dígitos,6,419302+630461 = ?,419302+630461,1049763,1049763,419302+630461 = 1049763,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+419302+630461 = 1049763"
+Soma,6 dígitos,6,239698+706164 = ?,239698+706164,945862,945862,239698+706164 = 945862,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+239698+706164 = 945862"
+Soma,6 dígitos,6,151730+192271 = ?,151730+192271,344001,344001,151730+192271 = 344001,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+151730+192271 = 344001"
+Soma,6 dígitos,6,144990+722389 = ?,144990+722389,867379,867379,144990+722389 = 867379,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+144990+722389 = 867379"
+Soma,6 dígitos,6,558878+323750 = ?,558878+323750,882628,882628,558878+323750 = 882628,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+558878+323750 = 882628"
+Soma,6 dígitos,6,148853+186024 = ?,148853+186024,334877,334877,148853+186024 = 334877,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+148853+186024 = 334877"
+Soma,6 dígitos,6,779631+274410 = ?,779631+274410,1054041,1054041,779631+274410 = 1054041,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+779631+274410 = 1054041"
+Soma,6 dígitos,6,971719+590675 = ?,971719+590675,1562394,1562394,971719+590675 = 1562394,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+971719+590675 = 1562394"
+Soma,6 dígitos,6,623714+806535 = ?,623714+806535,1430249,1430249,623714+806535 = 1430249,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+623714+806535 = 1430249"
+Soma,6 dígitos,6,701911+856544 = ?,701911+856544,1558455,1558455,701911+856544 = 1558455,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+701911+856544 = 1558455"
+Soma,6 dígitos,6,746207+100268 = ?,746207+100268,846475,846475,746207+100268 = 846475,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+746207+100268 = 846475"
+Soma,6 dígitos,6,470999+600719 = ?,470999+600719,1071718,1071718,470999+600719 = 1071718,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+470999+600719 = 1071718"
+Soma,6 dígitos,6,739912+846396 = ?,739912+846396,1586308,1656776,739912+846396 = 1656776,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+739912+846396 = 1656776"
+Soma,6 dígitos,6,497537+506558 = ?,497537+506558,1004095,1007606,497537+506558 = 1007606,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+497537+506558 = 1007606"
+Soma,6 dígitos,6,364627+844137 = ?,364627+844137,1208764,1307271,364627+844137 = 1307271,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+364627+844137 = 1307271"
+Soma,6 dígitos,6,295736+452288 = ?,295736+452288,748024,792240,295736+452288 = 792240,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+295736+452288 = 792240"
+Soma,6 dígitos,6,787153+755905 = ?,787153+755905,1543058,1924109,787153+755905 = 1924109,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+787153+755905 = 1924109"
+Soma,6 dígitos,6,443783+922761 = ?,443783+922761,1366544,1654031,443783+922761 = 1654031,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+443783+922761 = 1654031"
+Soma,6 dígitos,6,186280+492602 = ?,186280+492602,678882,716040,186280+492602 = 716040,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+186280+492602 = 716040"
+Soma,6 dígitos,6,454328+483014 = ?,454328+483014,937342,939670,454328+483014 = 939670,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+454328+483014 = 939670"
+Soma,6 dígitos,6,296249+688620 = ?,296249+688620,984869,1036953,296249+688620 = 1036953,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+296249+688620 = 1036953"
+Soma,6 dígitos,6,685159+778136 = ?,685159+778136,1463295,1569377,685159+778136 = 1569377,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+685159+778136 = 1569377"
+Soma,6 dígitos,6,909078+873379 = ?,909078+873379,1782457,2395791,909078+873379 = 2395791,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+909078+873379 = 2395791"
+Soma,6 dígitos,6,750824+897696 = ?,750824+897696,1648520,2207507,750824+897696 = 2207507,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+750824+897696 = 2207507"
+Soma,6 dígitos,6,780379+448795 = ?,780379+448795,1229174,1339253,780379+448795 = 1339253,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+780379+448795 = 1339253"
+Soma,6 dígitos,6,416621+997223 = ?,416621+997223,1413844,1756612,416621+997223 = 1756612,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+416621+997223 = 1756612"
+Soma,6 dígitos,6,857524+963255 = ?,857524+963255,1820779,1843451,857524+963255 = 1843451,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+857524+963255 = 1843451"
+Soma,6 dígitos,6,746612+809528 = ?,746612+809528,1556140,1974541,746612+809528 = 1974541,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+746612+809528 = 1974541"
+Soma,6 dígitos,6,735844+844807 = ?,735844+844807,1580651,1936180,735844+844807 = 1936180,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+735844+844807 = 1936180"
+Soma,6 dígitos,6,786837+197681 = ?,786837+197681,984518,1026626,786837+197681 = 1026626,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+786837+197681 = 1026626"
+Soma,6 dígitos,6,505223+220098 = ?,505223+220098,725321,745988,505223+220098 = 745988,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+505223+220098 = 745988"
+Soma,6 dígitos,6,280404+414115 = ?,280404+414115,694519,746183,280404+414115 = 746183,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+280404+414115 = 746183"
+Soma,6 dígitos,6,337661+359594 = ?,337661+359594,697255,712964,337661+359594 = 712964,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+337661+359594 = 712964"
+Soma,6 dígitos,6,845652+704717 = ?,845652+704717,1550369,1862325,845652+704717 = 1862325,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+845652+704717 = 1862325"
+Soma,6 dígitos,6,455812+940080 = ?,455812+940080,1395892,1529776,455812+940080 = 1529776,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+455812+940080 = 1529776"
+Soma,6 dígitos,6,123623+789652 = ?,123623+789652,913275,920374,123623+789652 = 920374,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+123623+789652 = 920374"
+Soma,6 dígitos,6,453514+601263 = ?,453514+601263,1054777,1101789,453514+601263 = 1101789,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+453514+601263 = 1101789"
+Soma,6 dígitos,6,265122+643543 = ?,265122+643543,908665,915212,265122+643543 = 915212,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+265122+643543 = 915212"
+Soma,6 dígitos,6,238771+823097 = ?,238771+823097,1061868,1120582,238771+823097 = 1120582,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+238771+823097 = 1120582"
+Soma,6 dígitos,6,782237+603439 = ?,782237+603439,1385676,1420431,782237+603439 = 1420431,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+782237+603439 = 1420431"
+Soma,6 dígitos,6,271150+819764 = ?,271150+819764,1090914,1102326,271150+819764 = 1102326,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+271150+819764 = 1102326"
+Soma,6 dígitos,6,220609+613749 = ?,220609+613749,834358,837270,220609+613749 = 837270,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+220609+613749 = 837270"
+Soma,6 dígitos,6,637159+941902 = ?,637159+941902,1579061,1793897,637159+941902 = 1793897,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+637159+941902 = 1793897"
+Soma,6 dígitos,6,993647+620487 = ?,993647+620487,1614134,2016031,993647+620487 = 2016031,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+993647+620487 = 2016031"
+Soma,6 dígitos,6,453130+723130 = ?,453130+723130,1176260,1261157,453130+723130 = 1261157,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+453130+723130 = 1261157"
+Soma,6 dígitos,6,582231+560401 = ?,582231+560401,1142632,1213928,582231+560401 = 1213928,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+582231+560401 = 1213928"
+Soma,6 dígitos,6,839326+143728 = ?,839326+143728,983054,994166,839326+143728 = 994166,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+839326+143728 = 994166"
+Soma,6 dígitos,6,959067+362857 = ?,959067+362857,1321924,1621573,959067+362857 = 1621573,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+959067+362857 = 1621573"
+Soma,6 dígitos,6,390731+264031 = ?,390731+264031,654762,656565,390731+264031 = 656565,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+390731+264031 = 656565"
+Soma,6 dígitos,6,780349+746698 = ?,780349+746698,1527047,1535203,780349+746698 = 1535203,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+780349+746698 = 1535203"
+Soma,6 dígitos,6,419302+630461 = ?,419302+630461,1049763,1057884,419302+630461 = 1057884,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+419302+630461 = 1057884"
+Soma,6 dígitos,6,239698+706164 = ?,239698+706164,945862,985247,239698+706164 = 985247,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+239698+706164 = 985247"
+Soma,6 dígitos,6,151730+192271 = ?,151730+192271,344001,343999,151730+192271 = 343999,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+151730+192271 = 343999"
+Soma,6 dígitos,6,144990+722389 = ?,144990+722389,867379,914634,144990+722389 = 914634,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+144990+722389 = 914634"
+Soma,6 dígitos,6,558878+323750 = ?,558878+323750,882628,904547,558878+323750 = 904547,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+558878+323750 = 904547"
+Soma,6 dígitos,6,148853+186024 = ?,148853+186024,334877,355323,148853+186024 = 355323,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+148853+186024 = 355323"
+Soma,6 dígitos,6,779631+274410 = ?,779631+274410,1054041,1084348,779631+274410 = 1084348,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+779631+274410 = 1084348"
+Soma,6 dígitos,6,971719+590675 = ?,971719+590675,1562394,1710113,971719+590675 = 1710113,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+971719+590675 = 1710113"
+Soma,6 dígitos,6,623714+806535 = ?,623714+806535,1430249,1739237,623714+806535 = 1739237,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+623714+806535 = 1739237"
+Soma,6 dígitos,6,701911+856544 = ?,701911+856544,1558455,1917201,701911+856544 = 1917201,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+701911+856544 = 1917201"
+Soma,6 dígitos,6,746207+100268 = ?,746207+100268,846475,871675,746207+100268 = 871675,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+746207+100268 = 871675"
+Soma,6 dígitos,6,470999+600719 = ?,470999+600719,1071718,1088090,470999+600719 = 1088090,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+470999+600719 = 1088090"
+Soma,7 dígitos,7,5888516+8951497 = ?,5888516+8951497,14840013,14840013,5888516+8951497 = 14840013,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5888516+8951497 = 14840013"
+Soma,7 dígitos,7,3960770+7721941 = ?,3960770+7721941,11682711,11682711,3960770+7721941 = 11682711,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3960770+7721941 = 11682711"
+Soma,7 dígitos,7,6658131+1442990 = ?,6658131+1442990,8101121,8101121,6658131+1442990 = 8101121,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6658131+1442990 = 8101121"
+Soma,7 dígitos,7,8381026+3029261 = ?,8381026+3029261,11410287,11410287,8381026+3029261 = 11410287,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8381026+3029261 = 11410287"
+Soma,7 dígitos,7,3978170+8867113 = ?,3978170+8867113,12845283,12845283,3978170+8867113 = 12845283,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3978170+8867113 = 12845283"
+Soma,7 dígitos,7,6012639+7960803 = ?,6012639+7960803,13973442,13973442,6012639+7960803 = 13973442,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6012639+7960803 = 13973442"
+Soma,7 dígitos,7,3171425+8706520 = ?,3171425+8706520,11877945,11877945,3171425+8706520 = 11877945,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3171425+8706520 = 11877945"
+Soma,7 dígitos,7,5311876+1309673 = ?,5311876+1309673,6621549,6621549,5311876+1309673 = 6621549,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5311876+1309673 = 6621549"
+Soma,7 dígitos,7,8724734+4755292 = ?,8724734+4755292,13480026,13480026,8724734+4755292 = 13480026,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8724734+4755292 = 13480026"
+Soma,7 dígitos,7,5546306+5487843 = ?,5546306+5487843,11034149,11034149,5546306+5487843 = 11034149,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5546306+5487843 = 11034149"
+Soma,7 dígitos,7,1895640+2514629 = ?,1895640+2514629,4410269,4410269,1895640+2514629 = 4410269,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1895640+2514629 = 4410269"
+Soma,7 dígitos,7,1359957+7252910 = ?,1359957+7252910,8612867,8612867,1359957+7252910 = 8612867,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1359957+7252910 = 8612867"
+Soma,7 dígitos,7,6111187+6064258 = ?,6111187+6064258,12175445,12175445,6111187+6064258 = 12175445,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6111187+6064258 = 12175445"
+Soma,7 dígitos,7,3514455+3589001 = ?,3514455+3589001,7103456,7103456,3514455+3589001 = 7103456,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3514455+3589001 = 7103456"
+Soma,7 dígitos,7,3435890+3822933 = ?,3435890+3822933,7258823,7258823,3435890+3822933 = 7258823,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3435890+3822933 = 7258823"
+Soma,7 dígitos,7,1649470+3008407 = ?,1649470+3008407,4657877,4657877,1649470+3008407 = 4657877,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1649470+3008407 = 4657877"
+Soma,7 dígitos,7,1753519+7189396 = ?,1753519+7189396,8942915,8942915,1753519+7189396 = 8942915,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1753519+7189396 = 8942915"
+Soma,7 dígitos,7,1214958+6928904 = ?,1214958+6928904,8143862,8143862,1214958+6928904 = 8143862,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1214958+6928904 = 8143862"
+Soma,7 dígitos,7,8388851+8798413 = ?,8388851+8798413,17187264,17187264,8388851+8798413 = 17187264,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8388851+8798413 = 17187264"
+Soma,7 dígitos,7,5260661+8761172 = ?,5260661+8761172,14021833,14021833,5260661+8761172 = 14021833,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5260661+8761172 = 14021833"
+Soma,7 dígitos,7,3593657+9151828 = ?,3593657+9151828,12745485,12745485,3593657+9151828 = 12745485,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3593657+9151828 = 12745485"
+Soma,7 dígitos,7,1337664+2241376 = ?,1337664+2241376,3579040,3579040,1337664+2241376 = 3579040,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1337664+2241376 = 3579040"
+Soma,7 dígitos,7,2124068+1391269 = ?,2124068+1391269,3515337,3515337,2124068+1391269 = 3515337,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2124068+1391269 = 3515337"
+Soma,7 dígitos,7,2929902+3965293 = ?,2929902+3965293,6895195,6895195,2929902+3965293 = 6895195,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2929902+3965293 = 6895195"
+Soma,7 dígitos,7,8056851+4857015 = ?,8056851+4857015,12913866,12913866,8056851+4857015 = 12913866,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8056851+4857015 = 12913866"
+Soma,7 dígitos,7,1648076+7701397 = ?,1648076+7701397,9349473,9349473,1648076+7701397 = 9349473,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1648076+7701397 = 9349473"
+Soma,7 dígitos,7,3358022+3457243 = ?,3358022+3457243,6815265,6815265,3358022+3457243 = 6815265,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3358022+3457243 = 6815265"
+Soma,7 dígitos,7,7565337+1470148 = ?,7565337+1470148,9035485,9035485,7565337+1470148 = 9035485,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7565337+1470148 = 9035485"
+Soma,7 dígitos,7,2093277+7825670 = ?,2093277+7825670,9918947,9918947,2093277+7825670 = 9918947,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2093277+7825670 = 9918947"
+Soma,7 dígitos,7,6466832+6748507 = ?,6466832+6748507,13215339,13215339,6466832+6748507 = 13215339,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6466832+6748507 = 13215339"
+Soma,7 dígitos,7,9369190+1865764 = ?,9369190+1865764,11234954,11234954,9369190+1865764 = 11234954,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9369190+1865764 = 11234954"
+Soma,7 dígitos,7,6437423+5841328 = ?,6437423+5841328,12278751,12278751,6437423+5841328 = 12278751,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6437423+5841328 = 12278751"
+Soma,7 dígitos,7,3030338+4053319 = ?,3030338+4053319,7083657,7083657,3030338+4053319 = 7083657,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3030338+4053319 = 7083657"
+Soma,7 dígitos,7,5351390+4102533 = ?,5351390+4102533,9453923,9453923,5351390+4102533 = 9453923,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5351390+4102533 = 9453923"
+Soma,7 dígitos,7,1765974+8247101 = ?,1765974+8247101,10013075,10013075,1765974+8247101 = 10013075,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1765974+8247101 = 10013075"
+Soma,7 dígitos,7,2589664+7314632 = ?,2589664+7314632,9904296,9904296,2589664+7314632 = 9904296,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2589664+7314632 = 9904296"
+Soma,7 dígitos,7,3770335+3500972 = ?,3770335+3500972,7271307,7271307,3770335+3500972 = 7271307,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3770335+3500972 = 7271307"
+Soma,7 dígitos,7,3902137+6550318 = ?,3902137+6550318,10452455,10452455,3902137+6550318 = 10452455,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3902137+6550318 = 10452455"
+Soma,7 dígitos,7,1144390+2320952 = ?,1144390+2320952,3465342,3465342,1144390+2320952 = 3465342,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1144390+2320952 = 3465342"
+Soma,7 dígitos,7,5504217+1854048 = ?,5504217+1854048,7358265,7358265,5504217+1854048 = 7358265,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5504217+1854048 = 7358265"
+Soma,7 dígitos,7,2826518+6079100 = ?,2826518+6079100,8905618,8905618,2826518+6079100 = 8905618,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2826518+6079100 = 8905618"
+Soma,7 dígitos,7,1113863+5436185 = ?,1113863+5436185,6550048,6550048,1113863+5436185 = 6550048,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1113863+5436185 = 6550048"
+Soma,7 dígitos,7,2250419+2629277 = ?,2250419+2629277,4879696,4879696,2250419+2629277 = 4879696,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2250419+2629277 = 4879696"
+Soma,7 dígitos,7,5854664+9600703 = ?,5854664+9600703,15455367,15455367,5854664+9600703 = 15455367,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5854664+9600703 = 15455367"
+Soma,7 dígitos,7,3396666+3016739 = ?,3396666+3016739,6413405,6413405,3396666+3016739 = 6413405,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3396666+3016739 = 6413405"
+Soma,7 dígitos,7,1550891+6149760 = ?,1550891+6149760,7700651,7700651,1550891+6149760 = 7700651,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1550891+6149760 = 7700651"
+Soma,7 dígitos,7,9326868+7452072 = ?,9326868+7452072,16778940,16778940,9326868+7452072 = 16778940,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9326868+7452072 = 16778940"
+Soma,7 dígitos,7,7253923+1431555 = ?,7253923+1431555,8685478,8685478,7253923+1431555 = 8685478,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7253923+1431555 = 8685478"
+Soma,7 dígitos,7,1837142+3328212 = ?,1837142+3328212,5165354,5165354,1837142+3328212 = 5165354,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1837142+3328212 = 5165354"
+Soma,7 dígitos,7,3669009+9124321 = ?,3669009+9124321,12793330,12793330,3669009+9124321 = 12793330,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3669009+9124321 = 12793330"
+Soma,7 dígitos,7,5888516+8951497 = ?,5888516+8951497,14840013,14839997,5888516+8951497 = 14839997,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+5888516+8951497 = 14839997"
+Soma,7 dígitos,7,3960770+7721941 = ?,3960770+7721941,11682711,13201875,3960770+7721941 = 13201875,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3960770+7721941 = 13201875"
+Soma,7 dígitos,7,6658131+1442990 = ?,6658131+1442990,8101121,8103171,6658131+1442990 = 8103171,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6658131+1442990 = 8103171"
+Soma,7 dígitos,7,8381026+3029261 = ?,8381026+3029261,11410287,12097264,8381026+3029261 = 12097264,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8381026+3029261 = 12097264"
+Soma,7 dígitos,7,3978170+8867113 = ?,3978170+8867113,12845283,14259731,3978170+8867113 = 14259731,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3978170+8867113 = 14259731"
+Soma,7 dígitos,7,6012639+7960803 = ?,6012639+7960803,13973442,16445632,6012639+7960803 = 16445632,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6012639+7960803 = 16445632"
+Soma,7 dígitos,7,3171425+8706520 = ?,3171425+8706520,11877945,12922053,3171425+8706520 = 12922053,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3171425+8706520 = 12922053"
+Soma,7 dígitos,7,5311876+1309673 = ?,5311876+1309673,6621549,6739346,5311876+1309673 = 6739346,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5311876+1309673 = 6739346"
+Soma,7 dígitos,7,8724734+4755292 = ?,8724734+4755292,13480026,13479992,8724734+4755292 = 13479992,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+8724734+4755292 = 13479992"
+Soma,7 dígitos,7,5546306+5487843 = ?,5546306+5487843,11034149,11226656,5546306+5487843 = 11226656,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5546306+5487843 = 11226656"
+Soma,7 dígitos,7,1895640+2514629 = ?,1895640+2514629,4410269,4584358,1895640+2514629 = 4584358,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1895640+2514629 = 4584358"
+Soma,7 dígitos,7,1359957+7252910 = ?,1359957+7252910,8612867,8882412,1359957+7252910 = 8882412,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1359957+7252910 = 8882412"
+Soma,7 dígitos,7,6111187+6064258 = ?,6111187+6064258,12175445,12873448,6111187+6064258 = 12873448,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6111187+6064258 = 12873448"
+Soma,7 dígitos,7,3514455+3589001 = ?,3514455+3589001,7103456,7118608,3514455+3589001 = 7118608,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3514455+3589001 = 7118608"
+Soma,7 dígitos,7,3435890+3822933 = ?,3435890+3822933,7258823,7441303,3435890+3822933 = 7441303,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3435890+3822933 = 7441303"
+Soma,7 dígitos,7,1649470+3008407 = ?,1649470+3008407,4657877,5248856,1649470+3008407 = 5248856,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1649470+3008407 = 5248856"
+Soma,7 dígitos,7,1753519+7189396 = ?,1753519+7189396,8942915,9471703,1753519+7189396 = 9471703,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1753519+7189396 = 9471703"
+Soma,7 dígitos,7,1214958+6928904 = ?,1214958+6928904,8143862,8150158,1214958+6928904 = 8150158,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1214958+6928904 = 8150158"
+Soma,7 dígitos,7,8388851+8798413 = ?,8388851+8798413,17187264,17188264,8388851+8798413 = 17188264,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+8388851+8798413 = 17188264"
+Soma,7 dígitos,7,5260661+8761172 = ?,5260661+8761172,14021833,14929151,5260661+8761172 = 14929151,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5260661+8761172 = 14929151"
+Soma,7 dígitos,7,3593657+9151828 = ?,3593657+9151828,12745485,15230853,3593657+9151828 = 15230853,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3593657+9151828 = 15230853"
+Soma,7 dígitos,7,1337664+2241376 = ?,1337664+2241376,3579040,3900225,1337664+2241376 = 3900225,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1337664+2241376 = 3900225"
+Soma,7 dígitos,7,2124068+1391269 = ?,2124068+1391269,3515337,3789665,2124068+1391269 = 3789665,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2124068+1391269 = 3789665"
+Soma,7 dígitos,7,2929902+3965293 = ?,2929902+3965293,6895195,7317711,2929902+3965293 = 7317711,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2929902+3965293 = 7317711"
+Soma,7 dígitos,7,8056851+4857015 = ?,8056851+4857015,12913866,13582101,8056851+4857015 = 13582101,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8056851+4857015 = 13582101"
+Soma,7 dígitos,7,1648076+7701397 = ?,1648076+7701397,9349473,9382185,1648076+7701397 = 9382185,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1648076+7701397 = 9382185"
+Soma,7 dígitos,7,3358022+3457243 = ?,3358022+3457243,6815265,7607237,3358022+3457243 = 7607237,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3358022+3457243 = 7607237"
+Soma,7 dígitos,7,7565337+1470148 = ?,7565337+1470148,9035485,9038043,7565337+1470148 = 9038043,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7565337+1470148 = 9038043"
+Soma,7 dígitos,7,2093277+7825670 = ?,2093277+7825670,9918947,10743740,2093277+7825670 = 10743740,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2093277+7825670 = 10743740"
+Soma,7 dígitos,7,6466832+6748507 = ?,6466832+6748507,13215339,15001294,6466832+6748507 = 15001294,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6466832+6748507 = 15001294"
+Soma,7 dígitos,7,9369190+1865764 = ?,9369190+1865764,11234954,11368227,9369190+1865764 = 11368227,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9369190+1865764 = 11368227"
+Soma,7 dígitos,7,6437423+5841328 = ?,6437423+5841328,12278751,13046588,6437423+5841328 = 13046588,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6437423+5841328 = 13046588"
+Soma,7 dígitos,7,3030338+4053319 = ?,3030338+4053319,7083657,7152155,3030338+4053319 = 7152155,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3030338+4053319 = 7152155"
+Soma,7 dígitos,7,5351390+4102533 = ?,5351390+4102533,9453923,9631971,5351390+4102533 = 9631971,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5351390+4102533 = 9631971"
+Soma,7 dígitos,7,1765974+8247101 = ?,1765974+8247101,10013075,10018049,1765974+8247101 = 10018049,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1765974+8247101 = 10018049"
+Soma,7 dígitos,7,2589664+7314632 = ?,2589664+7314632,9904296,10547706,2589664+7314632 = 10547706,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2589664+7314632 = 10547706"
+Soma,7 dígitos,7,3770335+3500972 = ?,3770335+3500972,7271307,7348813,3770335+3500972 = 7348813,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3770335+3500972 = 7348813"
+Soma,7 dígitos,7,3902137+6550318 = ?,3902137+6550318,10452455,10455325,3902137+6550318 = 10455325,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3902137+6550318 = 10455325"
+Soma,7 dígitos,7,1144390+2320952 = ?,1144390+2320952,3465342,3722529,1144390+2320952 = 3722529,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1144390+2320952 = 3722529"
+Soma,7 dígitos,7,5504217+1854048 = ?,5504217+1854048,7358265,7670518,5504217+1854048 = 7670518,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5504217+1854048 = 7670518"
+Soma,7 dígitos,7,2826518+6079100 = ?,2826518+6079100,8905618,9542203,2826518+6079100 = 9542203,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2826518+6079100 = 9542203"
+Soma,7 dígitos,7,1113863+5436185 = ?,1113863+5436185,6550048,6549998,1113863+5436185 = 6549998,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+1113863+5436185 = 6549998"
+Soma,7 dígitos,7,2250419+2629277 = ?,2250419+2629277,4879696,4969969,2250419+2629277 = 4969969,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2250419+2629277 = 4969969"
+Soma,7 dígitos,7,5854664+9600703 = ?,5854664+9600703,15455367,17590987,5854664+9600703 = 17590987,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5854664+9600703 = 17590987"
+Soma,7 dígitos,7,3396666+3016739 = ?,3396666+3016739,6413405,6698878,3396666+3016739 = 6698878,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3396666+3016739 = 6698878"
+Soma,7 dígitos,7,1550891+6149760 = ?,1550891+6149760,7700651,8180699,1550891+6149760 = 8180699,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1550891+6149760 = 8180699"
+Soma,7 dígitos,7,9326868+7452072 = ?,9326868+7452072,16778940,18486864,9326868+7452072 = 18486864,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9326868+7452072 = 18486864"
+Soma,7 dígitos,7,7253923+1431555 = ?,7253923+1431555,8685478,8744350,7253923+1431555 = 8744350,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7253923+1431555 = 8744350"
+Soma,7 dígitos,7,1837142+3328212 = ?,1837142+3328212,5165354,5318826,1837142+3328212 = 5318826,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1837142+3328212 = 5318826"
+Soma,7 dígitos,7,3669009+9124321 = ?,3669009+9124321,12793330,12921722,3669009+9124321 = 12921722,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3669009+9124321 = 12921722"
+Soma,8 dígitos,8,62764743+43492365 = ?,62764743+43492365,106257108,106257108,62764743+43492365 = 106257108,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+62764743+43492365 = 106257108"
+Soma,8 dígitos,8,68361477+93361126 = ?,68361477+93361126,161722603,161722603,68361477+93361126 = 161722603,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+68361477+93361126 = 161722603"
+Soma,8 dígitos,8,10062728+55521423 = ?,10062728+55521423,65584151,65584151,10062728+55521423 = 65584151,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+10062728+55521423 = 65584151"
+Soma,8 dígitos,8,34775625+76375277 = ?,34775625+76375277,111150902,111150902,34775625+76375277 = 111150902,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+34775625+76375277 = 111150902"
+Soma,8 dígitos,8,59866390+47865904 = ?,59866390+47865904,107732294,107732294,59866390+47865904 = 107732294,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+59866390+47865904 = 107732294"
+Soma,8 dígitos,8,26629599+85692191 = ?,26629599+85692191,112321790,112321790,26629599+85692191 = 112321790,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+26629599+85692191 = 112321790"
+Soma,8 dígitos,8,66079137+28891646 = ?,66079137+28891646,94970783,94970783,66079137+28891646 = 94970783,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+66079137+28891646 = 94970783"
+Soma,8 dígitos,8,92806167+26424517 = ?,92806167+26424517,119230684,119230684,92806167+26424517 = 119230684,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+92806167+26424517 = 119230684"
+Soma,8 dígitos,8,17930361+84320447 = ?,17930361+84320447,102250808,102250808,17930361+84320447 = 102250808,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+17930361+84320447 = 102250808"
+Soma,8 dígitos,8,89153506+93601308 = ?,89153506+93601308,182754814,182754814,89153506+93601308 = 182754814,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+89153506+93601308 = 182754814"
+Soma,8 dígitos,8,58121347+13438209 = ?,58121347+13438209,71559556,71559556,58121347+13438209 = 71559556,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+58121347+13438209 = 71559556"
+Soma,8 dígitos,8,43127019+13997718 = ?,43127019+13997718,57124737,57124737,43127019+13997718 = 57124737,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+43127019+13997718 = 57124737"
+Soma,8 dígitos,8,50050146+19811808 = ?,50050146+19811808,69861954,69861954,50050146+19811808 = 69861954,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+50050146+19811808 = 69861954"
+Soma,8 dígitos,8,77542861+96042844 = ?,77542861+96042844,173585705,173585705,77542861+96042844 = 173585705,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+77542861+96042844 = 173585705"
+Soma,8 dígitos,8,53615943+18411372 = ?,53615943+18411372,72027315,72027315,53615943+18411372 = 72027315,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+53615943+18411372 = 72027315"
+Soma,8 dígitos,8,47972519+29764325 = ?,47972519+29764325,77736844,77736844,47972519+29764325 = 77736844,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+47972519+29764325 = 77736844"
+Soma,8 dígitos,8,48775188+79556283 = ?,48775188+79556283,128331471,128331471,48775188+79556283 = 128331471,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+48775188+79556283 = 128331471"
+Soma,8 dígitos,8,71116955+83129244 = ?,71116955+83129244,154246199,154246199,71116955+83129244 = 154246199,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+71116955+83129244 = 154246199"
+Soma,8 dígitos,8,98194008+48059365 = ?,98194008+48059365,146253373,146253373,98194008+48059365 = 146253373,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+98194008+48059365 = 146253373"
+Soma,8 dígitos,8,36264177+96226068 = ?,36264177+96226068,132490245,132490245,36264177+96226068 = 132490245,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+36264177+96226068 = 132490245"
+Soma,8 dígitos,8,10468780+78352202 = ?,10468780+78352202,88820982,88820982,10468780+78352202 = 88820982,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+10468780+78352202 = 88820982"
+Soma,8 dígitos,8,84407939+95236439 = ?,84407939+95236439,179644378,179644378,84407939+95236439 = 179644378,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+84407939+95236439 = 179644378"
+Soma,8 dígitos,8,66790063+70338614 = ?,66790063+70338614,137128677,137128677,66790063+70338614 = 137128677,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+66790063+70338614 = 137128677"
+Soma,8 dígitos,8,38779360+69490503 = ?,38779360+69490503,108269863,108269863,38779360+69490503 = 108269863,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+38779360+69490503 = 108269863"
+Soma,8 dígitos,8,51289658+98626935 = ?,51289658+98626935,149916593,149916593,51289658+98626935 = 149916593,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+51289658+98626935 = 149916593"
+Soma,8 dígitos,8,49986021+91313520 = ?,49986021+91313520,141299541,141299541,49986021+91313520 = 141299541,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+49986021+91313520 = 141299541"
+Soma,8 dígitos,8,49743699+39461997 = ?,49743699+39461997,89205696,89205696,49743699+39461997 = 89205696,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+49743699+39461997 = 89205696"
+Soma,8 dígitos,8,31909841+56766349 = ?,31909841+56766349,88676190,88676190,31909841+56766349 = 88676190,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+31909841+56766349 = 88676190"
+Soma,8 dígitos,8,93570705+60883937 = ?,93570705+60883937,154454642,154454642,93570705+60883937 = 154454642,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+93570705+60883937 = 154454642"
+Soma,8 dígitos,8,10606480+24471338 = ?,10606480+24471338,35077818,35077818,10606480+24471338 = 35077818,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+10606480+24471338 = 35077818"
+Soma,8 dígitos,8,91026125+15944321 = ?,91026125+15944321,106970446,106970446,91026125+15944321 = 106970446,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+91026125+15944321 = 106970446"
+Soma,8 dígitos,8,69582274+46628804 = ?,69582274+46628804,116211078,116211078,69582274+46628804 = 116211078,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+69582274+46628804 = 116211078"
+Soma,8 dígitos,8,50841185+22752748 = ?,50841185+22752748,73593933,73593933,50841185+22752748 = 73593933,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+50841185+22752748 = 73593933"
+Soma,8 dígitos,8,69707715+79287929 = ?,69707715+79287929,148995644,148995644,69707715+79287929 = 148995644,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+69707715+79287929 = 148995644"
+Soma,8 dígitos,8,15807179+31125978 = ?,15807179+31125978,46933157,46933157,15807179+31125978 = 46933157,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+15807179+31125978 = 46933157"
+Soma,8 dígitos,8,60751256+15685987 = ?,60751256+15685987,76437243,76437243,60751256+15685987 = 76437243,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+60751256+15685987 = 76437243"
+Soma,8 dígitos,8,41995736+53852718 = ?,41995736+53852718,95848454,95848454,41995736+53852718 = 95848454,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+41995736+53852718 = 95848454"
+Soma,8 dígitos,8,98695147+86885992 = ?,98695147+86885992,185581139,185581139,98695147+86885992 = 185581139,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+98695147+86885992 = 185581139"
+Soma,8 dígitos,8,38197360+84210813 = ?,38197360+84210813,122408173,122408173,38197360+84210813 = 122408173,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+38197360+84210813 = 122408173"
+Soma,8 dígitos,8,58704749+89616526 = ?,58704749+89616526,148321275,148321275,58704749+89616526 = 148321275,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+58704749+89616526 = 148321275"
+Soma,8 dígitos,8,24633241+10351711 = ?,24633241+10351711,34984952,34984952,24633241+10351711 = 34984952,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+24633241+10351711 = 34984952"
+Soma,8 dígitos,8,17959959+59798642 = ?,17959959+59798642,77758601,77758601,17959959+59798642 = 77758601,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+17959959+59798642 = 77758601"
+Soma,8 dígitos,8,37807851+62802647 = ?,37807851+62802647,100610498,100610498,37807851+62802647 = 100610498,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+37807851+62802647 = 100610498"
+Soma,8 dígitos,8,50227181+99771071 = ?,50227181+99771071,149998252,149998252,50227181+99771071 = 149998252,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+50227181+99771071 = 149998252"
+Soma,8 dígitos,8,99432058+97136540 = ?,99432058+97136540,196568598,196568598,99432058+97136540 = 196568598,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+99432058+97136540 = 196568598"
+Soma,8 dígitos,8,21219414+88680941 = ?,21219414+88680941,109900355,109900355,21219414+88680941 = 109900355,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+21219414+88680941 = 109900355"
+Soma,8 dígitos,8,92151450+25292400 = ?,92151450+25292400,117443850,117443850,92151450+25292400 = 117443850,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+92151450+25292400 = 117443850"
+Soma,8 dígitos,8,29060792+21612001 = ?,29060792+21612001,50672793,50672793,29060792+21612001 = 50672793,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+29060792+21612001 = 50672793"
+Soma,8 dígitos,8,35139687+97130036 = ?,35139687+97130036,132269723,132269723,35139687+97130036 = 132269723,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+35139687+97130036 = 132269723"
+Soma,8 dígitos,8,75141071+63154547 = ?,75141071+63154547,138295618,138295618,75141071+63154547 = 138295618,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+75141071+63154547 = 138295618"
+Soma,8 dígitos,8,62764743+43492365 = ?,62764743+43492365,106257108,107274135,62764743+43492365 = 107274135,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+62764743+43492365 = 107274135"
+Soma,8 dígitos,8,68361477+93361126 = ?,68361477+93361126,161722603,167576188,68361477+93361126 = 167576188,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+68361477+93361126 = 167576188"
+Soma,8 dígitos,8,10062728+55521423 = ?,10062728+55521423,65584151,69885906,10062728+55521423 = 69885906,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+10062728+55521423 = 69885906"
+Soma,8 dígitos,8,34775625+76375277 = ?,34775625+76375277,111150902,113419945,34775625+76375277 = 113419945,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+34775625+76375277 = 113419945"
+Soma,8 dígitos,8,59866390+47865904 = ?,59866390+47865904,107732294,114462492,59866390+47865904 = 114462492,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+59866390+47865904 = 114462492"
+Soma,8 dígitos,8,26629599+85692191 = ?,26629599+85692191,112321790,114305300,26629599+85692191 = 114305300,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+26629599+85692191 = 114305300"
+Soma,8 dígitos,8,66079137+28891646 = ?,66079137+28891646,94970783,95087165,66079137+28891646 = 95087165,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+66079137+28891646 = 95087165"
+Soma,8 dígitos,8,92806167+26424517 = ?,92806167+26424517,119230684,137529602,92806167+26424517 = 137529602,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+92806167+26424517 = 137529602"
+Soma,8 dígitos,8,17930361+84320447 = ?,17930361+84320447,102250808,103871006,17930361+84320447 = 103871006,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+17930361+84320447 = 103871006"
+Soma,8 dígitos,8,89153506+93601308 = ?,89153506+93601308,182754814,260483947,89153506+93601308 = 260483947,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+89153506+93601308 = 260483947"
+Soma,8 dígitos,8,58121347+13438209 = ?,58121347+13438209,71559556,73007244,58121347+13438209 = 73007244,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+58121347+13438209 = 73007244"
+Soma,8 dígitos,8,43127019+13997718 = ?,43127019+13997718,57124737,58324124,43127019+13997718 = 58324124,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+43127019+13997718 = 58324124"
+Soma,8 dígitos,8,50050146+19811808 = ?,50050146+19811808,69861954,73300573,50050146+19811808 = 73300573,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+50050146+19811808 = 73300573"
+Soma,8 dígitos,8,77542861+96042844 = ?,77542861+96042844,173585705,231831051,77542861+96042844 = 231831051,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+77542861+96042844 = 231831051"
+Soma,8 dígitos,8,53615943+18411372 = ?,53615943+18411372,72027315,74041800,53615943+18411372 = 74041800,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+53615943+18411372 = 74041800"
+Soma,8 dígitos,8,47972519+29764325 = ?,47972519+29764325,77736844,80674474,47972519+29764325 = 80674474,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+47972519+29764325 = 80674474"
+Soma,8 dígitos,8,48775188+79556283 = ?,48775188+79556283,128331471,147565872,48775188+79556283 = 147565872,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+48775188+79556283 = 147565872"
+Soma,8 dígitos,8,71116955+83129244 = ?,71116955+83129244,154246199,189218807,71116955+83129244 = 189218807,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+71116955+83129244 = 189218807"
+Soma,8 dígitos,8,98194008+48059365 = ?,98194008+48059365,146253373,166837278,98194008+48059365 = 166837278,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+98194008+48059365 = 166837278"
+Soma,8 dígitos,8,36264177+96226068 = ?,36264177+96226068,132490245,148049921,36264177+96226068 = 148049921,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+36264177+96226068 = 148049921"
+Soma,8 dígitos,8,10468780+78352202 = ?,10468780+78352202,88820982,88821002,10468780+78352202 = 88821002,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+10468780+78352202 = 88821002"
+Soma,8 dígitos,8,84407939+95236439 = ?,84407939+95236439,179644378,195544855,84407939+95236439 = 195544855,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+84407939+95236439 = 195544855"
+Soma,8 dígitos,8,66790063+70338614 = ?,66790063+70338614,137128677,149708709,66790063+70338614 = 149708709,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+66790063+70338614 = 149708709"
+Soma,8 dígitos,8,38779360+69490503 = ?,38779360+69490503,108269863,108270000,38779360+69490503 = 108270000,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+38779360+69490503 = 108270000"
+Soma,8 dígitos,8,51289658+98626935 = ?,51289658+98626935,149916593,170735586,51289658+98626935 = 170735586,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+51289658+98626935 = 170735586"
+Soma,8 dígitos,8,49986021+91313520 = ?,49986021+91313520,141299541,163786598,49986021+91313520 = 163786598,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+49986021+91313520 = 163786598"
+Soma,8 dígitos,8,49743699+39461997 = ?,49743699+39461997,89205696,94336094,49743699+39461997 = 94336094,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+49743699+39461997 = 94336094"
+Soma,8 dígitos,8,31909841+56766349 = ?,31909841+56766349,88676190,92127547,31909841+56766349 = 92127547,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+31909841+56766349 = 92127547"
+Soma,8 dígitos,8,93570705+60883937 = ?,93570705+60883937,154454642,191453159,93570705+60883937 = 191453159,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+93570705+60883937 = 191453159"
+Soma,8 dígitos,8,10606480+24471338 = ?,10606480+24471338,35077818,38004928,10606480+24471338 = 38004928,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+10606480+24471338 = 38004928"
+Soma,8 dígitos,8,91026125+15944321 = ?,91026125+15944321,106970446,111343025,91026125+15944321 = 111343025,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+91026125+15944321 = 111343025"
+Soma,8 dígitos,8,69582274+46628804 = ?,69582274+46628804,116211078,123190530,69582274+46628804 = 123190530,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+69582274+46628804 = 123190530"
+Soma,8 dígitos,8,50841185+22752748 = ?,50841185+22752748,73593933,77065014,50841185+22752748 = 77065014,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+50841185+22752748 = 77065014"
+Soma,8 dígitos,8,69707715+79287929 = ?,69707715+79287929,148995644,176670548,69707715+79287929 = 176670548,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+69707715+79287929 = 176670548"
+Soma,8 dígitos,8,15807179+31125978 = ?,15807179+31125978,46933157,49820162,15807179+31125978 = 49820162,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+15807179+31125978 = 49820162"
+Soma,8 dígitos,8,60751256+15685987 = ?,60751256+15685987,76437243,78369004,60751256+15685987 = 78369004,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+60751256+15685987 = 78369004"
+Soma,8 dígitos,8,41995736+53852718 = ?,41995736+53852718,95848454,95979828,41995736+53852718 = 95979828,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+41995736+53852718 = 95979828"
+Soma,8 dígitos,8,98695147+86885992 = ?,98695147+86885992,185581139,185581141,98695147+86885992 = 185581141,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+98695147+86885992 = 185581141"
+Soma,8 dígitos,8,38197360+84210813 = ?,38197360+84210813,122408173,130912076,38197360+84210813 = 130912076,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+38197360+84210813 = 130912076"
+Soma,8 dígitos,8,58704749+89616526 = ?,58704749+89616526,148321275,193396830,58704749+89616526 = 193396830,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+58704749+89616526 = 193396830"
+Soma,8 dígitos,8,24633241+10351711 = ?,24633241+10351711,34984952,39827564,24633241+10351711 = 39827564,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+24633241+10351711 = 39827564"
+Soma,8 dígitos,8,17959959+59798642 = ?,17959959+59798642,77758601,"Format Requirements**: ""retorne o resultado somente em formato de número, sem unidades ou caracteres especiais.""
+    Only numbers: 77758601.7775","17959959+59798642 = Format Requirements**: ""retorne o resultado somente em formato de número, sem unidades ou caracteres especiais.""
+    Only numbers: 77758601.7775",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+17959959+59798642 = Format Requirements**: ""retorne o resultado somente em formato de número, sem unidades ou caracteres especiais.""
+    Only numbers: 77758601.7775"
+Soma,8 dígitos,8,37807851+62802647 = ?,37807851+62802647,100610498,100676225,37807851+62802647 = 100676225,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+37807851+62802647 = 100676225"
+Soma,8 dígitos,8,50227181+99771071 = ?,50227181+99771071,149998252,150000000,50227181+99771071 = 150000000,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+50227181+99771071 = 150000000"
+Soma,8 dígitos,8,99432058+97136540 = ?,99432058+97136540,196568598,239938027,99432058+97136540 = 239938027,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+99432058+97136540 = 239938027"
+Soma,8 dígitos,8,21219414+88680941 = ?,21219414+88680941,109900355,109899355,21219414+88680941 = 109899355,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+21219414+88680941 = 109899355"
+Soma,8 dígitos,8,92151450+25292400 = ?,92151450+25292400,117443850,129683883,92151450+25292400 = 129683883,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+92151450+25292400 = 129683883"
+Soma,8 dígitos,8,29060792+21612001 = ?,29060792+21612001,50672793,50790809,29060792+21612001 = 50790809,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+29060792+21612001 = 50790809"
+Soma,8 dígitos,8,35139687+97130036 = ?,35139687+97130036,132269723,136156126,35139687+97130036 = 136156126,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+35139687+97130036 = 136156126"
+Soma,8 dígitos,8,75141071+63154547 = ?,75141071+63154547,138295618,155760940,75141071+63154547 = 155760940,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+75141071+63154547 = 155760940"
+Soma,9 dígitos,9,466095725+540017463 = ?,466095725+540017463,1006113188,1006113188,466095725+540017463 = 1006113188,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+466095725+540017463 = 1006113188"
+Soma,9 dígitos,9,390228819+399241216 = ?,390228819+399241216,789470035,789470035,390228819+399241216 = 789470035,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+390228819+399241216 = 789470035"
+Soma,9 dígitos,9,264633002+978823865 = ?,264633002+978823865,1243456867,1243456867,264633002+978823865 = 1243456867,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+264633002+978823865 = 1243456867"
+Soma,9 dígitos,9,509187545+196018459 = ?,509187545+196018459,705206004,705206004,509187545+196018459 = 705206004,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+509187545+196018459 = 705206004"
+Soma,9 dígitos,9,924115192+600117946 = ?,924115192+600117946,1524233138,1524233138,924115192+600117946 = 1524233138,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+924115192+600117946 = 1524233138"
+Soma,9 dígitos,9,559815460+215709167 = ?,559815460+215709167,775524627,775524627,559815460+215709167 = 775524627,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+559815460+215709167 = 775524627"
+Soma,9 dígitos,9,144566167+542120915 = ?,144566167+542120915,686687082,686687082,144566167+542120915 = 686687082,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+144566167+542120915 = 686687082"
+Soma,9 dígitos,9,251530889+716761467 = ?,251530889+716761467,968292356,968292356,251530889+716761467 = 968292356,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+251530889+716761467 = 968292356"
+Soma,9 dígitos,9,246357408+587263455 = ?,246357408+587263455,833620863,833620863,246357408+587263455 = 833620863,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+246357408+587263455 = 833620863"
+Soma,9 dígitos,9,987162776+571876640 = ?,987162776+571876640,1559039416,1559039416,987162776+571876640 = 1559039416,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+987162776+571876640 = 1559039416"
+Soma,9 dígitos,9,408361757+640183257 = ?,408361757+640183257,1048545014,1048545014,408361757+640183257 = 1048545014,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+408361757+640183257 = 1048545014"
+Soma,9 dígitos,9,623296791+518909147 = ?,623296791+518909147,1142205938,1142205938,623296791+518909147 = 1142205938,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+623296791+518909147 = 1142205938"
+Soma,9 dígitos,9,834983184+324774475 = ?,834983184+324774475,1159757659,1159757659,834983184+324774475 = 1159757659,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+834983184+324774475 = 1159757659"
+Soma,9 dígitos,9,917745173+373437375 = ?,917745173+373437375,1291182548,1291182548,917745173+373437375 = 1291182548,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+917745173+373437375 = 1291182548"
+Soma,9 dígitos,9,609695763+885847282 = ?,609695763+885847282,1495543045,1495543045,609695763+885847282 = 1495543045,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+609695763+885847282 = 1495543045"
+Soma,9 dígitos,9,572898233+348658583 = ?,572898233+348658583,921556816,921556816,572898233+348658583 = 921556816,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+572898233+348658583 = 921556816"
+Soma,9 dígitos,9,261763249+709228879 = ?,261763249+709228879,970992128,970992128,261763249+709228879 = 970992128,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+261763249+709228879 = 970992128"
+Soma,9 dígitos,9,649420159+831547792 = ?,649420159+831547792,1480967951,1480967951,649420159+831547792 = 1480967951,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+649420159+831547792 = 1480967951"
+Soma,9 dígitos,9,676379869+986103411 = ?,676379869+986103411,1662483280,1662483280,676379869+986103411 = 1662483280,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+676379869+986103411 = 1662483280"
+Soma,9 dígitos,9,677955211+143146402 = ?,677955211+143146402,821101613,821101613,677955211+143146402 = 821101613,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+677955211+143146402 = 821101613"
+Soma,9 dígitos,9,266756832+169195491 = ?,266756832+169195491,435952323,435952323,266756832+169195491 = 435952323,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+266756832+169195491 = 435952323"
+Soma,9 dígitos,9,337928002+343931062 = ?,337928002+343931062,681859064,681859064,337928002+343931062 = 681859064,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+337928002+343931062 = 681859064"
+Soma,9 dígitos,9,248387672+725500948 = ?,248387672+725500948,973888620,973888620,248387672+725500948 = 973888620,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+248387672+725500948 = 973888620"
+Soma,9 dígitos,9,819328191+566507944 = ?,819328191+566507944,1385836135,1385836135,819328191+566507944 = 1385836135,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+819328191+566507944 = 1385836135"
+Soma,9 dígitos,9,645484810+188984507 = ?,645484810+188984507,834469317,834469317,645484810+188984507 = 834469317,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+645484810+188984507 = 834469317"
+Soma,9 dígitos,9,256793452+275697647 = ?,256793452+275697647,532491099,532491099,256793452+275697647 = 532491099,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+256793452+275697647 = 532491099"
+Soma,9 dígitos,9,476105696+756215892 = ?,476105696+756215892,1232321588,1232321588,476105696+756215892 = 1232321588,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+476105696+756215892 = 1232321588"
+Soma,9 dígitos,9,226719067+682712359 = ?,226719067+682712359,909431426,909431426,226719067+682712359 = 909431426,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+226719067+682712359 = 909431426"
+Soma,9 dígitos,9,155725449+232755077 = ?,155725449+232755077,388480526,388480526,155725449+232755077 = 388480526,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+155725449+232755077 = 388480526"
+Soma,9 dígitos,9,683013817+329626748 = ?,683013817+329626748,1012640565,1012640565,683013817+329626748 = 1012640565,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+683013817+329626748 = 1012640565"
+Soma,9 dígitos,9,985850872+305009920 = ?,985850872+305009920,1290860792,1290860792,985850872+305009920 = 1290860792,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+985850872+305009920 = 1290860792"
+Soma,9 dígitos,9,489770608+736355750 = ?,489770608+736355750,1226126358,1226126358,489770608+736355750 = 1226126358,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+489770608+736355750 = 1226126358"
+Soma,9 dígitos,9,388188345+741701988 = ?,388188345+741701988,1129890333,1129890333,388188345+741701988 = 1129890333,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+388188345+741701988 = 1129890333"
+Soma,9 dígitos,9,621546983+675538639 = ?,621546983+675538639,1297085622,1297085622,621546983+675538639 = 1297085622,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+621546983+675538639 = 1297085622"
+Soma,9 dígitos,9,283186188+801303730 = ?,283186188+801303730,1084489918,1084489918,283186188+801303730 = 1084489918,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+283186188+801303730 = 1084489918"
+Soma,9 dígitos,9,201990216+134921526 = ?,201990216+134921526,336911742,336911742,201990216+134921526 = 336911742,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+201990216+134921526 = 336911742"
+Soma,9 dígitos,9,393925149+626837428 = ?,393925149+626837428,1020762577,1020762577,393925149+626837428 = 1020762577,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+393925149+626837428 = 1020762577"
+Soma,9 dígitos,9,977702969+551945805 = ?,977702969+551945805,1529648774,1529648774,977702969+551945805 = 1529648774,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+977702969+551945805 = 1529648774"
+Soma,9 dígitos,9,299625874+907829045 = ?,299625874+907829045,1207454919,1207454919,299625874+907829045 = 1207454919,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+299625874+907829045 = 1207454919"
+Soma,9 dígitos,9,968332382+733217806 = ?,968332382+733217806,1701550188,1701550188,968332382+733217806 = 1701550188,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+968332382+733217806 = 1701550188"
+Soma,9 dígitos,9,237266349+295870229 = ?,237266349+295870229,533136578,533136578,237266349+295870229 = 533136578,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+237266349+295870229 = 533136578"
+Soma,9 dígitos,9,855176662+347580303 = ?,855176662+347580303,1202756965,1202756965,855176662+347580303 = 1202756965,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+855176662+347580303 = 1202756965"
+Soma,9 dígitos,9,434237471+250466305 = ?,434237471+250466305,684703776,684703776,434237471+250466305 = 684703776,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+434237471+250466305 = 684703776"
+Soma,9 dígitos,9,585043909+206799594 = ?,585043909+206799594,791843503,791843503,585043909+206799594 = 791843503,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+585043909+206799594 = 791843503"
+Soma,9 dígitos,9,870356032+260597872 = ?,870356032+260597872,1130953904,1130953904,870356032+260597872 = 1130953904,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+870356032+260597872 = 1130953904"
+Soma,9 dígitos,9,865864915+894507562 = ?,865864915+894507562,1760372477,1760372477,865864915+894507562 = 1760372477,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+865864915+894507562 = 1760372477"
+Soma,9 dígitos,9,186170402+565693212 = ?,186170402+565693212,751863614,751863614,186170402+565693212 = 751863614,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+186170402+565693212 = 751863614"
+Soma,9 dígitos,9,129832142+735750591 = ?,129832142+735750591,865582733,865582733,129832142+735750591 = 865582733,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+129832142+735750591 = 865582733"
+Soma,9 dígitos,9,654079158+950155444 = ?,654079158+950155444,1604234602,1604234602,654079158+950155444 = 1604234602,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+654079158+950155444 = 1604234602"
+Soma,9 dígitos,9,580658801+892727890 = ?,580658801+892727890,1473386691,1473386691,580658801+892727890 = 1473386691,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+580658801+892727890 = 1473386691"
+Soma,9 dígitos,9,466095725+540017463 = ?,466095725+540017463,1006113188,1008724099,466095725+540017463 = 1008724099,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+466095725+540017463 = 1008724099"
+Soma,9 dígitos,9,390228819+399241216 = ?,390228819+399241216,789470035,789469935,390228819+399241216 = 789469935,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+390228819+399241216 = 789469935"
+Soma,9 dígitos,9,264633002+978823865 = ?,264633002+978823865,1243456867,1379663769,264633002+978823865 = 1379663769,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+264633002+978823865 = 1379663769"
+Soma,9 dígitos,9,509187545+196018459 = ?,509187545+196018459,705206004,708286766,509187545+196018459 = 708286766,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+509187545+196018459 = 708286766"
+Soma,9 dígitos,9,924115192+600117946 = ?,924115192+600117946,1524233138,1760528629,924115192+600117946 = 1760528629,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+924115192+600117946 = 1760528629"
+Soma,9 dígitos,9,559815460+215709167 = ?,559815460+215709167,775524627,807999611,559815460+215709167 = 807999611,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+559815460+215709167 = 807999611"
+Soma,9 dígitos,9,144566167+542120915 = ?,144566167+542120915,686687082,720686616,144566167+542120915 = 720686616,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+144566167+542120915 = 720686616"
+Soma,9 dígitos,9,251530889+716761467 = ?,251530889+716761467,968292356,"*   $30000+60000 = 90000$
+    *   $500000+700000","251530889+716761467 = *   $30000+60000 = 90000$
+    *   $500000+700000",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+251530889+716761467 = *   $30000+60000 = 90000$
+    *   $500000+700000"
+Soma,9 dígitos,9,246357408+587263455 = ?,246357408+587263455,833620863,848337559,246357408+587263455 = 848337559,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+246357408+587263455 = 848337559"
+Soma,9 dígitos,9,987162776+571876640 = ?,987162776+571876640,1559039416,2052991704,987162776+571876640 = 2052991704,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+987162776+571876640 = 2052991704"
+Soma,9 dígitos,9,408361757+640183257 = ?,408361757+640183257,1048545014,1072935500,408361757+640183257 = 1072935500,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+408361757+640183257 = 1072935500"
+Soma,9 dígitos,9,623296791+518909147 = ?,623296791+518909147,1142205938,1206991284,623296791+518909147 = 1206991284,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+623296791+518909147 = 1206991284"
+Soma,9 dígitos,9,834983184+324774475 = ?,834983184+324774475,1159757659,1177640410,834983184+324774475 = 1177640410,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+834983184+324774475 = 1177640410"
+Soma,9 dígitos,9,917745173+373437375 = ?,917745173+373437375,1291182548,1369907823,917745173+373437375 = 1369907823,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+917745173+373437375 = 1369907823"
+Soma,9 dígitos,9,609695763+885847282 = ?,609695763+885847282,1495543045,"495,543,045$
+3.  **Verify with standard python-like addition:**
+    *   $6096957","609695763+885847282 = 495,543,045$
+3.  **Verify with standard python-like addition:**
+    *   $6096957",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+609695763+885847282 = 495,543,045$
+3.  **Verify with standard python-like addition:**
+    *   $6096957"
+Soma,9 dígitos,9,572898233+348658583 = ?,572898233+348658583,921556816,"Let's check: $8233 + 8583 = 16816$. Yes, carry 1 to the next column.
+            *   Next","572898233+348658583 = Let's check: $8233 + 8583 = 16816$. Yes, carry 1 to the next column.
+            *   Next",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+572898233+348658583 = Let's check: $8233 + 8583 = 16816$. Yes, carry 1 to the next column.
+            *   Next"
+Soma,9 dígitos,9,261763249+709228879 = ?,261763249+709228879,970992128,"$
+        *   $1000000 + 9000000 = 10000000$
+        *   $","261763249+709228879 = $
+        *   $1000000 + 9000000 = 10000000$
+        *   $",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+261763249+709228879 = $
+        *   $1000000 + 9000000 = 10000000$
+        *   $"
+Soma,9 dígitos,9,649420159+831547792 = ?,649420159+831547792,1480967951,1675489529,649420159+831547792 = 1675489529,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+649420159+831547792 = 1675489529"
+Soma,9 dígitos,9,676379869+986103411 = ?,676379869+986103411,1662483280,2209546450,676379869+986103411 = 2209546450,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+676379869+986103411 = 2209546450"
+Soma,9 dígitos,9,677955211+143146402 = ?,677955211+143146402,821101613,830714887,677955211+143146402 = 830714887,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+677955211+143146402 = 830714887"
+Soma,9 dígitos,9,266756832+169195491 = ?,266756832+169195491,435952323,463412692,266756832+169195491 = 463412692,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+266756832+169195491 = 463412692"
+Soma,9 dígitos,9,337928002+343931062 = ?,337928002+343931062,681859064,702989408,337928002+343931062 = 702989408,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+337928002+343931062 = 702989408"
+Soma,9 dígitos,9,248387672+725500948 = ?,248387672+725500948,973888620,1014758413,248387672+725500948 = 1014758413,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+248387672+725500948 = 1014758413"
+Soma,9 dígitos,9,819328191+566507944 = ?,819328191+566507944,1385836135,1435749360,819328191+566507944 = 1435749360,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+819328191+566507944 = 1435749360"
+Soma,9 dígitos,9,645484810+188984507 = ?,645484810+188984507,834469317,859319995,645484810+188984507 = 859319995,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+645484810+188984507 = 859319995"
+Soma,9 dígitos,9,256793452+275697647 = ?,256793452+275697647,532491099,532989963,256793452+275697647 = 532989963,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+256793452+275697647 = 532989963"
+Soma,9 dígitos,9,476105696+756215892 = ?,476105696+756215892,1232321588,1459181659,476105696+756215892 = 1459181659,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+476105696+756215892 = 1459181659"
+Soma,9 dígitos,9,226719067+682712359 = ?,226719067+682712359,909431426,912107615,226719067+682712359 = 912107615,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+226719067+682712359 = 912107615"
+Soma,9 dígitos,9,155725449+232755077 = ?,155725449+232755077,388480526,388500526,155725449+232755077 = 388500526,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+155725449+232755077 = 388500526"
+Soma,9 dígitos,9,683013817+329626748 = ?,683013817+329626748,1012640565,1015936556,683013817+329626748 = 1015936556,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+683013817+329626748 = 1015936556"
+Soma,9 dígitos,9,985850872+305009920 = ?,985850872+305009920,1290860792,1483193106,985850872+305009920 = 1483193106,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+985850872+305009920 = 1483193106"
+Soma,9 dígitos,9,489770608+736355750 = ?,489770608+736355750,1226126358,1252784968,489770608+736355750 = 1252784968,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+489770608+736355750 = 1252784968"
+Soma,9 dígitos,9,388188345+741701988 = ?,388188345+741701988,1129890333,1130000333,388188345+741701988 = 1130000333,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+388188345+741701988 = 1130000333"
+Soma,9 dígitos,9,621546983+675538639 = ?,621546983+675538639,1297085622,1461327555,621546983+675538639 = 1461327555,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+621546983+675538639 = 1461327555"
+Soma,9 dígitos,9,283186188+801303730 = ?,283186188+801303730,1084489918,1084490000,283186188+801303730 = 1084490000,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+283186188+801303730 = 1084490000"
+Soma,9 dígitos,9,201990216+134921526 = ?,201990216+134921526,336911742,351811770,201990216+134921526 = 351811770,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+201990216+134921526 = 351811770"
+Soma,9 dígitos,9,393925149+626837428 = ?,393925149+626837428,1020762577,1035923403,393925149+626837428 = 1035923403,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+393925149+626837428 = 1035923403"
+Soma,9 dígitos,9,977702969+551945805 = ?,977702969+551945805,1529648774,1551917581,977702969+551945805 = 1551917581,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+977702969+551945805 = 1551917581"
+Soma,9 dígitos,9,299625874+907829045 = ?,299625874+907829045,1207454919,1213967360,299625874+907829045 = 1213967360,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+299625874+907829045 = 1213967360"
+Soma,9 dígitos,9,968332382+733217806 = ?,968332382+733217806,1701550188,2250852496,968332382+733217806 = 2250852496,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+968332382+733217806 = 2250852496"
+Soma,9 dígitos,9,237266349+295870229 = ?,237266349+295870229,533136578,539236207,237266349+295870229 = 539236207,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+237266349+295870229 = 539236207"
+Soma,9 dígitos,9,855176662+347580303 = ?,855176662+347580303,1202756965,1231850873,855176662+347580303 = 1231850873,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+855176662+347580303 = 1231850873"
+Soma,9 dígitos,9,434237471+250466305 = ?,434237471+250466305,684703776,720957224,434237471+250466305 = 720957224,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+434237471+250466305 = 720957224"
+Soma,9 dígitos,9,585043909+206799594 = ?,585043909+206799594,791843503,853978287,585043909+206799594 = 853978287,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+585043909+206799594 = 853978287"
+Soma,9 dígitos,9,870356032+260597872 = ?,870356032+260597872,1130953904,1224514718,870356032+260597872 = 1224514718,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+870356032+260597872 = 1224514718"
+Soma,9 dígitos,9,865864915+894507562 = ?,865864915+894507562,1760372477,1957050509,865864915+894507562 = 1957050509,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+865864915+894507562 = 1957050509"
+Soma,9 dígitos,9,186170402+565693212 = ?,186170402+565693212,751863614,768586188,186170402+565693212 = 768586188,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+186170402+565693212 = 768586188"
+Soma,9 dígitos,9,129832142+735750591 = ?,129832142+735750591,865582733,930030169,129832142+735750591 = 930030169,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+129832142+735750591 = 930030169"
+Soma,9 dígitos,9,654079158+950155444 = ?,654079158+950155444,1604234602,2191000797,654079158+950155444 = 2191000797,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+654079158+950155444 = 2191000797"
+Soma,9 dígitos,9,580658801+892727890 = ?,580658801+892727890,1473386691,1851323034,580658801+892727890 = 1851323034,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+580658801+892727890 = 1851323034"
+Soma,10 dígitos,10,4440407780+3626233967 = ?,4440407780+3626233967,8066641747,8066641747,4440407780+3626233967 = 8066641747,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4440407780+3626233967 = 8066641747"
+Soma,10 dígitos,10,2055117404+4961479804 = ?,2055117404+4961479804,7016597208,7016597208,2055117404+4961479804 = 7016597208,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2055117404+4961479804 = 7016597208"
+Soma,10 dígitos,10,4232008719+6668153589 = ?,4232008719+6668153589,10900162308,10900162308,4232008719+6668153589 = 10900162308,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4232008719+6668153589 = 10900162308"
+Soma,10 dígitos,10,7845481655+4838137103 = ?,7845481655+4838137103,12683618758,12683618758,7845481655+4838137103 = 12683618758,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7845481655+4838137103 = 12683618758"
+Soma,10 dígitos,10,3763820552+9018644422 = ?,3763820552+9018644422,12782464974,12782464974,3763820552+9018644422 = 12782464974,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3763820552+9018644422 = 12782464974"
+Soma,10 dígitos,10,1658524665+9446695507 = ?,1658524665+9446695507,11105220172,11105220172,1658524665+9446695507 = 11105220172,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1658524665+9446695507 = 11105220172"
+Soma,10 dígitos,10,3440011037+5542736031 = ?,3440011037+5542736031,8982747068,8982747068,3440011037+5542736031 = 8982747068,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3440011037+5542736031 = 8982747068"
+Soma,10 dígitos,10,4565232644+1746342576 = ?,4565232644+1746342576,6311575220,6311575220,4565232644+1746342576 = 6311575220,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4565232644+1746342576 = 6311575220"
+Soma,10 dígitos,10,3373476496+9716378989 = ?,3373476496+9716378989,13089855485,13089855485,3373476496+9716378989 = 13089855485,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3373476496+9716378989 = 13089855485"
+Soma,10 dígitos,10,4950407198+6008353961 = ?,4950407198+6008353961,10958761159,10958761159,4950407198+6008353961 = 10958761159,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4950407198+6008353961 = 10958761159"
+Soma,10 dígitos,10,4038256994+3645247219 = ?,4038256994+3645247219,7683504213,7683504213,4038256994+3645247219 = 7683504213,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4038256994+3645247219 = 7683504213"
+Soma,10 dígitos,10,4555952036+9070545289 = ?,4555952036+9070545289,13626497325,13626497325,4555952036+9070545289 = 13626497325,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4555952036+9070545289 = 13626497325"
+Soma,10 dígitos,10,8209492068+8012955899 = ?,8209492068+8012955899,16222447967,16222447967,8209492068+8012955899 = 16222447967,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8209492068+8012955899 = 16222447967"
+Soma,10 dígitos,10,5761982305+3054734634 = ?,5761982305+3054734634,8816716939,8816716939,5761982305+3054734634 = 8816716939,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5761982305+3054734634 = 8816716939"
+Soma,10 dígitos,10,7977665028+9963687105 = ?,7977665028+9963687105,17941352133,17941352133,7977665028+9963687105 = 17941352133,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7977665028+9963687105 = 17941352133"
+Soma,10 dígitos,10,9608169499+2813762261 = ?,9608169499+2813762261,12421931760,12421931760,9608169499+2813762261 = 12421931760,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9608169499+2813762261 = 12421931760"
+Soma,10 dígitos,10,7858213288+1748374235 = ?,7858213288+1748374235,9606587523,9606587523,7858213288+1748374235 = 9606587523,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7858213288+1748374235 = 9606587523"
+Soma,10 dígitos,10,7522188321+3374822510 = ?,7522188321+3374822510,10897010831,10897010831,7522188321+3374822510 = 10897010831,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7522188321+3374822510 = 10897010831"
+Soma,10 dígitos,10,2442416550+1234510608 = ?,2442416550+1234510608,3676927158,3676927158,2442416550+1234510608 = 3676927158,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2442416550+1234510608 = 3676927158"
+Soma,10 dígitos,10,7234017396+4196866098 = ?,7234017396+4196866098,11430883494,11430883494,7234017396+4196866098 = 11430883494,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7234017396+4196866098 = 11430883494"
+Soma,10 dígitos,10,2974414837+3315714761 = ?,2974414837+3315714761,6290129598,6290129598,2974414837+3315714761 = 6290129598,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2974414837+3315714761 = 6290129598"
+Soma,10 dígitos,10,8902760845+3515588375 = ?,8902760845+3515588375,12418349220,12418349220,8902760845+3515588375 = 12418349220,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8902760845+3515588375 = 12418349220"
+Soma,10 dígitos,10,8394879275+2121961957 = ?,8394879275+2121961957,10516841232,10516841232,8394879275+2121961957 = 10516841232,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8394879275+2121961957 = 10516841232"
+Soma,10 dígitos,10,4045433116+1818461987 = ?,4045433116+1818461987,5863895103,5863895103,4045433116+1818461987 = 5863895103,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4045433116+1818461987 = 5863895103"
+Soma,10 dígitos,10,8991081172+7242852129 = ?,8991081172+7242852129,16233933301,16233933301,8991081172+7242852129 = 16233933301,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8991081172+7242852129 = 16233933301"
+Soma,10 dígitos,10,3306275503+3420967287 = ?,3306275503+3420967287,6727242790,6727242790,3306275503+3420967287 = 6727242790,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3306275503+3420967287 = 6727242790"
+Soma,10 dígitos,10,3896355900+8693134024 = ?,3896355900+8693134024,12589489924,12589489924,3896355900+8693134024 = 12589489924,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3896355900+8693134024 = 12589489924"
+Soma,10 dígitos,10,9650819573+6761255741 = ?,9650819573+6761255741,16412075314,16412075314,9650819573+6761255741 = 16412075314,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9650819573+6761255741 = 16412075314"
+Soma,10 dígitos,10,2879332763+2990867737 = ?,2879332763+2990867737,5870200500,5870200500,2879332763+2990867737 = 5870200500,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2879332763+2990867737 = 5870200500"
+Soma,10 dígitos,10,6815136437+2921230552 = ?,6815136437+2921230552,9736366989,9736366989,6815136437+2921230552 = 9736366989,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6815136437+2921230552 = 9736366989"
+Soma,10 dígitos,10,2448209438+3209249007 = ?,2448209438+3209249007,5657458445,5657458445,2448209438+3209249007 = 5657458445,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2448209438+3209249007 = 5657458445"
+Soma,10 dígitos,10,6374588200+7998245062 = ?,6374588200+7998245062,14372833262,14372833262,6374588200+7998245062 = 14372833262,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+6374588200+7998245062 = 14372833262"
+Soma,10 dígitos,10,7111130025+6853660939 = ?,7111130025+6853660939,13964790964,13964790964,7111130025+6853660939 = 13964790964,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7111130025+6853660939 = 13964790964"
+Soma,10 dígitos,10,1962129800+3394306922 = ?,1962129800+3394306922,5356436722,5356436722,1962129800+3394306922 = 5356436722,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1962129800+3394306922 = 5356436722"
+Soma,10 dígitos,10,9931395266+5253970214 = ?,9931395266+5253970214,15185365480,15185365480,9931395266+5253970214 = 15185365480,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9931395266+5253970214 = 15185365480"
+Soma,10 dígitos,10,4186412090+3263762817 = ?,4186412090+3263762817,7450174907,7450174907,4186412090+3263762817 = 7450174907,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4186412090+3263762817 = 7450174907"
+Soma,10 dígitos,10,3803142557+7370772707 = ?,3803142557+7370772707,11173915264,11173915264,3803142557+7370772707 = 11173915264,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3803142557+7370772707 = 11173915264"
+Soma,10 dígitos,10,7718495190+5321676522 = ?,7718495190+5321676522,13040171712,13040171712,7718495190+5321676522 = 13040171712,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7718495190+5321676522 = 13040171712"
+Soma,10 dígitos,10,1909097415+5050119018 = ?,1909097415+5050119018,6959216433,6959216433,1909097415+5050119018 = 6959216433,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1909097415+5050119018 = 6959216433"
+Soma,10 dígitos,10,2192747515+3769609853 = ?,2192747515+3769609853,5962357368,5962357368,2192747515+3769609853 = 5962357368,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+2192747515+3769609853 = 5962357368"
+Soma,10 dígitos,10,8400993427+5804002491 = ?,8400993427+5804002491,14204995918,14204995918,8400993427+5804002491 = 14204995918,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8400993427+5804002491 = 14204995918"
+Soma,10 dígitos,10,9537466171+6339850565 = ?,9537466171+6339850565,15877316736,15877316736,9537466171+6339850565 = 15877316736,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9537466171+6339850565 = 15877316736"
+Soma,10 dígitos,10,1682324719+1948880441 = ?,1682324719+1948880441,3631205160,3631205160,1682324719+1948880441 = 3631205160,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1682324719+1948880441 = 3631205160"
+Soma,10 dígitos,10,5458709523+9710603499 = ?,5458709523+9710603499,15169313022,15169313022,5458709523+9710603499 = 15169313022,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+5458709523+9710603499 = 15169313022"
+Soma,10 dígitos,10,4794669268+7676935831 = ?,4794669268+7676935831,12471605099,12471605099,4794669268+7676935831 = 12471605099,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+4794669268+7676935831 = 12471605099"
+Soma,10 dígitos,10,7194259905+9564565893 = ?,7194259905+9564565893,16758825798,16758825798,7194259905+9564565893 = 16758825798,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+7194259905+9564565893 = 16758825798"
+Soma,10 dígitos,10,1505096795+5655828949 = ?,1505096795+5655828949,7160925744,7160925744,1505096795+5655828949 = 7160925744,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+1505096795+5655828949 = 7160925744"
+Soma,10 dígitos,10,3402839914+4621238099 = ?,3402839914+4621238099,8024078013,8024078013,3402839914+4621238099 = 8024078013,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+3402839914+4621238099 = 8024078013"
+Soma,10 dígitos,10,9584234319+3580053791 = ?,9584234319+3580053791,13164288110,13164288110,9584234319+3580053791 = 13164288110,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+9584234319+3580053791 = 13164288110"
+Soma,10 dígitos,10,8566051179+3819351147 = ?,8566051179+3819351147,12385402326,12385402326,8566051179+3819351147 = 12385402326,True,VERDADEIRA,gabarito_correto,"A seguinte expressão matemática está correta?
+
+8566051179+3819351147 = 12385402326"
+Soma,10 dígitos,10,4440407780+3626233967 = ?,4440407780+3626233967,8066641747,"(carry 1)
+                *   4th: $7+3+1 = 11$ (carry 1)
+                *   5th: $0","4440407780+3626233967 = (carry 1)
+                *   4th: $7+3+1 = 11$ (carry 1)
+                *   5th: $0",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+4440407780+3626233967 = (carry 1)
+                *   4th: $7+3+1 = 11$ (carry 1)
+                *   5th: $0"
+Soma,10 dígitos,10,2055117404+4961479804 = ?,2055117404+4961479804,7016597208,7017769831,2055117404+4961479804 = 7017769831,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2055117404+4961479804 = 7017769831"
+Soma,10 dígitos,10,4232008719+6668153589 = ?,4232008719+6668153589,10900162308,"13$ (write 3, carry 1)
+                *   $8 + 3 + 1 = 12$ (write 2, carry","4232008719+6668153589 = 13$ (write 3, carry 1)
+                *   $8 + 3 + 1 = 12$ (write 2, carry",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+4232008719+6668153589 = 13$ (write 3, carry 1)
+                *   $8 + 3 + 1 = 12$ (write 2, carry"
+Soma,10 dígitos,10,7845481655+4838137103 = ?,7845481655+4838137103,12683618758,12683618765,7845481655+4838137103 = 12683618765,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7845481655+4838137103 = 12683618765"
+Soma,10 dígitos,10,3763820552+9018644422 = ?,3763820552+9018644422,12782464974,12782464981,3763820552+9018644422 = 12782464981,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3763820552+9018644422 = 12782464981"
+Soma,10 dígitos,10,1658524665+9446695507 = ?,1658524665+9446695507,11105220172,11443942318,1658524665+9446695507 = 11443942318,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1658524665+9446695507 = 11443942318"
+Soma,10 dígitos,10,3440011037+5542736031 = ?,3440011037+5542736031,8982747068,9386396414,3440011037+5542736031 = 9386396414,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3440011037+5542736031 = 9386396414"
+Soma,10 dígitos,10,4565232644+1746342576 = ?,4565232644+1746342576,6311575220,6584194516,4565232644+1746342576 = 6584194516,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4565232644+1746342576 = 6584194516"
+Soma,10 dígitos,10,3373476496+9716378989 = ?,3373476496+9716378989,13089855485,13089855492,3373476496+9716378989 = 13089855492,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3373476496+9716378989 = 13089855492"
+Soma,10 dígitos,10,4950407198+6008353961 = ?,4950407198+6008353961,10958761159,11294971806,4950407198+6008353961 = 11294971806,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4950407198+6008353961 = 11294971806"
+Soma,10 dígitos,10,4038256994+3645247219 = ?,4038256994+3645247219,7683504213,"10$ -- wait!
+        *   Ah! $5 + 4 = 9$, plus carry $1 = 10$.
+        *   Let's re-","4038256994+3645247219 = 10$ -- wait!
+        *   Ah! $5 + 4 = 9$, plus carry $1 = 10$.
+        *   Let's re-",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+4038256994+3645247219 = 10$ -- wait!
+        *   Ah! $5 + 4 = 9$, plus carry $1 = 10$.
+        *   Let's re-"
+Soma,10 dígitos,10,4555952036+9070545289 = ?,4555952036+9070545289,13626497325,": 5 + 0 + 1 = 6 -> 6, carry 0
+Position 9 (billions): 4 + 9 + 0 = 13","4555952036+9070545289 = : 5 + 0 + 1 = 6 -> 6, carry 0
+Position 9 (billions): 4 + 9 + 0 = 13",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+4555952036+9070545289 = : 5 + 0 + 1 = 6 -> 6, carry 0
+Position 9 (billions): 4 + 9 + 0 = 13"
+Soma,10 dígitos,10,8209492068+8012955899 = ?,8209492068+8012955899,16222447967,"303447967$
+            *   Let's check:
+                *   $16,222,447,967$","8209492068+8012955899 = 303447967$
+            *   Let's check:
+                *   $16,222,447,967$",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+8209492068+8012955899 = 303447967$
+            *   Let's check:
+                *   $16,222,447,967$"
+Soma,10 dígitos,10,5761982305+3054734634 = ?,5761982305+3054734634,8816716939,9555563594,5761982305+3054734634 = 9555563594,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+5761982305+3054734634 = 9555563594"
+Soma,10 dígitos,10,7977665028+9963687105 = ?,7977665028+9963687105,17941352133,17941352140,7977665028+9963687105 = 17941352140,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7977665028+9963687105 = 17941352140"
+Soma,10 dígitos,10,9608169499+2813762261 = ?,9608169499+2813762261,12421931760,12421931767,9608169499+2813762261 = 12421931767,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9608169499+2813762261 = 12421931767"
+Soma,10 dígitos,10,7858213288+1748374235 = ?,7858213288+1748374235,9606587523,9760958425,7858213288+1748374235 = 9760958425,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7858213288+1748374235 = 9760958425"
+Soma,10 dígitos,10,7522188321+3374822510 = ?,7522188321+3374822510,10897010831,"somente em formato de número, sem unidades ou caracteres especiais."" -> `10897010831`108970108","7522188321+3374822510 = somente em formato de número, sem unidades ou caracteres especiais."" -> `10897010831`108970108",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+7522188321+3374822510 = somente em formato de número, sem unidades ou caracteres especiais."" -> `10897010831`108970108"
+Soma,10 dígitos,10,2442416550+1234510608 = ?,2442416550+1234510608,3676927158,4012590313,2442416550+1234510608 = 4012590313,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2442416550+1234510608 = 4012590313"
+Soma,10 dígitos,10,7234017396+4196866098 = ?,7234017396+4196866098,11430883494,"+ 6 + 1 = 8$ -> 8
+                        *   $0+8 = 8$ -> 8
+                        *   $4+9 =","7234017396+4196866098 = + 6 + 1 = 8$ -> 8
+                        *   $0+8 = 8$ -> 8
+                        *   $4+9 =",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+7234017396+4196866098 = + 6 + 1 = 8$ -> 8
+                        *   $0+8 = 8$ -> 8
+                        *   $4+9 ="
+Soma,10 dígitos,10,2974414837+3315714761 = ?,2974414837+3315714761,6290129598,6419157368,2974414837+3315714761 = 6419157368,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2974414837+3315714761 = 6419157368"
+Soma,10 dígitos,10,8902760845+3515588375 = ?,8902760845+3515588375,12418349220,"= 13$ (3, carry 1)
+                    *   1000000s: $2 + 5 + 1 = 8$ (8)","8902760845+3515588375 = = 13$ (3, carry 1)
+                    *   1000000s: $2 + 5 + 1 = 8$ (8)",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+8902760845+3515588375 = = 13$ (3, carry 1)
+                    *   1000000s: $2 + 5 + 1 = 8$ (8)"
+Soma,10 dígitos,10,8394879275+2121961957 = ?,8394879275+2121961957,10516841232,10699998543,8394879275+2121961957 = 10699998543,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8394879275+2121961957 = 10699998543"
+Soma,10 dígitos,10,4045433116+1818461987 = ?,4045433116+1818461987,5863895103,6020838588,4045433116+1818461987 = 6020838588,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4045433116+1818461987 = 6020838588"
+Soma,10 dígitos,10,8991081172+7242852129 = ?,8991081172+7242852129,16233933301,16233933308,8991081172+7242852129 = 16233933308,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8991081172+7242852129 = 16233933308"
+Soma,10 dígitos,10,3306275503+3420967287 = ?,3306275503+3420967287,6727242790,"$
+    *   $6726 \times 10^6 + 1242790 = 6726000000 +","3306275503+3420967287 = $
+    *   $6726 \times 10^6 + 1242790 = 6726000000 +",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+3306275503+3420967287 = $
+    *   $6726 \times 10^6 + 1242790 = 6726000000 +"
+Soma,10 dígitos,10,3896355900+8693134024 = ?,3896355900+8693134024,12589489924,12589489931,3896355900+8693134024 = 12589489931,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3896355900+8693134024 = 12589489931"
+Soma,10 dígitos,10,9650819573+6761255741 = ?,9650819573+6761255741,16412075314,"+ 761,000,000 = 1,411,000,000
+    819,573","9650819573+6761255741 = + 761,000,000 = 1,411,000,000
+    819,573",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+9650819573+6761255741 = + 761,000,000 = 1,411,000,000
+    819,573"
+Soma,10 dígitos,10,2879332763+2990867737 = ?,2879332763+2990867737,5870200500,5870195500,2879332763+2990867737 = 5870195500,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+2879332763+2990867737 = 5870195500"
+Soma,10 dígitos,10,6815136437+2921230552 = ?,6815136437+2921230552,9736366989,9736369989,6815136437+2921230552 = 9736369989,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+6815136437+2921230552 = 9736369989"
+Soma,10 dígitos,10,2448209438+3209249007 = ?,2448209438+3209249007,5657458445,6039424931,2448209438+3209249007 = 6039424931,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+2448209438+3209249007 = 6039424931"
+Soma,10 dígitos,10,6374588200+7998245062 = ?,6374588200+7998245062,14372833262,14372833269,6374588200+7998245062 = 14372833269,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+6374588200+7998245062 = 14372833269"
+Soma,10 dígitos,10,7111130025+6853660939 = ?,7111130025+6853660939,13964790964,13964791000,7111130025+6853660939 = 13964791000,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+7111130025+6853660939 = 13964791000"
+Soma,10 dígitos,10,1962129800+3394306922 = ?,1962129800+3394306922,5356436722,5487434312,1962129800+3394306922 = 5487434312,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1962129800+3394306922 = 5487434312"
+Soma,10 dígitos,10,9931395266+5253970214 = ?,9931395266+5253970214,15185365480,15185365487,9931395266+5253970214 = 15185365487,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9931395266+5253970214 = 15185365487"
+Soma,10 dígitos,10,4186412090+3263762817 = ?,4186412090+3263762817,7450174907,7451254508,4186412090+3263762817 = 7451254508,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+4186412090+3263762817 = 7451254508"
+Soma,10 dígitos,10,3803142557+7370772707 = ?,3803142557+7370772707,11173915264,11334324532,3803142557+7370772707 = 11334324532,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3803142557+7370772707 = 11334324532"
+Soma,10 dígitos,10,7718495190+5321676522 = ?,7718495190+5321676522,13040171712,13040171719,7718495190+5321676522 = 13040171719,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7718495190+5321676522 = 13040171719"
+Soma,10 dígitos,10,1909097415+5050119018 = ?,1909097415+5050119018,6959216433,7126010331,1909097415+5050119018 = 7126010331,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1909097415+5050119018 = 7126010331"
+Soma,10 dígitos,10,2192747515+3769609853 = ?,2192747515+3769609853,5962357368,"515 + 853 = 1368$ (correct)
+        *   $7515 + 9853 = 1","2192747515+3769609853 = 515 + 853 = 1368$ (correct)
+        *   $7515 + 9853 = 1",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+2192747515+3769609853 = 515 + 853 = 1368$ (correct)
+        *   $7515 + 9853 = 1"
+Soma,10 dígitos,10,8400993427+5804002491 = ?,8400993427+5804002491,14204995918,14204995925,8400993427+5804002491 = 14204995925,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+8400993427+5804002491 = 14204995925"
+Soma,10 dígitos,10,9537466171+6339850565 = ?,9537466171+6339850565,15877316736,15877316743,9537466171+6339850565 = 15877316743,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+9537466171+6339850565 = 15877316743"
+Soma,10 dígitos,10,1682324719+1948880441 = ?,1682324719+1948880441,3631205160,3943022190,1682324719+1948880441 = 3943022190,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1682324719+1948880441 = 3943022190"
+Soma,10 dígitos,10,5458709523+9710603499 = ?,5458709523+9710603499,15169313022,15169312922,5458709523+9710603499 = 15169312922,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+5458709523+9710603499 = 15169312922"
+Soma,10 dígitos,10,4794669268+7676935831 = ?,4794669268+7676935831,12471605099,12471605100,4794669268+7676935831 = 12471605100,False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+4794669268+7676935831 = 12471605100"
+Soma,10 dígitos,10,7194259905+9564565893 = ?,7194259905+9564565893,16758825798,16758825805,7194259905+9564565893 = 16758825805,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+7194259905+9564565893 = 16758825805"
+Soma,10 dígitos,10,1505096795+5655828949 = ?,1505096795+5655828949,7160925744,7320193563,1505096795+5655828949 = 7320193563,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+1505096795+5655828949 = 7320193563"
+Soma,10 dígitos,10,3402839914+4621238099 = ?,3402839914+4621238099,8024078013,8032927865,3402839914+4621238099 = 8032927865,False,FALSA,perturbacao_numpy,"A seguinte expressão matemática está correta?
+
+3402839914+4621238099 = 8032927865"
+Soma,10 dígitos,10,9584234319+3580053791 = ?,9584234319+3580053791,13164288110,"+ 1 = 11 \rightarrow 1$, carry 1
+            *   3rd: $3 + 7 + 1 = 11 \rightarrow","9584234319+3580053791 = + 1 = 11 \rightarrow 1$, carry 1
+            *   3rd: $3 + 7 + 1 = 11 \rightarrow",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+9584234319+3580053791 = + 1 = 11 \rightarrow 1$, carry 1
+            *   3rd: $3 + 7 + 1 = 11 \rightarrow"
+Soma,10 dígitos,10,8566051179+3819351147 = ?,8566051179+3819351147,12385402326,"0000 (+100000 = 400000)$ -> 402326
+            *   $6000000","8566051179+3819351147 = 0000 (+100000 = 400000)$ -> 402326
+            *   $6000000",False,FALSA,erro_modelo_anterior,"A seguinte expressão matemática está correta?
+
+8566051179+3819351147 = 0000 (+100000 = 400000)$ -> 402326
+            *   $6000000"

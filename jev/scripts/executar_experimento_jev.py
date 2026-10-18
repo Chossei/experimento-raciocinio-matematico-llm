@@ -1,8 +1,8 @@
 """Módulo de Execução do Experimento Complementar: JEV (TypeSafe Decision Model)
 
 Este script:
-1. Carrega a base consolidada de 1.800 amostras em 'jev/bases_de_dados/base_jev_completa.csv'
-   (4 operações x 9 dígitos x 50 amostras: 25 verdadeiras e 25 falsas).
+1. Carrega a base consolidada de 3.600 amostras em 'jev/bases_de_dados/base_jev_completa.csv'
+   (4 operações x 9 dígitos x 100 amostras: 50 verdadeiras e 50 falsas).
 2. Conecta ao endpoint Decisions do OpenRouter ('https://openrouter.ai/api/alpha/decisions').
 3. Para cada amostra, formula a requisição de decisão:
    - Question Type: 'noul' (probabilidade de True / Sim) ou 'choice' (['correta', 'incorreta']).

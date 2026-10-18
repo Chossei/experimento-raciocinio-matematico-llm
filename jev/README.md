@@ -9,11 +9,11 @@ Diferente de Large Language Models (LLMs) tradicionais, que foram projetados par
 ```text
 jev/
 ├── bases_de_dados/
-│   ├── base_jev_completa.csv                 # 1.800 amostras (4 operações x 9 dígitos x 50 amostras)
-│   ├── base_jev_soma.csv                     # 450 amostras de Soma
-│   ├── base_jev_multiplicacao_inteira.csv    # 450 amostras de Multiplicação Inteira
-│   ├── base_jev_multiplicacao_decimal.csv    # 450 amostras de Multiplicação Decimal
-│   └── base_jev_expressoes_combinadas.csv   # 450 amostras de Expressões Combinadas
+│   ├── base_jev_completa.csv                 # 3.600 amostras (4 operações x 9 dígitos x 100 amostras: 50/50)
+│   ├── base_jev_soma.csv                     # 900 amostras de Soma (450 V / 450 F)
+│   ├── base_jev_multiplicacao_inteira.csv    # 900 amostras de Multiplicação Inteira (450 V / 450 F)
+│   ├── base_jev_multiplicacao_decimal.csv    # 900 amostras de Multiplicação Decimal (450 V / 450 F)
+│   └── base_jev_expressoes_combinadas.csv   # 900 amostras de Expressões Combinadas (450 V / 450 F)
 ├── scripts/
 │   ├── gerar_base_jev.py                     # Script reprodutível de geração da base
 │   ├── executar_experimento_jev.py           # Script de execução via OpenRouter Decisions API
@@ -27,11 +27,11 @@ jev/
 ```
 
 ## 3. Metodologia de Amostragem da Base de Dados
-Para cada uma das 4 operações matemáticas (Soma, Multiplicação Inteira, Multiplicação Decimal e Expressões Combinadas) ao longo de 9 níveis de complexidade (2 a 10 dígitos), foram geradas **50 amostras** equilibradas:
-- **25 Expressões Verdadeiras:** Com o resultado exato emitido via precisão arbitrária (`Decimal`).
-- **25 Expressões Falsas:**
-  1. Primeiro, busca resultados incorretos reais que os LLMs cometeram no experimento anterior para aquela conta específica.
-  2. Quando não há erro real disponível (ex.: somas simples onde todos os modelos acertaram), aplica-se a perturbação estrita: sorteia-se um número aleatório entre 1 e a segunda casa decimal do resultado e soma-se ao gabarito.
+Para cada uma das 4 operações matemáticas (Soma, Multiplicação Inteira, Multiplicação Decimal e Expressões Combinadas) ao longo de 9 níveis de complexidade (2 a 10 dígitos), foram geradas **100 amostras** equilibradas (50/50):
+- **50 Expressões Verdadeiras:** Com o resultado exato emitido via precisão arbitrária (`Decimal`).
+- **50 Expressões Falsas:**
+  1. Primeiro, busca resultados incorretos reais que os LLMs cometeram nos experimentos anteriores para aquela conta específica (foram capturados 1.164 erros reais de modelos).
+  2. Quando não há erro real disponível (ex.: somas simples de poucos dígitos), aplica-se a perturbação estrita: sorteia-se um número aleatório entre 1 e a segunda casa decimal do resultado e soma-se ao gabarito.
 
 ### Formato do Prompt Fixo
 ```text
@@ -53,7 +53,7 @@ python "jev/scripts/executar_experimento_jev.py" --dry-run
 python "jev/scripts/executar_experimento_jev.py" --limite 5
 ```
 
-### Execução Completa (1.800 amostras)
+### Execução Completa (3.600 amostras)
 ```powershell
 python "jev/scripts/executar_experimento_jev.py"
 ```

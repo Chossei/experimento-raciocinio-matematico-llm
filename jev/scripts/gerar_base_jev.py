@@ -1,18 +1,21 @@
 """Script de Geração da Base de Dados para o Experimento Complementar (JEV)
 
 Este script:
-1. Lê as operações das 4 modalidades (Soma, Multiplicação Inteira, Multiplicação Decimal, Expressões Combinadas).
-2. Para cada modalidade e para cada nível de dígitos (2 a 10 dígitos), gera 50 amostras:
-   - 25 Expressões Verdadeiras (com o gabarito matemático exato via Decimal).
-   - 25 Expressões Falsas:
-     * Primeiro, busca respostas incorretas emitidas por modelos no experimento anterior.
-     * Caso não haja erro disponível, aplica a perturbação estrita: sorteia um número aleatório
-       entre 1 e a segunda casa decimal do resultado e soma ao resultado.
+1. Lê os dados das 4 modalidades (Soma, Multiplicação Inteira, Multiplicação Decimal, Expressões Combinadas)
+   diretamente das bases de resultados dos experimentos anteriores (onde estão todas as operações, gabaritos
+   e os erros reais cometidos por todos os modelos).
+2. Para cada modalidade e para cada quantidade de dígitos (2 a 10 dígitos), gera exatamente 100 amostras:
+   - 50 Expressões Verdadeiras (com o gabarito matemático exato: expressao = resultado_correto).
+   - 50 Expressões Falsas (expressao = resultado_falso):
+     * Primeiro, busca respostas incorretas emitidas por modelos nos experimentos anteriores.
+     * Caso não haja erro disponível (ou a conta tenha tido 100% de acertos), aplica a perturbação estrita:
+       sorteia um número aleatório entre 1 e a segunda casa decimal do resultado e soma ao resultado.
 3. Constrói o prompt padronizado do JEV:
    "A seguinte expressão matemática está correta?
 
    [expressão]=[resultado]"
-4. Salva a base completa consolidada e as bases segmentadas por operação em 'jev/bases_de_dados/'.
+4. Salva a base completa consolidada (3.600 amostras: 1.800 verdadeiras e 1.800 falsas) e as bases
+   segmentadas por operação em 'jev/bases_de_dados/' e sincroniza com 'github_repo/jev/bases_de_dados/'.
 """
 
 import os
@@ -46,17 +49,9 @@ logging.basicConfig(
     ]
 )
 
-logging.info("=== Iniciando geração da base de dados do experimento JEV ===")
+logging.info("=== Iniciando geração da base de dados do experimento JEV (100 chamadas por dígito: 50/50) ===")
 
-# Caminhos dos arquivos de operações e resultados anteriores
-CAMINHOS_OPERACOES = {
-    "Soma": os.path.join(PASTA_RAIZ, "3° Fase", "operacoes", "operacoes_soma.csv"),
-    "Multiplicação Inteira": os.path.join(PASTA_RAIZ, "3° Fase", "operacoes", "operacoes_multiplicacao.csv"),
-    "Multiplicação Decimal": os.path.join(PASTA_RAIZ, "3° Fase", "operacoes", "operacoes_decimal.csv"),
-    "Expressões Combinadas": os.path.join(PASTA_RAIZ, "3° Fase", "operacoes", "operacoes_combinadas.csv")
-}
-
-CAMINHOS_RESULTADOS_ANTERIORES = {
+CAMINHOS_RESULTADOS = {
     "Soma": os.path.join(PASTA_RAIZ, "repo_dashboard", "dados", "resultados_soma.csv"),
     "Multiplicação Inteira": os.path.join(PASTA_RAIZ, "repo_dashboard", "dados", "resultados_multiplicacao.csv"),
     "Multiplicação Decimal": os.path.join(PASTA_RAIZ, "repo_dashboard", "dados", "resultados_decimal.csv"),
@@ -80,7 +75,6 @@ def perturbar_resultado(resultado_original_str):
         # Decimal
         try:
             d = Decimal(res_str)
-            # Para decimais, perturba a parte inteira ou a primeira fração
             inteiro_str = str(abs(int(d)))
             if len(inteiro_str) >= 2:
                 segunda_casa = int(inteiro_str[1:]) if int(inteiro_str[1:]) > 1 else 10
@@ -95,7 +89,6 @@ def perturbar_resultado(resultado_original_str):
         # Inteiro
         try:
             if len(res_str) >= 2:
-                # segunda casa do resultado em diante
                 segunda_parte = res_str[1:]
                 lim_sup = int(segunda_parte) if int(segunda_parte) > 1 else 9
             else:
@@ -106,59 +99,48 @@ def perturbar_resultado(resultado_original_str):
         except Exception:
             return str(int(res_str) + 7)
 
-def gerar_amostras_para_operacao(tipo_op, path_operacoes, path_resultados):
-    logging.info(f"Processando operação: {tipo_op}")
-    df_op = pd.read_csv(path_operacoes)
+def gerar_amostras_para_operacao(tipo_op, path_resultados):
+    logging.info(f"Processando operação: {tipo_op} a partir de {path_resultados}")
+    df = pd.read_csv(path_resultados)
 
-    # Carregar resultados anteriores para coletar erros reais de modelos
-    df_res_ant = pd.read_csv(path_resultados) if os.path.exists(path_resultados) else pd.DataFrame()
+    col_conta = [c for c in df.columns if "conta" in c.lower()][0]
+    col_res_orig = [c for c in df.columns if "original" in c.lower()][0]
+    col_dig = [c for c in df.columns if "digito" in c.lower() or c.lower() in ["operacao", "tipo"]][0]
+    col_acerto = [c for c in df.columns if "acerto" in c.lower() and "operacao" in c.lower()][0]
+    col_mod_res = [c for c in df.columns if "resultado" in c.lower() and ("modelo" in c.lower() or "bruto" in c.lower())][0]
 
+    # Mapear erros reais dos modelos por conta normalizada
+    df_erros = df[df[col_acerto].astype(str).str.lower().isin(["false", "0"])].copy()
     erros_mapa = {}
-    if not df_res_ant.empty:
-        # Encontrar colunas de acerto e resposta do modelo
-        col_acerto = [c for c in df_res_ant.columns if "acerto" in c.lower() and "operacao" in c.lower()][0]
-        col_resposta = [c for c in df_res_ant.columns if "resultado" in c.lower() and ("modelo" in c.lower() or "bruto" in c.lower())][0]
-        col_conta = [c for c in df_res_ant.columns if "conta" in c.lower()][0]
+    for _, row_err in df_erros.iterrows():
+        c_norm = normalizar_conta_str(row_err[col_conta])
+        resp_val = str(row_err[col_mod_res]).strip()
+        if resp_val and resp_val.lower() not in ["none", "nan", ""]:
+            erros_mapa.setdefault(c_norm, []).append(resp_val)
 
-        df_erros = df_res_ant[df_res_ant[col_acerto].astype(str).str.lower().isin(["false", "0"])].copy()
-        for _, row_err in df_erros.iterrows():
-            c_norm = normalizar_conta_str(row_err[col_conta])
-            resp_val = str(row_err[col_resposta]).strip()
-            # filtrar apenas respostas numéricas válidas e distintas de None
-            if resp_val and resp_val.lower() not in ["none", "nan", ""]:
-                if c_norm not in erros_mapa:
-                    erros_mapa[c_norm] = []
-                erros_mapa[c_norm].append(resp_val)
+    # Identificar e ordenar os dígitos (2 a 10)
+    digitos_unicos = df[col_dig].unique()
+    digitos_ordenados = sorted(
+        [d for d in digitos_unicos if re.search(r"\d+", str(d)) and 2 <= int(re.search(r"\d+", str(d)).group()) <= 10],
+        key=lambda x: int(re.search(r"\d+", str(x)).group())
+    )
 
     amostras_op = []
-
-    # Determinar coluna de quantidade de dígitos
-    col_dig = [c for c in df_op.columns if "digito" in c.lower() or "tipo" in c.lower()][0]
-    col_res_orig = [c for c in df_op.columns if "resultado" in c.lower() and ("operacao" in c.lower() or "original" in c.lower() or c.lower() == "resultado")][0]
-    col_conta_orig = [c for c in df_op.columns if "conta" in c.lower() or "string" in c.lower()][0]
-
-    digitos_unicos = df_op[col_dig].unique()
-    # Ordenar numericamente por dígitos (2 a 10)
-    digitos_ordenados = sorted(digitos_unicos, key=lambda x: int(re.search(r"\d+", str(x)).group()) if re.search(r"\d+", str(x)) else 0)
+    total_erros_reais = 0
+    total_perturbados = 0
 
     for dig_rotulo in digitos_ordenados:
         dig_num = int(re.search(r"\d+", str(dig_rotulo)).group())
-        df_dig = df_op[df_op[col_dig] == dig_rotulo].copy().reset_index(drop=True)
+        df_dig = df[df[col_dig] == dig_rotulo].drop_duplicates(subset=[col_conta]).copy().reset_index(drop=True)
 
         if len(df_dig) < 50:
-            logging.warning(f"[{tipo_op}] Menos de 50 operações para {dig_rotulo}: {len(df_dig)}")
+            logging.warning(f"[{tipo_op}] Menos de 50 operações únicas para {dig_rotulo}: {len(df_dig)}")
 
-        # Selecionar exatamente 50 operações: 25 para Verdadeiras e 25 para Falsas
-        indices = list(range(len(df_dig)))
-        np.random.shuffle(indices)
+        df_selecionadas = df_dig.head(50).copy()
 
-        idx_verdadeiras = indices[:25]
-        idx_falsas = indices[25:50]
-
-        # 1. 25 Expressões Verdadeiras
-        for idx in idx_verdadeiras:
-            row = df_dig.iloc[idx]
-            conta_raw = row[col_conta_orig]
+        # 1. 50 Expressões Verdadeiras
+        for _, row in df_selecionadas.iterrows():
+            conta_raw = row[col_conta]
             expressao = normalizar_conta_str(conta_raw)
             res_correto = str(row[col_res_orig]).strip()
 
@@ -180,25 +162,23 @@ def gerar_amostras_para_operacao(tipo_op, path_operacoes, path_resultados):
                 "prompt_jev": prompt_jev
             })
 
-        # 2. 25 Expressões Falsas
-        for idx in idx_falsas:
-            row = df_dig.iloc[idx]
-            conta_raw = row[col_conta_orig]
+        # 2. 50 Expressões Falsas
+        for _, row in df_selecionadas.iterrows():
+            conta_raw = row[col_conta]
             expressao = normalizar_conta_str(conta_raw)
             res_correto = str(row[col_res_orig]).strip()
 
-            # Verificar se temos erro de modelo anterior
             erros_disponiveis = [e for e in erros_mapa.get(expressao, []) if e != res_correto]
             if erros_disponiveis:
-                # Escolher um erro real de modelo
                 res_falso = np.random.choice(erros_disponiveis)
                 origem = "erro_modelo_anterior"
+                total_erros_reais += 1
             else:
-                # Aplicar fórmula de perturbação
                 res_falso = perturbar_resultado(res_correto)
                 if res_falso == res_correto:
                     res_falso = str(int(res_correto) + 1 if "." not in res_correto else Decimal(res_correto) + Decimal("1"))
                 origem = "perturbacao_numpy"
+                total_perturbados += 1
 
             expressao_completa = f"{expressao} = {res_falso}"
             prompt_jev = f"A seguinte expressão matemática está correta?\n\n{expressao_completa}"
@@ -219,18 +199,20 @@ def gerar_amostras_para_operacao(tipo_op, path_operacoes, path_resultados):
             })
 
     df_resultado = pd.DataFrame(amostras_op)
-    logging.info(f"[{tipo_op}] Total gerado: {len(df_resultado)} amostras (Verdadeiras: {(df_resultado['tipo_expressao'] == 'VERDADEIRA').sum()}, Falsas: {(df_resultado['tipo_expressao'] == 'FALSA').sum()})")
+    logging.info(
+        f"[{tipo_op}] Concluído: {len(df_resultado)} amostras "
+        f"(Verdadeiras: 450, Falsas: 450 | Erros Reais: {total_erros_reais}, Perturbados: {total_perturbados})"
+    )
     return df_resultado
 
 def main():
     todas_amostras = []
 
-    for tipo_op, p_op in CAMINHOS_OPERACOES.items():
-        p_res = CAMINHOS_RESULTADOS_ANTERIORES[tipo_op]
-        df_op_gerado = gerar_amostras_para_operacao(tipo_op, p_op, p_res)
+    for tipo_op, p_res in CAMINHOS_RESULTADOS.items():
+        df_op_gerado = gerar_amostras_para_operacao(tipo_op, p_res)
         
         # Salvar base individual por operação
-        slug_op = tipo_op.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a")
+        slug_op = tipo_op.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("õ", "o").replace("é", "e")
         p_save_op = os.path.join(BASES_DIR, f"base_jev_{slug_op}.csv")
         df_op_gerado.to_csv(p_save_op, index=False)
         logging.info(f"Salva base individual: {p_save_op}")
@@ -241,15 +223,19 @@ def main():
     df_consolidada = pd.concat(todas_amostras, ignore_index=True)
     df_consolidada["id_amostra"] = [f"JEV_{i+1:04d}" for i in range(len(df_consolidada))]
 
-    # Reordenar colunas
-    cols = ["id_amostra", "tipo_operacao", "quantidade_digitos", "digitos_num", "conta_original", "expressao", "resultado_correto", "resultado_avaliado", "expressao_completa", "rotulo_verdadeiro", "tipo_expressao", "origem_resultado", "prompt_jev"]
+    cols = [
+        "id_amostra", "tipo_operacao", "quantidade_digitos", "digitos_num",
+        "conta_original", "expressao", "resultado_correto", "resultado_avaliado",
+        "expressao_completa", "rotulo_verdadeiro", "tipo_expressao",
+        "origem_resultado", "prompt_jev"
+    ]
     df_consolidada = df_consolidada[cols]
 
     p_save_total = os.path.join(BASES_DIR, "base_jev_completa.csv")
     df_consolidada.to_csv(p_save_total, index=False)
     logging.info(f"Base consolidada do JEV salva com SUCESSO: {p_save_total} ({len(df_consolidada)} amostras)")
 
-    # Também salvar cópia em github_repo/jev/bases_de_dados
+    # Sincronizar cópia em github_repo/jev/bases_de_dados
     p_github_bases = os.path.join(PASTA_RAIZ, "github_repo", "jev", "bases_de_dados")
     os.makedirs(p_github_bases, exist_ok=True)
     df_consolidada.to_csv(os.path.join(p_github_bases, "base_jev_completa.csv"), index=False)
