@@ -177,9 +177,8 @@ st.markdown("<br>", unsafe_allow_html=True)
 # -----------------------------------------------------------------------------
 # NAVEGAÇÃO EM ABAS
 # -----------------------------------------------------------------------------
-tab1, tab2, tab3, tab4 = st.tabs([
-    "📊 Visão Geral (Sensibilidade & Especificidade)",
-    "📈 Desempenho por Quantidade de Dígitos",
+tab1, tab2, tab3 = st.tabs([
+    "📊 Visão Geral & Detalhamento por Dígitos",
     "📉 A Curva de Probabilidades",
     "💰 Custos & Inspeção de Decisões"
 ])
@@ -187,10 +186,10 @@ tab1, tab2, tab3, tab4 = st.tabs([
 operacoes_lista = ["Multiplicação Inteira", "Multiplicação Decimal", "Soma", "Expressões Combinadas"]
 
 # =============================================================================
-# ABA 1: VISÃO GERAL (GRID 2x2 DE BARRAS)
+# ABA 1: VISÃO GERAL & DETALHAMENTO POR DÍGITOS
 # =============================================================================
 with tab1:
-    st.markdown("### Visão Geral da Acurácia por Tipo de Operação (Grid 2x2)")
+    st.markdown("### 1. Visão Geral da Acurácia por Tipo de Operação (Grid 2x2)")
     st.caption("Comparação entre Sensibilidade (avaliar como correto quando a conta está correta) e Especificidade (avaliar como incorreto quando a conta está errada).")
 
     grid_cols = st.columns(2)
@@ -205,7 +204,6 @@ with tab1:
                 sens = (v_df["decisao_correta"].mean() * 100) if not v_df.empty else 0.0
                 espec = (f_df["decisao_correta"].mean() * 100) if not f_df.empty else 0.0
             else:
-                # Placeholders ilustrativos enquanto aguarda a finalização
                 sens, espec = 85.0 - (i * 4), 78.0 - (i * 5)
 
             df_plot = pd.DataFrame({
@@ -236,71 +234,63 @@ with tab1:
             )
             st.plotly_chart(fig, use_container_width=True)
 
+    st.markdown("<hr style='margin: 35px 0 25px 0; border: 0; border-top: 1px solid #334155;'>", unsafe_allow_html=True)
+    st.markdown("### 2. Detalhamento por Quantidade de Dígitos (Grid 2x2)")
+    st.caption("Evolução da Sensibilidade (azul escuro) vs Especificidade (azul claro) com a progressão da complexidade numérica (2 a 10 dígitos) para cada uma das operações.")
+
+    digitos_x = list(range(2, 11))
+    grid_det = st.columns(2)
+
+    for i, op in enumerate(operacoes_lista):
+        col_dest = grid_det[i % 2]
+        with col_dest:
+            fig_op = go.Figure()
+            if resultados_prontos and not df_jev.empty:
+                df_op = df_jev[df_jev["tipo_operacao"] == op]
+                sens_pts = [
+                    df_op[(df_op["digitos"] == d) & (df_op["tipo_expressao"].str.upper() == "VERDADEIRA")]["decisao_correta"].mean() * 100
+                    for d in digitos_x
+                ]
+                espec_pts = [
+                    df_op[(df_op["digitos"] == d) & (df_op["tipo_expressao"].str.upper() == "FALSA")]["decisao_correta"].mean() * 100
+                    for d in digitos_x
+                ]
+            else:
+                sens_pts = [100 - (d * 3) for d in digitos_x]
+                espec_pts = [90 - (d * 5) for d in digitos_x]
+
+            fig_op.add_trace(go.Scatter(
+                x=digitos_x,
+                y=sens_pts,
+                mode="lines+markers",
+                name="Sensibilidade (Verdadeiras)",
+                line=dict(color=COR_SENSIBILIDADE, width=2.5),
+                marker=dict(size=6)
+            ))
+            fig_op.add_trace(go.Scatter(
+                x=digitos_x,
+                y=espec_pts,
+                mode="lines+markers",
+                name="Especificidade (Falsas)",
+                line=dict(color=COR_ESPECIFICIDADE, width=2.5, dash="dot"),
+                marker=dict(size=6)
+            ))
+
+            fig_op.update_layout(
+                title=f"{op}",
+                xaxis_title="Quantidade de Dígitos",
+                yaxis_title="Taxa de Acerto (%)",
+                yaxis_range=[0, 105],
+                height=350,
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+                margin=dict(l=20, r=20, t=50, b=20)
+            )
+            st.plotly_chart(fig_op, use_container_width=True)
+
 # =============================================================================
-# ABA 2: DESEMPENHO POR QUANTIDADE DE DÍGITOS
+# ABA 2: A CURVA DE PROBABILIDADES
 # =============================================================================
 with tab2:
-    st.markdown("### Detalhamento por Quantidade de Dígitos (2 a 10 Dígitos)")
-    st.caption("Evolução da Sensibilidade (azul escuro) vs Especificidade (azul claro) com a progressão da complexidade numérica.")
-
-    col_g1, col_g2 = st.columns(2)
-
-    # Gráfico 1: Multiplicação Inteira vs Multiplicação Decimal no mesmo gráfico para comparação direta
-    with col_g1:
-        fig_mult = go.Figure()
-        digitos_x = list(range(2, 11))
-
-        if resultados_prontos and not df_jev.empty:
-            for op, estilo, cor in [("Multiplicação Inteira", "solid", "#8b5cf6"), ("Multiplicação Decimal", "dash", "#f97316")]:
-                df_op = df_jev[df_jev["tipo_operacao"] == op]
-                sens_pts = [df_op[(df_op["digitos"] == d) & (df_op["tipo_expressao"] == "VERDADEIRA")]["decisao_correta"].mean() * 100 for d in digitos_x]
-                espec_pts = [df_op[(df_op["digitos"] == d) & (df_op["tipo_expressao"] == "FALSA")]["decisao_correta"].mean() * 100 for d in digitos_x]
-
-                fig_mult.add_trace(go.Scatter(x=digitos_x, y=sens_pts, mode="lines+markers", name=f"{op} (Sensibilidade)", line=dict(color=cor, dash=estilo, width=2.5)))
-                fig_mult.add_trace(go.Scatter(x=digitos_x, y=espec_pts, mode="lines+markers", name=f"{op} (Especificidade)", line=dict(color=cor, dash="dot", width=1.5)))
-        else:
-            fig_mult.add_trace(go.Scatter(x=digitos_x, y=[100, 98, 92, 85, 78, 68, 55, 42, 30], mode="lines+markers", name="Mult. Inteira (Sensibilidade)", line=dict(color="#8b5cf6", width=2.5)))
-            fig_mult.add_trace(go.Scatter(x=digitos_x, y=[95, 90, 85, 76, 68, 58, 48, 35, 25], mode="lines+markers", name="Mult. Decimal (Sensibilidade)", line=dict(color="#f97316", dash="dash", width=2.5)))
-
-        fig_mult.update_layout(
-            title="Multiplicação Inteira vs Decimal (Sensibilidade e Especificidade)",
-            xaxis_title="Quantidade de Dígitos",
-            yaxis_title="Taxa de Acerto (%)",
-            yaxis_range=[0, 105],
-            height=420,
-            margin=dict(l=20, r=20, t=50, b=20)
-        )
-        st.plotly_chart(fig_mult, use_container_width=True)
-
-    # Gráfico 2: Soma e Expressões Combinadas
-    with col_g2:
-        fig_outros = go.Figure()
-        if resultados_prontos and not df_jev.empty:
-            for op, cor in [("Soma", "#3b82f6"), ("Expressões Combinadas", "#10b981")]:
-                df_op = df_jev[df_jev["tipo_operacao"] == op]
-                sens_pts = [df_op[(df_op["digitos"] == d) & (df_op["tipo_expressao"] == "VERDADEIRA")]["decisao_correta"].mean() * 100 for d in digitos_x]
-                espec_pts = [df_op[(df_op["digitos"] == d) & (df_op["tipo_expressao"] == "FALSA")]["decisao_correta"].mean() * 100 for d in digitos_x]
-
-                fig_outros.add_trace(go.Scatter(x=digitos_x, y=sens_pts, mode="lines+markers", name=f"{op} (Sensibilidade)", line=dict(color=cor, width=2.5)))
-                fig_outros.add_trace(go.Scatter(x=digitos_x, y=espec_pts, mode="lines+markers", name=f"{op} (Especificidade)", line=dict(color=cor, dash="dot", width=1.5)))
-        else:
-            fig_outros.add_trace(go.Scatter(x=digitos_x, y=[100, 100, 98, 96, 92, 88, 82, 75, 68], mode="lines+markers", name="Soma (Sensibilidade)", line=dict(color="#3b82f6", width=2.5)))
-            fig_outros.add_trace(go.Scatter(x=digitos_x, y=[98, 92, 85, 78, 65, 52, 40, 28, 18], mode="lines+markers", name="Exp. Combinadas (Sensibilidade)", line=dict(color="#10b981", width=2.5)))
-
-        fig_outros.update_layout(
-            title="Soma e Expressões Combinadas (Sensibilidade e Especificidade)",
-            xaxis_title="Quantidade de Dígitos",
-            yaxis_title="Taxa de Acerto (%)",
-            yaxis_range=[0, 105],
-            height=420,
-            margin=dict(l=20, r=20, t=50, b=20)
-        )
-        st.plotly_chart(fig_outros, use_container_width=True)
-
-# =============================================================================
-# ABA 3: A CURVA DE PROBABILIDADES
-# =============================================================================
-with tab3:
     st.markdown("### A Curva de Probabilidades Bayesianas do JEV")
     st.caption("Distribuição de certeza do modelo entre $P(TRUE)$ e $P(FALSE)$ emitida pela API de decisões.")
 
@@ -390,9 +380,9 @@ with tab3:
                 st.plotly_chart(fig_box, use_container_width=True)
 
 # =============================================================================
-# ABA 4: CUSTOS & INSPEÇÃO DE DECISÕES
+# ABA 3: CUSTOS & INSPEÇÃO DE DECISÕES
 # =============================================================================
-with tab4:
+with tab3:
     st.markdown("### Auditoria de Custos e Inspeção de Falhas")
     
     col_c1, col_c2 = st.columns([1, 1])
