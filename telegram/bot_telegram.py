@@ -16,6 +16,11 @@ from datetime import datetime
 import requests
 from dotenv import load_dotenv
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 PASTA_TELEGRAM = os.path.dirname(os.path.abspath(__file__))
 PASTA_RAIZ = os.path.dirname(PASTA_TELEGRAM)
 
@@ -23,20 +28,30 @@ PASTA_RAIZ = os.path.dirname(PASTA_TELEGRAM)
 ARQUIVO_ENV_TELEGRAM = os.path.join(PASTA_TELEGRAM, ".env")
 ARQUIVO_CHAVE_ENV = os.path.join(PASTA_RAIZ, "chave.env")
 
-load_dotenv(ARQUIVO_CHAVE_ENV)
+# Carrega primeiro de telegram/.env se existir
 if os.path.exists(ARQUIVO_ENV_TELEGRAM):
     load_dotenv(ARQUIVO_ENV_TELEGRAM)
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
 AUTHORIZED_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
+# Se não estiver no .env do telegram, busca no chave.env manualmente
+if not TELEGRAM_BOT_TOKEN and os.path.exists(ARQUIVO_CHAVE_ENV):
+    try:
+        with open(ARQUIVO_CHAVE_ENV, "r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                if line.startswith("TELEGRAM_BOT_TOKEN") and "=" in line:
+                    TELEGRAM_BOT_TOKEN = line.split("=", 1)[1].strip("\"' \r\n")
+    except Exception:
+        pass
+
 OPENROUTER_API_KEY = os.environ.get("OPEN_ROUTER_API_KEY_2", "").strip()
-if not OPENROUTER_API_KEY:
+if not OPENROUTER_API_KEY and os.path.exists(ARQUIVO_CHAVE_ENV):
     try:
         with open(ARQUIVO_CHAVE_ENV, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
                 if "OPEN_ROUTER_API_KEY_2" in line and "=" in line:
-                    OPENROUTER_API_KEY = line.strip().split("=", 1)[1].strip("\"' ")
+                    OPENROUTER_API_KEY = line.strip().split("=", 1)[1].strip("\"' \r\n")
     except Exception:
         pass
 
