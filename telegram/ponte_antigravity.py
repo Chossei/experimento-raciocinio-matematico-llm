@@ -14,8 +14,15 @@ import time
 import json
 import glob
 import logging
+import ctypes
 import pyautogui
 import pyperclip
+
+# Desativa o FAILSAFE para evitar travamentos quando o mouse estiver em cantos ou posições virtuais
+pyautogui.FAILSAFE = False
+pyautogui.PAUSE = 0.05
+
+user32 = ctypes.windll.user32
 
 PASTA_TELEGRAM = os.path.dirname(os.path.abspath(__file__))
 ARQUIVO_CONFIG_POSICAO = os.path.join(PASTA_TELEGRAM, "config_posicao.json")
@@ -58,29 +65,43 @@ def obter_ultimo_step(caminho_transcript):
         logging.error(f"Erro ao ler transcript: {e}")
         return 0, None
 
+def clicar_na_coordenada(x, y):
+    """Clica na tela utilizando PyAutoGUI e fallback nativo Win32."""
+    try:
+        user32.SetCursorPos(int(x), int(y))
+        time.sleep(0.05)
+        user32.mouse_event(0x0002, 0, 0, 0, 0) # MOUSEEVENTF_LEFTDOWN
+        time.sleep(0.05)
+        user32.mouse_event(0x0004, 0, 0, 0, 0) # MOUSEEVENTF_LEFTUP
+    except Exception as e:
+        logging.warning(f"Aviso no clique win32: {e}")
+
+    try:
+        pyautogui.click(x, y)
+    except Exception as e:
+        logging.warning(f"Aviso no clique pyautogui: {e}")
+
 def injetar_texto_no_antigravity(texto):
-    """Clica na caixa de texto, cola a mensagem e aperta Enter."""
+    """Copia a mensagem, clica na caixa de texto, cola e aperta Enter."""
     chat_x, chat_y = obter_posicao_chat()
-    
-    # Salva posição original do mouse para restaurar depois
-    orig_x, orig_y = pyautogui.position()
-
     logging.info(f"Clicando na coordenada do chat: ({chat_x}, {chat_y})")
-    pyautogui.click(chat_x, chat_y)
-    time.sleep(0.15)
 
-    # Copia o texto para o clipboard garantindo caracteres especiais e UTF-8
+    # 1. Copia o texto para a área de transferência primeiro
     pyperclip.copy(texto)
     time.sleep(0.1)
 
-    # Cola (Ctrl+V) e dá Enter
+    # 2. Clica na caixa de texto do Antigravity
+    clicar_na_coordenada(chat_x, chat_y)
+    time.sleep(0.2)
+
+    # 3. Cola o texto (Ctrl + V)
     pyautogui.hotkey("ctrl", "v")
-    time.sleep(0.15)
+    time.sleep(0.2)
+
+    # 4. Envia Enter
     pyautogui.press("enter")
     time.sleep(0.1)
-
-    # Restaura o cursor
-    pyautogui.moveTo(orig_x, orig_y)
+    logging.info("Texto injetado e [ENTER] pressionado com sucesso!")
 
 def executar_comando_antigravity(mensagem_usuario, callback_status=None, timeout_segundos=600):
     """Executa o ciclo completo:

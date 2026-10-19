@@ -359,17 +359,21 @@ def processar_mensagem(msg):
     else:
         # 🚀 PONTE DIRETA COM O ANTIGRAVITY IDE:
         # Move o mouse, clica na caixa de texto, cola a mensagem, dá Enter e monitora a resposta!
-        enviar_mensagem_telegram(chat_id, f"⚡ _Enviando comando para o Antigravity IDE no seu computador..._")
+        enviar_mensagem_telegram(chat_id, "⚡ _Enviando comando para o Antigravity IDE no seu computador..._")
         
         def atualizar_status(msg):
             enviar_mensagem_telegram(chat_id, msg)
 
-        resposta = ponte_antigravity.executar_comando_antigravity(
-            mensagem_usuario=texto,
-            callback_status=atualizar_status,
-            timeout_segundos=600
-        )
-        enviar_mensagem_telegram(chat_id, resposta, reply_markup=obter_teclado_comandos())
+        try:
+            resposta = ponte_antigravity.executar_comando_antigravity(
+                mensagem_usuario=texto,
+                callback_status=atualizar_status,
+                timeout_segundos=600
+            )
+            enviar_mensagem_telegram(chat_id, resposta, reply_markup=obter_teclado_comandos())
+        except Exception as e:
+            logging.exception(f"Erro ao executar comando na ponte do Antigravity: {e}")
+            enviar_mensagem_telegram(chat_id, f"⚠️ Erro ao injetar comando no Antigravity: `{e}`", reply_markup=obter_teclado_comandos())
 
 def main():
     if not TELEGRAM_BOT_TOKEN or TELEGRAM_BOT_TOKEN == "SEU_TOKEN_DO_BOT_AQUI":
