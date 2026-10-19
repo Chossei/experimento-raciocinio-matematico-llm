@@ -40,6 +40,11 @@ pg = st.navigation([
         os.path.join(pages_dir, "3_Custos_Formatos_Erros.py"),
         title="Custos, Formatos e Erros",
         icon="💰"
+    ),
+    st.Page(
+        os.path.join(pages_dir, "4_Experimento_Complementar.py"),
+        title="Experimento Complementar (JEV)",
+        icon="🧪"
     )
 ])
 
