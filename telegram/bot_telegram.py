@@ -235,49 +235,6 @@ def obter_status_jev():
     else:
         return "⚠️ Base do JEV ainda não encontrada em `jev/bases_de_dados/`."
 
-def responder_com_ia(chat_id, pergunta_usuario):
-    """Responde a perguntas em linguagem natural usando o modelo via OpenRouter."""
-    if not OPENROUTER_API_KEY:
-        enviar_mensagem_telegram(chat_id, "⚠️ Não posso responder por IA porque a chave do OpenRouter não está configurada.")
-        return
-
-    enviar_mensagem_telegram(chat_id, "🤔 _Processando sua pergunta..._")
-
-    prompt_sistema = (
-        "Você é o assistente virtual do experimento de TCC sobre Raciocínio Matemático nos LLMs, "
-        "conduzido por Átila Prudente. O experimento avalia 12 modelos da família Google Gemini "
-        "(do 2.5 flash ao 3.8 flash com variações low, medium e high) e o modelo de decisão TypeSafe JEV 1.14. "
-        "Seja extremamente prestativo, inteligente, objetivo e direto ao ponto. "
-        "Responda sempre em português do Brasil e utilize formatação limpa compatível com Telegram."
-    )
-
-    url = "https://openrouter.ai/api/v1/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://tcc-experimento.ufba.br",
-        "X-Title": "Telegram Bot Telemetria"
-    }
-    payload = {
-        "model": "google/gemini-2.5-flash",
-        "messages": [
-            {"role": "system", "content": prompt_sistema},
-            {"role": "user", "content": pergunta_usuario}
-        ],
-        "temperature": 0.3,
-        "max_tokens": 800
-    }
-
-    try:
-        resp = requests.post(url, headers=headers, json=payload, timeout=30)
-        if resp.status_code == 200:
-            dados = resp.json()
-            resposta = dados["choices"][0]["message"]["content"]
-            enviar_mensagem_telegram(chat_id, resposta)
-        else:
-            enviar_mensagem_telegram(chat_id, f"⚠️ Erro na IA ({resp.status_code}): {resp.text[:200]}")
-    except Exception as e:
-        enviar_mensagem_telegram(chat_id, f"⚠️ Erro ao gerar resposta: {e}")
 
 def processar_mensagem(msg):
     chat = msg.get("chat", {})
@@ -351,10 +308,6 @@ def processar_mensagem(msg):
         )
         enviar_mensagem_telegram(chat_id, msg_calib, reply_markup=obter_teclado_comandos())
 
-    elif texto_lower.startswith("/ia "):
-        # Modo rápido: pergunta à IA sem mexer no mouse do PC
-        pergunta = texto[4:].strip()
-        responder_com_ia(chat_id, pergunta)
 
     else:
         # 🚀 PONTE DIRETA COM O ANTIGRAVITY IDE:
