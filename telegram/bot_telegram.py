@@ -86,30 +86,67 @@ def salvar_chat_id(chat_id):
         f.write(f"TELEGRAM_CHAT_ID={AUTHORIZED_CHAT_ID}\n")
     logging.info(f"Chat ID {chat_id} salvo e pareado com sucesso!")
 
+try:
+    import ponte_antigravity
+except ImportError:
+    from telegram import ponte_antigravity
+
+def dividir_texto_em_blocos(texto, tamanho_max=3800):
+    """Divide textos longos em pedaços seguros para o limite do Telegram (4096 caracteres)."""
+    if len(texto) <= tamanho_max:
+        return [texto]
+    blocos = []
+    linhas = texto.split("\n")
+    bloco_atual = ""
+    for linha in linhas:
+        if len(bloco_atual) + len(linha) + 1 > tamanho_max:
+            if bloco_atual:
+                blocos.append(bloco_atual.strip())
+                bloco_atual = ""
+            while len(linha) > tamanho_max:
+                blocos.append(linha[:tamanho_max])
+                linha = linha[tamanho_max:]
+        bloco_atual += linha + "\n"
+    if bloco_atual.strip():
+        blocos.append(bloco_atual.strip())
+    return blocos
+
 def enviar_mensagem_telegram(chat_id, texto, reply_markup=None):
     if not TELEGRAM_BOT_TOKEN:
         return False
     url = f"{TELEGRAM_API_URL}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": texto,
-        "parse_mode": "Markdown"
-    }
-    if reply_markup:
-        payload["reply_markup"] = reply_markup
-    try:
-        r = requests.post(url, json=payload, timeout=20)
-        return r.status_code == 200
-    except Exception as e:
-        logging.error(f"Erro ao enviar mensagem no Telegram: {e}")
-        return False
+    blocos = dividir_texto_em_blocos(texto)
+    sucesso = True
+
+    for i, bloco in enumerate(blocos):
+        payload = {
+            "chat_id": chat_id,
+            "text": bloco,
+            "parse_mode": "Markdown"
+        }
+        if reply_markup and i == len(blocos) - 1:
+            payload["reply_markup"] = reply_markup
+        try:
+            r = requests.post(url, json=payload, timeout=25)
+            # Se falhou por erro de parsing do Markdown, reenvia como texto puro
+            if r.status_code == 400:
+                payload.pop("parse_mode", None)
+                r = requests.post(url, json=payload, timeout=25)
+            if r.status_code != 200:
+                sucesso = False
+                logging.error(f"Erro Telegram ({r.status_code}): {r.text}")
+        except Exception as e:
+            logging.error(f"Erro ao enviar mensagem no Telegram: {e}")
+            sucesso = False
+    return sucesso
 
 def obter_teclado_comandos():
     """Cria botões de acesso rápido no Telegram."""
     return {
         "keyboard": [
             [{"text": "📊 Status dos Jobs"}, {"text": "💰 Saldo e Custos"}],
-            [{"text": "🧪 Status do JEV"}, {"text": "❓ Ajuda"}]
+            [{"text": "🧪 Status do JEV"}, {"text": "🎯 Calibrar Caixa de Texto"}],
+            [{"text": "❓ Ajuda"}]
         ],
         "resize_keyboard": True
     }
@@ -294,13 +331,45 @@ def processar_mensagem(msg):
             "• `/status` - Verifica o status dos lotes de Batch na API\n"
             "• `/saldo` - Consulta o saldo disponível e custo total do experimento\n"
             "• `/jev` - Exibe os detalhes da base e do modelo JEV 1.14\n"
-            "• *Conversa livre:* Digite qualquer pergunta ou dúvida, e eu te responderei usando a IA do projeto!"
+            "• `/calibrar` - Configura onde o mouse deve clicar na tela do PC\n"
+            "• `/ia <pergunta>` - Pergunta rápida à IA sem interagir com a tela do PC\n\n"
+            "💬 *Ponte Direta com Antigravity:*\n"
+            "Qualquer mensagem normal que você digitar aqui será colada na caixa de texto do Antigravity IDE, apertará Enter e te devolverá a resposta completa!"
         )
         enviar_mensagem_telegram(chat_id, msg_ajuda, reply_markup=obter_teclado_comandos())
 
+    elif texto_lower in ["/calibrar", "calibrar", "🎯 calibrar caixa de texto", "calibrar caixa de texto"]:
+        pos_x, pos_y = ponte_antigravity.obter_posicao_chat()
+        cfg_existe = os.path.exists(ponte_antigravity.ARQUIVO_CONFIG_POSICAO)
+        msg_calib = (
+            "🎯 *Configuração da Caixa de Texto do Antigravity*\n\n"
+            f"• Coordenadas atuais de clique: `(X={pos_x}, Y={pos_y})`\n"
+            f"• Calibração personalizada salva: `{'SIM' if cfg_existe else 'NÃO (usando padrão)'}`\n\n"
+            "Se o mouse não estiver clicando no local exato do chat, no seu PC dê duplo clique em:\n"
+            "👉 `telegram/calibrar_clique.bat`\n"
+            "e mantenha o mouse sobre a caixa de texto durante a contagem de 5 segundos!"
+        )
+        enviar_mensagem_telegram(chat_id, msg_calib, reply_markup=obter_teclado_comandos())
+
+    elif texto_lower.startswith("/ia "):
+        # Modo rápido: pergunta à IA sem mexer no mouse do PC
+        pergunta = texto[4:].strip()
+        responder_com_ia(chat_id, pergunta)
+
     else:
-        # Conversa em linguagem natural usando a IA
-        responder_com_ia(chat_id, texto)
+        # 🚀 PONTE DIRETA COM O ANTIGRAVITY IDE:
+        # Move o mouse, clica na caixa de texto, cola a mensagem, dá Enter e monitora a resposta!
+        enviar_mensagem_telegram(chat_id, f"⚡ _Enviando comando para o Antigravity IDE no seu computador..._")
+        
+        def atualizar_status(msg):
+            enviar_mensagem_telegram(chat_id, msg)
+
+        resposta = ponte_antigravity.executar_comando_antigravity(
+            mensagem_usuario=texto,
+            callback_status=atualizar_status,
+            timeout_segundos=600
+        )
+        enviar_mensagem_telegram(chat_id, resposta, reply_markup=obter_teclado_comandos())
 
 def main():
     if not TELEGRAM_BOT_TOKEN or TELEGRAM_BOT_TOKEN == "SEU_TOKEN_DO_BOT_AQUI":
