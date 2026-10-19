@@ -196,17 +196,20 @@ def normalizar_dataframe(df, tipo):
         # Fatores de ajuste baseados nos valores faturados reais:
         # Multiplicacao Inteira: Vertex AI batch/zero thinking real = ~$0.8057 USD
         # Soma: OpenRouter Batch API com 50% de desconto real = ~$4.0772 USD
-        # Combinadas: OpenRouter Batch API com 50% de desconto real = ~$8.6279 USD
+        # Combinadas: OpenRouter Batch API com 50% de desconto real = ~$8.6279 USD (base) + $1.3314 (mid) + $1.9467 (high)
         # Decimal: OpenRouter inferência com tier flex real = ~$10.7592 USD
-        # Soma consolidada exata = $24.27 USD (idêntico ao indicador oficial)
         fatores_operacao = {
             "multiplicacao": 0.805703 / 3.787578,
             "soma": 4.077187 / 7.443801,
-            "combinadas": 8.627928 / 15.752397,
             "decimal": 10.759182 / 14.065440,
         }
-        fator = fatores_operacao.get(tipo, 1.0)
-        df["custo_total"] = df["custo_total"] * fator
+        if tipo == "combinadas":
+            # As variações mid e high já estão calculadas com o valor faturado exato da Batch API
+            mask_orig = ~df["Nome_do_modelo"].isin(["gemini-3.8-flash-mid", "gemini-3.8-flash-high"])
+            df.loc[mask_orig, "custo_total"] = df.loc[mask_orig, "custo_total"] * (8.627928 / 15.752397)
+        else:
+            fator = fatores_operacao.get(tipo, 1.0)
+            df["custo_total"] = df["custo_total"] * fator
     else:
         df["custo_total"] = 0.0
 
