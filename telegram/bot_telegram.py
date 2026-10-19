@@ -26,24 +26,33 @@ PASTA_RAIZ = os.path.dirname(PASTA_TELEGRAM)
 
 # Carregamento de chaves
 ARQUIVO_ENV_TELEGRAM = os.path.join(PASTA_TELEGRAM, ".env")
+ARQUIVO_TELEGRAM_ENV = os.path.join(PASTA_TELEGRAM, "telegram.env")
 ARQUIVO_CHAVE_ENV = os.path.join(PASTA_RAIZ, "chave.env")
 
-# Carrega primeiro de telegram/.env se existir
-if os.path.exists(ARQUIVO_ENV_TELEGRAM):
-    load_dotenv(ARQUIVO_ENV_TELEGRAM)
+# Carrega de telegram/.env ou telegram/telegram.env se existirem
+for arq in [ARQUIVO_ENV_TELEGRAM, ARQUIVO_TELEGRAM_ENV]:
+    if os.path.exists(arq):
+        load_dotenv(arq)
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
 AUTHORIZED_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
-# Se não estiver no .env do telegram, busca no chave.env manualmente
-if not TELEGRAM_BOT_TOKEN and os.path.exists(ARQUIVO_CHAVE_ENV):
-    try:
-        with open(ARQUIVO_CHAVE_ENV, "r", encoding="utf-8", errors="ignore") as f:
-            for line in f:
-                if line.startswith("TELEGRAM_BOT_TOKEN") and "=" in line:
-                    TELEGRAM_BOT_TOKEN = line.split("=", 1)[1].strip("\"' \r\n")
-    except Exception:
-        pass
+# Se não pegou via os.environ, lê manualmente dos arquivos
+if not TELEGRAM_BOT_TOKEN:
+    for arq in [ARQUIVO_ENV_TELEGRAM, ARQUIVO_TELEGRAM_ENV, ARQUIVO_CHAVE_ENV]:
+        if os.path.exists(arq):
+            try:
+                with open(arq, "r", encoding="utf-8", errors="ignore") as f:
+                    for line in f:
+                        if line.startswith("TELEGRAM_BOT_TOKEN") and "=" in line:
+                            val = line.split("=", 1)[1].strip("\"' \r\n")
+                            if val and val != "SEU_TOKEN_DO_BOT_AQUI":
+                                TELEGRAM_BOT_TOKEN = val
+                                break
+            except Exception:
+                pass
+        if TELEGRAM_BOT_TOKEN:
+            break
 
 OPENROUTER_API_KEY = os.environ.get("OPEN_ROUTER_API_KEY_2", "").strip()
 if not OPENROUTER_API_KEY and os.path.exists(ARQUIVO_CHAVE_ENV):
