@@ -145,8 +145,8 @@ def obter_teclado_comandos():
     return {
         "keyboard": [
             [{"text": "📊 Status dos Jobs"}, {"text": "💰 Saldo e Custos"}],
-            [{"text": "🧪 Status do JEV"}, {"text": "🎯 Calibrar Caixa de Texto"}],
-            [{"text": "❓ Ajuda"}]
+            [{"text": "🧪 Status do JEV"}, {"text": "✅ Permitir / Sim"}],
+            [{"text": "🎯 Calibrar Caixa de Texto"}, {"text": "❓ Ajuda"}]
         ],
         "resize_keyboard": True
     }
@@ -201,10 +201,11 @@ def obter_saldo_e_custos():
             msg += f"• Total Adquirido: `${tot:.2f} USD`\n"
             msg += f"• Uso Faturado: `${use:.4f} USD`\n"
             msg += f"• Saldo Atual: {emoji_saldo} *`${saldo:.4f} USD`*\n\n"
-            msg += "📈 *Custo Acumulado do Experimento (4 Operações):*\n"
-            msg += "• Total Geral: `~$27.55 USD` (26.997 testes)\n"
-            msg += "• Expressões Combinadas: `$11.91 USD`\n"
-            msg += "• Saldo suficiente para rodar o JEV: *SIM* (< $0.01 USD necessário)"
+            msg += "📈 *Custo Acumulado do Experimento:*\n"
+            msg += "• Modelos Gemini (12 configs, 36k testes): `~$27.55 USD`\n"
+            msg += "• Experimento JEV 1.14 (3.600 testes): `$0.0556 USD`\n"
+            msg += "• Custo Total Consolidado: `~$27.61 USD` (~R$ 151,85)\n"
+            msg += "• Status do JEV: *100% Concluído*"
             return msg
         else:
             return f"⚠️ Erro ao consultar créditos: HTTP {r.status_code}"
@@ -310,6 +311,10 @@ def processar_mensagem(msg):
 
 
     else:
+        # Se for o botão de permissão rápida
+        if texto == "✅ Permitir / Sim":
+            texto = "sim"
+
         # 🚀 PONTE DIRETA COM O ANTIGRAVITY IDE:
         # Move o mouse, clica na caixa de texto, cola a mensagem, dá Enter e monitora a resposta!
         enviar_mensagem_telegram(chat_id, "⚡ _Enviando comando para o Antigravity IDE no seu computador..._")
@@ -321,7 +326,7 @@ def processar_mensagem(msg):
             resposta = ponte_antigravity.executar_comando_antigravity(
                 mensagem_usuario=texto,
                 callback_status=atualizar_status,
-                timeout_segundos=600
+                timeout_segundos=900
             )
             enviar_mensagem_telegram(chat_id, resposta, reply_markup=obter_teclado_comandos())
         except Exception as e:

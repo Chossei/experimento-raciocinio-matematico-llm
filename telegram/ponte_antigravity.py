@@ -103,10 +103,44 @@ def injetar_texto_no_antigravity(texto):
     time.sleep(0.1)
     logging.info("Texto injetado e [ENTER] pressionado com sucesso!")
 
-def executar_comando_antigravity(mensagem_usuario, callback_status=None, timeout_segundos=600):
+def extrair_solicitacao_permissao(obj):
+    """Verifica se o passo do transcript é uma pergunta (ask_question) ou pedido de autorização."""
+    if not isinstance(obj, dict):
+        return None
+    
+    tipo = obj.get("type", "")
+    tool_calls = obj.get("tool_calls", [])
+    if isinstance(tool_calls, list):
+        for tc in tool_calls:
+            if isinstance(tc, dict) and tc.get("name") == "ask_question":
+                args = tc.get("args", {})
+                if isinstance(args, str):
+                    try:
+                        args = json.loads(args)
+                    except Exception:
+                        args = {}
+                questions = args.get("questions", [])
+                msg = "🔔 *O Antigravity está solicitando sua confirmação / escolha:*\n\n"
+                for q in questions:
+                    msg += f"❓ *{q.get('question', '')}*\n"
+                    for op in q.get("options", []):
+                        msg += f"• `{op}`\n"
+                msg += "\n👉 *Envie sua resposta ou clique em '✅ Permitir / Sim' no Telegram para autorizar!*"
+                return msg
+            
+            if tc.get("status") in ["CONFIRMATION_REQUEST", "WAITING_APPROVAL", "PENDING_APPROVAL"]:
+                nome = tc.get("name", "ação")
+                return f"🔔 *O Antigravity está solicitando permissão para executar `{nome}`!*\n\n👉 *Envie 'sim' ou toque em '✅ Permitir / Sim' para autorizar.*"
+
+    if tipo in ["CONFIRMATION_REQUEST", "PERMISSION_REQUEST"]:
+        return "🔔 *O Antigravity está solicitando permissão na tela do computador.*\n\n👉 *Envie 'sim' ou toque em '✅ Permitir / Sim' para autorizar.*"
+
+    return None
+
+def executar_comando_antigravity(mensagem_usuario, callback_status=None, timeout_segundos=900):
     """Executa o ciclo completo:
     1. Injeta o prompt no IDE
-    2. Monitora o transcript até a resposta final
+    2. Monitora o transcript até a resposta final ou pedido de autorização
     3. Retorna o texto de resposta
     """
     transcript_path = obter_arquivo_transcript_ativo()
@@ -120,7 +154,7 @@ def executar_comando_antigravity(mensagem_usuario, callback_status=None, timeout
     injetar_texto_no_antigravity(mensagem_usuario)
 
     if callback_status:
-        callback_status("📥 _Mensagem injetada no Antigravity IDE! Aguardando o agente processar..._")
+        callback_status("📥 _Mensagem enviada ao Antigravity IDE! Aguardando o agente processar..._")
 
     inicio = time.time()
     ultimo_status_notificado = ""
@@ -147,7 +181,7 @@ def executar_comando_antigravity(mensagem_usuario, callback_status=None, timeout
                 if idx <= step_inicial:
                     break
 
-                # Notifica progresso se o agente estiver executando comandos
+                # Notifica se o agente estiver executando comandos
                 tipo = d.get("type", "")
                 if callback_status:
                     if tipo == "RUN_COMMAND" and ultimo_status_notificado != "terminal":
@@ -156,6 +190,12 @@ def executar_comando_antigravity(mensagem_usuario, callback_status=None, timeout
                     elif tipo in ["REPLACE_FILE_CONTENT", "WRITE_TO_FILE"] and ultimo_status_notificado != "edit":
                         callback_status("📝 _O agente está editando arquivos do projeto..._")
                         ultimo_status_notificado = "edit"
+
+                # Verifica se há pedido de permissão / pergunta interativa
+                msg_perm = extrair_solicitacao_permissao(d)
+                if msg_perm:
+                    logging.info(f"Solicitação de permissão capturada no step {idx}!")
+                    return msg_perm
 
                 # Verifica se é a resposta final do agente (PLANNER_RESPONSE com conteúdo e sem ferramentas)
                 if d.get("source") == "MODEL" and d.get("type") == "PLANNER_RESPONSE":
@@ -168,4 +208,4 @@ def executar_comando_antigravity(mensagem_usuario, callback_status=None, timeout
         except Exception as e:
             logging.error(f"Erro durante leitura do transcript: {e}")
 
-    return "⚠️ Tempo limite excedido (timeout). O agente pode ainda estar processando ou ocorreu um travamento."
+    return "⚠️ Tempo limite excedido (mais de 15 minutos). O agente pode ainda estar processando uma tarefa longa ou aguardando resposta manual."
