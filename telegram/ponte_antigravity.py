@@ -86,6 +86,10 @@ def injetar_texto_no_antigravity(texto):
     chat_x, chat_y = obter_posicao_chat()
     logging.info(f"Clicando na coordenada do chat: ({chat_x}, {chat_y})")
 
+    # Garante que a mensagem sempre chegue com o identificador [Telegram]
+    if not str(texto).startswith("[Telegram]"):
+        texto = f"[Telegram] {texto}"
+
     # 1. Copia o texto para a área de transferência primeiro
     pyperclip.copy(texto)
     time.sleep(0.1)

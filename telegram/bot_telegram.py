@@ -322,9 +322,12 @@ def processar_mensagem(msg):
         def atualizar_status(msg):
             enviar_mensagem_telegram(chat_id, msg)
 
+        # Formata com a tag [Telegram] para o agente saber que o usuário está ausente do PC
+        texto_envio = texto if texto.startswith("[Telegram]") else f"[Telegram] {texto}"
+
         try:
             resposta = ponte_antigravity.executar_comando_antigravity(
-                mensagem_usuario=texto,
+                mensagem_usuario=texto_envio,
                 callback_status=atualizar_status,
                 timeout_segundos=900
             )
