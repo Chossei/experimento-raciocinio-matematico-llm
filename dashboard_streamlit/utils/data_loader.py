@@ -11,7 +11,7 @@ import streamlit as st
 ORDEM_DIGITOS = [f"{i} dígitos" for i in range(2, 11)]
 ORDEM_DIGITOS_NUM = [str(i) for i in range(2, 11)]
 
-# Ordem estrita estabelecida pelo usuário
+# Ordem estrita estabelecida pelo usuário (12 modelos no total)
 MODELOS_GEMINI = [
     "gemini-2.5-flash",
     "gemini-2.5-pro",
@@ -22,10 +22,12 @@ MODELOS_GEMINI = [
     "gemini-3.5-flash",
     "gemini-3.6-flash",
     "gemini-3.7-flash",
-    "gemini-3.8-flash"
+    "gemini-3.8-flash",
+    "gemini-3.8-flash-mid",
+    "gemini-3.8-flash-high"
 ]
 
-# Escala progressiva de azuis: do mais claro (2.5 flash) ao mais escuro (3.8 flash)
+# Escala progressiva de azuis: do mais claro (2.5 flash) aos tons oceano/cerúleo e meia-noite (3.8 flash)
 CORES_MODELOS_AZUL = {
     "gemini-2.5-flash": "#bfdbfe",       # Azul muito claro (Sky/Blue 200)
     "gemini-2.5-pro": "#93c5fd",         # Azul claro (Blue 300)
@@ -36,7 +38,9 @@ CORES_MODELOS_AZUL = {
     "gemini-3.5-flash": "#1e40af",       # Azul cobalto escuro (Blue 800)
     "gemini-3.6-flash": "#1e3a8a",       # Azul marinho (Blue 900)
     "gemini-3.7-flash": "#172554",       # Azul profundo (Blue 950)
-    "gemini-3.8-flash": "#0b132b"        # Azul meia-noite ultra escuro
+    "gemini-3.8-flash": "#0b132b",       # Azul meia-noite ultra escuro (Reasoning: low)
+    "gemini-3.8-flash-mid": "#0284c7",   # Azul oceano (Reasoning: medium)
+    "gemini-3.8-flash-high": "#0369a1"   # Azul cerúleo escuro (Reasoning: high)
 }
 
 # Cor azul padrão unificada para gráficos simples de barra
@@ -62,6 +66,8 @@ REASONING_MODELOS = {
     "gemini-3.6-flash": "Reasoning: minimal",
     "gemini-3.7-flash": "Reasoning: low",
     "gemini-3.8-flash": "Reasoning: low",
+    "gemini-3.8-flash-mid": "Reasoning: medium",
+    "gemini-3.8-flash-high": "Reasoning: high"
 }
 
 # Rótulos padronizados com indicação de reasoning entre parênteses

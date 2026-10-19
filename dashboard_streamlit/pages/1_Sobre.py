@@ -103,9 +103,9 @@ st.markdown(
     f"Foram avaliados longitudinalmente os **{stats['modelos_testados']} modelos** oficiais da família Google Gemini, ordenados da geração anterior até a mais recente:"
 )
 
-cols_mod = st.columns(5)
+cols_mod = st.columns(4)
 for idx, modelo in enumerate(MODELOS_GEMINI):
-    col_atual = cols_mod[idx % 5]
+    col_atual = cols_mod[idx % 4]
     cor_borda = CORES_MODELOS_AZUL.get(modelo, "#3b82f6")
     with col_atual:
         st.markdown(

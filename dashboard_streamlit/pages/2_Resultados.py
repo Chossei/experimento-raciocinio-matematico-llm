@@ -238,81 +238,46 @@ with tab_acuracia:
     df_det = mapa_df.get(det_op_sel, pd.DataFrame())
 
     if not df_det.empty:
-        # Linha 1 (modelos 0 a 4)
-        cols_linha1 = st.columns(5)
-        for idx in range(5):
-            modelo_card = MODELOS_GEMINI[idx]
-            df_m = df_det[df_det["Nome_do_modelo"] == modelo_card]
-            sub_r = REASONING_MODELOS.get(modelo_card, "Reasoning: none")
-            title_card = f"<b>{modelo_card}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_r})</span>"
-            with cols_linha1[idx]:
-                if not df_m.empty:
-                    res_m = (
-                        df_m.groupby("Digitos")["Acerto_da_operacao"]
-                        .agg(Total="count", Acertos="sum")
-                        .reset_index()
-                    )
-                    res_m["Taxa_Acerto"] = (res_m["Acertos"] / res_m["Total"]) * 100
-                    fig_card = px.bar(
-                        res_m,
-                        x="Digitos",
-                        y="Taxa_Acerto",
-                        category_orders={"Digitos": ORDEM_DIGITOS_NUM},
-                        color_discrete_sequence=[CORES_MODELOS_AZUL.get(modelo_card, COR_AZUL_PADRAO)],
-                        labels={"Digitos": "Dígitos", "Taxa_Acerto": "Acerto (%)"},
-                        title=title_card
-                    )
-                    fig_card.update_traces(
-                        texttemplate="%{y:.1f}%",
-                        textposition="outside"
-                    )
-                    fig_card.update_layout(
-                        height=255,
-                        margin=dict(l=15, r=15, t=48, b=30),
-                        yaxis=dict(range=[0, 120], showgrid=True, dtick=50, title=None),
-                        xaxis=dict(title=None)
-                    )
-                    st.plotly_chart(fig_card, use_container_width=True)
-                else:
-                    st.info(f"{modelo_card}: Sem dados")
-
-        # Linha 2 (modelos 5 a 9)
-        cols_linha2 = st.columns(5)
-        for idx in range(5, 10):
-            modelo_card = MODELOS_GEMINI[idx]
-            df_m = df_det[df_det["Nome_do_modelo"] == modelo_card]
-            sub_r = REASONING_MODELOS.get(modelo_card, "Reasoning: none")
-            title_card = f"<b>{modelo_card}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_r})</span>"
-            with cols_linha2[idx - 5]:
-                if not df_m.empty:
-                    res_m = (
-                        df_m.groupby("Digitos")["Acerto_da_operacao"]
-                        .agg(Total="count", Acertos="sum")
-                        .reset_index()
-                    )
-                    res_m["Taxa_Acerto"] = (res_m["Acertos"] / res_m["Total"]) * 100
-                    fig_card = px.bar(
-                        res_m,
-                        x="Digitos",
-                        y="Taxa_Acerto",
-                        category_orders={"Digitos": ORDEM_DIGITOS_NUM},
-                        color_discrete_sequence=[CORES_MODELOS_AZUL.get(modelo_card, COR_AZUL_PADRAO)],
-                        labels={"Digitos": "Dígitos", "Taxa_Acerto": "Acerto (%)"},
-                        title=title_card
-                    )
-                    fig_card.update_traces(
-                        texttemplate="%{y:.1f}%",
-                        textposition="outside"
-                    )
-                    fig_card.update_layout(
-                        height=255,
-                        margin=dict(l=15, r=15, t=48, b=30),
-                        yaxis=dict(range=[0, 120], showgrid=True, dtick=50, title=None),
-                        xaxis=dict(title=None)
-                    )
-                    st.plotly_chart(fig_card, use_container_width=True)
-                else:
-                    st.info(f"{modelo_card}: Sem dados")
+        # Grid 3x4 (12 modelos em 3 linhas de 4 colunas)
+        num_cols = 4
+        num_modelos = len(MODELOS_GEMINI)
+        for row_start in range(0, num_modelos, num_cols):
+            cols_linha = st.columns(num_cols)
+            for col_idx, idx in enumerate(range(row_start, min(row_start + num_cols, num_modelos))):
+                modelo_card = MODELOS_GEMINI[idx]
+                df_m = df_det[df_det["Nome_do_modelo"] == modelo_card]
+                sub_r = REASONING_MODELOS.get(modelo_card, "Reasoning: none")
+                title_card = f"<b>{modelo_card}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_r})</span>"
+                with cols_linha[col_idx]:
+                    if not df_m.empty:
+                        res_m = (
+                            df_m.groupby("Digitos")["Acerto_da_operacao"]
+                            .agg(Total="count", Acertos="sum")
+                            .reset_index()
+                        )
+                        res_m["Taxa_Acerto"] = (res_m["Acertos"] / res_m["Total"]) * 100
+                        fig_card = px.bar(
+                            res_m,
+                            x="Digitos",
+                            y="Taxa_Acerto",
+                            category_orders={"Digitos": ORDEM_DIGITOS_NUM},
+                            color_discrete_sequence=[CORES_MODELOS_AZUL.get(modelo_card, COR_AZUL_PADRAO)],
+                            labels={"Digitos": "Dígitos", "Taxa_Acerto": "Acerto (%)"},
+                            title=title_card
+                        )
+                        fig_card.update_traces(
+                            texttemplate="%{y:.1f}%",
+                            textposition="outside"
+                        )
+                        fig_card.update_layout(
+                            height=255,
+                            margin=dict(l=15, r=15, t=48, b=30),
+                            yaxis=dict(range=[0, 120], showgrid=True, dtick=50, title=None),
+                            xaxis=dict(title=None)
+                        )
+                        st.plotly_chart(fig_card, use_container_width=True)
+                    else:
+                        st.info(f"{modelo_card}: Sem dados")
 
 # =============================================================================
 # ABA 2: COMPARATIVO POR COMPLEXIDADE
@@ -430,99 +395,55 @@ with tab_complexidade:
     if not df_todas_op.empty and ops_selecionadas:
         df_todas_op_filtradas = df_todas_op[df_todas_op["Tipo_Operacao"].isin(ops_selecionadas)]
 
-        # Linha 1 de modelos (0 a 4)
-        cols_dec_l1 = st.columns(5)
-        for idx in range(5):
-            mod_atual = MODELOS_GEMINI[idx]
-            df_mod = df_todas_op_filtradas[df_todas_op_filtradas["Nome_do_modelo"] == mod_atual]
-            with cols_dec_l1[idx]:
-                if not df_mod.empty:
-                    res_dec = (
-                        df_mod.groupby(["Tipo_Operacao", "Digitos"])["Acerto_da_operacao"]
-                        .agg(Total="count", Acertos="sum")
-                        .reset_index()
-                    )
-                    res_dec["Taxa_Acerto"] = (res_dec["Acertos"] / res_dec["Total"]) * 100
-                    # Ordenação estritamente numérica para eliminar ligação entre dígito 2 e 10
-                    res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
-                    res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
+        # Grid 3x4 (12 modelos em 3 linhas de 4 colunas)
+        num_cols = 4
+        num_modelos = len(MODELOS_GEMINI)
+        for row_start in range(0, num_modelos, num_cols):
+            cols_dec = st.columns(num_cols)
+            for col_idx, idx in enumerate(range(row_start, min(row_start + num_cols, num_modelos))):
+                mod_atual = MODELOS_GEMINI[idx]
+                df_mod = df_todas_op_filtradas[df_todas_op_filtradas["Nome_do_modelo"] == mod_atual]
+                with cols_dec[col_idx]:
+                    if not df_mod.empty:
+                        res_dec = (
+                            df_mod.groupby(["Tipo_Operacao", "Digitos"])["Acerto_da_operacao"]
+                            .agg(Total="count", Acertos="sum")
+                            .reset_index()
+                        )
+                        res_dec["Taxa_Acerto"] = (res_dec["Acertos"] / res_dec["Total"]) * 100
+                        # Ordenação estritamente numérica para eliminar ligação entre dígito 2 e 10
+                        res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
+                        res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
 
-                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
-                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
+                        sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                        titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
 
-                    fig_dec = px.line(
-                        res_dec,
-                        x="Digitos",
-                        y="Taxa_Acerto",
-                        color="Tipo_Operacao",
-                        markers=True,
-                        category_orders={
-                            "Digitos": ORDEM_DIGITOS_NUM,
-                            "Tipo_Operacao": ops_selecionadas
-                        },
-                        color_discrete_map=CORES_OPERACOES,
-                        title=titulo_html
-                    )
-                    fig_dec.update_traces(
-                        hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
-                    )
-                    fig_dec.update_layout(
-                        height=255,
-                        margin=dict(l=15, r=15, t=48, b=25),
-                        yaxis=dict(range=[-5, 105], dtick=50, title=None),
-                        xaxis=dict(title=None),
-                        showlegend=False
-                    )
-                    st.plotly_chart(fig_dec, use_container_width=True)
-                else:
-                    st.info(f"{mod_atual}: Sem dados")
-
-        # Linha 2 de modelos (5 a 9)
-        cols_dec_l2 = st.columns(5)
-        for idx in range(5, 10):
-            mod_atual = MODELOS_GEMINI[idx]
-            df_mod = df_todas_op_filtradas[df_todas_op_filtradas["Nome_do_modelo"] == mod_atual]
-            with cols_dec_l2[idx - 5]:
-                if not df_mod.empty:
-                    res_dec = (
-                        df_mod.groupby(["Tipo_Operacao", "Digitos"])["Acerto_da_operacao"]
-                        .agg(Total="count", Acertos="sum")
-                        .reset_index()
-                    )
-                    res_dec["Taxa_Acerto"] = (res_dec["Acertos"] / res_dec["Total"]) * 100
-                    # Ordenação estritamente numérica para eliminar ligação entre dígito 2 e 10
-                    res_dec["Digitos_Num"] = pd.to_numeric(res_dec["Digitos"], errors="coerce")
-                    res_dec = res_dec.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
-
-                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
-                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
-
-                    fig_dec = px.line(
-                        res_dec,
-                        x="Digitos",
-                        y="Taxa_Acerto",
-                        color="Tipo_Operacao",
-                        markers=True,
-                        category_orders={
-                            "Digitos": ORDEM_DIGITOS_NUM,
-                            "Tipo_Operacao": ops_selecionadas
-                        },
-                        color_discrete_map=CORES_OPERACOES,
-                        title=titulo_html
-                    )
-                    fig_dec.update_traces(
-                        hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
-                    )
-                    fig_dec.update_layout(
-                        height=255,
-                        margin=dict(l=15, r=15, t=48, b=25),
-                        yaxis=dict(range=[-5, 105], dtick=50, title=None),
-                        xaxis=dict(title=None),
-                        showlegend=False
-                    )
-                    st.plotly_chart(fig_dec, use_container_width=True)
-                else:
-                    st.info(f"{mod_atual}: Sem dados")
+                        fig_dec = px.line(
+                            res_dec,
+                            x="Digitos",
+                            y="Taxa_Acerto",
+                            color="Tipo_Operacao",
+                            markers=True,
+                            category_orders={
+                                "Digitos": ORDEM_DIGITOS_NUM,
+                                "Tipo_Operacao": ops_selecionadas
+                            },
+                            color_discrete_map=CORES_OPERACOES,
+                            title=titulo_html
+                        )
+                        fig_dec.update_traces(
+                            hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Acerto: %{y:.1f}%<extra></extra>"
+                        )
+                        fig_dec.update_layout(
+                            height=255,
+                            margin=dict(l=15, r=15, t=48, b=25),
+                            yaxis=dict(range=[-5, 105], dtick=50, title=None),
+                            xaxis=dict(title=None),
+                            showlegend=False
+                        )
+                        st.plotly_chart(fig_dec, use_container_width=True)
+                    else:
+                        st.info(f"{mod_atual}: Sem dados")
 
 
 # =============================================================================
@@ -697,7 +618,7 @@ with tab_raciocinio:
     # NOVO: GRID 2x3 DA MÉDIA DE TOKENS POR DÍGITOS
     # -------------------------------------------------------------------------
     st.markdown("### Média de tokens de raciocínio por quantidade de dígitos")
-    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para os modelos com raciocínio ativo (Grid 2x3), comparando Soma e Expressões Combinadas.")
+    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para os modelos com raciocínio ativo (Grid 2x4), comparando Soma e Expressões Combinadas.")
 
     st.markdown("""
     <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
@@ -716,93 +637,51 @@ with tab_raciocinio:
     df_tokens_ambos = pd.concat([df_soma_tok, df_comb_tok], ignore_index=True)
     df_tokens_ambos["Digitos_Num"] = pd.to_numeric(df_tokens_ambos["Digitos"], errors="coerce")
 
-    # Linha 1: 3 modelos
-    cols_tok_l1 = st.columns(3)
-    for idx in range(min(3, len(MODELOS_COM_REASONING))):
-        mod_atual = MODELOS_COM_REASONING[idx]
-        df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
-        with cols_tok_l1[idx]:
-            if not df_mod_t.empty:
-                res_tok = (
-                    df_mod_t.groupby(["Tipo_Operacao", "Digitos", "Digitos_Num"])["reasoning_tokens"]
-                    .mean()
-                    .reset_index(name="Media_Tokens")
-                )
-                res_tok = res_tok.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
+    # Grid 2x4 (8 modelos em 2 linhas de 4 colunas)
+    num_cols_tok = 4
+    for row_start in range(0, len(MODELOS_COM_REASONING), num_cols_tok):
+        cols_tok = st.columns(num_cols_tok)
+        for col_idx, idx in enumerate(range(row_start, min(row_start + num_cols_tok, len(MODELOS_COM_REASONING)))):
+            mod_atual = MODELOS_COM_REASONING[idx]
+            df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
+            with cols_tok[col_idx]:
+                if not df_mod_t.empty:
+                    res_tok = (
+                        df_mod_t.groupby(["Tipo_Operacao", "Digitos", "Digitos_Num"])["reasoning_tokens"]
+                        .mean()
+                        .reset_index(name="Media_Tokens")
+                    )
+                    res_tok = res_tok.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
 
-                sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
-                titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
+                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
 
-                fig_tok = px.line(
-                    res_tok,
-                    x="Digitos",
-                    y="Media_Tokens",
-                    color="Tipo_Operacao",
-                    markers=True,
-                    category_orders={
-                        "Digitos": ORDEM_DIGITOS_NUM,
-                        "Tipo_Operacao": ["Soma", "Expressões Combinadas"]
-                    },
-                    color_discrete_map=CORES_OPERACOES,
-                    title=titulo_html
-                )
-                fig_tok.update_traces(
-                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Média Tokens: %{y:.1f}<extra></extra>"
-                )
-                fig_tok.update_layout(
-                    height=255,
-                    margin=dict(l=15, r=15, t=48, b=25),
-                    yaxis=dict(range=[0, 1250], dtick=250, title=None),
-                    xaxis=dict(title=None),
-                    showlegend=False
-                )
-                st.plotly_chart(fig_tok, use_container_width=True)
-            else:
-                st.info(f"{mod_atual}: Sem dados")
-
-    # Linha 2: 3 modelos
-    cols_tok_l2 = st.columns(3)
-    for idx in range(3, len(MODELOS_COM_REASONING)):
-        mod_atual = MODELOS_COM_REASONING[idx]
-        df_mod_t = df_tokens_ambos[df_tokens_ambos["Nome_do_modelo"] == mod_atual]
-        with cols_tok_l2[idx - 3]:
-            if not df_mod_t.empty:
-                res_tok = (
-                    df_mod_t.groupby(["Tipo_Operacao", "Digitos", "Digitos_Num"])["reasoning_tokens"]
-                    .mean()
-                    .reset_index(name="Media_Tokens")
-                )
-                res_tok = res_tok.sort_values(by=["Tipo_Operacao", "Digitos_Num"])
-
-                sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
-                titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
-
-                fig_tok = px.line(
-                    res_tok,
-                    x="Digitos",
-                    y="Media_Tokens",
-                    color="Tipo_Operacao",
-                    markers=True,
-                    category_orders={
-                        "Digitos": ORDEM_DIGITOS_NUM,
-                        "Tipo_Operacao": ["Soma", "Expressões Combinadas"]
-                    },
-                    color_discrete_map=CORES_OPERACOES,
-                    title=titulo_html
-                )
-                fig_tok.update_traces(
-                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Média Tokens: %{y:.1f}<extra></extra>"
-                )
-                fig_tok.update_layout(
-                    height=255,
-                    margin=dict(l=15, r=15, t=48, b=25),
-                    yaxis=dict(range=[0, 1250], dtick=250, title=None),
-                    xaxis=dict(title=None),
-                    showlegend=False
-                )
-                st.plotly_chart(fig_tok, use_container_width=True)
-            else:
-                st.info(f"{mod_atual}: Sem dados")
+                    fig_tok = px.line(
+                        res_tok,
+                        x="Digitos",
+                        y="Media_Tokens",
+                        color="Tipo_Operacao",
+                        markers=True,
+                        category_orders={
+                            "Digitos": ORDEM_DIGITOS_NUM,
+                            "Tipo_Operacao": ["Soma", "Expressões Combinadas"]
+                        },
+                        color_discrete_map=CORES_OPERACOES,
+                        title=titulo_html
+                    )
+                    fig_tok.update_traces(
+                        hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Média Tokens: %{y:.1f}<extra></extra>"
+                    )
+                    fig_tok.update_layout(
+                        height=255,
+                        margin=dict(l=15, r=15, t=48, b=25),
+                        yaxis=dict(range=[0, 1250], dtick=250, title=None),
+                        xaxis=dict(title=None),
+                        showlegend=False
+                    )
+                    st.plotly_chart(fig_tok, use_container_width=True)
+                else:
+                    st.info(f"{mod_atual}: Sem dados")
 
     st.markdown("---")
 
@@ -810,7 +689,7 @@ with tab_raciocinio:
     # NOVO: GRID 2x3 DE BOXPLOTS (TOKENS DE RACIOCÍNIO VS ACERTO/ERRO)
     # -------------------------------------------------------------------------
     st.markdown("### Distribuição de tokens de raciocínio por resultado da operação")
-    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X) para os modelos com raciocínio ativo (Grid 2x3), revelando a dispersão do esforço cognitivo.")
+    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X) para os modelos com raciocínio ativo (Grid 2x4), revelando a dispersão do esforço cognitivo.")
 
     # Seletores de operação e de quantidade de dígitos
     col_sel_box1, col_sel_box2 = st.columns([1, 1])
@@ -860,67 +739,38 @@ with tab_raciocinio:
         else:
             y_max_box = int(math.ceil(float(max_val_box) * 1.05 / 50.0) * 50)
 
-        # Linha 1: 3 modelos
-        cols_box_l1 = st.columns(3)
-        for idx in range(min(3, len(MODELOS_COM_REASONING))):
-            mod_atual = MODELOS_COM_REASONING[idx]
-            df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
-            with cols_box_l1[idx]:
-                if not df_mod_b.empty:
-                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
-                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
+        # Grid 2x4 (8 modelos em 2 linhas de 4 colunas)
+        num_cols_box = 4
+        for row_start in range(0, len(MODELOS_COM_REASONING), num_cols_box):
+            cols_box = st.columns(num_cols_box)
+            for col_idx, idx in enumerate(range(row_start, min(row_start + num_cols_box, len(MODELOS_COM_REASONING)))):
+                mod_atual = MODELOS_COM_REASONING[idx]
+                df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
+                with cols_box[col_idx]:
+                    if not df_mod_b.empty:
+                        sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
+                        titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
 
-                    fig_box = px.box(
-                        df_mod_b,
-                        x="Resultado",
-                        y="reasoning_tokens",
-                        color="Resultado",
-                        category_orders={"Resultado": ["Acerto", "Erro"]},
-                        color_discrete_map={"Acerto": "#10b981", "Erro": "#ef4444"},
-                        title=titulo_html,
-                        points="outliers"
-                    )
-                    fig_box.update_layout(
-                        height=265,
-                        margin=dict(l=15, r=15, t=48, b=25),
-                        yaxis=dict(range=[0, y_max_box], title=None),
-                        xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
-                        showlegend=False
-                    )
-                    st.plotly_chart(fig_box, use_container_width=True)
-                else:
-                    st.info(f"{mod_atual}: Sem dados para {dig_box_sel} dígitos" if dig_box_sel != "Todos" else f"{mod_atual}: Sem dados")
-
-        # Linha 2: 3 modelos
-        cols_box_l2 = st.columns(3)
-        for idx in range(3, len(MODELOS_COM_REASONING)):
-            mod_atual = MODELOS_COM_REASONING[idx]
-            df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
-            with cols_box_l2[idx - 3]:
-                if not df_mod_b.empty:
-                    sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
-                    titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
-
-                    fig_box = px.box(
-                        df_mod_b,
-                        x="Resultado",
-                        y="reasoning_tokens",
-                        color="Resultado",
-                        category_orders={"Resultado": ["Acerto", "Erro"]},
-                        color_discrete_map={"Acerto": "#10b981", "Erro": "#ef4444"},
-                        title=titulo_html,
-                        points="outliers"
-                    )
-                    fig_box.update_layout(
-                        height=265,
-                        margin=dict(l=15, r=15, t=48, b=25),
-                        yaxis=dict(range=[0, y_max_box], title=None),
-                        xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
-                        showlegend=False
-                    )
-                    st.plotly_chart(fig_box, use_container_width=True)
-                else:
-                    st.info(f"{mod_atual}: Sem dados para {dig_box_sel} dígitos" if dig_box_sel != "Todos" else f"{mod_atual}: Sem dados")
+                        fig_box = px.box(
+                            df_mod_b,
+                            x="Resultado",
+                            y="reasoning_tokens",
+                            color="Resultado",
+                            category_orders={"Resultado": ["Acerto", "Erro"]},
+                            color_discrete_map={"Acerto": "#10b981", "Erro": "#ef4444"},
+                            title=titulo_html,
+                            points="outliers"
+                        )
+                        fig_box.update_layout(
+                            height=265,
+                            margin=dict(l=15, r=15, t=48, b=25),
+                            yaxis=dict(range=[0, y_max_box], title=None),
+                            xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
+                            showlegend=False
+                        )
+                        st.plotly_chart(fig_box, use_container_width=True)
+                    else:
+                        st.info(f"{mod_atual}: Sem dados para {dig_box_sel} dígitos" if dig_box_sel != "Todos" else f"{mod_atual}: Sem dados")
 
 
 # =============================================================================
