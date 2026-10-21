@@ -222,9 +222,14 @@ with tab1:
                 },
                 text="Taxa",
                 title=f"{op}",
-                range_y=[0, 105]
+                range_y=[0, 115]
             )
-            fig.update_traces(texttemplate="%{text:.1f}%", textposition="outside")
+            fig.update_traces(
+                texttemplate="%{text:.1f}%",
+                textposition="outside",
+                cliponaxis=False,
+                width=0.4
+            )
             fig.update_layout(
                 height=320,
                 showlegend=False,
