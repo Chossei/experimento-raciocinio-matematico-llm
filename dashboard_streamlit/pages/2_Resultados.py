@@ -618,7 +618,7 @@ with tab_raciocinio:
     # NOVO: GRID 2x3 DA MÉDIA DE TOKENS POR DÍGITOS
     # -------------------------------------------------------------------------
     st.markdown("### Média de tokens de raciocínio por quantidade de dígitos")
-    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos (2 a 10) para os modelos com raciocínio ativo (Grid 2x4), comparando Soma e Expressões Combinadas.")
+    st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos para os modelos com raciocínio ativo, comparando Soma e Expressões Combinadas.")
 
     st.markdown("""
     <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
@@ -672,105 +672,24 @@ with tab_raciocinio:
                     fig_tok.update_traces(
                         hovertemplate="<b>%{data.name}</b><br>Dígitos: %{x}<br>Média Tokens: %{y:.1f}<extra></extra>"
                     )
+
+                    # Autoescala para Gemini 3.8 mid e high; escala fixa [0, 1250] para os demais
+                    is_autoescala = ("3.8" in mod_atual and any(k in mod_atual.lower() for k in ["mid", "high"])) or (mod_atual in ["gemini-3.8-flash-mid", "gemini-3.8-flash-high"])
+                    if is_autoescala:
+                        yaxis_cfg = dict(autorange=True, title=None)
+                    else:
+                        yaxis_cfg = dict(range=[0, 1250], dtick=250, title=None)
+
                     fig_tok.update_layout(
                         height=255,
                         margin=dict(l=15, r=15, t=48, b=25),
-                        yaxis=dict(range=[0, 1250], dtick=250, title=None),
+                        yaxis=yaxis_cfg,
                         xaxis=dict(title=None),
                         showlegend=False
                     )
                     st.plotly_chart(fig_tok, use_container_width=True)
                 else:
                     st.info(f"{mod_atual}: Sem dados")
-
-    st.markdown("---")
-
-    # -------------------------------------------------------------------------
-    # NOVO: GRID 2x3 DE BOXPLOTS (TOKENS DE RACIOCÍNIO VS ACERTO/ERRO)
-    # -------------------------------------------------------------------------
-    st.markdown("### Distribuição de tokens de raciocínio por resultado da operação")
-    st.caption("Cruzamento entre o volume de tokens de raciocínio (eixo Y) e o desfecho da resposta (Acerto vs Erro no eixo X) para os modelos com raciocínio ativo (Grid 2x4), revelando a dispersão do esforço cognitivo.")
-
-    # Seletores de operação e de quantidade de dígitos
-    col_sel_box1, col_sel_box2 = st.columns([1, 1])
-    with col_sel_box1:
-        op_box_sel = st.radio(
-            "Selecione a operação para inspecionar os boxplots:",
-            options=["Soma", "Expressões Combinadas"],
-            index=0,
-            horizontal=True,
-            key="sel_op_boxplot_grid"
-        )
-    with col_sel_box2:
-        opcoes_dig_box = ["Todos"] + ORDEM_DIGITOS_NUM
-        dig_box_sel = st.selectbox(
-            "Selecione a quantidade de dígitos para analisar:",
-            options=opcoes_dig_box,
-            index=0,
-            key="sel_dig_boxplot_grid"
-        )
-
-    # Legenda explicativa superior das caixas
-    st.markdown("""
-    <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; padding: 10px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-weight: 600;">
-        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #10b981; border-radius: 3px; display: inline-block;"></span> Acerto</div>
-        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; background-color: #ef4444; border-radius: 3px; display: inline-block;"></span> Erro</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    if op_box_sel == "Soma":
-        df_box_base = df_soma_r.copy()
-    else:
-        df_box_base = df_comb_r.copy()
-
-    if not df_box_base.empty:
-        # Filtrar por dígitos se selecionado algo diferente de "Todos"
-        if dig_box_sel != "Todos":
-            df_box_base = df_box_base[df_box_base["Digitos"] == str(dig_box_sel)]
-
-        df_box_base["Resultado"] = df_box_base["Acerto_da_operacao"].apply(lambda x: "Acerto" if bool(x) else "Erro")
-
-        # Determinar a escala Y máxima unificada baseada no maior ponto (outlier/máximo) entre todos os modelos
-        import math
-        df_box_models = df_box_base[df_box_base["Nome_do_modelo"].isin(MODELOS_COM_REASONING)]
-        max_val_box = df_box_models["reasoning_tokens"].max() if not df_box_models.empty else 0
-        if pd.isna(max_val_box) or max_val_box <= 0:
-            y_max_box = 100
-        else:
-            y_max_box = int(math.ceil(float(max_val_box) * 1.05 / 50.0) * 50)
-
-        # Grid 2x4 (8 modelos em 2 linhas de 4 colunas)
-        num_cols_box = 4
-        for row_start in range(0, len(MODELOS_COM_REASONING), num_cols_box):
-            cols_box = st.columns(num_cols_box)
-            for col_idx, idx in enumerate(range(row_start, min(row_start + num_cols_box, len(MODELOS_COM_REASONING)))):
-                mod_atual = MODELOS_COM_REASONING[idx]
-                df_mod_b = df_box_base[df_box_base["Nome_do_modelo"] == mod_atual]
-                with cols_box[col_idx]:
-                    if not df_mod_b.empty:
-                        sub_reasoning = REASONING_MODELOS.get(mod_atual, "Reasoning: none")
-                        titulo_html = f"<b>{mod_atual}</b><br><span style='font-size:0.75rem; color:#64748b; font-weight:normal;'>({sub_reasoning})</span>"
-
-                        fig_box = px.box(
-                            df_mod_b,
-                            x="Resultado",
-                            y="reasoning_tokens",
-                            color="Resultado",
-                            category_orders={"Resultado": ["Acerto", "Erro"]},
-                            color_discrete_map={"Acerto": "#10b981", "Erro": "#ef4444"},
-                            title=titulo_html,
-                            points="outliers"
-                        )
-                        fig_box.update_layout(
-                            height=265,
-                            margin=dict(l=15, r=15, t=48, b=25),
-                            yaxis=dict(range=[0, y_max_box], title=None),
-                            xaxis=dict(categoryorder="array", categoryarray=["Acerto", "Erro"], title=None),
-                            showlegend=False
-                        )
-                        st.plotly_chart(fig_box, use_container_width=True)
-                    else:
-                        st.info(f"{mod_atual}: Sem dados para {dig_box_sel} dígitos" if dig_box_sel != "Todos" else f"{mod_atual}: Sem dados")
 
 
 # =============================================================================

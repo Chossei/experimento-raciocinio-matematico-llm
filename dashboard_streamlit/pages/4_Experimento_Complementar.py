@@ -189,7 +189,7 @@ operacoes_lista = ["Multiplicação Inteira", "Multiplicação Decimal", "Soma",
 # ABA 1: VISÃO GERAL & DETALHAMENTO POR DÍGITOS
 # =============================================================================
 with tab1:
-    st.markdown("### 1. Visão Geral da Acurácia por Tipo de Operação (Grid 2x2)")
+    st.markdown("### 1. Visão Geral da Acurácia por Tipo de Operação")
     st.caption("Comparação entre Sensibilidade (avaliar como correto quando a conta está correta) e Especificidade (avaliar como incorreto quando a conta está errada).")
 
     grid_cols = st.columns(2)
@@ -235,7 +235,7 @@ with tab1:
             st.plotly_chart(fig, use_container_width=True)
 
     st.markdown("<hr style='margin: 35px 0 25px 0; border: 0; border-top: 1px solid #334155;'>", unsafe_allow_html=True)
-    st.markdown("### 2. Detalhamento por Quantidade de Dígitos (Grid 2x2)")
+    st.markdown("### 2. Detalhamento por Quantidade de Dígitos")
     st.caption("Evolução da Sensibilidade (azul escuro) vs Especificidade (azul claro) com a progressão da complexidade numérica (2 a 10 dígitos) para cada uma das operações.")
 
     digitos_x = list(range(2, 11))
@@ -292,7 +292,7 @@ with tab1:
 # =============================================================================
 with tab2:
     st.markdown("### A Curva de Probabilidades Bayesianas do JEV")
-    st.caption("Distribuição de certeza do modelo entre $P(TRUE)$ e $P(FALSE)$ emitida pela API de decisões.")
+    st.caption("Distribuição de certeza do modelo entre $P(TRUE)$ (probabilidade da conta estar certa) e $P(FALSE)$ (probabilidade de estar errada) emitida pela API de decisões.")
 
     st.markdown("#### 1. Evolução da Probabilidade Média por Dígitos")
     st.markdown("A linha **sólida** representa a média de $P(TRUE)$ quando a expressão é verdadeira. A linha **tracejada** representa a média de $P(FALSE)$ quando a expressão é falsa.")
@@ -333,7 +333,7 @@ with tab2:
             st.plotly_chart(fig_p, use_container_width=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("#### 2. Dispersão das Probabilidades por Operação (Grid 3x3 por Dígito)")
+    st.markdown("#### 2. Dispersão das Probabilidades por Operação por Dígito")
     
     filtro_expressao = st.selectbox(
         "Selecione o recorte de análise:",
