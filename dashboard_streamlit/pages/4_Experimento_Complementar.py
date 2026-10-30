@@ -73,7 +73,7 @@ df_jev, resultados_prontos = carregar_dados_jev()
 st.markdown('<div class="dash-title">🧪 Experimento Complementar: TypeSafe JEV 1.14</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="dash-subtitle">'
-    'Investigação da capacidade de avaliação e validação aritmética determinística do modelo especializado TypeSafe JEV em expressões balanceadas.'
+    'Investigação da capacidade de avaliação e validação aritmética do modelo TypeSafe JEV em expressões verdadeiras e falsas.'
     '</div>',
     unsafe_allow_html=True
 )
@@ -92,22 +92,21 @@ col_intro1, col_intro2 = st.columns([1.2, 0.8])
 with col_intro1:
     st.markdown("### 📌 Contextualização e Objetivo")
     st.markdown(
-        "Diferente dos LLMs tradicionais da família Gemini — projetados para geração aberta de linguagem natural e texto contínuo —, "
-        "o **TypeSafe JEV 1.14** é uma arquitetura orientada estritamente a **tarefas de escolha, decisão e classificação probabilística**, "
-        "substituindo saídas estruturadas com garantias bayesianas via logprobs calibradas."
+        "O **TypeSafe JEV 1.14** é um modelo destinado a executar tarefas de escolha, decisão e classificação através de logprobabilidades. "
+        "Lançado recentemente, ele se difere dos LLMs tradicionais por não gerar linguagem natural em texto e surgir como uma alternativa aos Outputs Estruturados."
     )
     st.markdown(
-        "**Objetivo:** Avaliar se um modelo de decisão dedicado consegue identificar se uma igualdade matemática está correta ou errada, "
-        "e mensurar sua assimetria entre **Sensibilidade** (reconhecer a verdade) e **Especificidade** (detectar erros reais gerados por outros LLMs)."
+        "Neste contexto, o objetivo deste experimento é avaliar se o modelo de decisão consegue identificar se uma igualdade matemática está correta ou errada, "
+        "mensurando o quanto ele é capaz de reconhecer quando a equação está correta - por meio da sensibilidade - e quando a equação está errada, via especificidade."
     )
 
 with col_intro2:
-    st.markdown("### 🎯 Desenho Amostral Balanceado")
+    st.markdown("### 🎯 Desenho amostral")
     st.markdown("""
-    - **Total Amostral:** 3.600 expressões avaliadas (100 por dígito $\times$ 9 dígitos $\times$ 4 operações).
-    - **Equilíbrio Rigoroso:** 50% de expressões verdadeiras (1.800) e 50% de expressões falsas (1.800).
-    - **Erros Realistas:** As expressões falsas utilizam respostas incorretas reais emitidas pelos modelos Gemini nas fases 1 e 2.
-    - **Decisão Probabilística:** O modelo emite a distribuição $P(\\text{TRUE})$ e $P(\\text{FALSE})$ com calibração isotônica.
+    - **Tamanho amostral:** 3.600 expressões avaliadas (100 por dígito × 9 dígitos × 4 operações).
+    - **Balanceamento:** 50% de expressões verdadeiras (1.800) e 50% de expressões falsas (1.800).
+    - **Erros anteriores:** As expressões falsas utilizam respostas incorretas emitidas pelos modelos Gemini no experimento anterior.
+    - **Erros gerados:** Para determinadas estruturas operacionais (como a Soma) e quantidade de dígitos ínfimas (2 ou 3 dígitos) não houveram erros produzidos pela família Gemini. Desse modo, gerou-se um número aleatório de 1 até a segunda casa decimal do resultado, somando-o para produzir o 'erro artificial'. Exemplo: 345 \\* 465 = 160425, sorteia-se um número entre 1 e 60425 adiciona-se ao resultado.
     """)
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -140,7 +139,7 @@ if resultados_prontos and not df_jev.empty:
     with c2:
         st.markdown(f"""
         <div class="metric-card">
-            <div class="metric-label">Sensibilidade (TPR)</div>
+            <div class="metric-label">Sensibilidade</div>
             <div class="metric-value" style="color: {COR_SENSIBILIDADE};">{sensibilidade:.1f}%</div>
             <div class="metric-sub">Acerto em contas verdadeiras</div>
         </div>
@@ -148,7 +147,7 @@ if resultados_prontos and not df_jev.empty:
     with c3:
         st.markdown(f"""
         <div class="metric-card">
-            <div class="metric-label">Especificidade (TNR)</div>
+            <div class="metric-label">Especificidade</div>
             <div class="metric-value" style="color: #0284c7;">{especificidade:.1f}%</div>
             <div class="metric-sub">Detecção de contas falsas</div>
         </div>
@@ -297,7 +296,7 @@ with tab1:
 # =============================================================================
 with tab2:
     st.markdown("### A Curva de Probabilidades Bayesianas do JEV")
-    st.caption("Distribuição de certeza do modelo entre $P(TRUE)$ (probabilidade da conta estar certa) e $P(FALSE)$ (probabilidade de estar errada) emitida pela API de decisões.")
+    st.caption("Distribuição de certeza do modelo entre $P(TRUE)$ (probabilidade da conta estar certa) e $P(FALSE)$ (probabilidade de estar errada) emitida pelo TypeSafe Jev 1.14.")
 
     st.markdown("#### 1. Evolução da Probabilidade Média por Dígitos")
     st.markdown("A linha **sólida** representa a média de $P(TRUE)$ quando a expressão é verdadeira. A linha **tracejada** representa a média de $P(FALSE)$ quando a expressão é falsa.")
@@ -338,7 +337,7 @@ with tab2:
             st.plotly_chart(fig_p, use_container_width=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("#### 2. Dispersão das Probabilidades por Operação por Dígito")
+    st.markdown("#### 2. Boxplot das probabilidades emitidas por operação e dígito")
     
     filtro_expressao = st.selectbox(
         "Selecione o recorte de análise:",
@@ -405,8 +404,8 @@ with tab3:
     with col_c2:
         st.markdown("#### Tipologia de Erros em Modelos de Decisão")
         st.markdown("""
-        - **Falso Positivo (FP):** O JEV avaliou uma conta errada como *Verdadeira*. (Falha de verificação aritmética).
-        - **Falso Negativo (FN):** O JEV avaliou uma conta verdadeira como *Falsa*. (Hiper-ceticismo ou penalização de complexidade).
+        - **Falso Positivo (FP):** O JEV avaliou uma conta errada como *Verdadeira*.
+        - **Falso Negativo (FN):** O JEV avaliou uma conta verdadeira como *Falsa*.
         - **Taxa de Erro Balanceada:** Como o conjunto tem proporção exata de 50/50, o desvio métrico não é enviesado por desbalanceamento amostral.
         """)
 
