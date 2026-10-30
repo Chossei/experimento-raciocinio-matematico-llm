@@ -450,172 +450,17 @@ with tab_complexidade:
 # ABA 3: A INFLUÊNCIA DO RACIOCÍNIO
 # =============================================================================
 with tab_raciocinio:
-    st.markdown("### A Influência do Raciocínio (Tokens de Pensamento)")
-    st.caption("Relação entre a Taxa de Acerto (%) e a Média de Tokens de Raciocínio gerados por complexidade de dígitos.")
-
-    # Seletor de quantidade de dígitos: "Todos" por padrão
-    col_sel_r, _ = st.columns([1, 1])
-    with col_sel_r:
-        opcoes_dig_r = ["Todos"] + ORDEM_DIGITOS_NUM
-        dig_r_sel = st.selectbox("Selecione a quantidade de dígitos para visualizar:", opcoes_dig_r, index=0, key="sel_dig_raciocinio")
-
     df_soma_r = dfs.get("soma", pd.DataFrame())
     df_comb_r = dfs.get("combinadas", pd.DataFrame())
 
-    col_r1, col_r2 = st.columns([1, 1])
-
-    # 1. Gráfico de Soma
-    with col_r1:
-        st.markdown("#### 1. Operações de Soma")
-        if not df_soma_r.empty:
-            df_soma_filtrado = df_soma_r.copy()
-            if dig_r_sel != "Todos":
-                df_soma_filtrado = df_soma_filtrado[df_soma_filtrado["Digitos"] == str(dig_r_sel)]
-
-            stats_soma = (
-                df_soma_filtrado.groupby(["Nome_do_modelo_rotulo", "Digitos"])
-                .agg(
-                    Taxa_Acerto=("Acerto_da_operacao", lambda x: (x.sum() / len(x)) * 100),
-                    Media_Reasoning=("reasoning_tokens", "mean")
-                )
-                .reset_index()
-            )
-            stats_soma["Digitos_Num"] = pd.to_numeric(stats_soma["Digitos"], errors="coerce")
-            stats_soma = stats_soma.sort_values(by=["Nome_do_modelo_rotulo", "Digitos_Num"])
-
-            if dig_r_sel == "Todos":
-                fig_r_soma = px.line(
-                    stats_soma,
-                    x="Media_Reasoning",
-                    y="Taxa_Acerto",
-                    color="Nome_do_modelo_rotulo",
-                    markers=True,
-                    text="Digitos",
-                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
-                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
-                    labels={
-                        "Media_Reasoning": "Média de Tokens de Raciocínio",
-                        "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo_rotulo": "Modelo"
-                    },
-                    title="Soma: Trajetória de Complexidade (Todos os Dígitos)"
-                )
-                fig_r_soma.update_traces(
-                    textposition="top right",
-                    marker=dict(size=8),
-                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{text}<br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
-                )
-            else:
-                fig_r_soma = px.scatter(
-                    stats_soma,
-                    x="Media_Reasoning",
-                    y="Taxa_Acerto",
-                    color="Nome_do_modelo_rotulo",
-                    text="Nome_do_modelo_rotulo",
-                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
-                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
-                    labels={
-                        "Media_Reasoning": "Média de Tokens de Raciocínio",
-                        "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo_rotulo": "Modelo"
-                    },
-                    title=f"Soma: {dig_r_sel} Dígitos"
-                )
-                fig_r_soma.update_traces(
-                    textposition="top center",
-                    marker=dict(size=12),
-                    hovertemplate="<b>%{text}</b><br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
-                )
-
-            fig_r_soma.update_layout(
-                yaxis=dict(range=[-5, 108], title="Taxa de Acerto (%)"),
-                xaxis=dict(title="Média de Tokens de Raciocínio"),
-                height=450,
-                margin=dict(l=40, r=20, t=50, b=40)
-            )
-            st.plotly_chart(fig_r_soma, use_container_width=True)
-
-    # 2. Gráfico de Expressões Combinadas
-    with col_r2:
-        st.markdown("#### 2. Expressões Combinadas a * (b + c)")
-        if not df_comb_r.empty:
-            df_comb_filtrado = df_comb_r.copy()
-            if dig_r_sel != "Todos":
-                df_comb_filtrado = df_comb_filtrado[df_comb_filtrado["Digitos"] == str(dig_r_sel)]
-
-            stats_comb = (
-                df_comb_filtrado.groupby(["Nome_do_modelo_rotulo", "Digitos"])
-                .agg(
-                    Taxa_Acerto=("Acerto_da_operacao", lambda x: (x.sum() / len(x)) * 100),
-                    Media_Reasoning=("reasoning_tokens", "mean")
-                )
-                .reset_index()
-            )
-            stats_comb["Digitos_Num"] = pd.to_numeric(stats_comb["Digitos"], errors="coerce")
-            stats_comb = stats_comb.sort_values(by=["Nome_do_modelo_rotulo", "Digitos_Num"])
-
-            if dig_r_sel == "Todos":
-                fig_r_comb = px.line(
-                    stats_comb,
-                    x="Media_Reasoning",
-                    y="Taxa_Acerto",
-                    color="Nome_do_modelo_rotulo",
-                    markers=True,
-                    text="Digitos",
-                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
-                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
-                    labels={
-                        "Media_Reasoning": "Média de Tokens de Raciocínio",
-                        "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo_rotulo": "Modelo"
-                    },
-                    title="Expressões Combinadas: Trajetória de Complexidade (Todos os Dígitos)"
-                )
-                fig_r_comb.update_traces(
-                    textposition="top right",
-                    marker=dict(size=8),
-                    hovertemplate="<b>%{data.name}</b><br>Dígitos: %{text}<br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
-                )
-            else:
-                fig_r_comb = px.scatter(
-                    stats_comb,
-                    x="Media_Reasoning",
-                    y="Taxa_Acerto",
-                    color="Nome_do_modelo_rotulo",
-                    text="Nome_do_modelo_rotulo",
-                    category_orders={"Nome_do_modelo_rotulo": MODELOS_GEMINI_ROTULOS},
-                    color_discrete_map=CORES_MODELOS_AZUL_ROTULOS,
-                    labels={
-                        "Media_Reasoning": "Média de Tokens de Raciocínio",
-                        "Taxa_Acerto": "Taxa de Acerto (%)",
-                        "Nome_do_modelo_rotulo": "Modelo"
-                    },
-                    title=f"Expressões Combinadas: {dig_r_sel} Dígitos"
-                )
-                fig_r_comb.update_traces(
-                    textposition="top center",
-                    marker=dict(size=12),
-                    hovertemplate="<b>%{text}</b><br>Tokens Raciocínio: %{x:.1f}<br>Acerto: %{y:.1f}%<extra></extra>"
-                )
-
-            fig_r_comb.update_layout(
-                yaxis=dict(range=[-5, 108], title="Taxa de Acerto (%)"),
-                xaxis=dict(title="Média de Tokens de Raciocínio"),
-                height=450,
-                margin=dict(l=40, r=20, t=50, b=40)
-            )
-            st.plotly_chart(fig_r_comb, use_container_width=True)
-
-    st.markdown("---")
-
-    # Lista dos modelos com raciocínio ativo (excluindo 'none' e gemini-3.5-flash-lite que gerou 0 tokens) -> 6 modelos
+    # Lista dos modelos com raciocínio ativo (excluindo 'none' e gemini-3.5-flash-lite que gerou 0 tokens)
     MODELOS_COM_REASONING = [
         m for m in MODELOS_GEMINI 
         if "none" not in REASONING_MODELOS.get(m, "").lower() and m != "gemini-3.5-flash-lite"
     ]
 
     # -------------------------------------------------------------------------
-    # NOVO: GRID 2x3 DA MÉDIA DE TOKENS POR DÍGITOS
+    # GRID DA MÉDIA DE TOKENS POR DÍGITOS
     # -------------------------------------------------------------------------
     st.markdown("### Média de tokens de raciocínio por quantidade de dígitos")
     st.caption("Evolução da média de tokens de raciocínio ao longo da complexidade de dígitos para os modelos com raciocínio ativo, comparando Soma e Expressões Combinadas.")
